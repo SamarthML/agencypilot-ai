@@ -3,7 +3,7 @@
 import { Menu, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
@@ -69,20 +69,40 @@ function NavLink({ item, active, collapsed, onNavigate }: NavLinkProps) {
   );
 }
 
-function NavList({ collapsed = false, onNavigate }: { collapsed?: boolean; onNavigate?: () => void }) {
-  const pathname = usePathname();
+interface NavListProps {
+  collapsed?: boolean;
+  onNavigate?: () => void;
+}
+
+function NavItems({ pathname, collapsed = false, onNavigate }: NavListProps & { pathname: string | null }) {
   return (
     <nav aria-label="Main" className="flex flex-col gap-1 px-3">
       {NAV_ITEMS.map((item) => (
         <NavLink
           key={item.href}
           item={item}
-          active={isActivePath(pathname, item.href)}
+          active={pathname !== null && isActivePath(pathname, item.href)}
           collapsed={collapsed}
           onNavigate={onNavigate}
         />
       ))}
     </nav>
+  );
+}
+
+function ActiveNavItems(props: NavListProps) {
+  return <NavItems pathname={usePathname()} {...props} />;
+}
+
+/**
+ * usePathname suspends while prerendering routes with request-time params (/reports/[id]) under
+ * Cache Components, so only the active-state read sits in Suspense; the links prerender as-is.
+ */
+function NavList(props: NavListProps) {
+  return (
+    <Suspense fallback={<NavItems pathname={null} {...props} />}>
+      <ActiveNavItems {...props} />
+    </Suspense>
   );
 }
 

@@ -25,6 +25,7 @@ from app.services.llm import (
     ProviderNotConfiguredError,
     ProviderUnavailableError,
 )
+from app.services.reports import ReportNotFoundError
 from app.services.seo.fetcher import (
     BlockedAddressError,
     FetchTimeoutError,
@@ -69,6 +70,7 @@ DOMAIN_ERROR_STATUS: dict[type[Exception], int] = {
     DocumentNotFoundError: status.HTTP_404_NOT_FOUND,
     UnsupportedDocumentError: status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
     InvalidDocumentError: status.HTTP_422_UNPROCESSABLE_CONTENT,
+    ReportNotFoundError: status.HTTP_404_NOT_FOUND,
 }
 HANDLED_ERRORS = (
     LLMError,
@@ -79,6 +81,7 @@ HANDLED_ERRORS = (
     DocumentNotFoundError,
     UnsupportedDocumentError,
     InvalidDocumentError,
+    ReportNotFoundError,
 )
 
 
@@ -98,7 +101,8 @@ def add_cors(app: FastAPI, settings: Settings) -> None:
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
-        expose_headers=["X-LLM-Provider"],
+        # Content-Disposition carries the report PDF filename to the browser download.
+        expose_headers=["X-LLM-Provider", "Content-Disposition"],
     )
 
 

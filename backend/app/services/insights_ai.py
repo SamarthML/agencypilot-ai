@@ -115,12 +115,12 @@ def build_context(client_name: str, snapshot: InsightsSnapshot) -> InsightsConte
             )  # fmt: skip
             for k in snapshot.kpis
         ],
-        channels=[_context_channel(c) for c in snapshot.channels],
+        channels=[context_channel(c) for c in snapshot.channels],
         notable_changes=[s.message for s in snapshot.signals],
     )
 
 
-def _context_channel(c: ChannelBreakdown) -> ContextChannel:
+def context_channel(c: ChannelBreakdown) -> ContextChannel:
     return ContextChannel(
         channel=c.channel,
         sessions=c.sessions,

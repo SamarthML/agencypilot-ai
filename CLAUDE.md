@@ -47,7 +47,7 @@ AgencyPilot/
 │   ├── pyproject.toml          # ruff + pytest config
 │   ├── alembic.ini
 │   ├── alembic/                # migrations: 0001 pgvector + llm_usage, 0002 insights, 0003 seo_audits,
-│   │                           #   0004 copilot (documents, chunks + HNSW, copilot_feedback)
+│   │                           #   0004 copilot (documents, chunks + HNSW, copilot_feedback), 0005 reports
 │   ├── scripts/                # generate_demo_data.py (marketing_demo.csv),
 │   │                           #   generate_sample_brief.py (bloom_bakery_brief.pdf)
 │   ├── sample_data/            # demo CSV (auto-loaded on first Insights request) and Bloom Bakery
@@ -74,7 +74,8 @@ AgencyPilot/
 │   │       │                   #   retrieval + similarity threshold
 │   │       ├── copilot.py      # ingest background task, SSE chat (rewrite → retrieve → guardrail →
 │   │       │                   #   stream), citation parsing, feedback, demo seed + startup warm-up
-│   │       └── reports.py      # report assembly + PDF rendering
+│   │       ├── reports.py      # monthly reports: month metrics + SEO → grounded narrative → CRUD
+│   │       └── report_pdf.py   # fpdf2 A4 PDF (branded header, KPI/channel tables, Latin-1 sanitising)
 │   └── tests/                  # pytest; mirrors app/ layout; fixtures in tests/fixtures/,
 │                               #   fake LLM provider in tests/fakes.py
 └── frontend/
@@ -86,7 +87,7 @@ AgencyPilot/
     │   ├── sidebar.tsx, topbar.tsx, page-header.tsx, empty-state.tsx, kpi-card.tsx, motion.tsx,
     │   │   llm-meta.tsx        # provider/model/tokens/latency/cost line under AI output
     │   ├── copy-button.tsx     # shared copy-to-clipboard icon button
-    │   └── <feature>/          # feature components (home/, insights/, seo/, copilot/); container queries
+    │   └── <feature>/          # feature components (home/, insights/, seo/, copilot/, reports/); container queries
     │                           #   (@container / @xl:) where a card's width, not the viewport, matters
     ├── lib/
     │   ├── api.ts              # typed fetch client: X-LLM-Provider header, ApiError, toasts
@@ -95,6 +96,7 @@ AgencyPilot/
     │   ├── seo.ts, channels.ts, format.ts   # feature helpers: score bands/error copy, chart colours, formatters
     │   ├── sse.ts              # pure Server-Sent Events parser for the Copilot chat stream
     │   ├── citations.ts        # [file p.N] / 【file p.N】 markers -> numbered chips (mirrors backend)
+    │   ├── reports.ts          # report section limits + client-side validation (mirrors backend)
     │   ├── providers.ts        # LLM provider display metadata
     │   └── model-context.tsx, client-context.tsx   # persisted UI state
     └── hooks/
@@ -160,6 +162,8 @@ AgencyPilot/
   border and `shadow-card`. Check 375 / 768 / 1440 px before calling UI work done.
 - Persisted UI state goes through `useLocalStorage` (no `setState` in effects, no hydration mismatch).
 - Server Components by default; add `"use client"` only where state/effects/streaming are needed.
+- Cache Components is on: `usePathname`/`useParams` suspend on routes with request-time params
+  (`/reports/[id]`), so keep those reads in small leaves wrapped in `<Suspense>` (see sidebar/topbar).
 - All backend calls go through `lib/api.ts`.
 - UI built from shadcn/ui primitives; icons from lucide-react; motion is subtle (Framer Motion for
   page/card transitions only).

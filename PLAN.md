@@ -148,13 +148,22 @@ Goal: upload PDFs, ask questions, get streamed answers with page citations.
 Goal: one-click monthly client report, and full visibility into LLM spend.
 
 ### Reports
-- [ ] Schemas: `ReportSection`, `ReportDraft`, `ReportUpdate`
-- [ ] `POST /reports/generate` from an insights dataset: KPI tables + LLM narrative sections
-      (exec summary, wins, issues, next-month plan)
-- [ ] Persist drafts; `GET` / `PUT /reports/{id}` for edits
-- [ ] Frontend: section-by-section editor, regenerate a single section, charts embedded
-- [ ] PDF export (backend-rendered, consistent layout) via `GET /reports/{id}/pdf`
-- [ ] Tests: report assembly, update round-trip, PDF endpoint returns valid PDF bytes
+- [x] Schemas: `ReportContent` (LLM output with section counts), `ReportMetrics`, `ReportUpdate`,
+      `Report` / `ReportSummary`, `ReportMonth`; migration 0005 `reports` (content + metrics JSONB,
+      `seo_audit_id` FK, provider/model/tokens/latency/cost)
+- [x] `POST /reports/generate {client, month}`: calendar-month KPIs vs the previous month, channel
+      breakdown and top movers (`analytics.build_month_snapshot`) + latest SEO audit (score, top
+      issues) → only these facts go to the LLM (`report`), validated JSON with one repair retry
+- [x] Persist drafts; `GET /reports?client=`, `GET` / `PUT` (sections, draft|final) / `DELETE /reports/{id}`,
+      `GET /reports/months?client=` for the month picker
+- [x] Frontend: report cards filtered by client, "New report" dialog (months in the data) with
+      staged progress, branded document view (KPI strip, Insights charts, sections), section and
+      list editors with validation, Mark as final, footer with model/tokens/cost
+- [ ] Regenerate a single section (not built yet)
+- [x] PDF export (fpdf2, A4, branded header, KPI + channel tables, page numbers, Latin-1 sanitising)
+      via `GET /reports/{id}/pdf`
+- [x] Tests: month analytics, prompt grounding (no daily rows), schema validation + repair retry,
+      CRUD round trip (Postgres), API contract, PDF bytes / content type
 
 ### Usage & cost
 - [ ] `GET /usage/summary` (totals, by provider, by feature, by day) and `GET /usage/calls` (paginated)

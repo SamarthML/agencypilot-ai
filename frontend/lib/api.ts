@@ -18,6 +18,11 @@ import type {
   InsightSummary,
   LlmProvider,
   OverviewResponse,
+  Report,
+  ReportGenerateRequest,
+  ReportMonth,
+  ReportSummary,
+  ReportUpdate,
   SampleLoadResponse,
   SeoAuditRequest,
   SeoAuditResponse,
@@ -311,4 +316,75 @@ export async function* streamCopilotChat(
   }
   // The final event may arrive without its terminating blank line.
   yield* parseSseChunk(`${buffer}\n\n`).events;
+}
+
+/* ---- Report Generator ---- */
+
+/** Metrics + a full structured report from a reasoning model can take a while. */
+const REPORT_TIMEOUT_MS = 120_000;
+
+export function getReportMonths(clientId: string, options: ApiOptions = {}): Promise<ReportMonth[]> {
+  return apiFetch(`/api/reports/months?client=${encodeURIComponent(clientId)}`, options);
+}
+
+export function listReports(clientId: string | null, options: ApiOptions = {}): Promise<ReportSummary[]> {
+  const query = clientId ? `?client=${encodeURIComponent(clientId)}` : "";
+  return apiFetch(`/api/reports${query}`, options);
+}
+
+export function getReport(id: string, options: ApiOptions = {}): Promise<Report> {
+  return apiFetch(`/api/reports/${encodeURIComponent(id)}`, options);
+}
+
+export function generateReport(request: ReportGenerateRequest, signal?: AbortSignal): Promise<Report> {
+  return apiFetch("/api/reports/generate", {
+    method: "POST",
+    body: JSON.stringify(request),
+    timeoutMs: REPORT_TIMEOUT_MS,
+    signal,
+    silent: true, // the dialog shows the error inline with a retry
+  });
+}
+
+export function updateReport(id: string, update: ReportUpdate): Promise<Report> {
+  return apiFetch(`/api/reports/${encodeURIComponent(id)}`, {
+    method: "PUT",
+    body: JSON.stringify(update),
+  });
+}
+
+export function deleteReport(id: string): Promise<void> {
+  return apiFetch(`/api/reports/${encodeURIComponent(id)}`, { method: "DELETE" });
+}
+
+function filenameFrom(disposition: string | null, fallback: string): string {
+  const match = disposition?.match(/filename="?([^";]+)"?/i);
+  return match?.[1] ?? fallback;
+}
+
+/** Fetch the server-rendered PDF and hand it to the browser as a download. */
+export async function downloadReportPdf(id: string, fallbackName: string): Promise<void> {
+  let response: Response;
+  try {
+    response = await fetch(`${API_URL}/api/reports/${encodeURIComponent(id)}/pdf`, {
+      signal: AbortSignal.timeout(30_000),
+    });
+  } catch (error) {
+    const apiError = toApiError(error);
+    toast.error("Couldn't download the PDF", { description: apiError.message });
+    throw apiError;
+  }
+  if (!response.ok) {
+    const apiError = new ApiError(await readErrorMessage(response), response.status);
+    toast.error("Couldn't download the PDF", { description: apiError.message });
+    throw apiError;
+  }
+  const url = URL.createObjectURL(await response.blob());
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filenameFrom(response.headers.get("Content-Disposition"), fallbackName);
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 10_000);
 }

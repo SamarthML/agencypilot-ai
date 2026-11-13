@@ -23,6 +23,7 @@ from app.schemas.insights import (
     Signal,
     TimeSeriesPoint,
 )
+from app.schemas.reports import MonthPeriod, MonthSnapshot, ReportMonth
 
 REQUIRED_COLUMNS = ("date", "channel", "sessions", "conversions", "revenue", "spend")
 COUNT_COLUMNS = ("sessions", "conversions")
@@ -36,6 +37,10 @@ MAX_SIGNALS = 5
 
 class CsvValidationError(ValueError):
     """The uploaded file isn't a usable marketing CSV; the message is shown to the user."""
+
+
+class NoDataForMonthError(CsvValidationError):
+    """The requested report month has no rows in the client's dataset."""
 
 
 @dataclass(frozen=True)
@@ -375,17 +380,19 @@ def _direction(delta: float) -> str:
     return "up" if delta > 0 else "down"
 
 
-def channel_signals(channels: list[ChannelBreakdown], days: int) -> list[Signal]:
+def channel_signals(
+    channels: list[ChannelBreakdown], comparison: str, min_delta: float = SIGNAL_MIN_DELTA_PCT
+) -> list[Signal]:
     previous_total = sum(c.previous_sessions for c in channels)
     signals: list[Signal] = []
     for c in channels:
         delta = c.sessions_delta_pct
         big_enough = previous_total and c.previous_sessions / previous_total >= SIGNAL_MIN_SHARE
-        if delta is None or abs(delta) < SIGNAL_MIN_DELTA_PCT or not big_enough:
+        if delta is None or delta == 0 or abs(delta) < min_delta or not big_enough:
             continue
         message = (
-            f"{c.channel} sessions {_direction(delta)} {abs(delta):.1f}% vs the previous "
-            f"{days} days ({c.previous_sessions:,} → {c.sessions:,})"
+            f"{c.channel} sessions {_direction(delta)} {abs(delta):.1f}% vs {comparison} "
+            f"({c.previous_sessions:,} → {c.sessions:,})"
         )
         signals.append(
             Signal(
@@ -402,15 +409,17 @@ def channel_signals(channels: list[ChannelBreakdown], days: int) -> list[Signal]
     return signals
 
 
-def kpi_signals(kpis: list[Kpi], days: int) -> list[Signal]:
+def kpi_signals(
+    kpis: list[Kpi], comparison: str, min_delta: float = SIGNAL_MIN_DELTA_PCT
+) -> list[Signal]:
     signals: list[Signal] = []
     for kpi in kpis:
         delta = kpi.delta_pct
-        if kpi.key not in SIGNAL_KPIS or delta is None or abs(delta) < SIGNAL_MIN_DELTA_PCT:
+        if kpi.key not in SIGNAL_KPIS or delta is None or delta == 0 or abs(delta) < min_delta:
             continue
         assert kpi.value is not None and kpi.previous is not None  # delta implies both exist
         message = (
-            f"{kpi.label} {_direction(delta)} {abs(delta):.1f}% vs the previous {days} days "
+            f"{kpi.label} {_direction(delta)} {abs(delta):.1f}% vs {comparison} "
             f"({format_value(kpi.previous, kpi.unit)} → {format_value(kpi.value, kpi.unit)})"
         )
         signals.append(
@@ -428,9 +437,21 @@ def kpi_signals(kpis: list[Kpi], days: int) -> list[Signal]:
     return signals
 
 
-def find_signals(kpis: list[Kpi], channels: list[ChannelBreakdown], days: int) -> list[Signal]:
-    signals = channel_signals(channels, days) + kpi_signals(kpis, days)
+def find_signals(
+    kpis: list[Kpi], channels: list[ChannelBreakdown], days: int, comparison: str | None = None
+) -> list[Signal]:
+    """Biggest movers; `comparison` names the baseline (default: "the previous N days")."""
+    comparison = comparison or f"the previous {days} days"
+    signals = channel_signals(channels, comparison) + kpi_signals(kpis, comparison)
     return sorted(signals, key=lambda s: abs(s.delta_pct), reverse=True)[:MAX_SIGNALS]
+
+
+def top_movers(
+    kpis: list[Kpi], channels: list[ChannelBreakdown], comparison: str, limit: int = MAX_SIGNALS
+) -> list[Signal]:
+    """The largest changes with no size threshold: a monthly report always names its movers."""
+    signals = channel_signals(channels, comparison, 0.0) + kpi_signals(kpis, comparison, 0.0)
+    return sorted(signals, key=lambda s: abs(s.delta_pct), reverse=True)[:limit]
 
 
 # ---------------------------------------------------------------------------
@@ -489,3 +510,88 @@ def build_overview_kpis(frames: list[pd.DataFrame], days: int) -> list[Kpi]:
     return [clients] + [
         build_kpi(KPI_BY_KEY[key], current, prev_totals) for key in OVERVIEW_KPI_KEYS
     ]
+
+
+# ---------------------------------------------------------------------------
+# Calendar months (monthly reports)
+# ---------------------------------------------------------------------------
+
+
+def month_bounds(month: str) -> tuple[date, date]:
+    """First and last day of a "YYYY-MM" month."""
+    first = date.fromisoformat(f"{month}-01")
+    next_first = (first.replace(day=28) + timedelta(days=4)).replace(day=1)
+    return first, next_first - timedelta(days=1)
+
+
+def previous_month(month: str) -> str:
+    first, _ = month_bounds(month)
+    return (first - timedelta(days=1)).strftime("%Y-%m")
+
+
+def month_label(month: str) -> str:
+    return month_bounds(month)[0].strftime("%B %Y")
+
+
+def _months_in(frame: pd.DataFrame) -> list[str]:
+    return sorted(frame["date"].dt.strftime("%Y-%m").unique().tolist())
+
+
+def available_months(frame: pd.DataFrame) -> list[ReportMonth]:
+    """Months with data, newest first; `complete` when the data spans the whole month."""
+    if frame.empty:
+        return []
+    first_day, last_day = frame["date"].min().date(), frame["date"].max().date()
+    months = _months_in(frame)
+    present = set(months)
+    result = []
+    for month in reversed(months):
+        start, end = month_bounds(month)
+        result.append(
+            ReportMonth(
+                month=month,
+                label=month_label(month),
+                complete=first_day <= start and last_day >= end,
+                has_previous=previous_month(month) in present,
+            )
+        )
+    return result
+
+
+def month_period(frame: pd.DataFrame, month: str) -> MonthPeriod:
+    start, end = month_bounds(month)
+    prev = previous_month(month)
+    previous_start, previous_end = month_bounds(prev)
+    return MonthPeriod(
+        month=month,
+        label=month_label(month),
+        start=start,
+        end=end,
+        previous_month=prev,
+        previous_label=month_label(prev),
+        previous_start=previous_start,
+        previous_end=previous_end,
+        has_previous=not window(frame, previous_start, previous_end).empty,
+    )
+
+
+def build_month_snapshot(frame: pd.DataFrame, month: str) -> MonthSnapshot:
+    """KPIs, channels, daily series and top movers for one calendar month vs the one before."""
+    period = month_period(frame, month)
+    current = window(frame, period.start, period.end)
+    if current.empty:
+        raise NoDataForMonthError(f"There is no data for {period.label}.")
+    previous = (
+        window(frame, period.previous_start, period.previous_end)
+        if period.has_previous
+        else frame.iloc[0:0]
+    )
+    kpis = build_kpis(totals(current), totals(previous) if period.has_previous else None)
+    channels = channel_breakdown(current, previous)
+    return MonthSnapshot(
+        period=period,
+        kpis=kpis,
+        channels=channels,
+        timeseries=build_timeseries(current),
+        top_movers=top_movers(kpis, channels, period.previous_label),
+    )

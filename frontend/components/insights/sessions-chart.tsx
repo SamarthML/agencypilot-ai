@@ -17,12 +17,13 @@ interface SessionsChartProps {
   timeseries: TimeSeriesPoint[];
   channels: string[];
   colors: Record<string, string>;
+  description?: string;
 }
 
 type Row = { date: string } & Record<string, number | string>;
 
 /** Daily sessions per channel: change over time, one line per channel on one axis. */
-export function SessionsChart({ timeseries, channels, colors }: SessionsChartProps) {
+export function SessionsChart({ timeseries, channels, colors, description = "Daily sessions in the selected period" }: SessionsChartProps) {
   const data = useMemo<Row[]>(
     () => timeseries.map((p) => ({ date: p.date, ...p.by_channel })),
     [timeseries],
@@ -31,7 +32,7 @@ export function SessionsChart({ timeseries, channels, colors }: SessionsChartPro
   return (
     <ChartCard
       title="Sessions by channel"
-      description="Daily sessions in the selected period"
+      description={description}
       legend={<ChartLegend items={channels.map((c) => ({ name: c, color: colors[c] }))} />}
     >
       <div className="h-64 md:h-72">

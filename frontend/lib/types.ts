@@ -307,3 +307,94 @@ export interface FeedbackResponse {
   id: string;
   created_at: string;
 }
+
+/* ---- Report Generator ---- */
+
+export type ReportStatus = "draft" | "final";
+
+export interface ReportMonth {
+  month: string;
+  label: string;
+  complete: boolean;
+  has_previous: boolean;
+}
+
+export interface MonthPeriod {
+  month: string;
+  label: string;
+  start: string;
+  end: string;
+  previous_month: string;
+  previous_label: string;
+  previous_start: string;
+  previous_end: string;
+  has_previous: boolean;
+}
+
+export interface MonthSnapshot {
+  period: MonthPeriod;
+  kpis: Kpi[];
+  channels: ChannelBreakdown[];
+  timeseries: TimeSeriesPoint[];
+  top_movers: Signal[];
+}
+
+export interface ReportSeoIssue {
+  name: string;
+  status: CheckStatus;
+  value: string;
+  recommendation: string;
+}
+
+export interface ReportSeo {
+  audit_id: string;
+  url: string;
+  score: number;
+  audited_at: string;
+  top_issues: ReportSeoIssue[];
+}
+
+export interface ReportMetrics extends MonthSnapshot {
+  seo: ReportSeo | null;
+}
+
+/** The narrative the LLM writes and the user edits. Limits mirror the backend schema. */
+export interface ReportContent {
+  title: string;
+  executive_summary: string;
+  wins: string[];
+  challenges: string[];
+  channel_commentary: string;
+  seo_highlights: string | null;
+  next_month_plan: string[];
+  closing_note: string;
+}
+
+export interface ReportGenerateRequest {
+  client: string;
+  month: string;
+}
+
+export interface ReportUpdate {
+  content?: ReportContent | null;
+  status?: ReportStatus | null;
+}
+
+export interface ReportSummary {
+  id: string;
+  client: string;
+  client_name: string;
+  month: string;
+  month_label: string;
+  status: ReportStatus;
+  title: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface Report extends ReportSummary {
+  content: ReportContent;
+  metrics: ReportMetrics;
+  seo_audit_id: string | null;
+  meta: LlmCallMeta;
+}

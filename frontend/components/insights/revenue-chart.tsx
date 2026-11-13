@@ -19,14 +19,15 @@ import type { ChannelBreakdown } from "@/lib/types";
 interface RevenueChartProps {
   channels: ChannelBreakdown[];
   colors: Record<string, string>;
+  description?: string;
 }
 
 /** Revenue per channel: magnitude, ranked, one axis, direct value labels. */
-export function RevenueChart({ channels, colors }: RevenueChartProps) {
+export function RevenueChart({ channels, colors, description = "Attributed revenue in the selected period" }: RevenueChartProps) {
   const data = [...channels].sort((a, b) => b.revenue - a.revenue);
 
   return (
-    <ChartCard title="Revenue by channel" description="Attributed revenue in the selected period">
+    <ChartCard title="Revenue by channel" description={description}>
       <div style={{ height: Math.max(180, data.length * 40) }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} layout="vertical" margin={{ top: 0, right: 56, bottom: 0, left: 0 }}>
