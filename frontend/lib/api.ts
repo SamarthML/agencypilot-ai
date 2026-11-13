@@ -3,7 +3,17 @@ import { toast } from "sonner";
 import { DEFAULT_PROVIDER, isProvider } from "@/lib/providers";
 import { readStorage } from "@/lib/storage";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
-import type { HealthResponse, LlmProvider } from "@/lib/types";
+import type {
+  AskResponse,
+  DatasetUploadResponse,
+  Days,
+  HealthResponse,
+  InsightsDashboard,
+  InsightSummary,
+  LlmProvider,
+  OverviewResponse,
+  SampleLoadResponse,
+} from "@/lib/types";
 
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(
   /\/$/,
@@ -67,18 +77,25 @@ function toApiError(error: unknown): ApiError {
   return new ApiError("Can't reach the API. Is the backend running?", null);
 }
 
+/** True when the caller cancelled the request (not a timeout): never worth a toast. */
+export function isAbortError(error: unknown): boolean {
+  return error instanceof DOMException && error.name === "AbortError";
+}
+
 export async function apiFetch<T>(path: string, options: ApiOptions = {}): Promise<T> {
   const { silent = false, timeoutMs = DEFAULT_TIMEOUT_MS, ...init } = options;
+  const timeout = AbortSignal.timeout(timeoutMs);
   try {
     const response = await fetch(`${API_URL}${path}`, {
       ...init,
       headers: buildHeaders(init),
-      signal: init.signal ?? AbortSignal.timeout(timeoutMs),
+      signal: init.signal ? AbortSignal.any([init.signal, timeout]) : timeout,
     });
     if (!response.ok) throw new ApiError(await readErrorMessage(response), response.status);
     if (response.status === 204) return undefined as T;
     return (await response.json()) as T;
   } catch (error) {
+    if (isAbortError(error)) throw error;
     const apiError = toApiError(error);
     if (!silent) toast.error("Request failed", { description: apiError.message });
     throw apiError;
@@ -87,4 +104,57 @@ export async function apiFetch<T>(path: string, options: ApiOptions = {}): Promi
 
 export function getHealth(options: ApiOptions = {}): Promise<HealthResponse> {
   return apiFetch<HealthResponse>("/health", { timeoutMs: 5_000, ...options });
+}
+
+/* ---- Insights ---- */
+
+/** LLM calls can take a while (reasoning models, retries with backoff). */
+const LLM_TIMEOUT_MS = 90_000;
+
+export function getInsightsDashboard(
+  clientId: string,
+  days: Days,
+  options: ApiOptions = {},
+): Promise<InsightsDashboard> {
+  return apiFetch(`/api/insights/${clientId}/summary?days=${days}`, options);
+}
+
+export function getInsightsOverview(days: Days, options: ApiOptions = {}): Promise<OverviewResponse> {
+  return apiFetch(`/api/insights/overview?days=${days}`, options);
+}
+
+export function generateAiSummary(clientId: string, days: Days): Promise<InsightSummary> {
+  return apiFetch(`/api/insights/${clientId}/ai-summary`, {
+    method: "POST",
+    body: JSON.stringify({ days }),
+    timeoutMs: LLM_TIMEOUT_MS,
+  });
+}
+
+export function askInsights(clientId: string, days: Days, question: string): Promise<AskResponse> {
+  return apiFetch(`/api/insights/${clientId}/ask`, {
+    method: "POST",
+    body: JSON.stringify({ days, question }),
+    timeoutMs: LLM_TIMEOUT_MS,
+  });
+}
+
+export function uploadInsightsCsv(
+  clientId: string,
+  clientName: string,
+  file: File,
+): Promise<DatasetUploadResponse> {
+  const body = new FormData();
+  body.append("file", file);
+  body.append("client_name", clientName);
+  return apiFetch(`/api/insights/${clientId}/upload`, {
+    method: "POST",
+    body,
+    timeoutMs: 60_000,
+    silent: true, // the upload dialog shows the validation message inline
+  });
+}
+
+export function loadSampleData(): Promise<SampleLoadResponse> {
+  return apiFetch("/api/insights/sample", { method: "POST", timeoutMs: 60_000 });
 }

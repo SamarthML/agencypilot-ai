@@ -1,0 +1,3241 @@
+date,client,channel,sessions,conversions,revenue,spend
+2026-05-17,Apex Fitness,Direct,186,6,461.37,0.0
+2026-05-17,Apex Fitness,Email,88,5,375.7,0.0
+2026-05-17,Apex Fitness,Organic,637,12,991.83,0.0
+2026-05-17,Apex Fitness,Paid Search,226,14,1133.72,374.41
+2026-05-17,Apex Fitness,Paid Social,294,2,183.17,230.69
+2026-05-17,Apex Fitness,Referral,61,1,86.73,0.0
+2026-05-18,Apex Fitness,Direct,192,5,341.91,0.0
+2026-05-18,Apex Fitness,Email,117,2,152.25,0.0
+2026-05-18,Apex Fitness,Organic,740,22,1687.62,0.0
+2026-05-18,Apex Fitness,Paid Search,217,8,634.8,366.51
+2026-05-18,Apex Fitness,Paid Social,347,5,368.27,269.43
+2026-05-18,Apex Fitness,Referral,68,0,0.0,0.0
+2026-05-19,Apex Fitness,Direct,248,6,455.1,0.0
+2026-05-19,Apex Fitness,Email,138,7,558.31,0.0
+2026-05-19,Apex Fitness,Organic,644,25,1927.68,0.0
+2026-05-19,Apex Fitness,Paid Search,270,14,1047.84,425.35
+2026-05-19,Apex Fitness,Paid Social,335,9,661.41,291.05
+2026-05-19,Apex Fitness,Referral,70,4,310.37,0.0
+2026-05-20,Apex Fitness,Direct,229,8,608.76,0.0
+2026-05-20,Apex Fitness,Email,110,13,993.82,0.0
+2026-05-20,Apex Fitness,Organic,677,16,1499.33,0.0
+2026-05-20,Apex Fitness,Paid Search,305,9,707.1,463.17
+2026-05-20,Apex Fitness,Paid Social,316,5,351.84,243.67
+2026-05-20,Apex Fitness,Referral,83,0,0.0,0.0
+2026-05-21,Apex Fitness,Direct,197,9,810.49,0.0
+2026-05-21,Apex Fitness,Email,112,3,233.87,0.0
+2026-05-21,Apex Fitness,Organic,622,9,932.37,0.0
+2026-05-21,Apex Fitness,Paid Search,256,8,640.53,411.16
+2026-05-21,Apex Fitness,Paid Social,320,3,270.07,239.62
+2026-05-21,Apex Fitness,Referral,72,2,176.49,0.0
+2026-05-22,Apex Fitness,Direct,189,9,721.21,0.0
+2026-05-22,Apex Fitness,Email,116,5,277.54,0.0
+2026-05-22,Apex Fitness,Organic,608,13,910.47,0.0
+2026-05-22,Apex Fitness,Paid Search,211,7,519.94,345.64
+2026-05-22,Apex Fitness,Paid Social,287,4,353.49,238.92
+2026-05-22,Apex Fitness,Referral,68,0,0.0,0.0
+2026-05-23,Apex Fitness,Direct,182,6,525.39,0.0
+2026-05-23,Apex Fitness,Email,98,5,397.26,0.0
+2026-05-23,Apex Fitness,Organic,620,12,835.82,0.0
+2026-05-23,Apex Fitness,Paid Search,209,5,389.95,310.85
+2026-05-23,Apex Fitness,Paid Social,252,5,390.84,199.44
+2026-05-23,Apex Fitness,Referral,52,0,0.0,0.0
+2026-05-24,Apex Fitness,Direct,194,3,244.26,0.0
+2026-05-24,Apex Fitness,Email,116,6,474.84,0.0
+2026-05-24,Apex Fitness,Organic,520,16,1148.63,0.0
+2026-05-24,Apex Fitness,Paid Search,194,7,500.1,296.88
+2026-05-24,Apex Fitness,Paid Social,271,3,206.12,240.07
+2026-05-24,Apex Fitness,Referral,59,0,0.0,0.0
+2026-05-25,Apex Fitness,Direct,214,7,524.16,0.0
+2026-05-25,Apex Fitness,Email,110,7,613.52,0.0
+2026-05-25,Apex Fitness,Organic,612,9,703.69,0.0
+2026-05-25,Apex Fitness,Paid Search,276,9,898.97,426.0
+2026-05-25,Apex Fitness,Paid Social,307,6,415.94,239.22
+2026-05-25,Apex Fitness,Referral,76,1,76.72,0.0
+2026-05-26,Apex Fitness,Direct,241,8,640.51,0.0
+2026-05-26,Apex Fitness,Email,111,5,450.24,0.0
+2026-05-26,Apex Fitness,Organic,665,25,2160.08,0.0
+2026-05-26,Apex Fitness,Paid Search,244,11,966.09,386.36
+2026-05-26,Apex Fitness,Paid Social,331,6,482.16,276.24
+2026-05-26,Apex Fitness,Referral,77,2,150.96,0.0
+2026-05-27,Apex Fitness,Direct,197,5,424.89,0.0
+2026-05-27,Apex Fitness,Email,128,7,542.72,0.0
+2026-05-27,Apex Fitness,Organic,707,19,1592.42,0.0
+2026-05-27,Apex Fitness,Paid Search,257,9,730.68,395.85
+2026-05-27,Apex Fitness,Paid Social,324,5,417.31,273.61
+2026-05-27,Apex Fitness,Referral,64,2,119.06,0.0
+2026-05-28,Apex Fitness,Direct,200,10,890.13,0.0
+2026-05-28,Apex Fitness,Email,104,7,600.03,0.0
+2026-05-28,Apex Fitness,Organic,696,17,1366.3,0.0
+2026-05-28,Apex Fitness,Paid Search,232,6,532.95,384.56
+2026-05-28,Apex Fitness,Paid Social,321,4,257.01,250.19
+2026-05-28,Apex Fitness,Referral,73,2,168.35,0.0
+2026-05-29,Apex Fitness,Direct,174,11,857.58,0.0
+2026-05-29,Apex Fitness,Email,104,5,353.8,0.0
+2026-05-29,Apex Fitness,Organic,641,20,1665.82,0.0
+2026-05-29,Apex Fitness,Paid Search,221,15,972.21,326.33
+2026-05-29,Apex Fitness,Paid Social,275,7,535.51,211.98
+2026-05-29,Apex Fitness,Referral,69,2,159.6,0.0
+2026-05-30,Apex Fitness,Direct,169,2,134.0,0.0
+2026-05-30,Apex Fitness,Email,94,10,853.01,0.0
+2026-05-30,Apex Fitness,Organic,604,8,589.74,0.0
+2026-05-30,Apex Fitness,Paid Search,228,10,611.71,337.09
+2026-05-30,Apex Fitness,Paid Social,270,4,371.51,224.16
+2026-05-30,Apex Fitness,Referral,66,0,0.0,0.0
+2026-05-31,Apex Fitness,Direct,207,10,665.31,0.0
+2026-05-31,Apex Fitness,Email,105,12,895.25,0.0
+2026-05-31,Apex Fitness,Organic,509,15,1156.42,0.0
+2026-05-31,Apex Fitness,Paid Search,214,13,986.8,336.73
+2026-05-31,Apex Fitness,Paid Social,250,6,463.8,205.83
+2026-05-31,Apex Fitness,Referral,59,0,0.0,0.0
+2026-06-01,Apex Fitness,Direct,257,10,764.63,0.0
+2026-06-01,Apex Fitness,Email,121,4,280.7,0.0
+2026-06-01,Apex Fitness,Organic,747,15,1182.62,0.0
+2026-06-01,Apex Fitness,Paid Search,244,9,619.44,386.99
+2026-06-01,Apex Fitness,Paid Social,305,5,458.45,227.38
+2026-06-01,Apex Fitness,Referral,63,2,149.17,0.0
+2026-06-02,Apex Fitness,Direct,232,6,375.18,0.0
+2026-06-02,Apex Fitness,Email,124,6,465.28,0.0
+2026-06-02,Apex Fitness,Organic,692,22,1483.37,0.0
+2026-06-02,Apex Fitness,Paid Search,241,4,308.61,358.55
+2026-06-02,Apex Fitness,Paid Social,315,3,252.89,238.18
+2026-06-02,Apex Fitness,Referral,71,2,152.27,0.0
+2026-06-03,Apex Fitness,Direct,215,7,661.74,0.0
+2026-06-03,Apex Fitness,Email,114,5,454.38,0.0
+2026-06-03,Apex Fitness,Organic,731,19,1336.43,0.0
+2026-06-03,Apex Fitness,Paid Search,225,9,725.77,349.24
+2026-06-03,Apex Fitness,Paid Social,298,5,354.41,210.0
+2026-06-03,Apex Fitness,Referral,69,2,165.49,0.0
+2026-06-04,Apex Fitness,Direct,213,5,419.3,0.0
+2026-06-04,Apex Fitness,Email,123,5,402.21,0.0
+2026-06-04,Apex Fitness,Organic,610,11,776.8,0.0
+2026-06-04,Apex Fitness,Paid Search,226,9,779.55,354.42
+2026-06-04,Apex Fitness,Paid Social,332,5,383.61,273.63
+2026-06-04,Apex Fitness,Referral,76,1,84.21,0.0
+2026-06-05,Apex Fitness,Direct,208,3,222.4,0.0
+2026-06-05,Apex Fitness,Email,140,8,734.02,0.0
+2026-06-05,Apex Fitness,Organic,624,18,1534.92,0.0
+2026-06-05,Apex Fitness,Paid Search,232,3,211.5,363.97
+2026-06-05,Apex Fitness,Paid Social,269,4,311.96,212.4
+2026-06-05,Apex Fitness,Referral,56,2,154.39,0.0
+2026-06-06,Apex Fitness,Direct,162,12,848.43,0.0
+2026-06-06,Apex Fitness,Email,99,7,513.11,0.0
+2026-06-06,Apex Fitness,Organic,567,7,566.74,0.0
+2026-06-06,Apex Fitness,Paid Search,221,12,986.65,356.3
+2026-06-06,Apex Fitness,Paid Social,245,6,430.93,194.42
+2026-06-06,Apex Fitness,Referral,58,0,0.0,0.0
+2026-06-07,Apex Fitness,Direct,179,7,612.88,0.0
+2026-06-07,Apex Fitness,Email,99,6,526.36,0.0
+2026-06-07,Apex Fitness,Organic,627,12,1007.74,0.0
+2026-06-07,Apex Fitness,Paid Search,205,9,712.02,317.33
+2026-06-07,Apex Fitness,Paid Social,291,8,573.58,213.92
+2026-06-07,Apex Fitness,Referral,69,2,156.76,0.0
+2026-06-08,Apex Fitness,Direct,246,6,424.05,0.0
+2026-06-08,Apex Fitness,Email,107,5,370.06,0.0
+2026-06-08,Apex Fitness,Organic,618,18,1183.05,0.0
+2026-06-08,Apex Fitness,Paid Search,284,13,1063.32,489.25
+2026-06-08,Apex Fitness,Paid Social,306,7,642.93,231.72
+2026-06-08,Apex Fitness,Referral,74,0,0.0,0.0
+2026-06-09,Apex Fitness,Direct,213,7,499.46,0.0
+2026-06-09,Apex Fitness,Email,115,5,404.0,0.0
+2026-06-09,Apex Fitness,Organic,712,18,1225.94,0.0
+2026-06-09,Apex Fitness,Paid Search,249,9,674.99,408.24
+2026-06-09,Apex Fitness,Paid Social,323,6,429.87,252.3
+2026-06-09,Apex Fitness,Referral,81,2,161.17,0.0
+2026-06-10,Apex Fitness,Direct,214,13,951.27,0.0
+2026-06-10,Apex Fitness,Email,116,13,1049.5,0.0
+2026-06-10,Apex Fitness,Organic,646,21,1772.76,0.0
+2026-06-10,Apex Fitness,Paid Search,253,11,997.9,388.79
+2026-06-10,Apex Fitness,Paid Social,300,5,439.98,232.07
+2026-06-10,Apex Fitness,Referral,67,1,68.96,0.0
+2026-06-11,Apex Fitness,Direct,217,7,559.35,0.0
+2026-06-11,Apex Fitness,Email,109,10,844.03,0.0
+2026-06-11,Apex Fitness,Organic,696,18,1077.02,0.0
+2026-06-11,Apex Fitness,Paid Search,230,8,625.49,369.74
+2026-06-11,Apex Fitness,Paid Social,328,7,529.38,263.95
+2026-06-11,Apex Fitness,Referral,65,2,161.72,0.0
+2026-06-12,Apex Fitness,Direct,206,11,924.66,0.0
+2026-06-12,Apex Fitness,Email,106,3,243.02,0.0
+2026-06-12,Apex Fitness,Organic,661,18,1607.25,0.0
+2026-06-12,Apex Fitness,Paid Search,248,17,1603.72,399.27
+2026-06-12,Apex Fitness,Paid Social,306,4,315.19,252.05
+2026-06-12,Apex Fitness,Referral,75,0,0.0,0.0
+2026-06-13,Apex Fitness,Direct,173,9,801.06,0.0
+2026-06-13,Apex Fitness,Email,107,7,513.6,0.0
+2026-06-13,Apex Fitness,Organic,613,13,855.82,0.0
+2026-06-13,Apex Fitness,Paid Search,239,8,583.97,406.35
+2026-06-13,Apex Fitness,Paid Social,272,7,584.96,243.75
+2026-06-13,Apex Fitness,Referral,61,2,142.57,0.0
+2026-06-14,Apex Fitness,Direct,188,5,438.51,0.0
+2026-06-14,Apex Fitness,Email,107,6,517.62,0.0
+2026-06-14,Apex Fitness,Organic,559,11,945.47,0.0
+2026-06-14,Apex Fitness,Paid Search,189,5,425.46,293.46
+2026-06-14,Apex Fitness,Paid Social,278,7,520.87,222.18
+2026-06-14,Apex Fitness,Referral,63,0,0.0,0.0
+2026-06-15,Apex Fitness,Direct,233,9,711.06,0.0
+2026-06-15,Apex Fitness,Email,116,8,751.49,0.0
+2026-06-15,Apex Fitness,Organic,739,27,1951.64,0.0
+2026-06-15,Apex Fitness,Paid Search,250,5,392.65,415.64
+2026-06-15,Apex Fitness,Paid Social,321,4,334.47,271.53
+2026-06-15,Apex Fitness,Referral,69,2,155.26,0.0
+2026-06-16,Apex Fitness,Direct,264,9,787.39,0.0
+2026-06-16,Apex Fitness,Email,111,7,521.64,0.0
+2026-06-16,Apex Fitness,Organic,784,15,1316.05,0.0
+2026-06-16,Apex Fitness,Paid Search,287,12,917.43,460.16
+2026-06-16,Apex Fitness,Paid Social,317,9,579.42,243.29
+2026-06-16,Apex Fitness,Referral,77,0,0.0,0.0
+2026-06-17,Apex Fitness,Direct,224,11,812.6,0.0
+2026-06-17,Apex Fitness,Email,130,11,723.3,0.0
+2026-06-17,Apex Fitness,Organic,624,16,1742.11,0.0
+2026-06-17,Apex Fitness,Paid Search,233,16,1346.51,401.67
+2026-06-17,Apex Fitness,Paid Social,305,8,660.41,224.4
+2026-06-17,Apex Fitness,Referral,70,0,0.0,0.0
+2026-06-18,Apex Fitness,Direct,217,7,460.94,0.0
+2026-06-18,Apex Fitness,Email,114,3,249.13,0.0
+2026-06-18,Apex Fitness,Organic,703,15,944.05,0.0
+2026-06-18,Apex Fitness,Paid Search,259,15,1150.07,442.03
+2026-06-18,Apex Fitness,Paid Social,340,6,370.32,267.25
+2026-06-18,Apex Fitness,Referral,79,3,252.75,0.0
+2026-06-19,Apex Fitness,Direct,226,4,295.49,0.0
+2026-06-19,Apex Fitness,Email,94,5,382.13,0.0
+2026-06-19,Apex Fitness,Organic,671,14,1185.65,0.0
+2026-06-19,Apex Fitness,Paid Search,252,11,665.9,407.19
+2026-06-19,Apex Fitness,Paid Social,306,9,695.05,226.0
+2026-06-19,Apex Fitness,Referral,82,0,0.0,0.0
+2026-06-20,Apex Fitness,Direct,175,4,291.52,0.0
+2026-06-20,Apex Fitness,Email,100,11,857.68,0.0
+2026-06-20,Apex Fitness,Organic,552,15,988.99,0.0
+2026-06-20,Apex Fitness,Paid Search,209,15,872.37,330.04
+2026-06-20,Apex Fitness,Paid Social,247,2,172.09,197.75
+2026-06-20,Apex Fitness,Referral,63,1,82.26,0.0
+2026-06-21,Apex Fitness,Direct,171,6,444.97,0.0
+2026-06-21,Apex Fitness,Email,106,4,334.07,0.0
+2026-06-21,Apex Fitness,Organic,535,16,1319.11,0.0
+2026-06-21,Apex Fitness,Paid Search,223,11,986.92,365.95
+2026-06-21,Apex Fitness,Paid Social,269,1,84.07,206.96
+2026-06-21,Apex Fitness,Referral,60,3,219.54,0.0
+2026-06-22,Apex Fitness,Direct,228,10,717.73,0.0
+2026-06-22,Apex Fitness,Email,99,3,226.43,0.0
+2026-06-22,Apex Fitness,Organic,742,23,1779.82,0.0
+2026-06-22,Apex Fitness,Paid Search,290,10,893.42,459.83
+2026-06-22,Apex Fitness,Paid Social,314,4,277.52,227.82
+2026-06-22,Apex Fitness,Referral,63,3,222.58,0.0
+2026-06-23,Apex Fitness,Direct,249,12,905.28,0.0
+2026-06-23,Apex Fitness,Email,114,8,615.23,0.0
+2026-06-23,Apex Fitness,Organic,658,22,1760.7,0.0
+2026-06-23,Apex Fitness,Paid Search,303,12,1144.92,527.29
+2026-06-23,Apex Fitness,Paid Social,305,6,421.68,266.13
+2026-06-23,Apex Fitness,Referral,68,3,237.02,0.0
+2026-06-24,Apex Fitness,Direct,233,9,756.48,0.0
+2026-06-24,Apex Fitness,Email,118,9,703.92,0.0
+2026-06-24,Apex Fitness,Organic,694,16,1153.86,0.0
+2026-06-24,Apex Fitness,Paid Search,258,6,473.17,414.42
+2026-06-24,Apex Fitness,Paid Social,328,5,368.71,255.44
+2026-06-24,Apex Fitness,Referral,84,1,74.16,0.0
+2026-06-25,Apex Fitness,Direct,217,4,375.13,0.0
+2026-06-25,Apex Fitness,Email,120,9,823.57,0.0
+2026-06-25,Apex Fitness,Organic,674,17,1452.03,0.0
+2026-06-25,Apex Fitness,Paid Search,240,8,555.37,376.29
+2026-06-25,Apex Fitness,Paid Social,303,9,724.36,223.34
+2026-06-25,Apex Fitness,Referral,68,1,74.71,0.0
+2026-06-26,Apex Fitness,Direct,184,1,66.48,0.0
+2026-06-26,Apex Fitness,Email,103,8,633.9,0.0
+2026-06-26,Apex Fitness,Organic,662,8,546.78,0.0
+2026-06-26,Apex Fitness,Paid Search,218,8,606.03,340.88
+2026-06-26,Apex Fitness,Paid Social,272,3,193.42,227.59
+2026-06-26,Apex Fitness,Referral,66,2,174.36,0.0
+2026-06-27,Apex Fitness,Direct,181,9,625.09,0.0
+2026-06-27,Apex Fitness,Email,90,6,418.9,0.0
+2026-06-27,Apex Fitness,Organic,540,15,1341.66,0.0
+2026-06-27,Apex Fitness,Paid Search,223,7,553.63,335.8
+2026-06-27,Apex Fitness,Paid Social,235,3,236.69,181.27
+2026-06-27,Apex Fitness,Referral,64,0,0.0,0.0
+2026-06-28,Apex Fitness,Direct,206,7,510.92,0.0
+2026-06-28,Apex Fitness,Email,104,4,280.38,0.0
+2026-06-28,Apex Fitness,Organic,557,12,909.99,0.0
+2026-06-28,Apex Fitness,Paid Search,196,13,928.61,322.45
+2026-06-28,Apex Fitness,Paid Social,242,5,407.5,204.45
+2026-06-28,Apex Fitness,Referral,70,2,134.01,0.0
+2026-06-29,Apex Fitness,Direct,207,9,767.58,0.0
+2026-06-29,Apex Fitness,Email,114,7,560.75,0.0
+2026-06-29,Apex Fitness,Organic,702,18,1235.89,0.0
+2026-06-29,Apex Fitness,Paid Search,253,20,1863.18,388.54
+2026-06-29,Apex Fitness,Paid Social,314,1,76.8,242.16
+2026-06-29,Apex Fitness,Referral,74,0,0.0,0.0
+2026-06-30,Apex Fitness,Direct,228,5,386.99,0.0
+2026-06-30,Apex Fitness,Email,126,9,635.07,0.0
+2026-06-30,Apex Fitness,Organic,770,15,1389.91,0.0
+2026-06-30,Apex Fitness,Paid Search,267,11,1087.13,451.31
+2026-06-30,Apex Fitness,Paid Social,329,7,582.83,256.18
+2026-06-30,Apex Fitness,Referral,75,4,301.67,0.0
+2026-07-01,Apex Fitness,Direct,222,7,514.37,0.0
+2026-07-01,Apex Fitness,Email,110,9,608.16,0.0
+2026-07-01,Apex Fitness,Organic,827,25,1961.74,0.0
+2026-07-01,Apex Fitness,Paid Search,251,12,994.44,376.46
+2026-07-01,Apex Fitness,Paid Social,306,5,403.94,249.06
+2026-07-01,Apex Fitness,Referral,76,2,167.75,0.0
+2026-07-02,Apex Fitness,Direct,209,11,933.57,0.0
+2026-07-02,Apex Fitness,Email,104,4,336.73,0.0
+2026-07-02,Apex Fitness,Organic,610,20,1912.07,0.0
+2026-07-02,Apex Fitness,Paid Search,255,9,710.23,410.6
+2026-07-02,Apex Fitness,Paid Social,328,11,823.18,270.3
+2026-07-02,Apex Fitness,Referral,70,2,177.13,0.0
+2026-07-03,Apex Fitness,Direct,208,5,434.64,0.0
+2026-07-03,Apex Fitness,Email,113,4,338.39,0.0
+2026-07-03,Apex Fitness,Organic,646,20,1785.25,0.0
+2026-07-03,Apex Fitness,Paid Search,279,8,555.24,472.83
+2026-07-03,Apex Fitness,Paid Social,290,7,455.66,241.09
+2026-07-03,Apex Fitness,Referral,65,1,103.51,0.0
+2026-07-04,Apex Fitness,Direct,189,3,236.56,0.0
+2026-07-04,Apex Fitness,Email,97,8,609.16,0.0
+2026-07-04,Apex Fitness,Organic,524,7,510.58,0.0
+2026-07-04,Apex Fitness,Paid Search,207,7,645.48,297.41
+2026-07-04,Apex Fitness,Paid Social,272,1,80.06,216.63
+2026-07-04,Apex Fitness,Referral,63,0,0.0,0.0
+2026-07-05,Apex Fitness,Direct,195,8,582.46,0.0
+2026-07-05,Apex Fitness,Email,106,5,406.77,0.0
+2026-07-05,Apex Fitness,Organic,630,28,2193.28,0.0
+2026-07-05,Apex Fitness,Paid Search,210,6,477.63,371.68
+2026-07-05,Apex Fitness,Paid Social,267,2,143.64,219.32
+2026-07-05,Apex Fitness,Referral,64,1,75.78,0.0
+2026-07-06,Apex Fitness,Direct,211,8,649.31,0.0
+2026-07-06,Apex Fitness,Email,114,3,241.5,0.0
+2026-07-06,Apex Fitness,Organic,655,14,1119.47,0.0
+2026-07-06,Apex Fitness,Paid Search,277,9,690.73,433.88
+2026-07-06,Apex Fitness,Paid Social,306,3,223.68,254.1
+2026-07-06,Apex Fitness,Referral,87,3,251.37,0.0
+2026-07-07,Apex Fitness,Direct,207,12,926.14,0.0
+2026-07-07,Apex Fitness,Email,115,9,755.15,0.0
+2026-07-07,Apex Fitness,Organic,687,15,1380.4,0.0
+2026-07-07,Apex Fitness,Paid Search,270,8,663.15,435.06
+2026-07-07,Apex Fitness,Paid Social,335,10,828.77,270.7
+2026-07-07,Apex Fitness,Referral,80,2,147.58,0.0
+2026-07-08,Apex Fitness,Direct,233,12,925.43,0.0
+2026-07-08,Apex Fitness,Email,132,7,587.47,0.0
+2026-07-08,Apex Fitness,Organic,679,14,1155.46,0.0
+2026-07-08,Apex Fitness,Paid Search,289,7,521.54,475.8
+2026-07-08,Apex Fitness,Paid Social,299,6,546.18,237.5
+2026-07-08,Apex Fitness,Referral,83,2,155.79,0.0
+2026-07-09,Apex Fitness,Direct,212,10,750.54,0.0
+2026-07-09,Apex Fitness,Email,104,5,304.39,0.0
+2026-07-09,Apex Fitness,Organic,677,14,1125.67,0.0
+2026-07-09,Apex Fitness,Paid Search,254,7,561.18,421.43
+2026-07-09,Apex Fitness,Paid Social,326,5,393.5,242.62
+2026-07-09,Apex Fitness,Referral,68,1,75.79,0.0
+2026-07-10,Apex Fitness,Direct,233,3,259.97,0.0
+2026-07-10,Apex Fitness,Email,117,2,154.25,0.0
+2026-07-10,Apex Fitness,Organic,649,17,1316.42,0.0
+2026-07-10,Apex Fitness,Paid Search,230,13,889.05,373.07
+2026-07-10,Apex Fitness,Paid Social,274,3,250.5,225.87
+2026-07-10,Apex Fitness,Referral,71,2,121.56,0.0
+2026-07-11,Apex Fitness,Direct,209,7,566.99,0.0
+2026-07-11,Apex Fitness,Email,105,2,166.4,0.0
+2026-07-11,Apex Fitness,Organic,587,12,943.22,0.0
+2026-07-11,Apex Fitness,Paid Search,185,4,352.29,311.14
+2026-07-11,Apex Fitness,Paid Social,280,8,547.0,224.47
+2026-07-11,Apex Fitness,Referral,58,1,79.98,0.0
+2026-07-12,Apex Fitness,Direct,218,11,963.83,0.0
+2026-07-12,Apex Fitness,Email,106,8,606.58,0.0
+2026-07-12,Apex Fitness,Organic,588,15,1350.13,0.0
+2026-07-12,Apex Fitness,Paid Search,194,6,469.08,318.56
+2026-07-12,Apex Fitness,Paid Social,265,3,242.89,207.66
+2026-07-12,Apex Fitness,Referral,65,0,0.0,0.0
+2026-07-13,Apex Fitness,Direct,212,7,632.06,0.0
+2026-07-13,Apex Fitness,Email,113,7,555.01,0.0
+2026-07-13,Apex Fitness,Organic,640,18,1422.53,0.0
+2026-07-13,Apex Fitness,Paid Search,228,9,798.35,398.37
+2026-07-13,Apex Fitness,Paid Social,349,7,549.7,297.62
+2026-07-13,Apex Fitness,Referral,79,4,358.84,0.0
+2026-07-14,Apex Fitness,Direct,243,13,1075.24,0.0
+2026-07-14,Apex Fitness,Email,116,4,340.64,0.0
+2026-07-14,Apex Fitness,Organic,760,24,1822.57,0.0
+2026-07-14,Apex Fitness,Paid Search,274,9,696.84,450.0
+2026-07-14,Apex Fitness,Paid Social,308,7,625.33,229.42
+2026-07-14,Apex Fitness,Referral,78,2,158.09,0.0
+2026-07-15,Apex Fitness,Direct,244,10,750.98,0.0
+2026-07-15,Apex Fitness,Email,118,6,477.85,0.0
+2026-07-15,Apex Fitness,Organic,707,18,1343.95,0.0
+2026-07-15,Apex Fitness,Paid Search,238,9,701.38,420.11
+2026-07-15,Apex Fitness,Paid Social,312,4,299.37,270.98
+2026-07-15,Apex Fitness,Referral,90,2,139.37,0.0
+2026-07-16,Apex Fitness,Direct,233,4,350.65,0.0
+2026-07-16,Apex Fitness,Email,106,4,367.43,0.0
+2026-07-16,Apex Fitness,Organic,741,19,1420.14,0.0
+2026-07-16,Apex Fitness,Paid Search,275,6,419.88,460.28
+2026-07-16,Apex Fitness,Paid Social,324,5,385.57,258.91
+2026-07-16,Apex Fitness,Referral,81,6,461.92,0.0
+2026-07-17,Apex Fitness,Direct,201,7,579.36,0.0
+2026-07-17,Apex Fitness,Email,101,3,265.27,0.0
+2026-07-17,Apex Fitness,Organic,606,12,823.98,0.0
+2026-07-17,Apex Fitness,Paid Search,236,11,937.6,345.0
+2026-07-17,Apex Fitness,Paid Social,319,4,351.29,259.28
+2026-07-17,Apex Fitness,Referral,74,1,64.09,0.0
+2026-07-18,Apex Fitness,Direct,201,8,819.94,0.0
+2026-07-18,Apex Fitness,Email,101,4,312.28,0.0
+2026-07-18,Apex Fitness,Organic,509,16,1172.62,0.0
+2026-07-18,Apex Fitness,Paid Search,207,9,651.38,377.39
+2026-07-18,Apex Fitness,Paid Social,296,4,313.11,232.17
+2026-07-18,Apex Fitness,Referral,65,4,279.96,0.0
+2026-07-19,Apex Fitness,Direct,191,3,244.46,0.0
+2026-07-19,Apex Fitness,Email,105,7,542.16,0.0
+2026-07-19,Apex Fitness,Organic,589,6,550.62,0.0
+2026-07-19,Apex Fitness,Paid Search,205,10,752.49,318.71
+2026-07-19,Apex Fitness,Paid Social,273,9,636.38,200.93
+2026-07-19,Apex Fitness,Referral,72,3,252.55,0.0
+2026-07-20,Apex Fitness,Direct,230,7,592.96,0.0
+2026-07-20,Apex Fitness,Email,111,5,297.04,0.0
+2026-07-20,Apex Fitness,Organic,772,17,1315.54,0.0
+2026-07-20,Apex Fitness,Paid Search,272,12,948.1,468.99
+2026-07-20,Apex Fitness,Paid Social,370,8,815.7,293.94
+2026-07-20,Apex Fitness,Referral,69,2,154.14,0.0
+2026-07-21,Apex Fitness,Direct,210,10,813.28,0.0
+2026-07-21,Apex Fitness,Email,129,6,458.77,0.0
+2026-07-21,Apex Fitness,Organic,733,13,1101.95,0.0
+2026-07-21,Apex Fitness,Paid Search,253,10,799.63,405.34
+2026-07-21,Apex Fitness,Paid Social,328,8,567.38,266.83
+2026-07-21,Apex Fitness,Referral,86,1,86.63,0.0
+2026-07-22,Apex Fitness,Direct,241,5,391.1,0.0
+2026-07-22,Apex Fitness,Email,124,8,552.01,0.0
+2026-07-22,Apex Fitness,Organic,702,17,1048.15,0.0
+2026-07-22,Apex Fitness,Paid Search,245,9,599.48,413.36
+2026-07-22,Apex Fitness,Paid Social,355,7,549.43,293.77
+2026-07-22,Apex Fitness,Referral,72,0,0.0,0.0
+2026-07-23,Apex Fitness,Direct,217,6,461.89,0.0
+2026-07-23,Apex Fitness,Email,129,7,565.37,0.0
+2026-07-23,Apex Fitness,Organic,645,16,1337.91,0.0
+2026-07-23,Apex Fitness,Paid Search,275,9,694.78,425.11
+2026-07-23,Apex Fitness,Paid Social,296,4,327.15,234.47
+2026-07-23,Apex Fitness,Referral,71,1,77.11,0.0
+2026-07-24,Apex Fitness,Direct,213,8,650.87,0.0
+2026-07-24,Apex Fitness,Email,113,4,320.87,0.0
+2026-07-24,Apex Fitness,Organic,722,17,1321.5,0.0
+2026-07-24,Apex Fitness,Paid Search,242,10,855.39,399.51
+2026-07-24,Apex Fitness,Paid Social,304,7,568.0,217.95
+2026-07-24,Apex Fitness,Referral,72,0,0.0,0.0
+2026-07-25,Apex Fitness,Direct,188,8,665.81,0.0
+2026-07-25,Apex Fitness,Email,104,2,169.39,0.0
+2026-07-25,Apex Fitness,Organic,532,12,903.44,0.0
+2026-07-25,Apex Fitness,Paid Search,208,3,228.2,328.61
+2026-07-25,Apex Fitness,Paid Social,224,4,310.06,165.91
+2026-07-25,Apex Fitness,Referral,67,0,0.0,0.0
+2026-07-26,Apex Fitness,Direct,194,7,620.67,0.0
+2026-07-26,Apex Fitness,Email,104,2,181.68,0.0
+2026-07-26,Apex Fitness,Organic,563,14,1126.2,0.0
+2026-07-26,Apex Fitness,Paid Search,229,8,617.96,396.5
+2026-07-26,Apex Fitness,Paid Social,253,3,232.66,224.27
+2026-07-26,Apex Fitness,Referral,59,2,169.0,0.0
+2026-07-27,Apex Fitness,Direct,228,13,1059.21,0.0
+2026-07-27,Apex Fitness,Email,128,7,551.55,0.0
+2026-07-27,Apex Fitness,Organic,736,16,1202.86,0.0
+2026-07-27,Apex Fitness,Paid Search,261,11,883.23,426.86
+2026-07-27,Apex Fitness,Paid Social,337,5,385.83,255.27
+2026-07-27,Apex Fitness,Referral,73,2,168.48,0.0
+2026-07-28,Apex Fitness,Direct,248,13,980.54,0.0
+2026-07-28,Apex Fitness,Email,113,8,793.88,0.0
+2026-07-28,Apex Fitness,Organic,639,10,638.83,0.0
+2026-07-28,Apex Fitness,Paid Search,276,7,546.08,462.76
+2026-07-28,Apex Fitness,Paid Social,306,6,423.95,262.91
+2026-07-28,Apex Fitness,Referral,79,1,92.17,0.0
+2026-07-29,Apex Fitness,Direct,228,9,688.14,0.0
+2026-07-29,Apex Fitness,Email,120,4,323.43,0.0
+2026-07-29,Apex Fitness,Organic,781,20,1732.65,0.0
+2026-07-29,Apex Fitness,Paid Search,249,5,356.32,357.54
+2026-07-29,Apex Fitness,Paid Social,340,7,685.66,259.59
+2026-07-29,Apex Fitness,Referral,76,3,228.43,0.0
+2026-07-30,Apex Fitness,Direct,201,5,346.05,0.0
+2026-07-30,Apex Fitness,Email,116,9,623.69,0.0
+2026-07-30,Apex Fitness,Organic,719,20,1618.87,0.0
+2026-07-30,Apex Fitness,Paid Search,294,14,1101.99,468.39
+2026-07-30,Apex Fitness,Paid Social,338,4,309.12,267.94
+2026-07-30,Apex Fitness,Referral,79,4,361.13,0.0
+2026-07-31,Apex Fitness,Direct,216,9,839.49,0.0
+2026-07-31,Apex Fitness,Email,107,8,597.46,0.0
+2026-07-31,Apex Fitness,Organic,683,18,1378.05,0.0
+2026-07-31,Apex Fitness,Paid Search,227,9,785.31,370.73
+2026-07-31,Apex Fitness,Paid Social,286,8,670.87,236.07
+2026-07-31,Apex Fitness,Referral,88,3,213.5,0.0
+2026-08-01,Apex Fitness,Direct,175,4,299.35,0.0
+2026-08-01,Apex Fitness,Email,100,1,76.11,0.0
+2026-08-01,Apex Fitness,Organic,597,9,645.52,0.0
+2026-08-01,Apex Fitness,Paid Search,236,11,782.29,381.85
+2026-08-01,Apex Fitness,Paid Social,248,4,305.6,190.43
+2026-08-01,Apex Fitness,Referral,64,2,141.81,0.0
+2026-08-02,Apex Fitness,Direct,175,8,696.2,0.0
+2026-08-02,Apex Fitness,Email,105,2,167.64,0.0
+2026-08-02,Apex Fitness,Organic,588,15,1023.02,0.0
+2026-08-02,Apex Fitness,Paid Search,217,14,1065.35,364.29
+2026-08-02,Apex Fitness,Paid Social,265,4,304.99,229.57
+2026-08-02,Apex Fitness,Referral,61,2,170.35,0.0
+2026-08-03,Apex Fitness,Direct,213,8,649.72,0.0
+2026-08-03,Apex Fitness,Email,123,5,359.3,0.0
+2026-08-03,Apex Fitness,Organic,659,15,1211.83,0.0
+2026-08-03,Apex Fitness,Paid Search,277,16,1100.89,435.17
+2026-08-03,Apex Fitness,Paid Social,306,4,301.93,245.73
+2026-08-03,Apex Fitness,Referral,70,1,67.96,0.0
+2026-08-04,Apex Fitness,Direct,241,7,570.05,0.0
+2026-08-04,Apex Fitness,Email,122,4,306.72,0.0
+2026-08-04,Apex Fitness,Organic,723,11,1021.15,0.0
+2026-08-04,Apex Fitness,Paid Search,284,10,867.98,455.51
+2026-08-04,Apex Fitness,Paid Social,335,8,541.26,274.25
+2026-08-04,Apex Fitness,Referral,77,1,83.66,0.0
+2026-08-05,Apex Fitness,Direct,230,8,624.62,0.0
+2026-08-05,Apex Fitness,Email,115,8,621.9,0.0
+2026-08-05,Apex Fitness,Organic,670,14,1128.7,0.0
+2026-08-05,Apex Fitness,Paid Search,287,9,704.46,487.14
+2026-08-05,Apex Fitness,Paid Social,333,5,388.71,262.86
+2026-08-05,Apex Fitness,Referral,72,4,319.22,0.0
+2026-08-06,Apex Fitness,Direct,192,7,511.11,0.0
+2026-08-06,Apex Fitness,Email,126,4,302.15,0.0
+2026-08-06,Apex Fitness,Organic,714,16,1100.76,0.0
+2026-08-06,Apex Fitness,Paid Search,240,10,725.61,342.65
+2026-08-06,Apex Fitness,Paid Social,312,5,379.25,257.96
+2026-08-06,Apex Fitness,Referral,77,2,175.88,0.0
+2026-08-07,Apex Fitness,Direct,202,11,788.78,0.0
+2026-08-07,Apex Fitness,Email,112,9,771.1,0.0
+2026-08-07,Apex Fitness,Organic,681,14,1131.18,0.0
+2026-08-07,Apex Fitness,Paid Search,256,10,797.32,421.85
+2026-08-07,Apex Fitness,Paid Social,334,4,355.28,289.15
+2026-08-07,Apex Fitness,Referral,72,3,235.6,0.0
+2026-08-08,Apex Fitness,Direct,202,5,469.53,0.0
+2026-08-08,Apex Fitness,Email,91,5,421.16,0.0
+2026-08-08,Apex Fitness,Organic,639,17,1335.86,0.0
+2026-08-08,Apex Fitness,Paid Search,242,11,770.46,380.79
+2026-08-08,Apex Fitness,Paid Social,253,5,350.45,201.08
+2026-08-08,Apex Fitness,Referral,60,4,317.78,0.0
+2026-08-09,Apex Fitness,Direct,187,11,878.96,0.0
+2026-08-09,Apex Fitness,Email,100,8,710.2,0.0
+2026-08-09,Apex Fitness,Organic,612,11,947.42,0.0
+2026-08-09,Apex Fitness,Paid Search,216,7,498.7,330.19
+2026-08-09,Apex Fitness,Paid Social,303,7,521.99,264.3
+2026-08-09,Apex Fitness,Referral,74,1,83.13,0.0
+2026-08-10,Apex Fitness,Direct,227,3,265.23,0.0
+2026-08-10,Apex Fitness,Email,107,8,611.42,0.0
+2026-08-10,Apex Fitness,Organic,760,22,1846.71,0.0
+2026-08-10,Apex Fitness,Paid Search,264,6,409.61,429.57
+2026-08-10,Apex Fitness,Paid Social,306,5,361.06,237.43
+2026-08-10,Apex Fitness,Referral,73,1,73.93,0.0
+2026-08-11,Apex Fitness,Direct,255,11,998.08,0.0
+2026-08-11,Apex Fitness,Email,124,7,623.66,0.0
+2026-08-11,Apex Fitness,Organic,718,16,937.72,0.0
+2026-08-11,Apex Fitness,Paid Search,261,8,568.05,444.03
+2026-08-11,Apex Fitness,Paid Social,340,10,912.59,282.59
+2026-08-11,Apex Fitness,Referral,78,2,147.23,0.0
+2026-08-12,Apex Fitness,Direct,246,13,985.66,0.0
+2026-08-12,Apex Fitness,Email,120,12,827.12,0.0
+2026-08-12,Apex Fitness,Organic,696,17,1418.26,0.0
+2026-08-12,Apex Fitness,Paid Search,259,7,633.39,436.5
+2026-08-12,Apex Fitness,Paid Social,361,2,144.84,295.95
+2026-08-12,Apex Fitness,Referral,81,0,0.0,0.0
+2026-08-13,Apex Fitness,Direct,240,7,576.92,0.0
+2026-08-13,Apex Fitness,Email,113,14,962.63,0.0
+2026-08-13,Apex Fitness,Organic,716,22,1572.06,0.0
+2026-08-13,Apex Fitness,Paid Search,288,8,587.32,457.7
+2026-08-13,Apex Fitness,Paid Social,346,4,334.28,262.4
+2026-08-13,Apex Fitness,Referral,79,2,157.54,0.0
+2026-08-14,Apex Fitness,Direct,172,2,158.71,0.0
+2026-08-14,Apex Fitness,Email,122,6,419.82,0.0
+2026-08-14,Apex Fitness,Organic,628,15,1027.95,0.0
+2026-08-14,Apex Fitness,Paid Search,222,14,1158.79,371.1
+2026-08-14,Apex Fitness,Paid Social,289,5,435.24,233.68
+2026-08-14,Apex Fitness,Referral,76,3,227.54,0.0
+2026-08-15,Apex Fitness,Direct,211,10,703.67,0.0
+2026-08-15,Apex Fitness,Email,90,3,237.22,0.0
+2026-08-15,Apex Fitness,Organic,589,8,620.2,0.0
+2026-08-15,Apex Fitness,Paid Search,200,2,145.32,334.19
+2026-08-15,Apex Fitness,Paid Social,277,6,467.12,221.68
+2026-08-15,Apex Fitness,Referral,64,2,156.7,0.0
+2026-08-16,Apex Fitness,Direct,202,9,697.93,0.0
+2026-08-16,Apex Fitness,Email,106,5,445.47,0.0
+2026-08-16,Apex Fitness,Organic,556,14,1152.4,0.0
+2026-08-16,Apex Fitness,Paid Search,247,10,852.34,393.48
+2026-08-16,Apex Fitness,Paid Social,285,4,275.35,218.48
+2026-08-16,Apex Fitness,Referral,69,1,92.66,0.0
+2026-08-17,Apex Fitness,Direct,274,8,670.24,0.0
+2026-08-17,Apex Fitness,Email,141,6,446.3,0.0
+2026-08-17,Apex Fitness,Organic,672,26,1743.19,0.0
+2026-08-17,Apex Fitness,Paid Search,276,17,1212.03,426.56
+2026-08-17,Apex Fitness,Paid Social,318,6,413.56,258.99
+2026-08-17,Apex Fitness,Referral,73,2,151.15,0.0
+2026-08-18,Apex Fitness,Direct,225,8,601.24,0.0
+2026-08-18,Apex Fitness,Email,134,9,677.9,0.0
+2026-08-18,Apex Fitness,Organic,769,27,2288.71,0.0
+2026-08-18,Apex Fitness,Paid Search,315,11,872.42,488.24
+2026-08-18,Apex Fitness,Paid Social,354,5,430.46,285.28
+2026-08-18,Apex Fitness,Referral,84,1,75.36,0.0
+2026-08-19,Apex Fitness,Direct,206,10,764.75,0.0
+2026-08-19,Apex Fitness,Email,122,6,463.87,0.0
+2026-08-19,Apex Fitness,Organic,768,16,1364.26,0.0
+2026-08-19,Apex Fitness,Paid Search,258,10,794.19,430.46
+2026-08-19,Apex Fitness,Paid Social,380,7,487.5,302.9
+2026-08-19,Apex Fitness,Referral,83,4,266.4,0.0
+2026-08-20,Apex Fitness,Direct,225,6,465.85,0.0
+2026-08-20,Apex Fitness,Email,109,6,501.94,0.0
+2026-08-20,Apex Fitness,Organic,649,19,1508.07,0.0
+2026-08-20,Apex Fitness,Paid Search,259,12,1196.48,413.53
+2026-08-20,Apex Fitness,Paid Social,332,7,575.11,264.69
+2026-08-20,Apex Fitness,Referral,83,0,0.0,0.0
+2026-08-21,Apex Fitness,Direct,205,8,780.58,0.0
+2026-08-21,Apex Fitness,Email,100,7,527.21,0.0
+2026-08-21,Apex Fitness,Organic,679,16,1158.96,0.0
+2026-08-21,Apex Fitness,Paid Search,228,7,588.98,346.21
+2026-08-21,Apex Fitness,Paid Social,311,10,799.09,247.68
+2026-08-21,Apex Fitness,Referral,62,3,253.09,0.0
+2026-08-22,Apex Fitness,Direct,196,6,394.57,0.0
+2026-08-22,Apex Fitness,Email,95,4,299.59,0.0
+2026-08-22,Apex Fitness,Organic,559,10,716.3,0.0
+2026-08-22,Apex Fitness,Paid Search,216,8,595.62,317.68
+2026-08-22,Apex Fitness,Paid Social,281,4,328.14,220.7
+2026-08-22,Apex Fitness,Referral,59,2,171.78,0.0
+2026-08-23,Apex Fitness,Direct,209,5,415.32,0.0
+2026-08-23,Apex Fitness,Email,97,6,414.33,0.0
+2026-08-23,Apex Fitness,Organic,601,16,1400.56,0.0
+2026-08-23,Apex Fitness,Paid Search,196,11,930.62,326.92
+2026-08-23,Apex Fitness,Paid Social,250,5,414.07,201.4
+2026-08-23,Apex Fitness,Referral,69,1,79.86,0.0
+2026-08-24,Apex Fitness,Direct,230,11,847.26,0.0
+2026-08-24,Apex Fitness,Email,115,6,447.66,0.0
+2026-08-24,Apex Fitness,Organic,792,20,1358.39,0.0
+2026-08-24,Apex Fitness,Paid Search,278,13,1271.83,432.8
+2026-08-24,Apex Fitness,Paid Social,342,6,431.75,264.93
+2026-08-24,Apex Fitness,Referral,64,1,86.92,0.0
+2026-08-25,Apex Fitness,Direct,234,7,518.68,0.0
+2026-08-25,Apex Fitness,Email,122,10,888.72,0.0
+2026-08-25,Apex Fitness,Organic,781,21,1845.34,0.0
+2026-08-25,Apex Fitness,Paid Search,279,14,939.68,453.84
+2026-08-25,Apex Fitness,Paid Social,317,4,286.63,289.63
+2026-08-25,Apex Fitness,Referral,82,1,84.99,0.0
+2026-08-26,Apex Fitness,Direct,243,13,998.86,0.0
+2026-08-26,Apex Fitness,Email,122,8,637.77,0.0
+2026-08-26,Apex Fitness,Organic,766,23,1787.23,0.0
+2026-08-26,Apex Fitness,Paid Search,266,18,1307.11,452.82
+2026-08-26,Apex Fitness,Paid Social,321,4,339.42,239.33
+2026-08-26,Apex Fitness,Referral,84,2,176.6,0.0
+2026-08-27,Apex Fitness,Direct,221,9,760.07,0.0
+2026-08-27,Apex Fitness,Email,122,2,146.73,0.0
+2026-08-27,Apex Fitness,Organic,797,18,1408.44,0.0
+2026-08-27,Apex Fitness,Paid Search,251,9,694.35,376.16
+2026-08-27,Apex Fitness,Paid Social,375,14,1038.54,291.36
+2026-08-27,Apex Fitness,Referral,72,3,261.51,0.0
+2026-08-28,Apex Fitness,Direct,205,7,594.55,0.0
+2026-08-28,Apex Fitness,Email,101,6,536.37,0.0
+2026-08-28,Apex Fitness,Organic,619,17,1132.13,0.0
+2026-08-28,Apex Fitness,Paid Search,225,10,757.73,359.19
+2026-08-28,Apex Fitness,Paid Social,295,3,180.02,230.11
+2026-08-28,Apex Fitness,Referral,68,3,277.29,0.0
+2026-08-29,Apex Fitness,Direct,202,7,563.38,0.0
+2026-08-29,Apex Fitness,Email,94,3,223.53,0.0
+2026-08-29,Apex Fitness,Organic,543,12,934.19,0.0
+2026-08-29,Apex Fitness,Paid Search,226,10,764.14,358.53
+2026-08-29,Apex Fitness,Paid Social,255,6,505.77,225.91
+2026-08-29,Apex Fitness,Referral,58,0,0.0,0.0
+2026-08-30,Apex Fitness,Direct,213,6,528.73,0.0
+2026-08-30,Apex Fitness,Email,101,8,728.43,0.0
+2026-08-30,Apex Fitness,Organic,573,9,755.99,0.0
+2026-08-30,Apex Fitness,Paid Search,205,9,624.06,334.29
+2026-08-30,Apex Fitness,Paid Social,302,3,213.67,226.17
+2026-08-30,Apex Fitness,Referral,63,2,138.36,0.0
+2026-08-31,Apex Fitness,Direct,251,12,1076.25,0.0
+2026-08-31,Apex Fitness,Email,120,8,727.24,0.0
+2026-08-31,Apex Fitness,Organic,707,16,1105.88,0.0
+2026-08-31,Apex Fitness,Paid Search,275,14,1272.71,468.12
+2026-08-31,Apex Fitness,Paid Social,311,8,662.22,254.16
+2026-08-31,Apex Fitness,Referral,75,3,253.26,0.0
+2026-09-01,Apex Fitness,Direct,236,10,857.2,0.0
+2026-09-01,Apex Fitness,Email,143,8,635.55,0.0
+2026-09-01,Apex Fitness,Organic,628,23,1909.9,0.0
+2026-09-01,Apex Fitness,Paid Search,316,15,1027.86,473.08
+2026-09-01,Apex Fitness,Paid Social,331,4,363.23,268.11
+2026-09-01,Apex Fitness,Referral,76,3,256.24,0.0
+2026-09-02,Apex Fitness,Direct,202,9,673.21,0.0
+2026-09-02,Apex Fitness,Email,125,8,544.05,0.0
+2026-09-02,Apex Fitness,Organic,717,18,1434.71,0.0
+2026-09-02,Apex Fitness,Paid Search,298,17,1316.38,490.58
+2026-09-02,Apex Fitness,Paid Social,366,12,949.59,297.72
+2026-09-02,Apex Fitness,Referral,74,1,92.43,0.0
+2026-09-03,Apex Fitness,Direct,224,7,581.03,0.0
+2026-09-03,Apex Fitness,Email,106,9,893.93,0.0
+2026-09-03,Apex Fitness,Organic,674,12,888.89,0.0
+2026-09-03,Apex Fitness,Paid Search,233,8,701.68,392.53
+2026-09-03,Apex Fitness,Paid Social,324,7,610.9,275.73
+2026-09-03,Apex Fitness,Referral,74,0,0.0,0.0
+2026-09-04,Apex Fitness,Direct,200,6,498.26,0.0
+2026-09-04,Apex Fitness,Email,114,9,739.08,0.0
+2026-09-04,Apex Fitness,Organic,689,19,1634.93,0.0
+2026-09-04,Apex Fitness,Paid Search,232,10,787.62,367.76
+2026-09-04,Apex Fitness,Paid Social,270,2,160.45,229.54
+2026-09-04,Apex Fitness,Referral,69,4,383.86,0.0
+2026-09-05,Apex Fitness,Direct,187,4,291.25,0.0
+2026-09-05,Apex Fitness,Email,103,6,458.89,0.0
+2026-09-05,Apex Fitness,Organic,599,22,1394.46,0.0
+2026-09-05,Apex Fitness,Paid Search,222,7,501.41,352.77
+2026-09-05,Apex Fitness,Paid Social,280,6,555.55,219.01
+2026-09-05,Apex Fitness,Referral,72,1,84.05,0.0
+2026-09-06,Apex Fitness,Direct,186,8,540.2,0.0
+2026-09-06,Apex Fitness,Email,101,7,608.48,0.0
+2026-09-06,Apex Fitness,Organic,580,18,1472.16,0.0
+2026-09-06,Apex Fitness,Paid Search,222,9,621.29,362.71
+2026-09-06,Apex Fitness,Paid Social,272,5,355.2,219.72
+2026-09-06,Apex Fitness,Referral,63,1,80.83,0.0
+2026-09-07,Apex Fitness,Direct,233,7,451.73,0.0
+2026-09-07,Apex Fitness,Email,112,6,508.49,0.0
+2026-09-07,Apex Fitness,Organic,753,20,1857.75,0.0
+2026-09-07,Apex Fitness,Paid Search,242,12,926.44,393.93
+2026-09-07,Apex Fitness,Paid Social,371,6,473.61,270.39
+2026-09-07,Apex Fitness,Referral,80,3,206.35,0.0
+2026-09-08,Apex Fitness,Direct,223,8,636.43,0.0
+2026-09-08,Apex Fitness,Email,142,10,900.66,0.0
+2026-09-08,Apex Fitness,Organic,782,18,1642.24,0.0
+2026-09-08,Apex Fitness,Paid Search,282,15,1098.6,464.53
+2026-09-08,Apex Fitness,Paid Social,329,4,338.0,264.51
+2026-09-08,Apex Fitness,Referral,77,1,81.47,0.0
+2026-09-09,Apex Fitness,Direct,216,7,569.73,0.0
+2026-09-09,Apex Fitness,Email,115,9,665.43,0.0
+2026-09-09,Apex Fitness,Organic,692,19,1560.67,0.0
+2026-09-09,Apex Fitness,Paid Search,269,9,725.74,442.65
+2026-09-09,Apex Fitness,Paid Social,363,8,620.08,279.1
+2026-09-09,Apex Fitness,Referral,75,3,224.26,0.0
+2026-09-10,Apex Fitness,Direct,247,8,561.56,0.0
+2026-09-10,Apex Fitness,Email,125,5,407.78,0.0
+2026-09-10,Apex Fitness,Organic,679,20,1533.05,0.0
+2026-09-10,Apex Fitness,Paid Search,297,12,824.03,452.43
+2026-09-10,Apex Fitness,Paid Social,367,8,709.18,290.88
+2026-09-10,Apex Fitness,Referral,67,0,0.0,0.0
+2026-09-11,Apex Fitness,Direct,198,8,701.69,0.0
+2026-09-11,Apex Fitness,Email,112,5,350.83,0.0
+2026-09-11,Apex Fitness,Organic,560,20,1482.67,0.0
+2026-09-11,Apex Fitness,Paid Search,237,8,685.53,398.45
+2026-09-11,Apex Fitness,Paid Social,285,4,302.64,209.57
+2026-09-11,Apex Fitness,Referral,63,2,158.86,0.0
+2026-09-12,Apex Fitness,Direct,189,7,561.48,0.0
+2026-09-12,Apex Fitness,Email,103,5,422.22,0.0
+2026-09-12,Apex Fitness,Organic,543,17,1302.93,0.0
+2026-09-12,Apex Fitness,Paid Search,235,7,559.43,398.59
+2026-09-12,Apex Fitness,Paid Social,267,7,680.14,217.97
+2026-09-12,Apex Fitness,Referral,58,4,331.26,0.0
+2026-09-13,Apex Fitness,Direct,210,13,1175.37,0.0
+2026-09-13,Apex Fitness,Email,116,4,315.28,0.0
+2026-09-13,Apex Fitness,Organic,576,13,1084.4,0.0
+2026-09-13,Apex Fitness,Paid Search,205,6,483.08,331.07
+2026-09-13,Apex Fitness,Paid Social,288,4,390.71,211.66
+2026-09-13,Apex Fitness,Referral,66,6,469.41,0.0
+2026-09-14,Apex Fitness,Direct,250,5,409.91,0.0
+2026-09-14,Apex Fitness,Email,128,7,568.76,0.0
+2026-09-14,Apex Fitness,Organic,728,13,947.35,0.0
+2026-09-14,Apex Fitness,Paid Search,249,13,1186.19,369.72
+2026-09-14,Apex Fitness,Paid Social,315,3,243.78,253.88
+2026-09-14,Apex Fitness,Referral,84,4,346.97,0.0
+2026-09-15,Apex Fitness,Direct,255,9,639.09,0.0
+2026-09-15,Apex Fitness,Email,121,5,389.26,0.0
+2026-09-15,Apex Fitness,Organic,698,17,1448.67,0.0
+2026-09-15,Apex Fitness,Paid Search,290,10,756.16,461.35
+2026-09-15,Apex Fitness,Paid Social,351,7,584.42,264.1
+2026-09-15,Apex Fitness,Referral,71,3,180.5,0.0
+2026-09-16,Apex Fitness,Direct,242,4,330.82,0.0
+2026-09-16,Apex Fitness,Email,134,8,616.33,0.0
+2026-09-16,Apex Fitness,Organic,706,15,1466.76,0.0
+2026-09-16,Apex Fitness,Paid Search,292,17,1248.98,471.76
+2026-09-16,Apex Fitness,Paid Social,333,3,266.99,255.32
+2026-09-16,Apex Fitness,Referral,76,1,80.52,0.0
+2026-09-17,Apex Fitness,Direct,240,11,929.23,0.0
+2026-09-17,Apex Fitness,Email,114,4,289.72,0.0
+2026-09-17,Apex Fitness,Organic,647,11,863.64,0.0
+2026-09-17,Apex Fitness,Paid Search,243,7,523.52,367.17
+2026-09-17,Apex Fitness,Paid Social,320,4,280.63,271.22
+2026-09-17,Apex Fitness,Referral,69,5,445.47,0.0
+2026-09-18,Apex Fitness,Direct,234,9,673.11,0.0
+2026-09-18,Apex Fitness,Email,112,5,427.49,0.0
+2026-09-18,Apex Fitness,Organic,665,17,1174.06,0.0
+2026-09-18,Apex Fitness,Paid Search,243,12,929.92,381.86
+2026-09-18,Apex Fitness,Paid Social,304,5,346.43,250.46
+2026-09-18,Apex Fitness,Referral,69,4,380.98,0.0
+2026-09-19,Apex Fitness,Direct,196,6,410.34,0.0
+2026-09-19,Apex Fitness,Email,91,6,550.14,0.0
+2026-09-19,Apex Fitness,Organic,606,16,1104.96,0.0
+2026-09-19,Apex Fitness,Paid Search,197,8,626.28,293.75
+2026-09-19,Apex Fitness,Paid Social,273,3,268.73,231.32
+2026-09-19,Apex Fitness,Referral,68,2,170.0,0.0
+2026-09-20,Apex Fitness,Direct,173,8,638.37,0.0
+2026-09-20,Apex Fitness,Email,96,5,373.61,0.0
+2026-09-20,Apex Fitness,Organic,627,21,1792.97,0.0
+2026-09-20,Apex Fitness,Paid Search,222,10,727.03,366.15
+2026-09-20,Apex Fitness,Paid Social,284,4,324.78,245.63
+2026-09-20,Apex Fitness,Referral,64,1,93.5,0.0
+2026-09-21,Apex Fitness,Direct,226,7,500.33,0.0
+2026-09-21,Apex Fitness,Email,124,8,667.97,0.0
+2026-09-21,Apex Fitness,Organic,728,21,1649.12,0.0
+2026-09-21,Apex Fitness,Paid Search,285,12,774.37,459.8
+2026-09-21,Apex Fitness,Paid Social,322,7,540.62,247.84
+2026-09-21,Apex Fitness,Referral,78,0,0.0,0.0
+2026-09-22,Apex Fitness,Direct,254,6,530.22,0.0
+2026-09-22,Apex Fitness,Email,130,9,742.4,0.0
+2026-09-22,Apex Fitness,Organic,672,21,1811.03,0.0
+2026-09-22,Apex Fitness,Paid Search,268,13,970.98,394.93
+2026-09-22,Apex Fitness,Paid Social,332,6,474.53,286.27
+2026-09-22,Apex Fitness,Referral,89,2,158.05,0.0
+2026-09-23,Apex Fitness,Direct,227,8,606.78,0.0
+2026-09-23,Apex Fitness,Email,110,12,948.77,0.0
+2026-09-23,Apex Fitness,Organic,704,22,1647.69,0.0
+2026-09-23,Apex Fitness,Paid Search,267,15,1228.42,434.77
+2026-09-23,Apex Fitness,Paid Social,336,7,435.61,249.81
+2026-09-23,Apex Fitness,Referral,82,3,249.89,0.0
+2026-09-24,Apex Fitness,Direct,256,4,375.48,0.0
+2026-09-24,Apex Fitness,Email,124,8,542.52,0.0
+2026-09-24,Apex Fitness,Organic,688,20,1716.84,0.0
+2026-09-24,Apex Fitness,Paid Search,241,10,800.84,384.51
+2026-09-24,Apex Fitness,Paid Social,326,6,465.05,270.71
+2026-09-24,Apex Fitness,Referral,72,1,78.97,0.0
+2026-09-25,Apex Fitness,Direct,212,11,702.7,0.0
+2026-09-25,Apex Fitness,Email,105,3,208.08,0.0
+2026-09-25,Apex Fitness,Organic,641,9,699.83,0.0
+2026-09-25,Apex Fitness,Paid Search,233,5,445.34,382.55
+2026-09-25,Apex Fitness,Paid Social,295,5,366.35,230.25
+2026-09-25,Apex Fitness,Referral,72,1,73.05,0.0
+2026-09-26,Apex Fitness,Direct,192,8,640.58,0.0
+2026-09-26,Apex Fitness,Email,109,3,219.2,0.0
+2026-09-26,Apex Fitness,Organic,593,16,1174.72,0.0
+2026-09-26,Apex Fitness,Paid Search,246,8,768.5,385.97
+2026-09-26,Apex Fitness,Paid Social,279,4,346.38,213.06
+2026-09-26,Apex Fitness,Referral,60,2,150.07,0.0
+2026-09-27,Apex Fitness,Direct,214,9,820.25,0.0
+2026-09-27,Apex Fitness,Email,101,11,701.66,0.0
+2026-09-27,Apex Fitness,Organic,675,12,910.74,0.0
+2026-09-27,Apex Fitness,Paid Search,227,11,937.56,348.93
+2026-09-27,Apex Fitness,Paid Social,248,6,523.59,204.59
+2026-09-27,Apex Fitness,Referral,68,0,0.0,0.0
+2026-09-28,Apex Fitness,Direct,233,11,794.98,0.0
+2026-09-28,Apex Fitness,Email,114,8,727.56,0.0
+2026-09-28,Apex Fitness,Organic,772,12,841.05,0.0
+2026-09-28,Apex Fitness,Paid Search,251,10,907.13,386.42
+2026-09-28,Apex Fitness,Paid Social,320,4,334.76,268.39
+2026-09-28,Apex Fitness,Referral,81,5,416.43,0.0
+2026-09-29,Apex Fitness,Direct,246,11,855.27,0.0
+2026-09-29,Apex Fitness,Email,128,10,819.59,0.0
+2026-09-29,Apex Fitness,Organic,701,12,1156.66,0.0
+2026-09-29,Apex Fitness,Paid Search,271,12,1023.55,422.09
+2026-09-29,Apex Fitness,Paid Social,340,4,328.75,284.74
+2026-09-29,Apex Fitness,Referral,73,1,79.09,0.0
+2026-09-30,Apex Fitness,Direct,254,8,607.03,0.0
+2026-09-30,Apex Fitness,Email,117,8,630.11,0.0
+2026-09-30,Apex Fitness,Organic,773,23,1799.57,0.0
+2026-09-30,Apex Fitness,Paid Search,243,10,937.32,389.17
+2026-09-30,Apex Fitness,Paid Social,321,8,544.11,259.57
+2026-09-30,Apex Fitness,Referral,80,1,76.2,0.0
+2026-10-01,Apex Fitness,Direct,207,5,368.89,0.0
+2026-10-01,Apex Fitness,Email,131,6,380.77,0.0
+2026-10-01,Apex Fitness,Organic,743,22,1853.71,0.0
+2026-10-01,Apex Fitness,Paid Search,244,8,760.5,393.3
+2026-10-01,Apex Fitness,Paid Social,367,8,670.45,295.54
+2026-10-01,Apex Fitness,Referral,76,0,0.0,0.0
+2026-10-02,Apex Fitness,Direct,210,6,485.74,0.0
+2026-10-02,Apex Fitness,Email,112,6,394.97,0.0
+2026-10-02,Apex Fitness,Organic,625,23,1722.02,0.0
+2026-10-02,Apex Fitness,Paid Search,269,13,1129.48,426.32
+2026-10-02,Apex Fitness,Paid Social,306,6,504.79,251.33
+2026-10-02,Apex Fitness,Referral,74,3,249.28,0.0
+2026-10-03,Apex Fitness,Direct,203,11,763.41,0.0
+2026-10-03,Apex Fitness,Email,99,8,631.85,0.0
+2026-10-03,Apex Fitness,Organic,629,24,1706.69,0.0
+2026-10-03,Apex Fitness,Paid Search,217,10,847.82,339.93
+2026-10-03,Apex Fitness,Paid Social,277,1,89.48,224.99
+2026-10-03,Apex Fitness,Referral,68,3,256.24,0.0
+2026-10-04,Apex Fitness,Direct,199,11,859.41,0.0
+2026-10-04,Apex Fitness,Email,108,9,865.86,0.0
+2026-10-04,Apex Fitness,Organic,607,19,1466.3,0.0
+2026-10-04,Apex Fitness,Paid Search,259,11,851.35,407.18
+2026-10-04,Apex Fitness,Paid Social,274,2,195.28,225.21
+2026-10-04,Apex Fitness,Referral,68,0,0.0,0.0
+2026-10-05,Apex Fitness,Direct,262,12,998.2,0.0
+2026-10-05,Apex Fitness,Email,116,5,368.35,0.0
+2026-10-05,Apex Fitness,Organic,664,12,1058.36,0.0
+2026-10-05,Apex Fitness,Paid Search,269,13,1022.76,487.9
+2026-10-05,Apex Fitness,Paid Social,338,6,400.19,273.17
+2026-10-05,Apex Fitness,Referral,77,0,0.0,0.0
+2026-10-06,Apex Fitness,Direct,218,5,386.59,0.0
+2026-10-06,Apex Fitness,Email,117,8,689.02,0.0
+2026-10-06,Apex Fitness,Organic,778,26,1949.78,0.0
+2026-10-06,Apex Fitness,Paid Search,278,16,1222.01,427.99
+2026-10-06,Apex Fitness,Paid Social,319,7,531.93,266.18
+2026-10-06,Apex Fitness,Referral,87,2,173.82,0.0
+2026-10-07,Apex Fitness,Direct,212,5,357.4,0.0
+2026-10-07,Apex Fitness,Email,129,5,376.49,0.0
+2026-10-07,Apex Fitness,Organic,751,23,1665.51,0.0
+2026-10-07,Apex Fitness,Paid Search,286,12,1008.76,445.01
+2026-10-07,Apex Fitness,Paid Social,338,6,440.09,249.27
+2026-10-07,Apex Fitness,Referral,75,1,68.85,0.0
+2026-10-08,Apex Fitness,Direct,243,12,1050.87,0.0
+2026-10-08,Apex Fitness,Email,112,11,873.81,0.0
+2026-10-08,Apex Fitness,Organic,701,22,1765.23,0.0
+2026-10-08,Apex Fitness,Paid Search,218,15,1102.64,411.25
+2026-10-08,Apex Fitness,Paid Social,308,1,80.37,244.79
+2026-10-08,Apex Fitness,Referral,70,2,166.89,0.0
+2026-10-09,Apex Fitness,Direct,228,5,424.92,0.0
+2026-10-09,Apex Fitness,Email,104,5,446.02,0.0
+2026-10-09,Apex Fitness,Organic,662,12,996.51,0.0
+2026-10-09,Apex Fitness,Paid Search,249,6,465.03,406.88
+2026-10-09,Apex Fitness,Paid Social,301,3,237.32,224.7
+2026-10-09,Apex Fitness,Referral,57,0,0.0,0.0
+2026-10-10,Apex Fitness,Direct,189,8,569.51,0.0
+2026-10-10,Apex Fitness,Email,107,7,534.2,0.0
+2026-10-10,Apex Fitness,Organic,565,10,931.05,0.0
+2026-10-10,Apex Fitness,Paid Search,219,10,624.23,327.04
+2026-10-10,Apex Fitness,Paid Social,229,5,385.86,185.75
+2026-10-10,Apex Fitness,Referral,64,2,185.77,0.0
+2026-10-11,Apex Fitness,Direct,205,6,416.46,0.0
+2026-10-11,Apex Fitness,Email,108,5,368.66,0.0
+2026-10-11,Apex Fitness,Organic,642,19,1555.05,0.0
+2026-10-11,Apex Fitness,Paid Search,252,11,1032.41,420.55
+2026-10-11,Apex Fitness,Paid Social,263,5,437.75,228.4
+2026-10-11,Apex Fitness,Referral,63,1,85.05,0.0
+2026-10-12,Apex Fitness,Direct,250,7,502.79,0.0
+2026-10-12,Apex Fitness,Email,114,7,637.25,0.0
+2026-10-12,Apex Fitness,Organic,733,15,1263.82,0.0
+2026-10-12,Apex Fitness,Paid Search,290,11,850.05,443.36
+2026-10-12,Apex Fitness,Paid Social,376,2,141.52,293.75
+2026-10-12,Apex Fitness,Referral,81,2,169.61,0.0
+2026-10-13,Apex Fitness,Direct,231,9,750.85,0.0
+2026-10-13,Apex Fitness,Email,123,9,714.25,0.0
+2026-10-13,Apex Fitness,Organic,765,20,1697.83,0.0
+2026-10-13,Apex Fitness,Paid Search,258,8,661.46,432.0
+2026-10-13,Apex Fitness,Paid Social,370,3,213.57,297.89
+2026-10-13,Apex Fitness,Referral,71,1,98.95,0.0
+2026-10-14,Apex Fitness,Direct,228,13,1055.69,0.0
+2026-10-14,Apex Fitness,Email,118,6,528.65,0.0
+2026-10-14,Apex Fitness,Organic,761,17,1196.74,0.0
+2026-10-14,Apex Fitness,Paid Search,299,13,1188.18,473.38
+2026-10-14,Apex Fitness,Paid Social,376,5,356.55,312.4
+2026-10-14,Apex Fitness,Referral,76,1,62.55,0.0
+2026-10-15,Apex Fitness,Direct,234,11,940.44,0.0
+2026-10-15,Apex Fitness,Email,137,11,811.45,0.0
+2026-10-15,Apex Fitness,Organic,659,12,860.94,0.0
+2026-10-15,Apex Fitness,Paid Search,259,9,732.67,405.39
+2026-10-15,Apex Fitness,Paid Social,364,3,228.61,262.6
+2026-10-15,Apex Fitness,Referral,80,1,75.42,0.0
+2026-10-16,Apex Fitness,Direct,229,8,611.72,0.0
+2026-10-16,Apex Fitness,Email,120,10,909.32,0.0
+2026-10-16,Apex Fitness,Organic,626,8,567.08,0.0
+2026-10-16,Apex Fitness,Paid Search,231,12,1095.31,400.57
+2026-10-16,Apex Fitness,Paid Social,322,5,349.33,250.96
+2026-10-16,Apex Fitness,Referral,67,0,0.0,0.0
+2026-10-17,Apex Fitness,Direct,178,6,432.13,0.0
+2026-10-17,Apex Fitness,Email,98,9,730.72,0.0
+2026-10-17,Apex Fitness,Organic,511,22,1521.23,0.0
+2026-10-17,Apex Fitness,Paid Search,223,7,488.42,367.05
+2026-10-17,Apex Fitness,Paid Social,267,2,157.23,217.53
+2026-10-17,Apex Fitness,Referral,66,0,0.0,0.0
+2026-10-18,Apex Fitness,Direct,197,10,866.03,0.0
+2026-10-18,Apex Fitness,Email,109,5,412.55,0.0
+2026-10-18,Apex Fitness,Organic,643,22,1881.9,0.0
+2026-10-18,Apex Fitness,Paid Search,225,6,602.41,377.95
+2026-10-18,Apex Fitness,Paid Social,265,5,388.52,183.41
+2026-10-18,Apex Fitness,Referral,64,4,357.71,0.0
+2026-10-19,Apex Fitness,Direct,234,8,597.97,0.0
+2026-10-19,Apex Fitness,Email,114,8,640.37,0.0
+2026-10-19,Apex Fitness,Organic,677,23,1870.47,0.0
+2026-10-19,Apex Fitness,Paid Search,303,13,1144.94,495.46
+2026-10-19,Apex Fitness,Paid Social,369,8,584.2,281.13
+2026-10-19,Apex Fitness,Referral,79,1,78.69,0.0
+2026-10-20,Apex Fitness,Direct,252,9,724.39,0.0
+2026-10-20,Apex Fitness,Email,123,8,600.85,0.0
+2026-10-20,Apex Fitness,Organic,651,14,1114.83,0.0
+2026-10-20,Apex Fitness,Paid Search,287,11,887.37,449.11
+2026-10-20,Apex Fitness,Paid Social,352,12,1034.56,297.53
+2026-10-20,Apex Fitness,Referral,85,1,80.05,0.0
+2026-10-21,Apex Fitness,Direct,241,9,608.92,0.0
+2026-10-21,Apex Fitness,Email,127,8,631.89,0.0
+2026-10-21,Apex Fitness,Organic,535,11,670.53,0.0
+2026-10-21,Apex Fitness,Paid Search,279,7,637.7,460.26
+2026-10-21,Apex Fitness,Paid Social,410,11,863.84,344.87
+2026-10-21,Apex Fitness,Referral,86,0,0.0,0.0
+2026-10-22,Apex Fitness,Direct,223,5,373.12,0.0
+2026-10-22,Apex Fitness,Email,125,8,604.64,0.0
+2026-10-22,Apex Fitness,Organic,412,10,970.28,0.0
+2026-10-22,Apex Fitness,Paid Search,282,12,843.44,479.32
+2026-10-22,Apex Fitness,Paid Social,323,4,351.43,263.28
+2026-10-22,Apex Fitness,Referral,78,3,224.93,0.0
+2026-10-23,Apex Fitness,Direct,236,5,436.95,0.0
+2026-10-23,Apex Fitness,Email,112,7,608.69,0.0
+2026-10-23,Apex Fitness,Organic,338,9,650.18,0.0
+2026-10-23,Apex Fitness,Paid Search,266,11,844.28,428.48
+2026-10-23,Apex Fitness,Paid Social,354,2,154.95,295.97
+2026-10-23,Apex Fitness,Referral,68,4,299.18,0.0
+2026-10-24,Apex Fitness,Direct,186,9,661.85,0.0
+2026-10-24,Apex Fitness,Email,103,3,232.24,0.0
+2026-10-24,Apex Fitness,Organic,328,2,193.98,0.0
+2026-10-24,Apex Fitness,Paid Search,233,7,638.92,407.94
+2026-10-24,Apex Fitness,Paid Social,273,4,315.24,220.76
+2026-10-24,Apex Fitness,Referral,62,2,162.34,0.0
+2026-10-25,Apex Fitness,Direct,196,7,599.93,0.0
+2026-10-25,Apex Fitness,Email,105,5,340.1,0.0
+2026-10-25,Apex Fitness,Organic,383,12,820.1,0.0
+2026-10-25,Apex Fitness,Paid Search,253,10,655.45,422.39
+2026-10-25,Apex Fitness,Paid Social,314,7,522.74,258.27
+2026-10-25,Apex Fitness,Referral,70,2,146.22,0.0
+2026-10-26,Apex Fitness,Direct,214,5,312.87,0.0
+2026-10-26,Apex Fitness,Email,124,5,333.93,0.0
+2026-10-26,Apex Fitness,Organic,459,20,1456.72,0.0
+2026-10-26,Apex Fitness,Paid Search,285,12,1002.65,460.86
+2026-10-26,Apex Fitness,Paid Social,385,3,236.83,303.18
+2026-10-26,Apex Fitness,Referral,74,3,260.7,0.0
+2026-10-27,Apex Fitness,Direct,234,7,522.91,0.0
+2026-10-27,Apex Fitness,Email,126,6,398.83,0.0
+2026-10-27,Apex Fitness,Organic,449,11,697.19,0.0
+2026-10-27,Apex Fitness,Paid Search,285,13,1083.13,461.77
+2026-10-27,Apex Fitness,Paid Social,327,5,424.16,263.12
+2026-10-27,Apex Fitness,Referral,81,2,168.67,0.0
+2026-10-28,Apex Fitness,Direct,251,16,1242.53,0.0
+2026-10-28,Apex Fitness,Email,123,5,420.18,0.0
+2026-10-28,Apex Fitness,Organic,421,10,819.13,0.0
+2026-10-28,Apex Fitness,Paid Search,301,12,1154.33,484.92
+2026-10-28,Apex Fitness,Paid Social,334,5,379.08,258.88
+2026-10-28,Apex Fitness,Referral,78,3,264.54,0.0
+2026-10-29,Apex Fitness,Direct,238,9,846.34,0.0
+2026-10-29,Apex Fitness,Email,124,5,352.04,0.0
+2026-10-29,Apex Fitness,Organic,369,8,566.1,0.0
+2026-10-29,Apex Fitness,Paid Search,264,9,606.91,396.78
+2026-10-29,Apex Fitness,Paid Social,309,3,249.61,263.32
+2026-10-29,Apex Fitness,Referral,77,3,211.7,0.0
+2026-10-30,Apex Fitness,Direct,226,8,562.27,0.0
+2026-10-30,Apex Fitness,Email,117,9,732.66,0.0
+2026-10-30,Apex Fitness,Organic,388,5,354.81,0.0
+2026-10-30,Apex Fitness,Paid Search,248,15,1391.95,395.02
+2026-10-30,Apex Fitness,Paid Social,284,5,364.17,245.16
+2026-10-30,Apex Fitness,Referral,67,0,0.0,0.0
+2026-10-31,Apex Fitness,Direct,202,3,253.45,0.0
+2026-10-31,Apex Fitness,Email,103,6,480.52,0.0
+2026-10-31,Apex Fitness,Organic,327,6,413.21,0.0
+2026-10-31,Apex Fitness,Paid Search,250,10,747.02,404.45
+2026-10-31,Apex Fitness,Paid Social,290,6,511.38,248.57
+2026-10-31,Apex Fitness,Referral,57,1,78.97,0.0
+2026-11-01,Apex Fitness,Direct,233,14,1229.3,0.0
+2026-11-01,Apex Fitness,Email,97,2,156.98,0.0
+2026-11-01,Apex Fitness,Organic,356,9,768.47,0.0
+2026-11-01,Apex Fitness,Paid Search,257,5,377.73,402.73
+2026-11-01,Apex Fitness,Paid Social,283,5,372.75,221.83
+2026-11-01,Apex Fitness,Referral,69,1,105.57,0.0
+2026-11-02,Apex Fitness,Direct,228,12,882.01,0.0
+2026-11-02,Apex Fitness,Email,117,9,742.86,0.0
+2026-11-02,Apex Fitness,Organic,391,9,763.43,0.0
+2026-11-02,Apex Fitness,Paid Search,274,14,978.78,445.86
+2026-11-02,Apex Fitness,Paid Social,344,10,860.23,262.38
+2026-11-02,Apex Fitness,Referral,86,0,0.0,0.0
+2026-11-03,Apex Fitness,Direct,220,8,608.83,0.0
+2026-11-03,Apex Fitness,Email,133,12,963.13,0.0
+2026-11-03,Apex Fitness,Organic,415,10,946.94,0.0
+2026-11-03,Apex Fitness,Paid Search,273,8,566.86,437.27
+2026-11-03,Apex Fitness,Paid Social,367,3,238.45,312.96
+2026-11-03,Apex Fitness,Referral,73,3,224.22,0.0
+2026-11-04,Apex Fitness,Direct,225,6,480.76,0.0
+2026-11-04,Apex Fitness,Email,141,12,722.98,0.0
+2026-11-04,Apex Fitness,Organic,418,13,958.94,0.0
+2026-11-04,Apex Fitness,Paid Search,307,14,1151.54,510.57
+2026-11-04,Apex Fitness,Paid Social,304,3,275.93,249.9
+2026-11-04,Apex Fitness,Referral,83,0,0.0,0.0
+2026-11-05,Apex Fitness,Direct,222,8,544.98,0.0
+2026-11-05,Apex Fitness,Email,124,10,764.84,0.0
+2026-11-05,Apex Fitness,Organic,404,8,645.98,0.0
+2026-11-05,Apex Fitness,Paid Search,282,13,918.89,466.41
+2026-11-05,Apex Fitness,Paid Social,365,6,422.34,296.84
+2026-11-05,Apex Fitness,Referral,84,3,254.89,0.0
+2026-11-06,Apex Fitness,Direct,203,10,754.85,0.0
+2026-11-06,Apex Fitness,Email,111,14,1154.03,0.0
+2026-11-06,Apex Fitness,Organic,383,4,277.77,0.0
+2026-11-06,Apex Fitness,Paid Search,254,16,1361.12,409.81
+2026-11-06,Apex Fitness,Paid Social,303,6,408.95,234.84
+2026-11-06,Apex Fitness,Referral,76,6,413.38,0.0
+2026-11-07,Apex Fitness,Direct,196,9,807.78,0.0
+2026-11-07,Apex Fitness,Email,104,7,651.57,0.0
+2026-11-07,Apex Fitness,Organic,318,3,229.19,0.0
+2026-11-07,Apex Fitness,Paid Search,218,14,1035.05,325.75
+2026-11-07,Apex Fitness,Paid Social,289,6,445.67,236.17
+2026-11-07,Apex Fitness,Referral,63,1,90.6,0.0
+2026-11-08,Apex Fitness,Direct,220,15,1248.58,0.0
+2026-11-08,Apex Fitness,Email,98,10,935.12,0.0
+2026-11-08,Apex Fitness,Organic,313,5,375.03,0.0
+2026-11-08,Apex Fitness,Paid Search,236,7,489.83,412.97
+2026-11-08,Apex Fitness,Paid Social,301,3,206.36,228.08
+2026-11-08,Apex Fitness,Referral,63,1,77.69,0.0
+2026-11-09,Apex Fitness,Direct,268,10,777.71,0.0
+2026-11-09,Apex Fitness,Email,138,14,965.06,0.0
+2026-11-09,Apex Fitness,Organic,459,12,993.07,0.0
+2026-11-09,Apex Fitness,Paid Search,275,13,974.2,436.89
+2026-11-09,Apex Fitness,Paid Social,379,11,756.78,312.97
+2026-11-09,Apex Fitness,Referral,81,2,156.57,0.0
+2026-11-10,Apex Fitness,Direct,257,7,559.29,0.0
+2026-11-10,Apex Fitness,Email,131,7,533.99,0.0
+2026-11-10,Apex Fitness,Organic,502,16,1399.32,0.0
+2026-11-10,Apex Fitness,Paid Search,270,9,735.35,430.26
+2026-11-10,Apex Fitness,Paid Social,351,5,420.33,300.84
+2026-11-10,Apex Fitness,Referral,84,3,237.56,0.0
+2026-11-11,Apex Fitness,Direct,283,10,837.25,0.0
+2026-11-11,Apex Fitness,Email,122,10,675.48,0.0
+2026-11-11,Apex Fitness,Organic,427,15,1308.46,0.0
+2026-11-11,Apex Fitness,Paid Search,281,12,922.07,441.97
+2026-11-11,Apex Fitness,Paid Social,300,4,315.87,260.39
+2026-11-11,Apex Fitness,Referral,82,1,88.58,0.0
+2026-11-12,Apex Fitness,Direct,228,10,853.44,0.0
+2026-11-12,Apex Fitness,Email,121,9,827.71,0.0
+2026-11-12,Apex Fitness,Organic,363,10,726.15,0.0
+2026-11-12,Apex Fitness,Paid Search,273,12,951.25,426.26
+2026-11-12,Apex Fitness,Paid Social,336,7,527.1,278.49
+2026-11-12,Apex Fitness,Referral,77,1,73.25,0.0
+2026-05-17,Bloom Bakery,Direct,151,7,214.65,0.0
+2026-05-17,Bloom Bakery,Email,69,5,170.16,0.0
+2026-05-17,Bloom Bakery,Organic,378,9,301.33,0.0
+2026-05-17,Bloom Bakery,Paid Search,141,7,204.13,125.31
+2026-05-17,Bloom Bakery,Paid Social,193,4,141.46,104.53
+2026-05-17,Bloom Bakery,Referral,42,2,63.44,0.0
+2026-05-18,Bloom Bakery,Direct,213,10,246.14,0.0
+2026-05-18,Bloom Bakery,Email,86,3,83.02,0.0
+2026-05-18,Bloom Bakery,Organic,410,9,246.26,0.0
+2026-05-18,Bloom Bakery,Paid Search,164,7,205.37,147.29
+2026-05-18,Bloom Bakery,Paid Social,236,2,58.48,125.95
+2026-05-18,Bloom Bakery,Referral,51,0,0.0,0.0
+2026-05-19,Bloom Bakery,Direct,181,4,126.46,0.0
+2026-05-19,Bloom Bakery,Email,91,4,122.38,0.0
+2026-05-19,Bloom Bakery,Organic,479,20,682.13,0.0
+2026-05-19,Bloom Bakery,Paid Search,186,7,190.2,168.06
+2026-05-19,Bloom Bakery,Paid Social,233,9,246.59,139.57
+2026-05-19,Bloom Bakery,Referral,54,3,93.12,0.0
+2026-05-20,Bloom Bakery,Direct,197,12,377.52,0.0
+2026-05-20,Bloom Bakery,Email,95,6,223.29,0.0
+2026-05-20,Bloom Bakery,Organic,476,14,424.5,0.0
+2026-05-20,Bloom Bakery,Paid Search,162,7,229.37,140.94
+2026-05-20,Bloom Bakery,Paid Social,205,6,197.07,113.98
+2026-05-20,Bloom Bakery,Referral,58,1,31.32,0.0
+2026-05-21,Bloom Bakery,Direct,180,9,312.76,0.0
+2026-05-21,Bloom Bakery,Email,90,3,86.21,0.0
+2026-05-21,Bloom Bakery,Organic,374,10,358.92,0.0
+2026-05-21,Bloom Bakery,Paid Search,154,7,222.14,142.34
+2026-05-21,Bloom Bakery,Paid Social,220,3,95.68,125.97
+2026-05-21,Bloom Bakery,Referral,58,1,29.02,0.0
+2026-05-22,Bloom Bakery,Direct,194,5,132.49,0.0
+2026-05-22,Bloom Bakery,Email,95,8,279.26,0.0
+2026-05-22,Bloom Bakery,Organic,365,14,352.61,0.0
+2026-05-22,Bloom Bakery,Paid Search,158,4,122.49,164.51
+2026-05-22,Bloom Bakery,Paid Social,205,3,91.4,113.45
+2026-05-22,Bloom Bakery,Referral,49,1,35.43,0.0
+2026-05-23,Bloom Bakery,Direct,144,6,215.66,0.0
+2026-05-23,Bloom Bakery,Email,82,9,274.37,0.0
+2026-05-23,Bloom Bakery,Organic,361,11,325.37,0.0
+2026-05-23,Bloom Bakery,Paid Search,123,4,95.25,101.29
+2026-05-23,Bloom Bakery,Paid Social,186,4,129.09,99.34
+2026-05-23,Bloom Bakery,Referral,42,1,29.64,0.0
+2026-05-24,Bloom Bakery,Direct,151,11,382.1,0.0
+2026-05-24,Bloom Bakery,Email,82,5,168.98,0.0
+2026-05-24,Bloom Bakery,Organic,363,15,405.51,0.0
+2026-05-24,Bloom Bakery,Paid Search,145,8,225.98,132.63
+2026-05-24,Bloom Bakery,Paid Social,187,5,211.01,102.91
+2026-05-24,Bloom Bakery,Referral,53,1,33.14,0.0
+2026-05-25,Bloom Bakery,Direct,177,9,326.41,0.0
+2026-05-25,Bloom Bakery,Email,96,10,357.11,0.0
+2026-05-25,Bloom Bakery,Organic,442,15,441.94,0.0
+2026-05-25,Bloom Bakery,Paid Search,170,7,250.57,147.29
+2026-05-25,Bloom Bakery,Paid Social,225,4,139.14,132.96
+2026-05-25,Bloom Bakery,Referral,51,2,63.55,0.0
+2026-05-26,Bloom Bakery,Direct,200,9,286.49,0.0
+2026-05-26,Bloom Bakery,Email,100,4,137.85,0.0
+2026-05-26,Bloom Bakery,Organic,429,14,459.23,0.0
+2026-05-26,Bloom Bakery,Paid Search,172,6,179.65,159.33
+2026-05-26,Bloom Bakery,Paid Social,238,3,106.62,134.58
+2026-05-26,Bloom Bakery,Referral,52,4,115.21,0.0
+2026-05-27,Bloom Bakery,Direct,174,9,318.73,0.0
+2026-05-27,Bloom Bakery,Email,90,3,105.14,0.0
+2026-05-27,Bloom Bakery,Organic,476,14,440.04,0.0
+2026-05-27,Bloom Bakery,Paid Search,190,9,298.57,171.4
+2026-05-27,Bloom Bakery,Paid Social,242,2,69.64,122.18
+2026-05-27,Bloom Bakery,Referral,47,2,60.22,0.0
+2026-05-28,Bloom Bakery,Direct,179,7,193.35,0.0
+2026-05-28,Bloom Bakery,Email,98,8,228.15,0.0
+2026-05-28,Bloom Bakery,Organic,455,22,686.39,0.0
+2026-05-28,Bloom Bakery,Paid Search,157,9,250.61,146.79
+2026-05-28,Bloom Bakery,Paid Social,221,13,482.33,120.25
+2026-05-28,Bloom Bakery,Referral,57,2,73.49,0.0
+2026-05-29,Bloom Bakery,Direct,148,10,343.65,0.0
+2026-05-29,Bloom Bakery,Email,80,7,250.39,0.0
+2026-05-29,Bloom Bakery,Organic,403,14,440.92,0.0
+2026-05-29,Bloom Bakery,Paid Search,177,6,221.71,168.94
+2026-05-29,Bloom Bakery,Paid Social,204,4,125.59,122.66
+2026-05-29,Bloom Bakery,Referral,51,1,32.65,0.0
+2026-05-30,Bloom Bakery,Direct,157,11,325.88,0.0
+2026-05-30,Bloom Bakery,Email,82,8,235.08,0.0
+2026-05-30,Bloom Bakery,Organic,389,19,620.49,0.0
+2026-05-30,Bloom Bakery,Paid Search,135,8,252.34,122.67
+2026-05-30,Bloom Bakery,Paid Social,189,6,156.34,102.84
+2026-05-30,Bloom Bakery,Referral,51,2,57.86,0.0
+2026-05-31,Bloom Bakery,Direct,154,11,298.42,0.0
+2026-05-31,Bloom Bakery,Email,87,3,98.52,0.0
+2026-05-31,Bloom Bakery,Organic,385,7,202.51,0.0
+2026-05-31,Bloom Bakery,Paid Search,130,9,296.48,123.81
+2026-05-31,Bloom Bakery,Paid Social,170,3,94.21,85.45
+2026-05-31,Bloom Bakery,Referral,40,2,65.98,0.0
+2026-06-01,Bloom Bakery,Direct,172,7,200.18,0.0
+2026-06-01,Bloom Bakery,Email,97,9,295.53,0.0
+2026-06-01,Bloom Bakery,Organic,418,16,549.5,0.0
+2026-06-01,Bloom Bakery,Paid Search,170,8,323.03,136.08
+2026-06-01,Bloom Bakery,Paid Social,241,8,277.65,145.71
+2026-06-01,Bloom Bakery,Referral,59,1,31.54,0.0
+2026-06-02,Bloom Bakery,Direct,211,9,288.16,0.0
+2026-06-02,Bloom Bakery,Email,97,6,201.54,0.0
+2026-06-02,Bloom Bakery,Organic,469,16,547.08,0.0
+2026-06-02,Bloom Bakery,Paid Search,162,8,297.92,157.87
+2026-06-02,Bloom Bakery,Paid Social,239,2,58.08,136.01
+2026-06-02,Bloom Bakery,Referral,55,4,180.81,0.0
+2026-06-03,Bloom Bakery,Direct,176,6,176.81,0.0
+2026-06-03,Bloom Bakery,Email,99,6,198.58,0.0
+2026-06-03,Bloom Bakery,Organic,420,8,266.05,0.0
+2026-06-03,Bloom Bakery,Paid Search,162,3,93.1,148.56
+2026-06-03,Bloom Bakery,Paid Social,236,2,62.88,129.35
+2026-06-03,Bloom Bakery,Referral,57,1,32.93,0.0
+2026-06-04,Bloom Bakery,Direct,196,8,265.81,0.0
+2026-06-04,Bloom Bakery,Email,76,3,88.23,0.0
+2026-06-04,Bloom Bakery,Organic,460,14,473.64,0.0
+2026-06-04,Bloom Bakery,Paid Search,169,12,361.88,160.52
+2026-06-04,Bloom Bakery,Paid Social,242,8,238.89,130.65
+2026-06-04,Bloom Bakery,Referral,46,2,61.61,0.0
+2026-06-05,Bloom Bakery,Direct,164,7,186.95,0.0
+2026-06-05,Bloom Bakery,Email,88,13,363.47,0.0
+2026-06-05,Bloom Bakery,Organic,401,13,428.52,0.0
+2026-06-05,Bloom Bakery,Paid Search,160,7,216.83,135.48
+2026-06-05,Bloom Bakery,Paid Social,184,7,260.3,106.83
+2026-06-05,Bloom Bakery,Referral,53,4,147.53,0.0
+2026-06-06,Bloom Bakery,Direct,173,9,232.82,0.0
+2026-06-06,Bloom Bakery,Email,77,2,69.83,0.0
+2026-06-06,Bloom Bakery,Organic,356,4,156.89,0.0
+2026-06-06,Bloom Bakery,Paid Search,132,10,336.74,113.97
+2026-06-06,Bloom Bakery,Paid Social,165,2,68.98,88.32
+2026-06-06,Bloom Bakery,Referral,45,2,53.24,0.0
+2026-06-07,Bloom Bakery,Direct,169,5,183.54,0.0
+2026-06-07,Bloom Bakery,Email,80,7,228.2,0.0
+2026-06-07,Bloom Bakery,Organic,356,11,348.95,0.0
+2026-06-07,Bloom Bakery,Paid Search,152,7,221.66,137.8
+2026-06-07,Bloom Bakery,Paid Social,199,3,102.46,115.92
+2026-06-07,Bloom Bakery,Referral,44,0,0.0,0.0
+2026-06-08,Bloom Bakery,Direct,178,12,420.32,0.0
+2026-06-08,Bloom Bakery,Email,100,8,287.18,0.0
+2026-06-08,Bloom Bakery,Organic,486,18,558.58,0.0
+2026-06-08,Bloom Bakery,Paid Search,184,2,61.52,165.46
+2026-06-08,Bloom Bakery,Paid Social,233,4,136.21,131.67
+2026-06-08,Bloom Bakery,Referral,56,2,78.13,0.0
+2026-06-09,Bloom Bakery,Direct,184,5,144.06,0.0
+2026-06-09,Bloom Bakery,Email,98,8,254.86,0.0
+2026-06-09,Bloom Bakery,Organic,454,12,356.13,0.0
+2026-06-09,Bloom Bakery,Paid Search,193,4,148.23,176.18
+2026-06-09,Bloom Bakery,Paid Social,243,4,127.52,135.3
+2026-06-09,Bloom Bakery,Referral,52,0,0.0,0.0
+2026-06-10,Bloom Bakery,Direct,201,3,95.97,0.0
+2026-06-10,Bloom Bakery,Email,89,7,194.64,0.0
+2026-06-10,Bloom Bakery,Organic,437,11,317.48,0.0
+2026-06-10,Bloom Bakery,Paid Search,178,9,284.73,169.13
+2026-06-10,Bloom Bakery,Paid Social,229,3,97.92,126.87
+2026-06-10,Bloom Bakery,Referral,52,2,53.82,0.0
+2026-06-11,Bloom Bakery,Direct,183,13,460.65,0.0
+2026-06-11,Bloom Bakery,Email,92,9,317.21,0.0
+2026-06-11,Bloom Bakery,Organic,423,12,339.07,0.0
+2026-06-11,Bloom Bakery,Paid Search,182,9,362.46,149.96
+2026-06-11,Bloom Bakery,Paid Social,238,8,227.39,129.76
+2026-06-11,Bloom Bakery,Referral,50,1,30.76,0.0
+2026-06-12,Bloom Bakery,Direct,171,10,333.7,0.0
+2026-06-12,Bloom Bakery,Email,87,4,123.35,0.0
+2026-06-12,Bloom Bakery,Organic,420,10,292.79,0.0
+2026-06-12,Bloom Bakery,Paid Search,135,2,64.58,127.56
+2026-06-12,Bloom Bakery,Paid Social,226,3,77.15,130.97
+2026-06-12,Bloom Bakery,Referral,42,2,74.02,0.0
+2026-06-13,Bloom Bakery,Direct,170,7,227.34,0.0
+2026-06-13,Bloom Bakery,Email,78,0,0.0,0.0
+2026-06-13,Bloom Bakery,Organic,371,15,476.62,0.0
+2026-06-13,Bloom Bakery,Paid Search,135,8,306.04,121.55
+2026-06-13,Bloom Bakery,Paid Social,196,5,162.42,103.24
+2026-06-13,Bloom Bakery,Referral,46,3,99.68,0.0
+2026-06-14,Bloom Bakery,Direct,152,8,285.63,0.0
+2026-06-14,Bloom Bakery,Email,81,6,179.96,0.0
+2026-06-14,Bloom Bakery,Organic,386,14,463.23,0.0
+2026-06-14,Bloom Bakery,Paid Search,134,9,298.48,119.38
+2026-06-14,Bloom Bakery,Paid Social,193,1,33.05,97.88
+2026-06-14,Bloom Bakery,Referral,49,0,0.0,0.0
+2026-06-15,Bloom Bakery,Direct,193,7,208.22,0.0
+2026-06-15,Bloom Bakery,Email,103,6,226.31,0.0
+2026-06-15,Bloom Bakery,Organic,461,9,289.48,0.0
+2026-06-15,Bloom Bakery,Paid Search,172,8,281.88,143.82
+2026-06-15,Bloom Bakery,Paid Social,202,1,36.11,114.57
+2026-06-15,Bloom Bakery,Referral,51,1,29.88,0.0
+2026-06-16,Bloom Bakery,Direct,211,8,256.8,0.0
+2026-06-16,Bloom Bakery,Email,91,4,117.26,0.0
+2026-06-16,Bloom Bakery,Organic,535,29,859.61,0.0
+2026-06-16,Bloom Bakery,Paid Search,169,7,208.34,155.97
+2026-06-16,Bloom Bakery,Paid Social,255,6,224.67,144.75
+2026-06-16,Bloom Bakery,Referral,56,2,60.52,0.0
+2026-06-17,Bloom Bakery,Direct,205,10,319.43,0.0
+2026-06-17,Bloom Bakery,Email,98,4,123.75,0.0
+2026-06-17,Bloom Bakery,Organic,439,16,560.23,0.0
+2026-06-17,Bloom Bakery,Paid Search,170,2,58.76,135.6
+2026-06-17,Bloom Bakery,Paid Social,258,4,149.76,145.35
+2026-06-17,Bloom Bakery,Referral,53,1,33.18,0.0
+2026-06-18,Bloom Bakery,Direct,184,8,249.11,0.0
+2026-06-18,Bloom Bakery,Email,102,5,161.73,0.0
+2026-06-18,Bloom Bakery,Organic,420,11,379.01,0.0
+2026-06-18,Bloom Bakery,Paid Search,189,11,368.56,175.7
+2026-06-18,Bloom Bakery,Paid Social,239,6,173.76,134.16
+2026-06-18,Bloom Bakery,Referral,53,0,0.0,0.0
+2026-06-19,Bloom Bakery,Direct,170,10,307.77,0.0
+2026-06-19,Bloom Bakery,Email,77,2,57.38,0.0
+2026-06-19,Bloom Bakery,Organic,383,14,440.9,0.0
+2026-06-19,Bloom Bakery,Paid Search,153,5,176.63,127.8
+2026-06-19,Bloom Bakery,Paid Social,200,1,30.89,108.25
+2026-06-19,Bloom Bakery,Referral,46,0,0.0,0.0
+2026-06-20,Bloom Bakery,Direct,138,5,161.17,0.0
+2026-06-20,Bloom Bakery,Email,79,2,66.15,0.0
+2026-06-20,Bloom Bakery,Organic,379,7,209.84,0.0
+2026-06-20,Bloom Bakery,Paid Search,142,9,289.16,128.14
+2026-06-20,Bloom Bakery,Paid Social,199,8,268.6,113.85
+2026-06-20,Bloom Bakery,Referral,41,1,33.49,0.0
+2026-06-21,Bloom Bakery,Direct,150,9,288.99,0.0
+2026-06-21,Bloom Bakery,Email,77,8,300.78,0.0
+2026-06-21,Bloom Bakery,Organic,407,25,845.1,0.0
+2026-06-21,Bloom Bakery,Paid Search,141,6,168.82,126.15
+2026-06-21,Bloom Bakery,Paid Social,209,5,206.1,114.69
+2026-06-21,Bloom Bakery,Referral,48,2,56.02,0.0
+2026-06-22,Bloom Bakery,Direct,197,12,345.78,0.0
+2026-06-22,Bloom Bakery,Email,94,5,152.34,0.0
+2026-06-22,Bloom Bakery,Organic,445,15,489.11,0.0
+2026-06-22,Bloom Bakery,Paid Search,172,8,223.44,164.12
+2026-06-22,Bloom Bakery,Paid Social,262,8,296.84,140.63
+2026-06-22,Bloom Bakery,Referral,53,2,56.04,0.0
+2026-06-23,Bloom Bakery,Direct,196,6,208.03,0.0
+2026-06-23,Bloom Bakery,Email,93,13,432.77,0.0
+2026-06-23,Bloom Bakery,Organic,436,15,415.29,0.0
+2026-06-23,Bloom Bakery,Paid Search,176,7,194.21,156.99
+2026-06-23,Bloom Bakery,Paid Social,228,3,107.37,123.46
+2026-06-23,Bloom Bakery,Referral,63,0,0.0,0.0
+2026-06-24,Bloom Bakery,Direct,195,5,145.12,0.0
+2026-06-24,Bloom Bakery,Email,96,12,291.69,0.0
+2026-06-24,Bloom Bakery,Organic,428,8,254.27,0.0
+2026-06-24,Bloom Bakery,Paid Search,178,5,134.08,154.74
+2026-06-24,Bloom Bakery,Paid Social,234,4,123.13,142.38
+2026-06-24,Bloom Bakery,Referral,54,1,27.97,0.0
+2026-06-25,Bloom Bakery,Direct,201,10,313.09,0.0
+2026-06-25,Bloom Bakery,Email,106,4,127.5,0.0
+2026-06-25,Bloom Bakery,Organic,457,18,591.29,0.0
+2026-06-25,Bloom Bakery,Paid Search,181,10,323.52,158.83
+2026-06-25,Bloom Bakery,Paid Social,241,4,117.18,121.54
+2026-06-25,Bloom Bakery,Referral,49,1,31.29,0.0
+2026-06-26,Bloom Bakery,Direct,161,10,310.69,0.0
+2026-06-26,Bloom Bakery,Email,80,7,217.1,0.0
+2026-06-26,Bloom Bakery,Organic,429,7,204.73,0.0
+2026-06-26,Bloom Bakery,Paid Search,174,8,286.48,166.89
+2026-06-26,Bloom Bakery,Paid Social,214,5,173.13,120.68
+2026-06-26,Bloom Bakery,Referral,53,1,32.99,0.0
+2026-06-27,Bloom Bakery,Direct,154,9,298.5,0.0
+2026-06-27,Bloom Bakery,Email,72,5,147.43,0.0
+2026-06-27,Bloom Bakery,Organic,379,9,293.52,0.0
+2026-06-27,Bloom Bakery,Paid Search,142,6,191.74,131.27
+2026-06-27,Bloom Bakery,Paid Social,177,3,85.99,89.51
+2026-06-27,Bloom Bakery,Referral,45,2,57.12,0.0
+2026-06-28,Bloom Bakery,Direct,164,9,233.0,0.0
+2026-06-28,Bloom Bakery,Email,74,7,249.58,0.0
+2026-06-28,Bloom Bakery,Organic,360,7,193.67,0.0
+2026-06-28,Bloom Bakery,Paid Search,150,12,306.31,132.42
+2026-06-28,Bloom Bakery,Paid Social,204,1,31.25,111.59
+2026-06-28,Bloom Bakery,Referral,47,1,28.88,0.0
+2026-06-29,Bloom Bakery,Direct,184,8,279.85,0.0
+2026-06-29,Bloom Bakery,Email,109,4,123.89,0.0
+2026-06-29,Bloom Bakery,Organic,458,16,585.19,0.0
+2026-06-29,Bloom Bakery,Paid Search,158,13,408.14,140.53
+2026-06-29,Bloom Bakery,Paid Social,246,4,126.54,132.4
+2026-06-29,Bloom Bakery,Referral,58,2,63.4,0.0
+2026-06-30,Bloom Bakery,Direct,220,9,269.15,0.0
+2026-06-30,Bloom Bakery,Email,96,4,125.75,0.0
+2026-06-30,Bloom Bakery,Organic,467,11,398.79,0.0
+2026-06-30,Bloom Bakery,Paid Search,176,11,346.32,146.46
+2026-06-30,Bloom Bakery,Paid Social,244,3,112.58,120.91
+2026-06-30,Bloom Bakery,Referral,53,3,100.96,0.0
+2026-07-01,Bloom Bakery,Direct,208,11,397.67,0.0
+2026-07-01,Bloom Bakery,Email,97,3,92.45,0.0
+2026-07-01,Bloom Bakery,Organic,462,19,592.84,0.0
+2026-07-01,Bloom Bakery,Paid Search,185,6,236.77,169.77
+2026-07-01,Bloom Bakery,Paid Social,242,4,123.54,135.71
+2026-07-01,Bloom Bakery,Referral,54,2,71.17,0.0
+2026-07-02,Bloom Bakery,Direct,192,7,213.54,0.0
+2026-07-02,Bloom Bakery,Email,91,8,211.35,0.0
+2026-07-02,Bloom Bakery,Organic,466,17,564.14,0.0
+2026-07-02,Bloom Bakery,Paid Search,177,8,221.29,145.88
+2026-07-02,Bloom Bakery,Paid Social,225,3,75.22,121.42
+2026-07-02,Bloom Bakery,Referral,52,2,68.01,0.0
+2026-07-03,Bloom Bakery,Direct,198,12,382.13,0.0
+2026-07-03,Bloom Bakery,Email,82,12,342.9,0.0
+2026-07-03,Bloom Bakery,Organic,415,8,201.18,0.0
+2026-07-03,Bloom Bakery,Paid Search,158,10,307.74,147.65
+2026-07-03,Bloom Bakery,Paid Social,237,3,100.97,117.36
+2026-07-03,Bloom Bakery,Referral,44,0,0.0,0.0
+2026-07-04,Bloom Bakery,Direct,141,5,193.75,0.0
+2026-07-04,Bloom Bakery,Email,77,7,246.6,0.0
+2026-07-04,Bloom Bakery,Organic,383,4,114.02,0.0
+2026-07-04,Bloom Bakery,Paid Search,148,6,227.71,134.06
+2026-07-04,Bloom Bakery,Paid Social,180,4,119.36,103.24
+2026-07-04,Bloom Bakery,Referral,43,0,0.0,0.0
+2026-07-05,Bloom Bakery,Direct,162,6,186.75,0.0
+2026-07-05,Bloom Bakery,Email,96,8,207.3,0.0
+2026-07-05,Bloom Bakery,Organic,381,6,186.44,0.0
+2026-07-05,Bloom Bakery,Paid Search,149,3,100.42,151.1
+2026-07-05,Bloom Bakery,Paid Social,190,3,96.41,112.27
+2026-07-05,Bloom Bakery,Referral,50,0,0.0,0.0
+2026-07-06,Bloom Bakery,Direct,199,11,398.42,0.0
+2026-07-06,Bloom Bakery,Email,107,14,414.95,0.0
+2026-07-06,Bloom Bakery,Organic,461,14,402.45,0.0
+2026-07-06,Bloom Bakery,Paid Search,187,11,372.4,159.29
+2026-07-06,Bloom Bakery,Paid Social,237,4,126.89,140.43
+2026-07-06,Bloom Bakery,Referral,55,3,91.22,0.0
+2026-07-07,Bloom Bakery,Direct,187,10,321.25,0.0
+2026-07-07,Bloom Bakery,Email,94,7,215.22,0.0
+2026-07-07,Bloom Bakery,Organic,486,17,584.29,0.0
+2026-07-07,Bloom Bakery,Paid Search,181,8,258.95,162.07
+2026-07-07,Bloom Bakery,Paid Social,259,5,155.68,145.03
+2026-07-07,Bloom Bakery,Referral,50,3,100.02,0.0
+2026-07-08,Bloom Bakery,Direct,200,10,333.57,0.0
+2026-07-08,Bloom Bakery,Email,102,3,114.29,0.0
+2026-07-08,Bloom Bakery,Organic,413,10,390.74,0.0
+2026-07-08,Bloom Bakery,Paid Search,170,8,264.59,167.39
+2026-07-08,Bloom Bakery,Paid Social,216,6,207.79,119.07
+2026-07-08,Bloom Bakery,Referral,49,0,0.0,0.0
+2026-07-09,Bloom Bakery,Direct,174,8,257.8,0.0
+2026-07-09,Bloom Bakery,Email,89,8,276.45,0.0
+2026-07-09,Bloom Bakery,Organic,430,17,483.61,0.0
+2026-07-09,Bloom Bakery,Paid Search,172,15,518.81,164.3
+2026-07-09,Bloom Bakery,Paid Social,210,3,82.36,123.43
+2026-07-09,Bloom Bakery,Referral,59,1,25.94,0.0
+2026-07-10,Bloom Bakery,Direct,184,14,487.64,0.0
+2026-07-10,Bloom Bakery,Email,78,4,121.06,0.0
+2026-07-10,Bloom Bakery,Organic,397,6,176.58,0.0
+2026-07-10,Bloom Bakery,Paid Search,127,6,177.07,110.39
+2026-07-10,Bloom Bakery,Paid Social,186,4,121.55,111.28
+2026-07-10,Bloom Bakery,Referral,48,1,29.58,0.0
+2026-07-11,Bloom Bakery,Direct,169,10,298.8,0.0
+2026-07-11,Bloom Bakery,Email,84,1,36.46,0.0
+2026-07-11,Bloom Bakery,Organic,351,13,425.91,0.0
+2026-07-11,Bloom Bakery,Paid Search,144,6,209.62,131.06
+2026-07-11,Bloom Bakery,Paid Social,193,8,274.12,112.34
+2026-07-11,Bloom Bakery,Referral,42,1,36.1,0.0
+2026-07-12,Bloom Bakery,Direct,166,11,319.01,0.0
+2026-07-12,Bloom Bakery,Email,88,6,178.3,0.0
+2026-07-12,Bloom Bakery,Organic,373,15,563.91,0.0
+2026-07-12,Bloom Bakery,Paid Search,112,4,111.58,100.81
+2026-07-12,Bloom Bakery,Paid Social,184,3,90.28,96.55
+2026-07-12,Bloom Bakery,Referral,44,1,32.25,0.0
+2026-07-13,Bloom Bakery,Direct,171,9,270.18,0.0
+2026-07-13,Bloom Bakery,Email,105,12,424.77,0.0
+2026-07-13,Bloom Bakery,Organic,504,18,509.72,0.0
+2026-07-13,Bloom Bakery,Paid Search,153,6,198.41,139.66
+2026-07-13,Bloom Bakery,Paid Social,231,8,217.96,128.34
+2026-07-13,Bloom Bakery,Referral,49,2,55.54,0.0
+2026-07-14,Bloom Bakery,Direct,187,10,323.21,0.0
+2026-07-14,Bloom Bakery,Email,97,5,139.67,0.0
+2026-07-14,Bloom Bakery,Organic,439,14,459.3,0.0
+2026-07-14,Bloom Bakery,Paid Search,184,5,162.89,159.91
+2026-07-14,Bloom Bakery,Paid Social,256,7,239.49,143.93
+2026-07-14,Bloom Bakery,Referral,61,4,162.0,0.0
+2026-07-15,Bloom Bakery,Direct,204,11,344.31,0.0
+2026-07-15,Bloom Bakery,Email,97,6,213.75,0.0
+2026-07-15,Bloom Bakery,Organic,491,18,691.07,0.0
+2026-07-15,Bloom Bakery,Paid Search,181,10,300.87,162.17
+2026-07-15,Bloom Bakery,Paid Social,230,2,71.61,115.56
+2026-07-15,Bloom Bakery,Referral,53,1,31.91,0.0
+2026-07-16,Bloom Bakery,Direct,189,9,309.2,0.0
+2026-07-16,Bloom Bakery,Email,100,5,153.63,0.0
+2026-07-16,Bloom Bakery,Organic,392,6,162.77,0.0
+2026-07-16,Bloom Bakery,Paid Search,155,10,319.27,128.79
+2026-07-16,Bloom Bakery,Paid Social,235,4,127.43,132.32
+2026-07-16,Bloom Bakery,Referral,58,2,66.51,0.0
+2026-07-17,Bloom Bakery,Direct,146,6,218.76,0.0
+2026-07-17,Bloom Bakery,Email,91,3,86.62,0.0
+2026-07-17,Bloom Bakery,Organic,402,9,253.37,0.0
+2026-07-17,Bloom Bakery,Paid Search,149,5,150.34,135.01
+2026-07-17,Bloom Bakery,Paid Social,211,5,131.51,130.02
+2026-07-17,Bloom Bakery,Referral,49,1,33.3,0.0
+2026-07-18,Bloom Bakery,Direct,172,9,261.22,0.0
+2026-07-18,Bloom Bakery,Email,77,3,93.94,0.0
+2026-07-18,Bloom Bakery,Organic,372,7,214.71,0.0
+2026-07-18,Bloom Bakery,Paid Search,154,6,172.49,141.75
+2026-07-18,Bloom Bakery,Paid Social,202,9,309.07,114.71
+2026-07-18,Bloom Bakery,Referral,48,1,30.85,0.0
+2026-07-19,Bloom Bakery,Direct,165,3,89.21,0.0
+2026-07-19,Bloom Bakery,Email,73,7,230.3,0.0
+2026-07-19,Bloom Bakery,Organic,397,11,334.14,0.0
+2026-07-19,Bloom Bakery,Paid Search,140,9,277.99,124.58
+2026-07-19,Bloom Bakery,Paid Social,207,4,108.42,122.55
+2026-07-19,Bloom Bakery,Referral,46,3,89.26,0.0
+2026-07-20,Bloom Bakery,Direct,184,3,83.16,0.0
+2026-07-20,Bloom Bakery,Email,98,10,304.55,0.0
+2026-07-20,Bloom Bakery,Organic,479,18,624.76,0.0
+2026-07-20,Bloom Bakery,Paid Search,203,4,114.62,168.53
+2026-07-20,Bloom Bakery,Paid Social,227,2,66.01,126.0
+2026-07-20,Bloom Bakery,Referral,58,0,0.0,0.0
+2026-07-21,Bloom Bakery,Direct,215,14,548.85,0.0
+2026-07-21,Bloom Bakery,Email,108,5,169.11,0.0
+2026-07-21,Bloom Bakery,Organic,495,15,491.74,0.0
+2026-07-21,Bloom Bakery,Paid Search,178,8,264.4,168.32
+2026-07-21,Bloom Bakery,Paid Social,243,5,146.41,133.16
+2026-07-21,Bloom Bakery,Referral,59,2,70.75,0.0
+2026-07-22,Bloom Bakery,Direct,188,5,164.95,0.0
+2026-07-22,Bloom Bakery,Email,91,4,120.75,0.0
+2026-07-22,Bloom Bakery,Organic,449,16,428.73,0.0
+2026-07-22,Bloom Bakery,Paid Search,180,8,228.19,164.98
+2026-07-22,Bloom Bakery,Paid Social,259,3,85.49,145.19
+2026-07-22,Bloom Bakery,Referral,57,3,104.22,0.0
+2026-07-23,Bloom Bakery,Direct,181,10,335.73,0.0
+2026-07-23,Bloom Bakery,Email,99,4,136.19,0.0
+2026-07-23,Bloom Bakery,Organic,429,10,336.93,0.0
+2026-07-23,Bloom Bakery,Paid Search,189,11,377.98,164.04
+2026-07-23,Bloom Bakery,Paid Social,239,6,183.7,126.2
+2026-07-23,Bloom Bakery,Referral,54,3,101.69,0.0
+2026-07-24,Bloom Bakery,Direct,181,9,251.88,0.0
+2026-07-24,Bloom Bakery,Email,91,2,66.89,0.0
+2026-07-24,Bloom Bakery,Organic,438,17,513.47,0.0
+2026-07-24,Bloom Bakery,Paid Search,159,4,113.74,141.11
+2026-07-24,Bloom Bakery,Paid Social,196,4,125.68,102.73
+2026-07-24,Bloom Bakery,Referral,48,1,28.95,0.0
+2026-07-25,Bloom Bakery,Direct,179,6,191.98,0.0
+2026-07-25,Bloom Bakery,Email,83,6,190.83,0.0
+2026-07-25,Bloom Bakery,Organic,365,8,290.8,0.0
+2026-07-25,Bloom Bakery,Paid Search,131,6,181.43,109.38
+2026-07-25,Bloom Bakery,Paid Social,203,5,150.02,118.95
+2026-07-25,Bloom Bakery,Referral,50,1,36.36,0.0
+2026-07-26,Bloom Bakery,Direct,184,13,437.73,0.0
+2026-07-26,Bloom Bakery,Email,87,7,214.33,0.0
+2026-07-26,Bloom Bakery,Organic,350,8,240.43,0.0
+2026-07-26,Bloom Bakery,Paid Search,145,5,150.31,123.98
+2026-07-26,Bloom Bakery,Paid Social,186,6,203.64,109.57
+2026-07-26,Bloom Bakery,Referral,43,2,58.83,0.0
+2026-07-27,Bloom Bakery,Direct,201,7,218.41,0.0
+2026-07-27,Bloom Bakery,Email,93,8,259.91,0.0
+2026-07-27,Bloom Bakery,Organic,422,15,450.39,0.0
+2026-07-27,Bloom Bakery,Paid Search,174,9,328.81,152.45
+2026-07-27,Bloom Bakery,Paid Social,264,6,183.62,138.18
+2026-07-27,Bloom Bakery,Referral,54,2,65.84,0.0
+2026-07-28,Bloom Bakery,Direct,208,15,534.51,0.0
+2026-07-28,Bloom Bakery,Email,90,6,202.86,0.0
+2026-07-28,Bloom Bakery,Organic,441,23,776.92,0.0
+2026-07-28,Bloom Bakery,Paid Search,163,3,99.22,155.99
+2026-07-28,Bloom Bakery,Paid Social,265,6,211.77,152.98
+2026-07-28,Bloom Bakery,Referral,56,1,27.16,0.0
+2026-07-29,Bloom Bakery,Direct,209,13,524.2,0.0
+2026-07-29,Bloom Bakery,Email,95,7,275.29,0.0
+2026-07-29,Bloom Bakery,Organic,478,15,518.05,0.0
+2026-07-29,Bloom Bakery,Paid Search,173,8,250.64,150.8
+2026-07-29,Bloom Bakery,Paid Social,247,6,197.48,135.26
+2026-07-29,Bloom Bakery,Referral,57,3,78.28,0.0
+2026-07-30,Bloom Bakery,Direct,174,7,203.76,0.0
+2026-07-30,Bloom Bakery,Email,101,4,140.61,0.0
+2026-07-30,Bloom Bakery,Organic,449,8,267.73,0.0
+2026-07-30,Bloom Bakery,Paid Search,161,7,235.45,149.61
+2026-07-30,Bloom Bakery,Paid Social,235,7,208.91,131.46
+2026-07-30,Bloom Bakery,Referral,51,1,33.03,0.0
+2026-07-31,Bloom Bakery,Direct,186,6,173.35,0.0
+2026-07-31,Bloom Bakery,Email,85,4,141.12,0.0
+2026-07-31,Bloom Bakery,Organic,435,14,378.51,0.0
+2026-07-31,Bloom Bakery,Paid Search,168,6,155.52,147.18
+2026-07-31,Bloom Bakery,Paid Social,214,7,205.42,120.44
+2026-07-31,Bloom Bakery,Referral,50,2,59.03,0.0
+2026-08-01,Bloom Bakery,Direct,151,6,175.87,0.0
+2026-08-01,Bloom Bakery,Email,76,9,392.22,0.0
+2026-08-01,Bloom Bakery,Organic,360,6,202.61,0.0
+2026-08-01,Bloom Bakery,Paid Search,142,4,127.45,129.39
+2026-08-01,Bloom Bakery,Paid Social,204,1,27.14,117.92
+2026-08-01,Bloom Bakery,Referral,44,3,78.68,0.0
+2026-08-02,Bloom Bakery,Direct,168,7,263.03,0.0
+2026-08-02,Bloom Bakery,Email,72,7,235.86,0.0
+2026-08-02,Bloom Bakery,Organic,388,15,432.83,0.0
+2026-08-02,Bloom Bakery,Paid Search,143,4,156.3,127.79
+2026-08-02,Bloom Bakery,Paid Social,196,4,131.78,108.25
+2026-08-02,Bloom Bakery,Referral,41,0,0.0,0.0
+2026-08-03,Bloom Bakery,Direct,193,7,248.61,0.0
+2026-08-03,Bloom Bakery,Email,111,12,403.07,0.0
+2026-08-03,Bloom Bakery,Organic,479,16,524.19,0.0
+2026-08-03,Bloom Bakery,Paid Search,173,7,226.98,162.65
+2026-08-03,Bloom Bakery,Paid Social,244,3,92.66,144.0
+2026-08-03,Bloom Bakery,Referral,55,1,39.56,0.0
+2026-08-04,Bloom Bakery,Direct,209,21,662.95,0.0
+2026-08-04,Bloom Bakery,Email,107,12,412.01,0.0
+2026-08-04,Bloom Bakery,Organic,462,10,277.54,0.0
+2026-08-04,Bloom Bakery,Paid Search,183,5,161.09,160.35
+2026-08-04,Bloom Bakery,Paid Social,263,8,201.94,146.91
+2026-08-04,Bloom Bakery,Referral,52,4,147.08,0.0
+2026-08-05,Bloom Bakery,Direct,200,8,256.94,0.0
+2026-08-05,Bloom Bakery,Email,105,9,260.36,0.0
+2026-08-05,Bloom Bakery,Organic,478,9,301.15,0.0
+2026-08-05,Bloom Bakery,Paid Search,184,13,439.44,153.08
+2026-08-05,Bloom Bakery,Paid Social,233,5,151.65,132.21
+2026-08-05,Bloom Bakery,Referral,49,2,62.37,0.0
+2026-08-06,Bloom Bakery,Direct,154,11,324.4,0.0
+2026-08-06,Bloom Bakery,Email,102,11,336.72,0.0
+2026-08-06,Bloom Bakery,Organic,426,9,265.68,0.0
+2026-08-06,Bloom Bakery,Paid Search,158,7,244.99,132.71
+2026-08-06,Bloom Bakery,Paid Social,224,4,116.97,118.17
+2026-08-06,Bloom Bakery,Referral,54,3,96.08,0.0
+2026-08-07,Bloom Bakery,Direct,180,6,209.87,0.0
+2026-08-07,Bloom Bakery,Email,93,6,182.52,0.0
+2026-08-07,Bloom Bakery,Organic,405,20,562.96,0.0
+2026-08-07,Bloom Bakery,Paid Search,147,9,235.85,128.83
+2026-08-07,Bloom Bakery,Paid Social,200,3,112.38,122.54
+2026-08-07,Bloom Bakery,Referral,51,1,34.97,0.0
+2026-08-08,Bloom Bakery,Direct,167,14,431.3,0.0
+2026-08-08,Bloom Bakery,Email,78,0,0.0,0.0
+2026-08-08,Bloom Bakery,Organic,362,10,343.68,0.0
+2026-08-08,Bloom Bakery,Paid Search,153,12,324.54,129.36
+2026-08-08,Bloom Bakery,Paid Social,181,3,80.97,101.92
+2026-08-08,Bloom Bakery,Referral,46,5,179.0,0.0
+2026-08-09,Bloom Bakery,Direct,170,6,187.07,0.0
+2026-08-09,Bloom Bakery,Email,82,2,62.89,0.0
+2026-08-09,Bloom Bakery,Organic,354,13,426.17,0.0
+2026-08-09,Bloom Bakery,Paid Search,143,4,130.72,131.37
+2026-08-09,Bloom Bakery,Paid Social,178,5,138.52,101.45
+2026-08-09,Bloom Bakery,Referral,48,0,0.0,0.0
+2026-08-10,Bloom Bakery,Direct,196,9,306.08,0.0
+2026-08-10,Bloom Bakery,Email,96,3,97.34,0.0
+2026-08-10,Bloom Bakery,Organic,476,16,481.51,0.0
+2026-08-10,Bloom Bakery,Paid Search,159,7,208.55,139.81
+2026-08-10,Bloom Bakery,Paid Social,254,3,107.27,128.91
+2026-08-10,Bloom Bakery,Referral,48,1,32.11,0.0
+2026-08-11,Bloom Bakery,Direct,228,12,376.85,0.0
+2026-08-11,Bloom Bakery,Email,122,5,178.38,0.0
+2026-08-11,Bloom Bakery,Organic,458,14,517.97,0.0
+2026-08-11,Bloom Bakery,Paid Search,186,11,401.35,188.5
+2026-08-11,Bloom Bakery,Paid Social,282,2,73.3,148.85
+2026-08-11,Bloom Bakery,Referral,51,1,32.98,0.0
+2026-08-12,Bloom Bakery,Direct,204,7,218.8,0.0
+2026-08-12,Bloom Bakery,Email,104,6,209.31,0.0
+2026-08-12,Bloom Bakery,Organic,465,10,306.21,0.0
+2026-08-12,Bloom Bakery,Paid Search,183,9,279.06,150.99
+2026-08-12,Bloom Bakery,Paid Social,269,8,237.62,157.4
+2026-08-12,Bloom Bakery,Referral,64,3,101.47,0.0
+2026-08-13,Bloom Bakery,Direct,198,12,384.41,0.0
+2026-08-13,Bloom Bakery,Email,93,8,251.89,0.0
+2026-08-13,Bloom Bakery,Organic,463,20,642.06,0.0
+2026-08-13,Bloom Bakery,Paid Search,153,6,158.23,139.11
+2026-08-13,Bloom Bakery,Paid Social,209,5,150.2,116.61
+2026-08-13,Bloom Bakery,Referral,50,3,94.73,0.0
+2026-08-14,Bloom Bakery,Direct,192,9,311.84,0.0
+2026-08-14,Bloom Bakery,Email,92,8,239.41,0.0
+2026-08-14,Bloom Bakery,Organic,430,11,361.59,0.0
+2026-08-14,Bloom Bakery,Paid Search,161,7,197.32,136.95
+2026-08-14,Bloom Bakery,Paid Social,230,3,102.1,114.96
+2026-08-14,Bloom Bakery,Referral,52,2,63.24,0.0
+2026-08-15,Bloom Bakery,Direct,164,8,301.82,0.0
+2026-08-15,Bloom Bakery,Email,75,6,215.08,0.0
+2026-08-15,Bloom Bakery,Organic,391,12,360.93,0.0
+2026-08-15,Bloom Bakery,Paid Search,150,2,48.61,131.71
+2026-08-15,Bloom Bakery,Paid Social,216,3,76.07,125.13
+2026-08-15,Bloom Bakery,Referral,42,1,36.73,0.0
+2026-08-16,Bloom Bakery,Direct,156,8,271.44,0.0
+2026-08-16,Bloom Bakery,Email,92,4,138.3,0.0
+2026-08-16,Bloom Bakery,Organic,384,13,436.07,0.0
+2026-08-16,Bloom Bakery,Paid Search,151,7,218.82,136.86
+2026-08-16,Bloom Bakery,Paid Social,196,8,212.52,104.91
+2026-08-16,Bloom Bakery,Referral,46,1,36.11,0.0
+2026-08-17,Bloom Bakery,Direct,167,9,312.09,0.0
+2026-08-17,Bloom Bakery,Email,94,8,218.01,0.0
+2026-08-17,Bloom Bakery,Organic,448,15,455.07,0.0
+2026-08-17,Bloom Bakery,Paid Search,184,15,471.04,147.42
+2026-08-17,Bloom Bakery,Paid Social,244,6,186.68,144.01
+2026-08-17,Bloom Bakery,Referral,53,1,33.56,0.0
+2026-08-18,Bloom Bakery,Direct,197,5,156.83,0.0
+2026-08-18,Bloom Bakery,Email,105,6,186.08,0.0
+2026-08-18,Bloom Bakery,Organic,473,22,675.61,0.0
+2026-08-18,Bloom Bakery,Paid Search,164,13,398.71,149.36
+2026-08-18,Bloom Bakery,Paid Social,216,5,186.82,118.28
+2026-08-18,Bloom Bakery,Referral,59,2,76.0,0.0
+2026-08-19,Bloom Bakery,Direct,211,7,208.69,0.0
+2026-08-19,Bloom Bakery,Email,108,2,65.07,0.0
+2026-08-19,Bloom Bakery,Organic,415,10,366.72,0.0
+2026-08-19,Bloom Bakery,Paid Search,182,4,142.58,180.15
+2026-08-19,Bloom Bakery,Paid Social,249,4,122.54,138.36
+2026-08-19,Bloom Bakery,Referral,56,0,0.0,0.0
+2026-08-20,Bloom Bakery,Direct,188,7,239.14,0.0
+2026-08-20,Bloom Bakery,Email,99,5,172.96,0.0
+2026-08-20,Bloom Bakery,Organic,406,12,346.05,0.0
+2026-08-20,Bloom Bakery,Paid Search,168,9,324.67,147.81
+2026-08-20,Bloom Bakery,Paid Social,218,3,96.97,127.18
+2026-08-20,Bloom Bakery,Referral,52,2,75.28,0.0
+2026-08-21,Bloom Bakery,Direct,190,9,292.97,0.0
+2026-08-21,Bloom Bakery,Email,90,5,175.24,0.0
+2026-08-21,Bloom Bakery,Organic,382,10,251.4,0.0
+2026-08-21,Bloom Bakery,Paid Search,154,5,157.3,140.41
+2026-08-21,Bloom Bakery,Paid Social,222,1,35.84,116.74
+2026-08-21,Bloom Bakery,Referral,46,2,67.57,0.0
+2026-08-22,Bloom Bakery,Direct,162,5,138.78,0.0
+2026-08-22,Bloom Bakery,Email,80,5,164.61,0.0
+2026-08-22,Bloom Bakery,Organic,349,10,375.93,0.0
+2026-08-22,Bloom Bakery,Paid Search,152,10,258.49,143.99
+2026-08-22,Bloom Bakery,Paid Social,176,5,197.52,92.11
+2026-08-22,Bloom Bakery,Referral,45,2,88.76,0.0
+2026-08-23,Bloom Bakery,Direct,182,14,433.54,0.0
+2026-08-23,Bloom Bakery,Email,83,8,271.43,0.0
+2026-08-23,Bloom Bakery,Organic,399,9,371.63,0.0
+2026-08-23,Bloom Bakery,Paid Search,164,3,102.11,146.39
+2026-08-23,Bloom Bakery,Paid Social,211,1,30.21,114.92
+2026-08-23,Bloom Bakery,Referral,42,2,56.81,0.0
+2026-08-24,Bloom Bakery,Direct,195,10,317.36,0.0
+2026-08-24,Bloom Bakery,Email,95,9,289.85,0.0
+2026-08-24,Bloom Bakery,Organic,435,9,276.56,0.0
+2026-08-24,Bloom Bakery,Paid Search,200,14,473.58,174.85
+2026-08-24,Bloom Bakery,Paid Social,261,0,0.0,149.61
+2026-08-24,Bloom Bakery,Referral,57,1,29.87,0.0
+2026-08-25,Bloom Bakery,Direct,211,12,364.89,0.0
+2026-08-25,Bloom Bakery,Email,99,8,239.32,0.0
+2026-08-25,Bloom Bakery,Organic,464,12,316.38,0.0
+2026-08-25,Bloom Bakery,Paid Search,199,11,363.06,159.84
+2026-08-25,Bloom Bakery,Paid Social,236,6,230.37,121.44
+2026-08-25,Bloom Bakery,Referral,68,2,66.74,0.0
+2026-08-26,Bloom Bakery,Direct,208,9,334.0,0.0
+2026-08-26,Bloom Bakery,Email,111,5,155.87,0.0
+2026-08-26,Bloom Bakery,Organic,513,12,372.26,0.0
+2026-08-26,Bloom Bakery,Paid Search,177,5,176.5,164.49
+2026-08-26,Bloom Bakery,Paid Social,227,8,219.85,114.86
+2026-08-26,Bloom Bakery,Referral,61,0,0.0,0.0
+2026-08-27,Bloom Bakery,Direct,215,9,302.16,0.0
+2026-08-27,Bloom Bakery,Email,96,9,288.55,0.0
+2026-08-27,Bloom Bakery,Organic,440,13,404.26,0.0
+2026-08-27,Bloom Bakery,Paid Search,176,3,85.44,157.51
+2026-08-27,Bloom Bakery,Paid Social,203,5,177.32,116.34
+2026-08-27,Bloom Bakery,Referral,56,1,38.89,0.0
+2026-08-28,Bloom Bakery,Direct,160,7,256.97,0.0
+2026-08-28,Bloom Bakery,Email,85,7,223.22,0.0
+2026-08-28,Bloom Bakery,Organic,442,14,439.57,0.0
+2026-08-28,Bloom Bakery,Paid Search,169,10,391.19,144.59
+2026-08-28,Bloom Bakery,Paid Social,216,4,115.61,115.27
+2026-08-28,Bloom Bakery,Referral,50,1,29.93,0.0
+2026-08-29,Bloom Bakery,Direct,156,7,229.98,0.0
+2026-08-29,Bloom Bakery,Email,78,3,79.5,0.0
+2026-08-29,Bloom Bakery,Organic,352,11,314.91,0.0
+2026-08-29,Bloom Bakery,Paid Search,144,4,116.29,130.42
+2026-08-29,Bloom Bakery,Paid Social,189,3,96.99,101.93
+2026-08-29,Bloom Bakery,Referral,39,0,0.0,0.0
+2026-08-30,Bloom Bakery,Direct,177,8,258.09,0.0
+2026-08-30,Bloom Bakery,Email,90,7,215.27,0.0
+2026-08-30,Bloom Bakery,Organic,384,10,339.09,0.0
+2026-08-30,Bloom Bakery,Paid Search,150,7,241.43,131.12
+2026-08-30,Bloom Bakery,Paid Social,183,3,93.7,91.73
+2026-08-30,Bloom Bakery,Referral,42,0,0.0,0.0
+2026-08-31,Bloom Bakery,Direct,222,9,262.25,0.0
+2026-08-31,Bloom Bakery,Email,104,7,225.26,0.0
+2026-08-31,Bloom Bakery,Organic,435,12,404.68,0.0
+2026-08-31,Bloom Bakery,Paid Search,188,13,351.41,164.79
+2026-08-31,Bloom Bakery,Paid Social,251,4,116.31,133.44
+2026-08-31,Bloom Bakery,Referral,61,2,68.67,0.0
+2026-09-01,Bloom Bakery,Direct,209,10,320.38,0.0
+2026-09-01,Bloom Bakery,Email,107,7,217.79,0.0
+2026-09-01,Bloom Bakery,Organic,467,11,303.14,0.0
+2026-09-01,Bloom Bakery,Paid Search,182,8,233.26,168.84
+2026-09-01,Bloom Bakery,Paid Social,243,4,116.02,133.6
+2026-09-01,Bloom Bakery,Referral,54,1,29.07,0.0
+2026-09-02,Bloom Bakery,Direct,197,17,544.71,0.0
+2026-09-02,Bloom Bakery,Email,99,4,124.88,0.0
+2026-09-02,Bloom Bakery,Organic,498,15,514.76,0.0
+2026-09-02,Bloom Bakery,Paid Search,170,7,260.68,143.1
+2026-09-02,Bloom Bakery,Paid Social,228,4,131.59,131.37
+2026-09-02,Bloom Bakery,Referral,53,1,36.84,0.0
+2026-09-03,Bloom Bakery,Direct,204,8,223.29,0.0
+2026-09-03,Bloom Bakery,Email,101,7,235.2,0.0
+2026-09-03,Bloom Bakery,Organic,401,10,392.91,0.0
+2026-09-03,Bloom Bakery,Paid Search,167,7,218.23,158.38
+2026-09-03,Bloom Bakery,Paid Social,228,5,176.75,120.66
+2026-09-03,Bloom Bakery,Referral,53,1,36.19,0.0
+2026-09-04,Bloom Bakery,Direct,192,10,303.19,0.0
+2026-09-04,Bloom Bakery,Email,86,4,114.91,0.0
+2026-09-04,Bloom Bakery,Organic,435,7,227.89,0.0
+2026-09-04,Bloom Bakery,Paid Search,168,4,139.22,140.99
+2026-09-04,Bloom Bakery,Paid Social,238,8,252.7,142.21
+2026-09-04,Bloom Bakery,Referral,47,1,33.98,0.0
+2026-09-05,Bloom Bakery,Direct,158,5,154.91,0.0
+2026-09-05,Bloom Bakery,Email,79,3,81.58,0.0
+2026-09-05,Bloom Bakery,Organic,384,11,340.32,0.0
+2026-09-05,Bloom Bakery,Paid Search,144,11,360.44,125.38
+2026-09-05,Bloom Bakery,Paid Social,206,10,322.25,109.49
+2026-09-05,Bloom Bakery,Referral,41,1,32.66,0.0
+2026-09-06,Bloom Bakery,Direct,171,7,233.46,0.0
+2026-09-06,Bloom Bakery,Email,90,4,123.62,0.0
+2026-09-06,Bloom Bakery,Organic,375,12,378.59,0.0
+2026-09-06,Bloom Bakery,Paid Search,152,5,158.33,150.61
+2026-09-06,Bloom Bakery,Paid Social,203,1,33.88,107.9
+2026-09-06,Bloom Bakery,Referral,46,1,32.73,0.0
+2026-09-07,Bloom Bakery,Direct,217,13,435.64,0.0
+2026-09-07,Bloom Bakery,Email,106,12,414.49,0.0
+2026-09-07,Bloom Bakery,Organic,422,9,306.28,0.0
+2026-09-07,Bloom Bakery,Paid Search,186,6,220.06,177.11
+2026-09-07,Bloom Bakery,Paid Social,255,5,145.19,151.46
+2026-09-07,Bloom Bakery,Referral,52,2,63.5,0.0
+2026-09-08,Bloom Bakery,Direct,235,9,271.74,0.0
+2026-09-08,Bloom Bakery,Email,96,5,189.41,0.0
+2026-09-08,Bloom Bakery,Organic,483,15,403.72,0.0
+2026-09-08,Bloom Bakery,Paid Search,178,6,187.51,160.98
+2026-09-08,Bloom Bakery,Paid Social,232,3,103.37,128.96
+2026-09-08,Bloom Bakery,Referral,54,0,0.0,0.0
+2026-09-09,Bloom Bakery,Direct,213,11,368.9,0.0
+2026-09-09,Bloom Bakery,Email,95,5,173.02,0.0
+2026-09-09,Bloom Bakery,Organic,454,14,455.43,0.0
+2026-09-09,Bloom Bakery,Paid Search,189,14,374.92,162.29
+2026-09-09,Bloom Bakery,Paid Social,248,4,138.93,132.69
+2026-09-09,Bloom Bakery,Referral,53,3,96.3,0.0
+2026-09-10,Bloom Bakery,Direct,195,10,314.23,0.0
+2026-09-10,Bloom Bakery,Email,98,5,138.15,0.0
+2026-09-10,Bloom Bakery,Organic,461,16,492.39,0.0
+2026-09-10,Bloom Bakery,Paid Search,178,4,118.12,156.02
+2026-09-10,Bloom Bakery,Paid Social,240,3,124.55,130.98
+2026-09-10,Bloom Bakery,Referral,56,0,0.0,0.0
+2026-09-11,Bloom Bakery,Direct,181,4,96.07,0.0
+2026-09-11,Bloom Bakery,Email,102,11,343.91,0.0
+2026-09-11,Bloom Bakery,Organic,424,14,538.92,0.0
+2026-09-11,Bloom Bakery,Paid Search,148,10,338.13,133.69
+2026-09-11,Bloom Bakery,Paid Social,214,2,61.64,125.94
+2026-09-11,Bloom Bakery,Referral,50,1,28.81,0.0
+2026-09-12,Bloom Bakery,Direct,169,13,396.32,0.0
+2026-09-12,Bloom Bakery,Email,71,6,196.99,0.0
+2026-09-12,Bloom Bakery,Organic,424,13,408.82,0.0
+2026-09-12,Bloom Bakery,Paid Search,160,9,299.62,144.27
+2026-09-12,Bloom Bakery,Paid Social,205,6,183.4,121.33
+2026-09-12,Bloom Bakery,Referral,45,0,0.0,0.0
+2026-09-13,Bloom Bakery,Direct,167,8,285.17,0.0
+2026-09-13,Bloom Bakery,Email,86,10,325.73,0.0
+2026-09-13,Bloom Bakery,Organic,386,10,378.08,0.0
+2026-09-13,Bloom Bakery,Paid Search,144,9,246.23,129.01
+2026-09-13,Bloom Bakery,Paid Social,195,4,138.23,102.96
+2026-09-13,Bloom Bakery,Referral,49,1,32.72,0.0
+2026-09-14,Bloom Bakery,Direct,203,12,324.56,0.0
+2026-09-14,Bloom Bakery,Email,91,5,168.87,0.0
+2026-09-14,Bloom Bakery,Organic,436,17,487.15,0.0
+2026-09-14,Bloom Bakery,Paid Search,159,13,386.93,142.88
+2026-09-14,Bloom Bakery,Paid Social,254,9,312.58,139.4
+2026-09-14,Bloom Bakery,Referral,55,1,31.91,0.0
+2026-09-15,Bloom Bakery,Direct,192,8,258.9,0.0
+2026-09-15,Bloom Bakery,Email,99,4,116.78,0.0
+2026-09-15,Bloom Bakery,Organic,488,14,475.1,0.0
+2026-09-15,Bloom Bakery,Paid Search,171,11,332.11,152.26
+2026-09-15,Bloom Bakery,Paid Social,262,2,60.67,144.75
+2026-09-15,Bloom Bakery,Referral,56,3,98.09,0.0
+2026-09-16,Bloom Bakery,Direct,222,16,599.95,0.0
+2026-09-16,Bloom Bakery,Email,99,8,257.67,0.0
+2026-09-16,Bloom Bakery,Organic,481,14,462.54,0.0
+2026-09-16,Bloom Bakery,Paid Search,168,13,401.07,140.68
+2026-09-16,Bloom Bakery,Paid Social,202,1,30.74,105.75
+2026-09-16,Bloom Bakery,Referral,58,1,33.64,0.0
+2026-09-17,Bloom Bakery,Direct,180,8,237.25,0.0
+2026-09-17,Bloom Bakery,Email,95,6,200.24,0.0
+2026-09-17,Bloom Bakery,Organic,501,16,469.38,0.0
+2026-09-17,Bloom Bakery,Paid Search,174,4,111.55,152.61
+2026-09-17,Bloom Bakery,Paid Social,259,4,135.12,142.05
+2026-09-17,Bloom Bakery,Referral,57,2,60.11,0.0
+2026-09-18,Bloom Bakery,Direct,177,8,256.06,0.0
+2026-09-18,Bloom Bakery,Email,88,9,312.79,0.0
+2026-09-18,Bloom Bakery,Organic,450,12,390.87,0.0
+2026-09-18,Bloom Bakery,Paid Search,159,9,270.46,149.8
+2026-09-18,Bloom Bakery,Paid Social,180,1,29.46,99.03
+2026-09-18,Bloom Bakery,Referral,50,0,0.0,0.0
+2026-09-19,Bloom Bakery,Direct,164,9,252.79,0.0
+2026-09-19,Bloom Bakery,Email,81,8,236.18,0.0
+2026-09-19,Bloom Bakery,Organic,390,11,397.38,0.0
+2026-09-19,Bloom Bakery,Paid Search,141,7,208.26,118.51
+2026-09-19,Bloom Bakery,Paid Social,191,3,92.14,111.21
+2026-09-19,Bloom Bakery,Referral,45,0,0.0,0.0
+2026-09-20,Bloom Bakery,Direct,194,7,263.58,0.0
+2026-09-20,Bloom Bakery,Email,81,5,154.57,0.0
+2026-09-20,Bloom Bakery,Organic,436,15,464.71,0.0
+2026-09-20,Bloom Bakery,Paid Search,157,7,241.97,139.97
+2026-09-20,Bloom Bakery,Paid Social,222,9,290.59,129.7
+2026-09-20,Bloom Bakery,Referral,44,1,30.64,0.0
+2026-09-21,Bloom Bakery,Direct,196,9,285.61,0.0
+2026-09-21,Bloom Bakery,Email,91,11,268.61,0.0
+2026-09-21,Bloom Bakery,Organic,432,18,486.34,0.0
+2026-09-21,Bloom Bakery,Paid Search,183,11,381.67,158.09
+2026-09-21,Bloom Bakery,Paid Social,241,3,106.05,130.39
+2026-09-21,Bloom Bakery,Referral,53,1,33.58,0.0
+2026-09-22,Bloom Bakery,Direct,198,18,578.69,0.0
+2026-09-22,Bloom Bakery,Email,109,9,270.65,0.0
+2026-09-22,Bloom Bakery,Organic,462,20,638.88,0.0
+2026-09-22,Bloom Bakery,Paid Search,188,14,441.52,170.14
+2026-09-22,Bloom Bakery,Paid Social,229,3,90.37,124.61
+2026-09-22,Bloom Bakery,Referral,61,1,26.63,0.0
+2026-09-23,Bloom Bakery,Direct,196,11,403.05,0.0
+2026-09-23,Bloom Bakery,Email,107,6,182.19,0.0
+2026-09-23,Bloom Bakery,Organic,445,14,409.34,0.0
+2026-09-23,Bloom Bakery,Paid Search,186,10,307.7,164.18
+2026-09-23,Bloom Bakery,Paid Social,230,5,133.08,130.77
+2026-09-23,Bloom Bakery,Referral,58,5,147.84,0.0
+2026-09-24,Bloom Bakery,Direct,220,12,410.26,0.0
+2026-09-24,Bloom Bakery,Email,104,7,202.29,0.0
+2026-09-24,Bloom Bakery,Organic,445,14,432.92,0.0
+2026-09-24,Bloom Bakery,Paid Search,182,8,259.61,176.36
+2026-09-24,Bloom Bakery,Paid Social,257,5,132.09,137.27
+2026-09-24,Bloom Bakery,Referral,56,2,70.6,0.0
+2026-09-25,Bloom Bakery,Direct,150,8,234.54,0.0
+2026-09-25,Bloom Bakery,Email,82,2,65.07,0.0
+2026-09-25,Bloom Bakery,Organic,387,15,476.1,0.0
+2026-09-25,Bloom Bakery,Paid Search,140,6,176.94,129.23
+2026-09-25,Bloom Bakery,Paid Social,195,4,112.85,110.45
+2026-09-25,Bloom Bakery,Referral,52,6,161.38,0.0
+2026-09-26,Bloom Bakery,Direct,152,10,299.94,0.0
+2026-09-26,Bloom Bakery,Email,83,8,254.57,0.0
+2026-09-26,Bloom Bakery,Organic,399,11,296.8,0.0
+2026-09-26,Bloom Bakery,Paid Search,142,5,142.66,119.69
+2026-09-26,Bloom Bakery,Paid Social,216,4,112.25,118.28
+2026-09-26,Bloom Bakery,Referral,46,1,35.78,0.0
+2026-09-27,Bloom Bakery,Direct,205,13,437.11,0.0
+2026-09-27,Bloom Bakery,Email,89,4,102.12,0.0
+2026-09-27,Bloom Bakery,Organic,389,15,408.39,0.0
+2026-09-27,Bloom Bakery,Paid Search,129,5,145.64,120.06
+2026-09-27,Bloom Bakery,Paid Social,206,6,189.05,107.94
+2026-09-27,Bloom Bakery,Referral,49,2,74.44,0.0
+2026-09-28,Bloom Bakery,Direct,211,11,330.7,0.0
+2026-09-28,Bloom Bakery,Email,94,5,163.49,0.0
+2026-09-28,Bloom Bakery,Organic,425,13,436.55,0.0
+2026-09-28,Bloom Bakery,Paid Search,180,7,210.22,155.85
+2026-09-28,Bloom Bakery,Paid Social,227,2,56.83,119.02
+2026-09-28,Bloom Bakery,Referral,60,2,61.68,0.0
+2026-09-29,Bloom Bakery,Direct,192,8,207.15,0.0
+2026-09-29,Bloom Bakery,Email,104,7,204.14,0.0
+2026-09-29,Bloom Bakery,Organic,452,9,273.33,0.0
+2026-09-29,Bloom Bakery,Paid Search,185,5,142.43,161.77
+2026-09-29,Bloom Bakery,Paid Social,244,5,149.14,144.27
+2026-09-29,Bloom Bakery,Referral,62,2,65.9,0.0
+2026-09-30,Bloom Bakery,Direct,204,5,159.15,0.0
+2026-09-30,Bloom Bakery,Email,101,3,100.78,0.0
+2026-09-30,Bloom Bakery,Organic,487,9,222.85,0.0
+2026-09-30,Bloom Bakery,Paid Search,195,5,162.61,178.28
+2026-09-30,Bloom Bakery,Paid Social,232,5,148.08,126.61
+2026-09-30,Bloom Bakery,Referral,56,5,178.95,0.0
+2026-10-01,Bloom Bakery,Direct,198,11,303.57,0.0
+2026-10-01,Bloom Bakery,Email,112,4,112.6,0.0
+2026-10-01,Bloom Bakery,Organic,486,18,623.03,0.0
+2026-10-01,Bloom Bakery,Paid Search,190,11,378.65,166.85
+2026-10-01,Bloom Bakery,Paid Social,255,7,214.35,152.24
+2026-10-01,Bloom Bakery,Referral,60,2,61.08,0.0
+2026-10-02,Bloom Bakery,Direct,194,13,488.98,0.0
+2026-10-02,Bloom Bakery,Email,105,9,288.87,0.0
+2026-10-02,Bloom Bakery,Organic,492,10,328.84,0.0
+2026-10-02,Bloom Bakery,Paid Search,165,7,191.13,155.28
+2026-10-02,Bloom Bakery,Paid Social,236,4,146.1,126.51
+2026-10-02,Bloom Bakery,Referral,52,3,104.7,0.0
+2026-10-03,Bloom Bakery,Direct,187,9,293.14,0.0
+2026-10-03,Bloom Bakery,Email,73,2,62.21,0.0
+2026-10-03,Bloom Bakery,Organic,469,11,327.75,0.0
+2026-10-03,Bloom Bakery,Paid Search,141,10,320.81,122.08
+2026-10-03,Bloom Bakery,Paid Social,178,4,136.76,99.34
+2026-10-03,Bloom Bakery,Referral,48,2,59.85,0.0
+2026-10-04,Bloom Bakery,Direct,175,5,146.15,0.0
+2026-10-04,Bloom Bakery,Email,101,7,230.89,0.0
+2026-10-04,Bloom Bakery,Organic,408,11,308.57,0.0
+2026-10-04,Bloom Bakery,Paid Search,156,7,219.13,136.12
+2026-10-04,Bloom Bakery,Paid Social,202,1,32.05,125.22
+2026-10-04,Bloom Bakery,Referral,48,0,0.0,0.0
+2026-10-05,Bloom Bakery,Direct,195,9,268.57,0.0
+2026-10-05,Bloom Bakery,Email,95,6,194.41,0.0
+2026-10-05,Bloom Bakery,Organic,442,10,347.9,0.0
+2026-10-05,Bloom Bakery,Paid Search,174,3,99.34,151.54
+2026-10-05,Bloom Bakery,Paid Social,233,3,91.67,121.55
+2026-10-05,Bloom Bakery,Referral,57,2,59.08,0.0
+2026-10-06,Bloom Bakery,Direct,221,11,291.4,0.0
+2026-10-06,Bloom Bakery,Email,112,6,187.16,0.0
+2026-10-06,Bloom Bakery,Organic,419,11,364.51,0.0
+2026-10-06,Bloom Bakery,Paid Search,185,5,159.79,161.86
+2026-10-06,Bloom Bakery,Paid Social,279,2,61.29,139.56
+2026-10-06,Bloom Bakery,Referral,55,2,66.23,0.0
+2026-10-07,Bloom Bakery,Direct,195,12,344.02,0.0
+2026-10-07,Bloom Bakery,Email,110,5,137.21,0.0
+2026-10-07,Bloom Bakery,Organic,487,18,730.97,0.0
+2026-10-07,Bloom Bakery,Paid Search,195,6,166.02,185.42
+2026-10-07,Bloom Bakery,Paid Social,228,6,198.4,133.73
+2026-10-07,Bloom Bakery,Referral,60,4,143.71,0.0
+2026-10-08,Bloom Bakery,Direct,184,6,212.54,0.0
+2026-10-08,Bloom Bakery,Email,92,8,220.84,0.0
+2026-10-08,Bloom Bakery,Organic,435,7,233.61,0.0
+2026-10-08,Bloom Bakery,Paid Search,169,12,338.46,156.96
+2026-10-08,Bloom Bakery,Paid Social,270,4,135.7,142.49
+2026-10-08,Bloom Bakery,Referral,67,3,94.25,0.0
+2026-10-09,Bloom Bakery,Direct,163,9,360.01,0.0
+2026-10-09,Bloom Bakery,Email,95,11,332.04,0.0
+2026-10-09,Bloom Bakery,Organic,417,16,532.24,0.0
+2026-10-09,Bloom Bakery,Paid Search,173,5,160.47,169.6
+2026-10-09,Bloom Bakery,Paid Social,224,6,175.34,123.07
+2026-10-09,Bloom Bakery,Referral,50,0,0.0,0.0
+2026-10-10,Bloom Bakery,Direct,148,9,309.7,0.0
+2026-10-10,Bloom Bakery,Email,82,3,95.92,0.0
+2026-10-10,Bloom Bakery,Organic,368,14,440.58,0.0
+2026-10-10,Bloom Bakery,Paid Search,153,7,248.27,154.23
+2026-10-10,Bloom Bakery,Paid Social,185,1,32.12,98.81
+2026-10-10,Bloom Bakery,Referral,46,0,0.0,0.0
+2026-10-11,Bloom Bakery,Direct,160,12,380.48,0.0
+2026-10-11,Bloom Bakery,Email,89,10,301.12,0.0
+2026-10-11,Bloom Bakery,Organic,394,11,381.96,0.0
+2026-10-11,Bloom Bakery,Paid Search,142,10,256.44,121.38
+2026-10-11,Bloom Bakery,Paid Social,199,6,156.7,110.93
+2026-10-11,Bloom Bakery,Referral,46,0,0.0,0.0
+2026-10-12,Bloom Bakery,Direct,187,6,183.88,0.0
+2026-10-12,Bloom Bakery,Email,103,8,272.52,0.0
+2026-10-12,Bloom Bakery,Organic,512,11,374.71,0.0
+2026-10-12,Bloom Bakery,Paid Search,194,16,530.01,175.22
+2026-10-12,Bloom Bakery,Paid Social,235,7,228.79,123.25
+2026-10-12,Bloom Bakery,Referral,55,1,38.48,0.0
+2026-10-13,Bloom Bakery,Direct,214,16,465.3,0.0
+2026-10-13,Bloom Bakery,Email,114,9,280.07,0.0
+2026-10-13,Bloom Bakery,Organic,494,15,544.01,0.0
+2026-10-13,Bloom Bakery,Paid Search,195,7,252.3,165.48
+2026-10-13,Bloom Bakery,Paid Social,234,2,69.07,127.55
+2026-10-13,Bloom Bakery,Referral,65,0,0.0,0.0
+2026-10-14,Bloom Bakery,Direct,189,9,353.87,0.0
+2026-10-14,Bloom Bakery,Email,103,8,232.45,0.0
+2026-10-14,Bloom Bakery,Organic,475,11,334.12,0.0
+2026-10-14,Bloom Bakery,Paid Search,184,4,126.06,159.28
+2026-10-14,Bloom Bakery,Paid Social,253,1,31.12,142.32
+2026-10-14,Bloom Bakery,Referral,54,2,61.57,0.0
+2026-10-15,Bloom Bakery,Direct,159,11,345.42,0.0
+2026-10-15,Bloom Bakery,Email,98,8,248.98,0.0
+2026-10-15,Bloom Bakery,Organic,430,12,367.64,0.0
+2026-10-15,Bloom Bakery,Paid Search,167,5,169.05,145.64
+2026-10-15,Bloom Bakery,Paid Social,222,1,38.37,116.1
+2026-10-15,Bloom Bakery,Referral,53,2,69.1,0.0
+2026-10-16,Bloom Bakery,Direct,171,4,158.16,0.0
+2026-10-16,Bloom Bakery,Email,100,10,327.31,0.0
+2026-10-16,Bloom Bakery,Organic,383,17,518.55,0.0
+2026-10-16,Bloom Bakery,Paid Search,154,3,89.48,131.46
+2026-10-16,Bloom Bakery,Paid Social,194,6,175.8,103.03
+2026-10-16,Bloom Bakery,Referral,46,3,93.73,0.0
+2026-10-17,Bloom Bakery,Direct,160,8,294.28,0.0
+2026-10-17,Bloom Bakery,Email,86,6,198.34,0.0
+2026-10-17,Bloom Bakery,Organic,372,20,692.67,0.0
+2026-10-17,Bloom Bakery,Paid Search,141,4,126.48,120.4
+2026-10-17,Bloom Bakery,Paid Social,197,2,65.41,106.48
+2026-10-17,Bloom Bakery,Referral,44,1,30.81,0.0
+2026-10-18,Bloom Bakery,Direct,164,8,215.1,0.0
+2026-10-18,Bloom Bakery,Email,90,6,231.67,0.0
+2026-10-18,Bloom Bakery,Organic,398,14,520.42,0.0
+2026-10-18,Bloom Bakery,Paid Search,158,7,190.48,141.18
+2026-10-18,Bloom Bakery,Paid Social,184,4,127.54,94.22
+2026-10-18,Bloom Bakery,Referral,42,1,29.08,0.0
+2026-10-19,Bloom Bakery,Direct,227,9,269.45,0.0
+2026-10-19,Bloom Bakery,Email,97,5,149.65,0.0
+2026-10-19,Bloom Bakery,Organic,539,13,397.34,0.0
+2026-10-19,Bloom Bakery,Paid Search,170,12,303.75,143.97
+2026-10-19,Bloom Bakery,Paid Social,284,6,190.08,152.93
+2026-10-19,Bloom Bakery,Referral,59,0,0.0,0.0
+2026-10-20,Bloom Bakery,Direct,201,9,269.36,0.0
+2026-10-20,Bloom Bakery,Email,98,4,127.06,0.0
+2026-10-20,Bloom Bakery,Organic,495,16,490.71,0.0
+2026-10-20,Bloom Bakery,Paid Search,193,9,316.47,181.17
+2026-10-20,Bloom Bakery,Paid Social,337,9,284.73,186.45
+2026-10-20,Bloom Bakery,Referral,71,4,99.3,0.0
+2026-10-21,Bloom Bakery,Direct,220,12,380.95,0.0
+2026-10-21,Bloom Bakery,Email,99,8,267.14,0.0
+2026-10-21,Bloom Bakery,Organic,516,18,594.38,0.0
+2026-10-21,Bloom Bakery,Paid Search,168,8,231.99,144.42
+2026-10-21,Bloom Bakery,Paid Social,380,8,258.76,204.87
+2026-10-21,Bloom Bakery,Referral,56,1,34.66,0.0
+2026-10-22,Bloom Bakery,Direct,198,10,318.08,0.0
+2026-10-22,Bloom Bakery,Email,95,2,63.85,0.0
+2026-10-22,Bloom Bakery,Organic,448,13,405.9,0.0
+2026-10-22,Bloom Bakery,Paid Search,174,5,152.88,180.22
+2026-10-22,Bloom Bakery,Paid Social,447,9,313.49,242.54
+2026-10-22,Bloom Bakery,Referral,49,0,0.0,0.0
+2026-10-23,Bloom Bakery,Direct,185,5,215.9,0.0
+2026-10-23,Bloom Bakery,Email,98,5,152.19,0.0
+2026-10-23,Bloom Bakery,Organic,398,13,457.55,0.0
+2026-10-23,Bloom Bakery,Paid Search,166,9,250.71,146.07
+2026-10-23,Bloom Bakery,Paid Social,363,14,514.18,199.45
+2026-10-23,Bloom Bakery,Referral,55,0,0.0,0.0
+2026-10-24,Bloom Bakery,Direct,156,7,201.12,0.0
+2026-10-24,Bloom Bakery,Email,89,3,82.22,0.0
+2026-10-24,Bloom Bakery,Organic,361,3,76.64,0.0
+2026-10-24,Bloom Bakery,Paid Search,175,9,250.13,158.07
+2026-10-24,Bloom Bakery,Paid Social,330,5,159.96,175.65
+2026-10-24,Bloom Bakery,Referral,44,2,75.8,0.0
+2026-10-25,Bloom Bakery,Direct,171,6,196.45,0.0
+2026-10-25,Bloom Bakery,Email,85,4,121.63,0.0
+2026-10-25,Bloom Bakery,Organic,381,9,265.15,0.0
+2026-10-25,Bloom Bakery,Paid Search,139,9,283.04,117.25
+2026-10-25,Bloom Bakery,Paid Social,296,8,277.75,168.52
+2026-10-25,Bloom Bakery,Referral,52,0,0.0,0.0
+2026-10-26,Bloom Bakery,Direct,194,14,476.49,0.0
+2026-10-26,Bloom Bakery,Email,113,9,258.68,0.0
+2026-10-26,Bloom Bakery,Organic,555,17,503.06,0.0
+2026-10-26,Bloom Bakery,Paid Search,202,14,416.48,197.99
+2026-10-26,Bloom Bakery,Paid Social,383,4,119.33,226.33
+2026-10-26,Bloom Bakery,Referral,56,2,59.79,0.0
+2026-10-27,Bloom Bakery,Direct,213,18,575.91,0.0
+2026-10-27,Bloom Bakery,Email,116,8,215.4,0.0
+2026-10-27,Bloom Bakery,Organic,465,11,279.11,0.0
+2026-10-27,Bloom Bakery,Paid Search,189,7,232.63,179.89
+2026-10-27,Bloom Bakery,Paid Social,419,8,276.38,225.16
+2026-10-27,Bloom Bakery,Referral,56,2,63.17,0.0
+2026-10-28,Bloom Bakery,Direct,204,8,258.84,0.0
+2026-10-28,Bloom Bakery,Email,105,7,206.87,0.0
+2026-10-28,Bloom Bakery,Organic,512,13,377.78,0.0
+2026-10-28,Bloom Bakery,Paid Search,189,5,167.41,172.64
+2026-10-28,Bloom Bakery,Paid Social,377,11,326.17,212.44
+2026-10-28,Bloom Bakery,Referral,57,3,100.06,0.0
+2026-10-29,Bloom Bakery,Direct,187,6,172.95,0.0
+2026-10-29,Bloom Bakery,Email,94,4,115.28,0.0
+2026-10-29,Bloom Bakery,Organic,437,15,438.02,0.0
+2026-10-29,Bloom Bakery,Paid Search,179,6,198.26,150.61
+2026-10-29,Bloom Bakery,Paid Social,415,9,321.19,225.53
+2026-10-29,Bloom Bakery,Referral,58,1,30.62,0.0
+2026-10-30,Bloom Bakery,Direct,199,7,226.4,0.0
+2026-10-30,Bloom Bakery,Email,104,7,237.47,0.0
+2026-10-30,Bloom Bakery,Organic,463,22,689.98,0.0
+2026-10-30,Bloom Bakery,Paid Search,170,8,262.18,154.62
+2026-10-30,Bloom Bakery,Paid Social,334,8,319.34,187.09
+2026-10-30,Bloom Bakery,Referral,51,0,0.0,0.0
+2026-10-31,Bloom Bakery,Direct,171,8,269.43,0.0
+2026-10-31,Bloom Bakery,Email,83,5,169.91,0.0
+2026-10-31,Bloom Bakery,Organic,399,13,464.97,0.0
+2026-10-31,Bloom Bakery,Paid Search,146,11,412.16,124.23
+2026-10-31,Bloom Bakery,Paid Social,319,5,158.06,189.74
+2026-10-31,Bloom Bakery,Referral,45,1,29.35,0.0
+2026-11-01,Bloom Bakery,Direct,167,11,363.72,0.0
+2026-11-01,Bloom Bakery,Email,87,7,204.64,0.0
+2026-11-01,Bloom Bakery,Organic,398,14,437.15,0.0
+2026-11-01,Bloom Bakery,Paid Search,170,6,172.56,164.61
+2026-11-01,Bloom Bakery,Paid Social,323,6,154.2,182.23
+2026-11-01,Bloom Bakery,Referral,47,0,0.0,0.0
+2026-11-02,Bloom Bakery,Direct,208,9,304.9,0.0
+2026-11-02,Bloom Bakery,Email,100,7,218.25,0.0
+2026-11-02,Bloom Bakery,Organic,479,25,721.64,0.0
+2026-11-02,Bloom Bakery,Paid Search,177,11,350.07,165.88
+2026-11-02,Bloom Bakery,Paid Social,407,7,212.05,204.86
+2026-11-02,Bloom Bakery,Referral,52,2,64.48,0.0
+2026-11-03,Bloom Bakery,Direct,210,5,184.28,0.0
+2026-11-03,Bloom Bakery,Email,99,7,186.01,0.0
+2026-11-03,Bloom Bakery,Organic,472,10,318.18,0.0
+2026-11-03,Bloom Bakery,Paid Search,204,9,322.54,184.48
+2026-11-03,Bloom Bakery,Paid Social,396,8,289.56,222.8
+2026-11-03,Bloom Bakery,Referral,60,1,33.48,0.0
+2026-11-04,Bloom Bakery,Direct,196,4,140.57,0.0
+2026-11-04,Bloom Bakery,Email,94,7,213.2,0.0
+2026-11-04,Bloom Bakery,Organic,500,15,533.1,0.0
+2026-11-04,Bloom Bakery,Paid Search,177,6,217.88,141.03
+2026-11-04,Bloom Bakery,Paid Social,399,9,304.38,233.4
+2026-11-04,Bloom Bakery,Referral,51,1,31.17,0.0
+2026-11-05,Bloom Bakery,Direct,201,7,225.6,0.0
+2026-11-05,Bloom Bakery,Email,105,12,399.63,0.0
+2026-11-05,Bloom Bakery,Organic,452,12,348.29,0.0
+2026-11-05,Bloom Bakery,Paid Search,177,7,194.31,151.66
+2026-11-05,Bloom Bakery,Paid Social,385,6,196.84,209.42
+2026-11-05,Bloom Bakery,Referral,54,0,0.0,0.0
+2026-11-06,Bloom Bakery,Direct,179,13,370.0,0.0
+2026-11-06,Bloom Bakery,Email,88,7,243.26,0.0
+2026-11-06,Bloom Bakery,Organic,399,8,233.72,0.0
+2026-11-06,Bloom Bakery,Paid Search,154,8,248.13,143.45
+2026-11-06,Bloom Bakery,Paid Social,346,5,176.98,200.01
+2026-11-06,Bloom Bakery,Referral,55,2,75.69,0.0
+2026-11-07,Bloom Bakery,Direct,156,9,271.23,0.0
+2026-11-07,Bloom Bakery,Email,103,7,208.58,0.0
+2026-11-07,Bloom Bakery,Organic,356,13,439.9,0.0
+2026-11-07,Bloom Bakery,Paid Search,153,7,256.58,146.31
+2026-11-07,Bloom Bakery,Paid Social,338,5,167.94,179.59
+2026-11-07,Bloom Bakery,Referral,47,0,0.0,0.0
+2026-11-08,Bloom Bakery,Direct,154,8,250.44,0.0
+2026-11-08,Bloom Bakery,Email,80,5,177.75,0.0
+2026-11-08,Bloom Bakery,Organic,408,12,375.59,0.0
+2026-11-08,Bloom Bakery,Paid Search,170,7,235.68,161.72
+2026-11-08,Bloom Bakery,Paid Social,344,6,216.86,175.66
+2026-11-08,Bloom Bakery,Referral,50,2,61.22,0.0
+2026-11-09,Bloom Bakery,Direct,201,8,262.54,0.0
+2026-11-09,Bloom Bakery,Email,94,2,55.0,0.0
+2026-11-09,Bloom Bakery,Organic,538,16,546.25,0.0
+2026-11-09,Bloom Bakery,Paid Search,182,6,195.79,151.27
+2026-11-09,Bloom Bakery,Paid Social,401,5,175.41,222.11
+2026-11-09,Bloom Bakery,Referral,57,0,0.0,0.0
+2026-11-10,Bloom Bakery,Direct,221,15,457.58,0.0
+2026-11-10,Bloom Bakery,Email,110,12,338.96,0.0
+2026-11-10,Bloom Bakery,Organic,501,11,351.52,0.0
+2026-11-10,Bloom Bakery,Paid Search,186,10,313.11,169.94
+2026-11-10,Bloom Bakery,Paid Social,403,11,409.85,203.01
+2026-11-10,Bloom Bakery,Referral,64,5,148.85,0.0
+2026-11-11,Bloom Bakery,Direct,199,8,233.13,0.0
+2026-11-11,Bloom Bakery,Email,116,7,240.47,0.0
+2026-11-11,Bloom Bakery,Organic,483,11,377.59,0.0
+2026-11-11,Bloom Bakery,Paid Search,171,6,184.77,161.92
+2026-11-11,Bloom Bakery,Paid Social,431,9,298.52,234.23
+2026-11-11,Bloom Bakery,Referral,62,3,90.46,0.0
+2026-11-12,Bloom Bakery,Direct,240,15,426.22,0.0
+2026-11-12,Bloom Bakery,Email,101,6,226.92,0.0
+2026-11-12,Bloom Bakery,Organic,478,19,548.21,0.0
+2026-11-12,Bloom Bakery,Paid Search,176,12,395.23,145.8
+2026-11-12,Bloom Bakery,Paid Social,386,5,175.16,226.41
+2026-11-12,Bloom Bakery,Referral,58,0,0.0,0.0
+2026-05-17,Nova Dental,Direct,96,4,953.08,0.0
+2026-05-17,Nova Dental,Email,35,3,653.66,0.0
+2026-05-17,Nova Dental,Organic,235,7,1503.54,0.0
+2026-05-17,Nova Dental,Paid Search,125,4,739.39,415.17
+2026-05-17,Nova Dental,Paid Social,76,1,215.47,81.35
+2026-05-17,Nova Dental,Referral,53,3,626.46,0.0
+2026-05-18,Nova Dental,Direct,119,4,885.65,0.0
+2026-05-18,Nova Dental,Email,46,2,404.48,0.0
+2026-05-18,Nova Dental,Organic,249,6,1229.65,0.0
+2026-05-18,Nova Dental,Paid Search,148,4,957.12,441.47
+2026-05-18,Nova Dental,Paid Social,90,1,254.07,99.79
+2026-05-18,Nova Dental,Referral,66,6,1191.52,0.0
+2026-05-19,Nova Dental,Direct,133,6,1427.25,0.0
+2026-05-19,Nova Dental,Email,51,1,218.54,0.0
+2026-05-19,Nova Dental,Organic,292,6,1163.98,0.0
+2026-05-19,Nova Dental,Paid Search,154,7,1533.38,470.44
+2026-05-19,Nova Dental,Paid Social,93,1,180.5,101.26
+2026-05-19,Nova Dental,Referral,56,5,1133.47,0.0
+2026-05-20,Nova Dental,Direct,120,6,1260.92,0.0
+2026-05-20,Nova Dental,Email,45,3,518.21,0.0
+2026-05-20,Nova Dental,Organic,267,5,915.03,0.0
+2026-05-20,Nova Dental,Paid Search,151,10,1933.74,496.28
+2026-05-20,Nova Dental,Paid Social,99,1,178.28,102.84
+2026-05-20,Nova Dental,Referral,61,5,1140.65,0.0
+2026-05-21,Nova Dental,Direct,125,5,1312.86,0.0
+2026-05-21,Nova Dental,Email,41,3,648.03,0.0
+2026-05-21,Nova Dental,Organic,272,10,2351.84,0.0
+2026-05-21,Nova Dental,Paid Search,142,7,1593.18,440.32
+2026-05-21,Nova Dental,Paid Social,106,1,193.94,108.75
+2026-05-21,Nova Dental,Referral,63,6,1506.06,0.0
+2026-05-22,Nova Dental,Direct,129,5,1131.34,0.0
+2026-05-22,Nova Dental,Email,39,2,477.23,0.0
+2026-05-22,Nova Dental,Organic,264,5,1137.3,0.0
+2026-05-22,Nova Dental,Paid Search,124,7,1839.35,378.8
+2026-05-22,Nova Dental,Paid Social,91,1,227.79,102.89
+2026-05-22,Nova Dental,Referral,62,6,1186.19,0.0
+2026-05-23,Nova Dental,Direct,104,5,959.57,0.0
+2026-05-23,Nova Dental,Email,35,3,622.42,0.0
+2026-05-23,Nova Dental,Organic,232,5,1202.06,0.0
+2026-05-23,Nova Dental,Paid Search,113,5,1027.4,378.37
+2026-05-23,Nova Dental,Paid Social,83,0,0.0,92.62
+2026-05-23,Nova Dental,Referral,52,1,224.47,0.0
+2026-05-24,Nova Dental,Direct,96,4,845.87,0.0
+2026-05-24,Nova Dental,Email,35,1,175.9,0.0
+2026-05-24,Nova Dental,Organic,235,6,1311.0,0.0
+2026-05-24,Nova Dental,Paid Search,120,5,1109.41,402.63
+2026-05-24,Nova Dental,Paid Social,77,1,222.92,85.15
+2026-05-24,Nova Dental,Referral,59,2,347.01,0.0
+2026-05-25,Nova Dental,Direct,119,8,1654.57,0.0
+2026-05-25,Nova Dental,Email,49,4,805.94,0.0
+2026-05-25,Nova Dental,Organic,287,8,1289.92,0.0
+2026-05-25,Nova Dental,Paid Search,171,12,2413.5,567.32
+2026-05-25,Nova Dental,Paid Social,96,1,221.36,107.04
+2026-05-25,Nova Dental,Referral,67,9,2053.37,0.0
+2026-05-26,Nova Dental,Direct,128,2,409.61,0.0
+2026-05-26,Nova Dental,Email,41,3,715.98,0.0
+2026-05-26,Nova Dental,Organic,296,10,1854.25,0.0
+2026-05-26,Nova Dental,Paid Search,138,8,1694.4,460.74
+2026-05-26,Nova Dental,Paid Social,101,2,513.73,107.71
+2026-05-26,Nova Dental,Referral,63,4,726.14,0.0
+2026-05-27,Nova Dental,Direct,125,10,1779.31,0.0
+2026-05-27,Nova Dental,Email,46,4,862.01,0.0
+2026-05-27,Nova Dental,Organic,308,9,1979.93,0.0
+2026-05-27,Nova Dental,Paid Search,145,6,1083.71,458.66
+2026-05-27,Nova Dental,Paid Social,92,1,233.14,102.14
+2026-05-27,Nova Dental,Referral,63,2,380.63,0.0
+2026-05-28,Nova Dental,Direct,124,1,218.28,0.0
+2026-05-28,Nova Dental,Email,41,1,182.23,0.0
+2026-05-28,Nova Dental,Organic,266,12,2428.53,0.0
+2026-05-28,Nova Dental,Paid Search,145,10,2099.89,459.28
+2026-05-28,Nova Dental,Paid Social,90,0,0.0,112.4
+2026-05-28,Nova Dental,Referral,63,4,868.38,0.0
+2026-05-29,Nova Dental,Direct,117,3,548.48,0.0
+2026-05-29,Nova Dental,Email,34,1,266.1,0.0
+2026-05-29,Nova Dental,Organic,251,8,1588.69,0.0
+2026-05-29,Nova Dental,Paid Search,131,6,1265.5,405.83
+2026-05-29,Nova Dental,Paid Social,91,2,481.14,106.15
+2026-05-29,Nova Dental,Referral,56,4,789.38,0.0
+2026-05-30,Nova Dental,Direct,116,6,978.8,0.0
+2026-05-30,Nova Dental,Email,34,4,741.02,0.0
+2026-05-30,Nova Dental,Organic,237,10,1880.64,0.0
+2026-05-30,Nova Dental,Paid Search,129,4,1005.56,416.28
+2026-05-30,Nova Dental,Paid Social,83,1,221.63,89.99
+2026-05-30,Nova Dental,Referral,57,5,973.32,0.0
+2026-05-31,Nova Dental,Direct,106,1,202.9,0.0
+2026-05-31,Nova Dental,Email,34,0,0.0,0.0
+2026-05-31,Nova Dental,Organic,223,8,1846.98,0.0
+2026-05-31,Nova Dental,Paid Search,121,6,1052.97,377.11
+2026-05-31,Nova Dental,Paid Social,80,1,200.56,85.73
+2026-05-31,Nova Dental,Referral,49,5,1000.31,0.0
+2026-06-01,Nova Dental,Direct,117,3,584.13,0.0
+2026-06-01,Nova Dental,Email,44,2,378.61,0.0
+2026-06-01,Nova Dental,Organic,251,5,1099.01,0.0
+2026-06-01,Nova Dental,Paid Search,146,9,1837.65,457.19
+2026-06-01,Nova Dental,Paid Social,88,1,187.29,83.9
+2026-06-01,Nova Dental,Referral,65,1,225.89,0.0
+2026-06-02,Nova Dental,Direct,142,4,770.66,0.0
+2026-06-02,Nova Dental,Email,44,3,568.0,0.0
+2026-06-02,Nova Dental,Organic,293,15,3311.9,0.0
+2026-06-02,Nova Dental,Paid Search,161,7,1672.09,530.89
+2026-06-02,Nova Dental,Paid Social,96,1,198.38,111.4
+2026-06-02,Nova Dental,Referral,69,4,765.18,0.0
+2026-06-03,Nova Dental,Direct,140,8,1231.81,0.0
+2026-06-03,Nova Dental,Email,40,3,602.15,0.0
+2026-06-03,Nova Dental,Organic,274,10,1971.07,0.0
+2026-06-03,Nova Dental,Paid Search,170,11,2254.82,577.19
+2026-06-03,Nova Dental,Paid Social,87,2,418.32,99.54
+2026-06-03,Nova Dental,Referral,63,1,208.87,0.0
+2026-06-04,Nova Dental,Direct,126,5,964.36,0.0
+2026-06-04,Nova Dental,Email,46,4,895.17,0.0
+2026-06-04,Nova Dental,Organic,246,7,1496.14,0.0
+2026-06-04,Nova Dental,Paid Search,159,8,1651.46,519.03
+2026-06-04,Nova Dental,Paid Social,93,0,0.0,99.56
+2026-06-04,Nova Dental,Referral,59,6,1213.18,0.0
+2026-06-05,Nova Dental,Direct,113,1,206.38,0.0
+2026-06-05,Nova Dental,Email,41,3,716.78,0.0
+2026-06-05,Nova Dental,Organic,258,5,918.52,0.0
+2026-06-05,Nova Dental,Paid Search,133,6,1159.26,465.55
+2026-06-05,Nova Dental,Paid Social,88,0,0.0,90.11
+2026-06-05,Nova Dental,Referral,57,2,455.89,0.0
+2026-06-06,Nova Dental,Direct,108,4,788.38,0.0
+2026-06-06,Nova Dental,Email,38,4,808.18,0.0
+2026-06-06,Nova Dental,Organic,247,4,829.16,0.0
+2026-06-06,Nova Dental,Paid Search,120,9,1721.71,370.69
+2026-06-06,Nova Dental,Paid Social,76,1,205.44,78.91
+2026-06-06,Nova Dental,Referral,55,4,914.33,0.0
+2026-06-07,Nova Dental,Direct,105,2,436.59,0.0
+2026-06-07,Nova Dental,Email,36,2,379.65,0.0
+2026-06-07,Nova Dental,Organic,206,7,1141.64,0.0
+2026-06-07,Nova Dental,Paid Search,125,6,1049.72,364.88
+2026-06-07,Nova Dental,Paid Social,81,0,0.0,91.1
+2026-06-07,Nova Dental,Referral,52,4,699.16,0.0
+2026-06-08,Nova Dental,Direct,110,8,1931.04,0.0
+2026-06-08,Nova Dental,Email,42,2,440.59,0.0
+2026-06-08,Nova Dental,Organic,296,9,1615.7,0.0
+2026-06-08,Nova Dental,Paid Search,150,7,1380.36,497.46
+2026-06-08,Nova Dental,Paid Social,98,0,0.0,107.32
+2026-06-08,Nova Dental,Referral,59,4,932.54,0.0
+2026-06-09,Nova Dental,Direct,136,3,663.39,0.0
+2026-06-09,Nova Dental,Email,46,4,883.77,0.0
+2026-06-09,Nova Dental,Organic,238,9,1830.05,0.0
+2026-06-09,Nova Dental,Paid Search,144,4,760.87,443.36
+2026-06-09,Nova Dental,Paid Social,100,0,0.0,113.87
+2026-06-09,Nova Dental,Referral,71,4,790.23,0.0
+2026-06-10,Nova Dental,Direct,137,6,1396.2,0.0
+2026-06-10,Nova Dental,Email,41,3,645.33,0.0
+2026-06-10,Nova Dental,Organic,271,7,1864.09,0.0
+2026-06-10,Nova Dental,Paid Search,160,7,1487.45,505.04
+2026-06-10,Nova Dental,Paid Social,89,0,0.0,98.32
+2026-06-10,Nova Dental,Referral,66,5,1075.11,0.0
+2026-06-11,Nova Dental,Direct,137,5,1173.16,0.0
+2026-06-11,Nova Dental,Email,42,0,0.0,0.0
+2026-06-11,Nova Dental,Organic,305,9,1578.54,0.0
+2026-06-11,Nova Dental,Paid Search,147,6,1164.56,430.56
+2026-06-11,Nova Dental,Paid Social,91,4,766.97,105.06
+2026-06-11,Nova Dental,Referral,66,5,955.9,0.0
+2026-06-12,Nova Dental,Direct,110,5,948.29,0.0
+2026-06-12,Nova Dental,Email,38,1,207.65,0.0
+2026-06-12,Nova Dental,Organic,245,5,927.22,0.0
+2026-06-12,Nova Dental,Paid Search,134,4,800.67,409.95
+2026-06-12,Nova Dental,Paid Social,89,0,0.0,99.73
+2026-06-12,Nova Dental,Referral,61,2,435.88,0.0
+2026-06-13,Nova Dental,Direct,105,8,1755.41,0.0
+2026-06-13,Nova Dental,Email,31,2,424.14,0.0
+2026-06-13,Nova Dental,Organic,225,5,1073.01,0.0
+2026-06-13,Nova Dental,Paid Search,110,6,1204.29,326.53
+2026-06-13,Nova Dental,Paid Social,87,0,0.0,99.75
+2026-06-13,Nova Dental,Referral,60,3,813.1,0.0
+2026-06-14,Nova Dental,Direct,109,3,695.92,0.0
+2026-06-14,Nova Dental,Email,36,3,618.66,0.0
+2026-06-14,Nova Dental,Organic,245,4,1002.59,0.0
+2026-06-14,Nova Dental,Paid Search,125,4,835.96,391.41
+2026-06-14,Nova Dental,Paid Social,79,2,385.04,78.28
+2026-06-14,Nova Dental,Referral,58,4,850.75,0.0
+2026-06-15,Nova Dental,Direct,129,7,1407.29,0.0
+2026-06-15,Nova Dental,Email,41,2,467.44,0.0
+2026-06-15,Nova Dental,Organic,246,9,1928.6,0.0
+2026-06-15,Nova Dental,Paid Search,131,5,995.95,411.01
+2026-06-15,Nova Dental,Paid Social,100,4,916.06,103.42
+2026-06-15,Nova Dental,Referral,61,3,601.69,0.0
+2026-06-16,Nova Dental,Direct,133,5,970.18,0.0
+2026-06-16,Nova Dental,Email,43,3,787.27,0.0
+2026-06-16,Nova Dental,Organic,286,9,2027.47,0.0
+2026-06-16,Nova Dental,Paid Search,147,8,1510.76,472.52
+2026-06-16,Nova Dental,Paid Social,105,0,0.0,113.41
+2026-06-16,Nova Dental,Referral,68,6,1231.08,0.0
+2026-06-17,Nova Dental,Direct,130,6,1328.64,0.0
+2026-06-17,Nova Dental,Email,44,4,855.23,0.0
+2026-06-17,Nova Dental,Organic,281,14,2842.4,0.0
+2026-06-17,Nova Dental,Paid Search,145,6,1270.85,493.67
+2026-06-17,Nova Dental,Paid Social,96,2,359.91,111.46
+2026-06-17,Nova Dental,Referral,62,3,543.93,0.0
+2026-06-18,Nova Dental,Direct,126,4,724.32,0.0
+2026-06-18,Nova Dental,Email,45,1,209.86,0.0
+2026-06-18,Nova Dental,Organic,307,12,2394.55,0.0
+2026-06-18,Nova Dental,Paid Search,148,8,1869.26,489.9
+2026-06-18,Nova Dental,Paid Social,101,0,0.0,122.05
+2026-06-18,Nova Dental,Referral,60,5,1213.72,0.0
+2026-06-19,Nova Dental,Direct,122,3,565.05,0.0
+2026-06-19,Nova Dental,Email,36,2,430.88,0.0
+2026-06-19,Nova Dental,Organic,230,9,1905.6,0.0
+2026-06-19,Nova Dental,Paid Search,154,9,1914.44,454.41
+2026-06-19,Nova Dental,Paid Social,95,2,477.96,103.65
+2026-06-19,Nova Dental,Referral,52,1,216.67,0.0
+2026-06-20,Nova Dental,Direct,113,2,392.91,0.0
+2026-06-20,Nova Dental,Email,34,2,393.26,0.0
+2026-06-20,Nova Dental,Organic,219,7,1376.35,0.0
+2026-06-20,Nova Dental,Paid Search,126,5,987.88,415.65
+2026-06-20,Nova Dental,Paid Social,86,0,0.0,91.75
+2026-06-20,Nova Dental,Referral,51,4,756.36,0.0
+2026-06-21,Nova Dental,Direct,102,2,439.35,0.0
+2026-06-21,Nova Dental,Email,34,1,226.69,0.0
+2026-06-21,Nova Dental,Organic,218,9,2031.97,0.0
+2026-06-21,Nova Dental,Paid Search,139,4,829.72,447.29
+2026-06-21,Nova Dental,Paid Social,83,1,170.28,82.8
+2026-06-21,Nova Dental,Referral,56,2,379.41,0.0
+2026-06-22,Nova Dental,Direct,127,10,2146.48,0.0
+2026-06-22,Nova Dental,Email,40,2,438.94,0.0
+2026-06-22,Nova Dental,Organic,259,11,1967.22,0.0
+2026-06-22,Nova Dental,Paid Search,157,7,1197.46,499.95
+2026-06-22,Nova Dental,Paid Social,114,1,192.82,130.93
+2026-06-22,Nova Dental,Referral,64,4,841.28,0.0
+2026-06-23,Nova Dental,Direct,128,6,1397.03,0.0
+2026-06-23,Nova Dental,Email,42,2,402.71,0.0
+2026-06-23,Nova Dental,Organic,310,11,2525.01,0.0
+2026-06-23,Nova Dental,Paid Search,167,5,1035.46,533.79
+2026-06-23,Nova Dental,Paid Social,95,2,369.53,101.66
+2026-06-23,Nova Dental,Referral,61,3,691.54,0.0
+2026-06-24,Nova Dental,Direct,125,3,574.52,0.0
+2026-06-24,Nova Dental,Email,43,3,689.47,0.0
+2026-06-24,Nova Dental,Organic,281,5,1054.14,0.0
+2026-06-24,Nova Dental,Paid Search,172,9,1815.83,556.06
+2026-06-24,Nova Dental,Paid Social,113,0,0.0,144.12
+2026-06-24,Nova Dental,Referral,58,4,748.67,0.0
+2026-06-25,Nova Dental,Direct,111,4,761.93,0.0
+2026-06-25,Nova Dental,Email,43,2,420.8,0.0
+2026-06-25,Nova Dental,Organic,260,9,1849.85,0.0
+2026-06-25,Nova Dental,Paid Search,138,9,1721.56,426.58
+2026-06-25,Nova Dental,Paid Social,99,1,218.86,104.95
+2026-06-25,Nova Dental,Referral,72,3,704.2,0.0
+2026-06-26,Nova Dental,Direct,116,6,1327.77,0.0
+2026-06-26,Nova Dental,Email,40,0,0.0,0.0
+2026-06-26,Nova Dental,Organic,243,4,712.73,0.0
+2026-06-26,Nova Dental,Paid Search,128,8,1558.28,405.88
+2026-06-26,Nova Dental,Paid Social,96,1,160.34,117.32
+2026-06-26,Nova Dental,Referral,59,5,1040.42,0.0
+2026-06-27,Nova Dental,Direct,108,3,581.64,0.0
+2026-06-27,Nova Dental,Email,32,1,217.52,0.0
+2026-06-27,Nova Dental,Organic,217,3,571.2,0.0
+2026-06-27,Nova Dental,Paid Search,127,5,1007.8,431.18
+2026-06-27,Nova Dental,Paid Social,76,0,0.0,86.79
+2026-06-27,Nova Dental,Referral,49,3,574.04,0.0
+2026-06-28,Nova Dental,Direct,107,4,790.81,0.0
+2026-06-28,Nova Dental,Email,39,3,645.11,0.0
+2026-06-28,Nova Dental,Organic,226,8,1893.94,0.0
+2026-06-28,Nova Dental,Paid Search,126,10,2319.11,389.26
+2026-06-28,Nova Dental,Paid Social,86,2,455.01,89.86
+2026-06-28,Nova Dental,Referral,56,7,1402.83,0.0
+2026-06-29,Nova Dental,Direct,129,6,1046.48,0.0
+2026-06-29,Nova Dental,Email,46,2,462.34,0.0
+2026-06-29,Nova Dental,Organic,255,11,2262.31,0.0
+2026-06-29,Nova Dental,Paid Search,153,4,936.93,465.03
+2026-06-29,Nova Dental,Paid Social,107,1,213.13,119.07
+2026-06-29,Nova Dental,Referral,75,6,1500.75,0.0
+2026-06-30,Nova Dental,Direct,136,4,864.79,0.0
+2026-06-30,Nova Dental,Email,41,1,228.21,0.0
+2026-06-30,Nova Dental,Organic,282,6,1295.57,0.0
+2026-06-30,Nova Dental,Paid Search,152,11,2105.25,484.9
+2026-06-30,Nova Dental,Paid Social,92,0,0.0,105.18
+2026-06-30,Nova Dental,Referral,69,4,731.12,0.0
+2026-07-01,Nova Dental,Direct,144,5,1224.97,0.0
+2026-07-01,Nova Dental,Email,47,4,830.87,0.0
+2026-07-01,Nova Dental,Organic,275,4,769.28,0.0
+2026-07-01,Nova Dental,Paid Search,146,9,1794.58,441.52
+2026-07-01,Nova Dental,Paid Social,96,0,0.0,104.42
+2026-07-01,Nova Dental,Referral,54,5,975.9,0.0
+2026-07-02,Nova Dental,Direct,122,3,568.38,0.0
+2026-07-02,Nova Dental,Email,43,1,200.32,0.0
+2026-07-02,Nova Dental,Organic,257,11,2303.3,0.0
+2026-07-02,Nova Dental,Paid Search,164,7,1399.34,481.49
+2026-07-02,Nova Dental,Paid Social,81,0,0.0,92.91
+2026-07-02,Nova Dental,Referral,75,3,692.96,0.0
+2026-07-03,Nova Dental,Direct,108,0,0.0,0.0
+2026-07-03,Nova Dental,Email,38,1,210.04,0.0
+2026-07-03,Nova Dental,Organic,256,4,732.3,0.0
+2026-07-03,Nova Dental,Paid Search,126,4,910.83,396.32
+2026-07-03,Nova Dental,Paid Social,86,0,0.0,98.54
+2026-07-03,Nova Dental,Referral,51,3,643.79,0.0
+2026-07-04,Nova Dental,Direct,104,5,1043.78,0.0
+2026-07-04,Nova Dental,Email,36,2,435.54,0.0
+2026-07-04,Nova Dental,Organic,230,3,636.32,0.0
+2026-07-04,Nova Dental,Paid Search,128,5,1065.39,440.37
+2026-07-04,Nova Dental,Paid Social,74,1,211.1,83.86
+2026-07-04,Nova Dental,Referral,51,2,388.05,0.0
+2026-07-05,Nova Dental,Direct,123,6,1056.09,0.0
+2026-07-05,Nova Dental,Email,36,3,661.23,0.0
+2026-07-05,Nova Dental,Organic,226,9,1961.37,0.0
+2026-07-05,Nova Dental,Paid Search,131,11,2331.53,418.39
+2026-07-05,Nova Dental,Paid Social,80,1,223.33,87.93
+2026-07-05,Nova Dental,Referral,50,4,925.08,0.0
+2026-07-06,Nova Dental,Direct,119,11,2112.29,0.0
+2026-07-06,Nova Dental,Email,45,4,865.7,0.0
+2026-07-06,Nova Dental,Organic,277,11,2385.26,0.0
+2026-07-06,Nova Dental,Paid Search,135,5,1107.84,435.87
+2026-07-06,Nova Dental,Paid Social,119,1,225.15,123.43
+2026-07-06,Nova Dental,Referral,61,0,0.0,0.0
+2026-07-07,Nova Dental,Direct,139,4,763.38,0.0
+2026-07-07,Nova Dental,Email,45,0,0.0,0.0
+2026-07-07,Nova Dental,Organic,335,10,1918.57,0.0
+2026-07-07,Nova Dental,Paid Search,146,10,1978.41,420.0
+2026-07-07,Nova Dental,Paid Social,112,1,211.81,122.73
+2026-07-07,Nova Dental,Referral,68,4,868.3,0.0
+2026-07-08,Nova Dental,Direct,142,7,1424.2,0.0
+2026-07-08,Nova Dental,Email,43,4,928.05,0.0
+2026-07-08,Nova Dental,Organic,328,10,2029.38,0.0
+2026-07-08,Nova Dental,Paid Search,145,7,1684.81,474.28
+2026-07-08,Nova Dental,Paid Social,89,2,468.6,98.77
+2026-07-08,Nova Dental,Referral,56,4,790.1,0.0
+2026-07-09,Nova Dental,Direct,107,8,1751.98,0.0
+2026-07-09,Nova Dental,Email,36,3,588.92,0.0
+2026-07-09,Nova Dental,Organic,253,7,1551.13,0.0
+2026-07-09,Nova Dental,Paid Search,153,7,1469.74,491.89
+2026-07-09,Nova Dental,Paid Social,98,1,202.27,98.15
+2026-07-09,Nova Dental,Referral,62,4,802.37,0.0
+2026-07-10,Nova Dental,Direct,121,5,1263.24,0.0
+2026-07-10,Nova Dental,Email,41,4,1076.36,0.0
+2026-07-10,Nova Dental,Organic,238,6,1233.64,0.0
+2026-07-10,Nova Dental,Paid Search,133,8,1542.19,411.68
+2026-07-10,Nova Dental,Paid Social,93,1,181.76,103.17
+2026-07-10,Nova Dental,Referral,63,2,432.13,0.0
+2026-07-11,Nova Dental,Direct,109,8,1455.98,0.0
+2026-07-11,Nova Dental,Email,34,3,679.96,0.0
+2026-07-11,Nova Dental,Organic,211,9,1836.47,0.0
+2026-07-11,Nova Dental,Paid Search,122,4,820.93,393.93
+2026-07-11,Nova Dental,Paid Social,77,2,440.52,84.29
+2026-07-11,Nova Dental,Referral,49,3,552.54,0.0
+2026-07-12,Nova Dental,Direct,107,10,2000.62,0.0
+2026-07-12,Nova Dental,Email,38,3,562.83,0.0
+2026-07-12,Nova Dental,Organic,253,10,2540.3,0.0
+2026-07-12,Nova Dental,Paid Search,114,5,1187.66,367.92
+2026-07-12,Nova Dental,Paid Social,82,0,0.0,84.54
+2026-07-12,Nova Dental,Referral,49,4,959.28,0.0
+2026-07-13,Nova Dental,Direct,124,7,1344.02,0.0
+2026-07-13,Nova Dental,Email,45,1,213.93,0.0
+2026-07-13,Nova Dental,Organic,273,7,1336.65,0.0
+2026-07-13,Nova Dental,Paid Search,178,14,2817.63,540.21
+2026-07-13,Nova Dental,Paid Social,99,1,220.7,107.1
+2026-07-13,Nova Dental,Referral,64,2,497.84,0.0
+2026-07-14,Nova Dental,Direct,128,14,2589.88,0.0
+2026-07-14,Nova Dental,Email,43,1,226.87,0.0
+2026-07-14,Nova Dental,Organic,294,7,1637.72,0.0
+2026-07-14,Nova Dental,Paid Search,156,6,1385.51,507.55
+2026-07-14,Nova Dental,Paid Social,91,3,555.17,98.55
+2026-07-14,Nova Dental,Referral,65,3,615.31,0.0
+2026-07-15,Nova Dental,Direct,128,6,1272.08,0.0
+2026-07-15,Nova Dental,Email,47,5,1013.95,0.0
+2026-07-15,Nova Dental,Organic,326,8,1496.79,0.0
+2026-07-15,Nova Dental,Paid Search,158,12,2367.24,536.79
+2026-07-15,Nova Dental,Paid Social,91,1,251.18,110.24
+2026-07-15,Nova Dental,Referral,63,9,1958.52,0.0
+2026-07-16,Nova Dental,Direct,123,5,1050.16,0.0
+2026-07-16,Nova Dental,Email,43,2,361.67,0.0
+2026-07-16,Nova Dental,Organic,273,4,896.84,0.0
+2026-07-16,Nova Dental,Paid Search,142,14,2723.3,449.25
+2026-07-16,Nova Dental,Paid Social,96,4,901.85,106.77
+2026-07-16,Nova Dental,Referral,58,6,1418.63,0.0
+2026-07-17,Nova Dental,Direct,114,7,1226.15,0.0
+2026-07-17,Nova Dental,Email,40,2,378.55,0.0
+2026-07-17,Nova Dental,Organic,268,7,1577.87,0.0
+2026-07-17,Nova Dental,Paid Search,131,3,672.96,401.4
+2026-07-17,Nova Dental,Paid Social,89,0,0.0,103.11
+2026-07-17,Nova Dental,Referral,61,1,255.36,0.0
+2026-07-18,Nova Dental,Direct,103,6,1262.29,0.0
+2026-07-18,Nova Dental,Email,35,4,886.79,0.0
+2026-07-18,Nova Dental,Organic,236,3,598.65,0.0
+2026-07-18,Nova Dental,Paid Search,140,7,1346.98,444.04
+2026-07-18,Nova Dental,Paid Social,75,1,191.25,82.02
+2026-07-18,Nova Dental,Referral,55,3,736.14,0.0
+2026-07-19,Nova Dental,Direct,118,2,372.31,0.0
+2026-07-19,Nova Dental,Email,41,4,704.82,0.0
+2026-07-19,Nova Dental,Organic,227,8,1487.42,0.0
+2026-07-19,Nova Dental,Paid Search,111,4,912.01,370.71
+2026-07-19,Nova Dental,Paid Social,77,0,0.0,77.12
+2026-07-19,Nova Dental,Referral,51,1,176.54,0.0
+2026-07-20,Nova Dental,Direct,119,4,840.99,0.0
+2026-07-20,Nova Dental,Email,41,3,545.0,0.0
+2026-07-20,Nova Dental,Organic,304,7,1207.1,0.0
+2026-07-20,Nova Dental,Paid Search,155,8,1740.12,466.5
+2026-07-20,Nova Dental,Paid Social,97,0,0.0,110.35
+2026-07-20,Nova Dental,Referral,61,7,1424.34,0.0
+2026-07-21,Nova Dental,Direct,118,3,715.28,0.0
+2026-07-21,Nova Dental,Email,44,4,886.33,0.0
+2026-07-21,Nova Dental,Organic,273,9,1777.25,0.0
+2026-07-21,Nova Dental,Paid Search,143,14,2694.06,471.03
+2026-07-21,Nova Dental,Paid Social,107,5,1316.43,113.89
+2026-07-21,Nova Dental,Referral,68,4,883.13,0.0
+2026-07-22,Nova Dental,Direct,143,8,1759.62,0.0
+2026-07-22,Nova Dental,Email,40,0,0.0,0.0
+2026-07-22,Nova Dental,Organic,313,9,1992.12,0.0
+2026-07-22,Nova Dental,Paid Search,149,11,2293.56,460.91
+2026-07-22,Nova Dental,Paid Social,98,0,0.0,106.01
+2026-07-22,Nova Dental,Referral,61,3,599.62,0.0
+2026-07-23,Nova Dental,Direct,125,4,855.04,0.0
+2026-07-23,Nova Dental,Email,44,3,587.66,0.0
+2026-07-23,Nova Dental,Organic,263,11,2074.01,0.0
+2026-07-23,Nova Dental,Paid Search,141,12,2385.43,456.69
+2026-07-23,Nova Dental,Paid Social,106,4,997.7,110.62
+2026-07-23,Nova Dental,Referral,64,3,752.95,0.0
+2026-07-24,Nova Dental,Direct,115,3,597.55,0.0
+2026-07-24,Nova Dental,Email,38,5,999.32,0.0
+2026-07-24,Nova Dental,Organic,247,13,2756.6,0.0
+2026-07-24,Nova Dental,Paid Search,128,4,869.83,398.2
+2026-07-24,Nova Dental,Paid Social,84,1,206.16,92.74
+2026-07-24,Nova Dental,Referral,65,4,988.65,0.0
+2026-07-25,Nova Dental,Direct,105,4,845.64,0.0
+2026-07-25,Nova Dental,Email,34,0,0.0,0.0
+2026-07-25,Nova Dental,Organic,212,6,1087.05,0.0
+2026-07-25,Nova Dental,Paid Search,123,6,1521.8,382.6
+2026-07-25,Nova Dental,Paid Social,80,2,491.93,92.81
+2026-07-25,Nova Dental,Referral,53,1,193.55,0.0
+2026-07-26,Nova Dental,Direct,111,2,444.34,0.0
+2026-07-26,Nova Dental,Email,35,1,220.42,0.0
+2026-07-26,Nova Dental,Organic,222,3,615.44,0.0
+2026-07-26,Nova Dental,Paid Search,107,4,809.43,369.49
+2026-07-26,Nova Dental,Paid Social,80,3,585.36,92.2
+2026-07-26,Nova Dental,Referral,50,4,826.47,0.0
+2026-07-27,Nova Dental,Direct,126,9,1979.8,0.0
+2026-07-27,Nova Dental,Email,44,3,581.18,0.0
+2026-07-27,Nova Dental,Organic,275,10,1872.42,0.0
+2026-07-27,Nova Dental,Paid Search,149,11,2436.65,444.36
+2026-07-27,Nova Dental,Paid Social,102,1,210.4,121.46
+2026-07-27,Nova Dental,Referral,67,4,779.34,0.0
+2026-07-28,Nova Dental,Direct,139,5,1039.63,0.0
+2026-07-28,Nova Dental,Email,41,2,398.09,0.0
+2026-07-28,Nova Dental,Organic,246,3,625.11,0.0
+2026-07-28,Nova Dental,Paid Search,156,5,1052.57,511.46
+2026-07-28,Nova Dental,Paid Social,95,6,1365.59,113.93
+2026-07-28,Nova Dental,Referral,66,4,823.77,0.0
+2026-07-29,Nova Dental,Direct,123,3,643.84,0.0
+2026-07-29,Nova Dental,Email,38,0,0.0,0.0
+2026-07-29,Nova Dental,Organic,281,6,1198.42,0.0
+2026-07-29,Nova Dental,Paid Search,140,4,842.02,488.51
+2026-07-29,Nova Dental,Paid Social,113,2,448.75,112.21
+2026-07-29,Nova Dental,Referral,65,6,1231.91,0.0
+2026-07-30,Nova Dental,Direct,124,4,736.38,0.0
+2026-07-30,Nova Dental,Email,44,1,204.68,0.0
+2026-07-30,Nova Dental,Organic,266,4,745.73,0.0
+2026-07-30,Nova Dental,Paid Search,165,3,619.68,546.41
+2026-07-30,Nova Dental,Paid Social,85,1,234.44,88.08
+2026-07-30,Nova Dental,Referral,66,2,462.05,0.0
+2026-07-31,Nova Dental,Direct,101,6,1170.79,0.0
+2026-07-31,Nova Dental,Email,34,1,195.71,0.0
+2026-07-31,Nova Dental,Organic,271,12,2359.32,0.0
+2026-07-31,Nova Dental,Paid Search,132,4,770.98,395.2
+2026-07-31,Nova Dental,Paid Social,100,1,200.01,100.49
+2026-07-31,Nova Dental,Referral,62,2,384.29,0.0
+2026-08-01,Nova Dental,Direct,115,5,1126.99,0.0
+2026-08-01,Nova Dental,Email,37,1,172.12,0.0
+2026-08-01,Nova Dental,Organic,236,2,382.54,0.0
+2026-08-01,Nova Dental,Paid Search,122,4,868.63,366.17
+2026-08-01,Nova Dental,Paid Social,80,0,0.0,90.82
+2026-08-01,Nova Dental,Referral,53,3,484.95,0.0
+2026-08-02,Nova Dental,Direct,108,4,913.79,0.0
+2026-08-02,Nova Dental,Email,41,4,871.44,0.0
+2026-08-02,Nova Dental,Organic,226,7,1289.0,0.0
+2026-08-02,Nova Dental,Paid Search,123,2,408.05,379.08
+2026-08-02,Nova Dental,Paid Social,86,0,0.0,91.38
+2026-08-02,Nova Dental,Referral,55,5,894.34,0.0
+2026-08-03,Nova Dental,Direct,137,5,1059.87,0.0
+2026-08-03,Nova Dental,Email,43,2,423.33,0.0
+2026-08-03,Nova Dental,Organic,275,8,1872.11,0.0
+2026-08-03,Nova Dental,Paid Search,152,10,1918.33,490.26
+2026-08-03,Nova Dental,Paid Social,108,1,195.7,115.93
+2026-08-03,Nova Dental,Referral,76,2,378.96,0.0
+2026-08-04,Nova Dental,Direct,139,9,2191.25,0.0
+2026-08-04,Nova Dental,Email,49,3,598.23,0.0
+2026-08-04,Nova Dental,Organic,287,10,2025.71,0.0
+2026-08-04,Nova Dental,Paid Search,172,11,2556.57,556.65
+2026-08-04,Nova Dental,Paid Social,107,1,222.37,116.43
+2026-08-04,Nova Dental,Referral,73,6,1180.03,0.0
+2026-08-05,Nova Dental,Direct,138,7,1546.61,0.0
+2026-08-05,Nova Dental,Email,44,0,0.0,0.0
+2026-08-05,Nova Dental,Organic,318,7,1179.44,0.0
+2026-08-05,Nova Dental,Paid Search,184,7,1484.63,552.53
+2026-08-05,Nova Dental,Paid Social,94,0,0.0,105.4
+2026-08-05,Nova Dental,Referral,70,4,855.87,0.0
+2026-08-06,Nova Dental,Direct,127,6,1230.97,0.0
+2026-08-06,Nova Dental,Email,48,2,420.54,0.0
+2026-08-06,Nova Dental,Organic,261,12,2367.73,0.0
+2026-08-06,Nova Dental,Paid Search,157,10,2052.64,480.95
+2026-08-06,Nova Dental,Paid Social,100,1,214.37,102.13
+2026-08-06,Nova Dental,Referral,64,4,754.02,0.0
+2026-08-07,Nova Dental,Direct,122,5,929.43,0.0
+2026-08-07,Nova Dental,Email,38,1,220.34,0.0
+2026-08-07,Nova Dental,Organic,245,9,2071.03,0.0
+2026-08-07,Nova Dental,Paid Search,150,7,1680.8,460.91
+2026-08-07,Nova Dental,Paid Social,102,2,423.57,105.36
+2026-08-07,Nova Dental,Referral,55,3,558.14,0.0
+2026-08-08,Nova Dental,Direct,99,9,2182.45,0.0
+2026-08-08,Nova Dental,Email,30,3,636.19,0.0
+2026-08-08,Nova Dental,Organic,213,6,1167.63,0.0
+2026-08-08,Nova Dental,Paid Search,140,9,1572.97,443.97
+2026-08-08,Nova Dental,Paid Social,75,1,194.08,82.51
+2026-08-08,Nova Dental,Referral,58,1,191.36,0.0
+2026-08-09,Nova Dental,Direct,101,5,1134.08,0.0
+2026-08-09,Nova Dental,Email,37,4,989.51,0.0
+2026-08-09,Nova Dental,Organic,215,6,1463.58,0.0
+2026-08-09,Nova Dental,Paid Search,131,5,1192.52,462.93
+2026-08-09,Nova Dental,Paid Social,96,3,613.79,112.12
+2026-08-09,Nova Dental,Referral,56,2,375.66,0.0
+2026-08-10,Nova Dental,Direct,131,5,1256.87,0.0
+2026-08-10,Nova Dental,Email,49,2,450.67,0.0
+2026-08-10,Nova Dental,Organic,291,11,2120.35,0.0
+2026-08-10,Nova Dental,Paid Search,171,9,1730.76,522.25
+2026-08-10,Nova Dental,Paid Social,101,4,852.26,110.96
+2026-08-10,Nova Dental,Referral,63,5,993.36,0.0
+2026-08-11,Nova Dental,Direct,129,9,2347.29,0.0
+2026-08-11,Nova Dental,Email,47,6,1246.55,0.0
+2026-08-11,Nova Dental,Organic,297,12,2650.11,0.0
+2026-08-11,Nova Dental,Paid Search,167,7,1501.43,508.92
+2026-08-11,Nova Dental,Paid Social,98,3,623.56,103.62
+2026-08-11,Nova Dental,Referral,67,4,791.3,0.0
+2026-08-12,Nova Dental,Direct,147,9,1661.77,0.0
+2026-08-12,Nova Dental,Email,43,0,0.0,0.0
+2026-08-12,Nova Dental,Organic,315,9,2096.44,0.0
+2026-08-12,Nova Dental,Paid Search,157,5,990.03,474.73
+2026-08-12,Nova Dental,Paid Social,94,1,245.77,92.87
+2026-08-12,Nova Dental,Referral,62,4,899.92,0.0
+2026-08-13,Nova Dental,Direct,131,6,1108.13,0.0
+2026-08-13,Nova Dental,Email,44,1,211.02,0.0
+2026-08-13,Nova Dental,Organic,298,7,1537.69,0.0
+2026-08-13,Nova Dental,Paid Search,153,8,1531.88,505.41
+2026-08-13,Nova Dental,Paid Social,94,0,0.0,108.44
+2026-08-13,Nova Dental,Referral,69,7,1331.5,0.0
+2026-08-14,Nova Dental,Direct,113,6,946.29,0.0
+2026-08-14,Nova Dental,Email,43,3,632.85,0.0
+2026-08-14,Nova Dental,Organic,305,4,732.13,0.0
+2026-08-14,Nova Dental,Paid Search,122,8,1915.89,389.59
+2026-08-14,Nova Dental,Paid Social,78,3,648.54,82.7
+2026-08-14,Nova Dental,Referral,63,1,202.62,0.0
+2026-08-15,Nova Dental,Direct,105,3,690.6,0.0
+2026-08-15,Nova Dental,Email,35,1,239.07,0.0
+2026-08-15,Nova Dental,Organic,230,4,764.45,0.0
+2026-08-15,Nova Dental,Paid Search,127,9,2275.5,388.59
+2026-08-15,Nova Dental,Paid Social,78,0,0.0,81.02
+2026-08-15,Nova Dental,Referral,54,3,596.58,0.0
+2026-08-16,Nova Dental,Direct,112,4,896.99,0.0
+2026-08-16,Nova Dental,Email,44,5,959.81,0.0
+2026-08-16,Nova Dental,Organic,235,4,944.27,0.0
+2026-08-16,Nova Dental,Paid Search,116,5,1027.03,364.53
+2026-08-16,Nova Dental,Paid Social,81,0,0.0,81.78
+2026-08-16,Nova Dental,Referral,55,3,683.08,0.0
+2026-08-17,Nova Dental,Direct,131,3,636.19,0.0
+2026-08-17,Nova Dental,Email,42,1,210.49,0.0
+2026-08-17,Nova Dental,Organic,261,3,581.3,0.0
+2026-08-17,Nova Dental,Paid Search,137,7,1520.15,421.39
+2026-08-17,Nova Dental,Paid Social,92,0,0.0,94.17
+2026-08-17,Nova Dental,Referral,63,2,413.57,0.0
+2026-08-18,Nova Dental,Direct,138,6,1114.6,0.0
+2026-08-18,Nova Dental,Email,49,4,946.12,0.0
+2026-08-18,Nova Dental,Organic,309,7,1620.65,0.0
+2026-08-18,Nova Dental,Paid Search,161,10,2112.0,522.88
+2026-08-18,Nova Dental,Paid Social,107,1,189.83,112.18
+2026-08-18,Nova Dental,Referral,58,7,1632.86,0.0
+2026-08-19,Nova Dental,Direct,134,5,1040.69,0.0
+2026-08-19,Nova Dental,Email,47,1,216.59,0.0
+2026-08-19,Nova Dental,Organic,291,12,2413.87,0.0
+2026-08-19,Nova Dental,Paid Search,144,3,749.02,526.99
+2026-08-19,Nova Dental,Paid Social,98,1,212.4,106.52
+2026-08-19,Nova Dental,Referral,60,7,1310.0,0.0
+2026-08-20,Nova Dental,Direct,116,4,855.66,0.0
+2026-08-20,Nova Dental,Email,41,1,202.39,0.0
+2026-08-20,Nova Dental,Organic,291,11,2342.9,0.0
+2026-08-20,Nova Dental,Paid Search,150,4,680.0,493.4
+2026-08-20,Nova Dental,Paid Social,92,0,0.0,95.26
+2026-08-20,Nova Dental,Referral,61,3,626.9,0.0
+2026-08-21,Nova Dental,Direct,103,8,1816.78,0.0
+2026-08-21,Nova Dental,Email,39,2,354.12,0.0
+2026-08-21,Nova Dental,Organic,239,10,1828.19,0.0
+2026-08-21,Nova Dental,Paid Search,141,6,1308.42,449.11
+2026-08-21,Nova Dental,Paid Social,88,2,407.13,97.7
+2026-08-21,Nova Dental,Referral,56,6,1189.49,0.0
+2026-08-22,Nova Dental,Direct,104,2,431.62,0.0
+2026-08-22,Nova Dental,Email,38,4,669.39,0.0
+2026-08-22,Nova Dental,Organic,238,8,1580.86,0.0
+2026-08-22,Nova Dental,Paid Search,127,4,781.09,393.11
+2026-08-22,Nova Dental,Paid Social,82,0,0.0,89.1
+2026-08-22,Nova Dental,Referral,55,0,0.0,0.0
+2026-08-23,Nova Dental,Direct,115,7,1570.89,0.0
+2026-08-23,Nova Dental,Email,37,2,516.91,0.0
+2026-08-23,Nova Dental,Organic,244,8,1539.2,0.0
+2026-08-23,Nova Dental,Paid Search,121,5,829.6,362.05
+2026-08-23,Nova Dental,Paid Social,84,0,0.0,103.26
+2026-08-23,Nova Dental,Referral,59,8,1668.7,0.0
+2026-08-24,Nova Dental,Direct,129,4,829.64,0.0
+2026-08-24,Nova Dental,Email,45,3,649.74,0.0
+2026-08-24,Nova Dental,Organic,290,6,1288.75,0.0
+2026-08-24,Nova Dental,Paid Search,164,4,810.25,544.41
+2026-08-24,Nova Dental,Paid Social,95,1,198.83,95.96
+2026-08-24,Nova Dental,Referral,66,6,1498.41,0.0
+2026-08-25,Nova Dental,Direct,149,2,472.67,0.0
+2026-08-25,Nova Dental,Email,41,0,0.0,0.0
+2026-08-25,Nova Dental,Organic,281,10,2119.66,0.0
+2026-08-25,Nova Dental,Paid Search,158,8,2021.01,523.07
+2026-08-25,Nova Dental,Paid Social,103,1,195.62,114.22
+2026-08-25,Nova Dental,Referral,75,3,578.49,0.0
+2026-08-26,Nova Dental,Direct,133,2,447.39,0.0
+2026-08-26,Nova Dental,Email,47,0,0.0,0.0
+2026-08-26,Nova Dental,Organic,315,8,1759.55,0.0
+2026-08-26,Nova Dental,Paid Search,161,9,1769.99,503.33
+2026-08-26,Nova Dental,Paid Social,100,2,479.64,110.96
+2026-08-26,Nova Dental,Referral,63,4,829.36,0.0
+2026-08-27,Nova Dental,Direct,142,6,1118.98,0.0
+2026-08-27,Nova Dental,Email,44,0,0.0,0.0
+2026-08-27,Nova Dental,Organic,322,9,1799.53,0.0
+2026-08-27,Nova Dental,Paid Search,138,9,2045.52,469.22
+2026-08-27,Nova Dental,Paid Social,89,0,0.0,92.98
+2026-08-27,Nova Dental,Referral,64,6,1105.05,0.0
+2026-08-28,Nova Dental,Direct,130,5,1206.49,0.0
+2026-08-28,Nova Dental,Email,40,3,609.48,0.0
+2026-08-28,Nova Dental,Organic,241,12,2296.15,0.0
+2026-08-28,Nova Dental,Paid Search,138,8,1893.94,442.07
+2026-08-28,Nova Dental,Paid Social,88,0,0.0,97.26
+2026-08-28,Nova Dental,Referral,60,3,544.46,0.0
+2026-08-29,Nova Dental,Direct,116,4,949.52,0.0
+2026-08-29,Nova Dental,Email,37,1,191.14,0.0
+2026-08-29,Nova Dental,Organic,245,10,2138.73,0.0
+2026-08-29,Nova Dental,Paid Search,135,6,1258.4,449.06
+2026-08-29,Nova Dental,Paid Social,84,0,0.0,96.02
+2026-08-29,Nova Dental,Referral,58,2,388.2,0.0
+2026-08-30,Nova Dental,Direct,102,5,1100.03,0.0
+2026-08-30,Nova Dental,Email,36,1,182.32,0.0
+2026-08-30,Nova Dental,Organic,197,4,757.82,0.0
+2026-08-30,Nova Dental,Paid Search,139,11,2337.99,451.44
+2026-08-30,Nova Dental,Paid Social,87,2,449.01,96.16
+2026-08-30,Nova Dental,Referral,56,4,803.04,0.0
+2026-08-31,Nova Dental,Direct,133,5,1079.89,0.0
+2026-08-31,Nova Dental,Email,42,2,340.28,0.0
+2026-08-31,Nova Dental,Organic,302,11,2573.04,0.0
+2026-08-31,Nova Dental,Paid Search,147,9,1591.93,466.25
+2026-08-31,Nova Dental,Paid Social,98,4,811.55,115.53
+2026-08-31,Nova Dental,Referral,67,2,403.31,0.0
+2026-09-01,Nova Dental,Direct,149,3,743.66,0.0
+2026-09-01,Nova Dental,Email,45,2,357.98,0.0
+2026-09-01,Nova Dental,Organic,260,5,1038.04,0.0
+2026-09-01,Nova Dental,Paid Search,154,9,1759.38,469.82
+2026-09-01,Nova Dental,Paid Social,108,2,459.64,106.54
+2026-09-01,Nova Dental,Referral,61,2,410.61,0.0
+2026-09-02,Nova Dental,Direct,137,5,891.78,0.0
+2026-09-02,Nova Dental,Email,43,2,465.16,0.0
+2026-09-02,Nova Dental,Organic,280,3,609.78,0.0
+2026-09-02,Nova Dental,Paid Search,146,5,1149.69,463.81
+2026-09-02,Nova Dental,Paid Social,94,1,184.93,99.14
+2026-09-02,Nova Dental,Referral,63,2,356.17,0.0
+2026-09-03,Nova Dental,Direct,134,2,475.5,0.0
+2026-09-03,Nova Dental,Email,50,0,0.0,0.0
+2026-09-03,Nova Dental,Organic,255,3,659.8,0.0
+2026-09-03,Nova Dental,Paid Search,144,8,1690.23,480.62
+2026-09-03,Nova Dental,Paid Social,91,2,472.19,107.76
+2026-09-03,Nova Dental,Referral,70,5,986.29,0.0
+2026-09-04,Nova Dental,Direct,109,2,400.47,0.0
+2026-09-04,Nova Dental,Email,43,2,443.08,0.0
+2026-09-04,Nova Dental,Organic,257,5,1042.01,0.0
+2026-09-04,Nova Dental,Paid Search,127,7,1525.0,396.2
+2026-09-04,Nova Dental,Paid Social,89,0,0.0,102.47
+2026-09-04,Nova Dental,Referral,52,2,441.61,0.0
+2026-09-05,Nova Dental,Direct,123,3,702.92,0.0
+2026-09-05,Nova Dental,Email,34,3,693.25,0.0
+2026-09-05,Nova Dental,Organic,248,9,1601.23,0.0
+2026-09-05,Nova Dental,Paid Search,125,8,1702.52,408.89
+2026-09-05,Nova Dental,Paid Social,90,0,0.0,101.71
+2026-09-05,Nova Dental,Referral,59,4,733.32,0.0
+2026-09-06,Nova Dental,Direct,106,5,1062.72,0.0
+2026-09-06,Nova Dental,Email,43,1,210.35,0.0
+2026-09-06,Nova Dental,Organic,212,6,1133.11,0.0
+2026-09-06,Nova Dental,Paid Search,136,9,2353.2,412.27
+2026-09-06,Nova Dental,Paid Social,85,1,195.94,99.45
+2026-09-06,Nova Dental,Referral,58,2,405.35,0.0
+2026-09-07,Nova Dental,Direct,116,6,1112.73,0.0
+2026-09-07,Nova Dental,Email,43,3,611.47,0.0
+2026-09-07,Nova Dental,Organic,282,3,700.29,0.0
+2026-09-07,Nova Dental,Paid Search,147,11,2212.66,489.11
+2026-09-07,Nova Dental,Paid Social,98,0,0.0,97.95
+2026-09-07,Nova Dental,Referral,63,2,432.48,0.0
+2026-09-08,Nova Dental,Direct,134,8,1598.62,0.0
+2026-09-08,Nova Dental,Email,46,0,0.0,0.0
+2026-09-08,Nova Dental,Organic,287,16,3388.3,0.0
+2026-09-08,Nova Dental,Paid Search,159,13,3205.42,516.82
+2026-09-08,Nova Dental,Paid Social,115,1,177.76,131.63
+2026-09-08,Nova Dental,Referral,65,4,776.79,0.0
+2026-09-09,Nova Dental,Direct,114,6,1395.54,0.0
+2026-09-09,Nova Dental,Email,48,4,805.72,0.0
+2026-09-09,Nova Dental,Organic,326,10,1774.96,0.0
+2026-09-09,Nova Dental,Paid Search,155,8,1702.58,467.07
+2026-09-09,Nova Dental,Paid Social,99,1,194.58,114.85
+2026-09-09,Nova Dental,Referral,77,3,651.89,0.0
+2026-09-10,Nova Dental,Direct,120,5,1028.16,0.0
+2026-09-10,Nova Dental,Email,38,4,947.47,0.0
+2026-09-10,Nova Dental,Organic,290,7,1522.68,0.0
+2026-09-10,Nova Dental,Paid Search,163,14,3482.78,515.79
+2026-09-10,Nova Dental,Paid Social,114,1,222.71,121.34
+2026-09-10,Nova Dental,Referral,72,5,901.84,0.0
+2026-09-11,Nova Dental,Direct,145,4,789.38,0.0
+2026-09-11,Nova Dental,Email,40,0,0.0,0.0
+2026-09-11,Nova Dental,Organic,241,7,1390.05,0.0
+2026-09-11,Nova Dental,Paid Search,135,10,1857.89,452.59
+2026-09-11,Nova Dental,Paid Social,87,1,190.75,109.15
+2026-09-11,Nova Dental,Referral,60,3,688.53,0.0
+2026-09-12,Nova Dental,Direct,105,0,0.0,0.0
+2026-09-12,Nova Dental,Email,35,1,242.76,0.0
+2026-09-12,Nova Dental,Organic,227,6,1154.49,0.0
+2026-09-12,Nova Dental,Paid Search,121,1,213.91,363.58
+2026-09-12,Nova Dental,Paid Social,76,0,0.0,84.42
+2026-09-12,Nova Dental,Referral,55,4,871.3,0.0
+2026-09-13,Nova Dental,Direct,101,5,1119.65,0.0
+2026-09-13,Nova Dental,Email,38,2,338.69,0.0
+2026-09-13,Nova Dental,Organic,271,8,1498.26,0.0
+2026-09-13,Nova Dental,Paid Search,123,7,1413.25,373.08
+2026-09-13,Nova Dental,Paid Social,83,0,0.0,81.82
+2026-09-13,Nova Dental,Referral,54,3,633.52,0.0
+2026-09-14,Nova Dental,Direct,134,4,1000.71,0.0
+2026-09-14,Nova Dental,Email,46,4,804.08,0.0
+2026-09-14,Nova Dental,Organic,305,11,2552.93,0.0
+2026-09-14,Nova Dental,Paid Search,144,4,851.8,459.2
+2026-09-14,Nova Dental,Paid Social,99,2,404.14,111.0
+2026-09-14,Nova Dental,Referral,68,6,1410.01,0.0
+2026-09-15,Nova Dental,Direct,129,4,678.11,0.0
+2026-09-15,Nova Dental,Email,46,2,420.17,0.0
+2026-09-15,Nova Dental,Organic,280,12,2070.33,0.0
+2026-09-15,Nova Dental,Paid Search,167,7,1661.13,594.55
+2026-09-15,Nova Dental,Paid Social,98,2,405.74,103.99
+2026-09-15,Nova Dental,Referral,66,1,203.2,0.0
+2026-09-16,Nova Dental,Direct,144,11,3056.64,0.0
+2026-09-16,Nova Dental,Email,45,3,659.86,0.0
+2026-09-16,Nova Dental,Organic,288,7,1351.9,0.0
+2026-09-16,Nova Dental,Paid Search,156,6,1308.65,482.69
+2026-09-16,Nova Dental,Paid Social,122,0,0.0,142.25
+2026-09-16,Nova Dental,Referral,67,7,1381.92,0.0
+2026-09-17,Nova Dental,Direct,122,3,642.97,0.0
+2026-09-17,Nova Dental,Email,47,1,176.69,0.0
+2026-09-17,Nova Dental,Organic,277,8,1700.3,0.0
+2026-09-17,Nova Dental,Paid Search,152,8,1898.06,498.6
+2026-09-17,Nova Dental,Paid Social,100,0,0.0,113.06
+2026-09-17,Nova Dental,Referral,74,3,722.69,0.0
+2026-09-18,Nova Dental,Direct,124,1,222.55,0.0
+2026-09-18,Nova Dental,Email,41,0,0.0,0.0
+2026-09-18,Nova Dental,Organic,253,1,245.9,0.0
+2026-09-18,Nova Dental,Paid Search,155,2,392.77,502.49
+2026-09-18,Nova Dental,Paid Social,94,0,0.0,100.35
+2026-09-18,Nova Dental,Referral,60,1,252.44,0.0
+2026-09-19,Nova Dental,Direct,100,7,1407.25,0.0
+2026-09-19,Nova Dental,Email,36,2,478.63,0.0
+2026-09-19,Nova Dental,Organic,209,9,1997.63,0.0
+2026-09-19,Nova Dental,Paid Search,139,5,967.06,431.88
+2026-09-19,Nova Dental,Paid Social,79,0,0.0,93.68
+2026-09-19,Nova Dental,Referral,50,3,587.79,0.0
+2026-09-20,Nova Dental,Direct,135,4,839.7,0.0
+2026-09-20,Nova Dental,Email,38,2,397.16,0.0
+2026-09-20,Nova Dental,Organic,232,6,1157.79,0.0
+2026-09-20,Nova Dental,Paid Search,117,2,420.68,377.43
+2026-09-20,Nova Dental,Paid Social,81,0,0.0,93.39
+2026-09-20,Nova Dental,Referral,51,2,415.25,0.0
+2026-09-21,Nova Dental,Direct,139,5,1070.41,0.0
+2026-09-21,Nova Dental,Email,51,4,723.91,0.0
+2026-09-21,Nova Dental,Organic,321,8,1957.62,0.0
+2026-09-21,Nova Dental,Paid Search,164,10,2091.9,513.18
+2026-09-21,Nova Dental,Paid Social,108,0,0.0,113.98
+2026-09-21,Nova Dental,Referral,68,4,932.53,0.0
+2026-09-22,Nova Dental,Direct,137,3,567.26,0.0
+2026-09-22,Nova Dental,Email,47,4,752.23,0.0
+2026-09-22,Nova Dental,Organic,291,18,3300.95,0.0
+2026-09-22,Nova Dental,Paid Search,164,11,2267.46,515.49
+2026-09-22,Nova Dental,Paid Social,92,2,450.39,100.43
+2026-09-22,Nova Dental,Referral,65,6,1250.19,0.0
+2026-09-23,Nova Dental,Direct,133,5,968.72,0.0
+2026-09-23,Nova Dental,Email,44,3,655.09,0.0
+2026-09-23,Nova Dental,Organic,292,9,1940.82,0.0
+2026-09-23,Nova Dental,Paid Search,153,16,3052.86,450.58
+2026-09-23,Nova Dental,Paid Social,94,2,401.36,106.11
+2026-09-23,Nova Dental,Referral,69,6,1337.19,0.0
+2026-09-24,Nova Dental,Direct,126,9,2127.68,0.0
+2026-09-24,Nova Dental,Email,38,2,386.84,0.0
+2026-09-24,Nova Dental,Organic,286,5,1102.49,0.0
+2026-09-24,Nova Dental,Paid Search,156,7,1657.2,498.59
+2026-09-24,Nova Dental,Paid Social,96,2,457.75,103.69
+2026-09-24,Nova Dental,Referral,58,4,908.18,0.0
+2026-09-25,Nova Dental,Direct,115,5,899.02,0.0
+2026-09-25,Nova Dental,Email,37,4,860.54,0.0
+2026-09-25,Nova Dental,Organic,308,8,1538.31,0.0
+2026-09-25,Nova Dental,Paid Search,126,5,1012.58,421.74
+2026-09-25,Nova Dental,Paid Social,100,1,214.39,108.18
+2026-09-25,Nova Dental,Referral,64,9,1786.66,0.0
+2026-09-26,Nova Dental,Direct,103,4,877.88,0.0
+2026-09-26,Nova Dental,Email,35,3,571.26,0.0
+2026-09-26,Nova Dental,Organic,236,6,1351.04,0.0
+2026-09-26,Nova Dental,Paid Search,141,10,2421.88,452.5
+2026-09-26,Nova Dental,Paid Social,80,1,245.93,88.16
+2026-09-26,Nova Dental,Referral,51,3,656.98,0.0
+2026-09-27,Nova Dental,Direct,127,4,809.45,0.0
+2026-09-27,Nova Dental,Email,37,3,529.16,0.0
+2026-09-27,Nova Dental,Organic,264,13,2593.25,0.0
+2026-09-27,Nova Dental,Paid Search,137,4,841.07,462.97
+2026-09-27,Nova Dental,Paid Social,87,1,233.08,90.73
+2026-09-27,Nova Dental,Referral,57,1,209.87,0.0
+2026-09-28,Nova Dental,Direct,130,4,763.06,0.0
+2026-09-28,Nova Dental,Email,43,7,1695.03,0.0
+2026-09-28,Nova Dental,Organic,280,9,2026.06,0.0
+2026-09-28,Nova Dental,Paid Search,148,13,2912.89,487.54
+2026-09-28,Nova Dental,Paid Social,101,2,467.01,99.36
+2026-09-28,Nova Dental,Referral,66,6,1115.64,0.0
+2026-09-29,Nova Dental,Direct,119,5,1278.88,0.0
+2026-09-29,Nova Dental,Email,47,2,437.06,0.0
+2026-09-29,Nova Dental,Organic,295,7,1223.0,0.0
+2026-09-29,Nova Dental,Paid Search,155,9,1998.4,494.53
+2026-09-29,Nova Dental,Paid Social,114,2,403.05,126.91
+2026-09-29,Nova Dental,Referral,78,3,570.64,0.0
+2026-09-30,Nova Dental,Direct,125,4,763.53,0.0
+2026-09-30,Nova Dental,Email,44,3,609.32,0.0
+2026-09-30,Nova Dental,Organic,295,9,1954.38,0.0
+2026-09-30,Nova Dental,Paid Search,141,7,1353.69,437.25
+2026-09-30,Nova Dental,Paid Social,91,2,415.93,90.62
+2026-09-30,Nova Dental,Referral,69,2,393.47,0.0
+2026-10-01,Nova Dental,Direct,140,3,562.68,0.0
+2026-10-01,Nova Dental,Email,41,3,598.0,0.0
+2026-10-01,Nova Dental,Organic,269,8,1612.17,0.0
+2026-10-01,Nova Dental,Paid Search,150,4,871.42,468.47
+2026-10-01,Nova Dental,Paid Social,104,2,407.37,108.86
+2026-10-01,Nova Dental,Referral,75,2,460.87,0.0
+2026-10-02,Nova Dental,Direct,120,5,1030.55,0.0
+2026-10-02,Nova Dental,Email,42,1,243.13,0.0
+2026-10-02,Nova Dental,Organic,261,4,942.35,0.0
+2026-10-02,Nova Dental,Paid Search,138,2,509.33,410.3
+2026-10-02,Nova Dental,Paid Social,90,1,180.64,90.61
+2026-10-02,Nova Dental,Referral,64,3,693.57,0.0
+2026-10-03,Nova Dental,Direct,108,7,1361.25,0.0
+2026-10-03,Nova Dental,Email,40,2,445.59,0.0
+2026-10-03,Nova Dental,Organic,252,11,2299.86,0.0
+2026-10-03,Nova Dental,Paid Search,116,6,1292.11,366.28
+2026-10-03,Nova Dental,Paid Social,87,0,0.0,88.13
+2026-10-03,Nova Dental,Referral,60,3,679.06,0.0
+2026-10-04,Nova Dental,Direct,123,8,1681.07,0.0
+2026-10-04,Nova Dental,Email,35,1,235.52,0.0
+2026-10-04,Nova Dental,Organic,232,2,475.89,0.0
+2026-10-04,Nova Dental,Paid Search,140,6,1378.84,451.28
+2026-10-04,Nova Dental,Paid Social,80,0,0.0,89.9
+2026-10-04,Nova Dental,Referral,56,2,438.9,0.0
+2026-10-05,Nova Dental,Direct,128,7,1493.02,0.0
+2026-10-05,Nova Dental,Email,46,2,396.19,0.0
+2026-10-05,Nova Dental,Organic,293,12,2651.22,0.0
+2026-10-05,Nova Dental,Paid Search,172,11,2475.83,599.69
+2026-10-05,Nova Dental,Paid Social,102,1,202.88,110.96
+2026-10-05,Nova Dental,Referral,69,4,875.4,0.0
+2026-10-06,Nova Dental,Direct,145,6,1289.92,0.0
+2026-10-06,Nova Dental,Email,41,1,211.07,0.0
+2026-10-06,Nova Dental,Organic,317,12,2488.07,0.0
+2026-10-06,Nova Dental,Paid Search,162,9,1948.93,532.28
+2026-10-06,Nova Dental,Paid Social,104,0,0.0,112.93
+2026-10-06,Nova Dental,Referral,76,6,1295.46,0.0
+2026-10-07,Nova Dental,Direct,130,7,1451.9,0.0
+2026-10-07,Nova Dental,Email,41,3,655.85,0.0
+2026-10-07,Nova Dental,Organic,279,5,1136.05,0.0
+2026-10-07,Nova Dental,Paid Search,156,7,1497.67,478.07
+2026-10-07,Nova Dental,Paid Social,96,0,0.0,98.88
+2026-10-07,Nova Dental,Referral,73,8,1749.89,0.0
+2026-10-08,Nova Dental,Direct,137,9,1761.84,0.0
+2026-10-08,Nova Dental,Email,42,3,596.28,0.0
+2026-10-08,Nova Dental,Organic,308,11,2500.91,0.0
+2026-10-08,Nova Dental,Paid Search,158,5,1109.07,470.49
+2026-10-08,Nova Dental,Paid Social,90,0,0.0,95.81
+2026-10-08,Nova Dental,Referral,68,2,440.45,0.0
+2026-10-09,Nova Dental,Direct,119,1,223.96,0.0
+2026-10-09,Nova Dental,Email,44,2,416.01,0.0
+2026-10-09,Nova Dental,Organic,267,10,2201.48,0.0
+2026-10-09,Nova Dental,Paid Search,143,7,1586.6,452.9
+2026-10-09,Nova Dental,Paid Social,88,0,0.0,98.64
+2026-10-09,Nova Dental,Referral,60,2,364.97,0.0
+2026-10-10,Nova Dental,Direct,108,3,623.0,0.0
+2026-10-10,Nova Dental,Email,35,1,198.09,0.0
+2026-10-10,Nova Dental,Organic,235,8,1335.84,0.0
+2026-10-10,Nova Dental,Paid Search,119,4,733.76,396.57
+2026-10-10,Nova Dental,Paid Social,83,3,554.39,91.06
+2026-10-10,Nova Dental,Referral,54,3,582.13,0.0
+2026-10-11,Nova Dental,Direct,120,3,599.54,0.0
+2026-10-11,Nova Dental,Email,36,2,437.1,0.0
+2026-10-11,Nova Dental,Organic,214,7,1332.43,0.0
+2026-10-11,Nova Dental,Paid Search,127,7,1506.81,401.94
+2026-10-11,Nova Dental,Paid Social,81,0,0.0,92.84
+2026-10-11,Nova Dental,Referral,62,2,378.93,0.0
+2026-10-12,Nova Dental,Direct,143,13,3165.47,0.0
+2026-10-12,Nova Dental,Email,45,1,184.01,0.0
+2026-10-12,Nova Dental,Organic,286,4,964.7,0.0
+2026-10-12,Nova Dental,Paid Search,155,8,1649.36,509.62
+2026-10-12,Nova Dental,Paid Social,99,0,0.0,114.28
+2026-10-12,Nova Dental,Referral,75,4,938.34,0.0
+2026-10-13,Nova Dental,Direct,138,9,1867.21,0.0
+2026-10-13,Nova Dental,Email,47,2,444.72,0.0
+2026-10-13,Nova Dental,Organic,310,5,926.07,0.0
+2026-10-13,Nova Dental,Paid Search,166,11,2221.3,526.41
+2026-10-13,Nova Dental,Paid Social,92,1,218.25,99.93
+2026-10-13,Nova Dental,Referral,67,4,991.1,0.0
+2026-10-14,Nova Dental,Direct,133,7,1639.61,0.0
+2026-10-14,Nova Dental,Email,43,2,433.25,0.0
+2026-10-14,Nova Dental,Organic,336,12,2752.49,0.0
+2026-10-14,Nova Dental,Paid Search,160,7,1673.4,592.6
+2026-10-14,Nova Dental,Paid Social,100,1,228.59,100.27
+2026-10-14,Nova Dental,Referral,65,5,845.26,0.0
+2026-10-15,Nova Dental,Direct,148,5,1187.05,0.0
+2026-10-15,Nova Dental,Email,51,5,1028.87,0.0
+2026-10-15,Nova Dental,Organic,298,5,1126.86,0.0
+2026-10-15,Nova Dental,Paid Search,156,6,1170.93,568.42
+2026-10-15,Nova Dental,Paid Social,106,2,445.12,112.27
+2026-10-15,Nova Dental,Referral,62,2,491.14,0.0
+2026-10-16,Nova Dental,Direct,128,9,2149.73,0.0
+2026-10-16,Nova Dental,Email,40,1,219.66,0.0
+2026-10-16,Nova Dental,Organic,288,6,1171.79,0.0
+2026-10-16,Nova Dental,Paid Search,129,8,1461.29,603.82
+2026-10-16,Nova Dental,Paid Social,97,1,221.87,106.18
+2026-10-16,Nova Dental,Referral,65,5,1059.15,0.0
+2026-10-17,Nova Dental,Direct,107,1,225.03,0.0
+2026-10-17,Nova Dental,Email,37,2,404.95,0.0
+2026-10-17,Nova Dental,Organic,219,6,1032.09,0.0
+2026-10-17,Nova Dental,Paid Search,135,7,1591.75,551.65
+2026-10-17,Nova Dental,Paid Social,82,0,0.0,86.77
+2026-10-17,Nova Dental,Referral,52,4,929.53,0.0
+2026-10-18,Nova Dental,Direct,109,3,629.96,0.0
+2026-10-18,Nova Dental,Email,37,3,589.17,0.0
+2026-10-18,Nova Dental,Organic,245,5,991.93,0.0
+2026-10-18,Nova Dental,Paid Search,133,8,1457.55,597.82
+2026-10-18,Nova Dental,Paid Social,87,1,216.27,90.78
+2026-10-18,Nova Dental,Referral,60,5,1104.55,0.0
+2026-10-19,Nova Dental,Direct,146,6,1251.96,0.0
+2026-10-19,Nova Dental,Email,47,2,443.47,0.0
+2026-10-19,Nova Dental,Organic,321,13,3360.54,0.0
+2026-10-19,Nova Dental,Paid Search,190,9,1558.59,809.71
+2026-10-19,Nova Dental,Paid Social,96,0,0.0,105.97
+2026-10-19,Nova Dental,Referral,71,3,727.61,0.0
+2026-10-20,Nova Dental,Direct,141,7,1434.55,0.0
+2026-10-20,Nova Dental,Email,51,4,890.79,0.0
+2026-10-20,Nova Dental,Organic,285,12,2311.58,0.0
+2026-10-20,Nova Dental,Paid Search,159,11,2529.63,682.91
+2026-10-20,Nova Dental,Paid Social,118,2,491.01,146.57
+2026-10-20,Nova Dental,Referral,67,6,1286.71,0.0
+2026-10-21,Nova Dental,Direct,136,8,1352.7,0.0
+2026-10-21,Nova Dental,Email,52,1,199.61,0.0
+2026-10-21,Nova Dental,Organic,319,13,2521.56,0.0
+2026-10-21,Nova Dental,Paid Search,164,6,1280.16,699.99
+2026-10-21,Nova Dental,Paid Social,119,3,547.56,127.74
+2026-10-21,Nova Dental,Referral,77,6,1099.4,0.0
+2026-10-22,Nova Dental,Direct,134,4,902.6,0.0
+2026-10-22,Nova Dental,Email,42,1,197.91,0.0
+2026-10-22,Nova Dental,Organic,302,5,950.31,0.0
+2026-10-22,Nova Dental,Paid Search,188,8,1761.32,822.61
+2026-10-22,Nova Dental,Paid Social,100,3,608.55,109.98
+2026-10-22,Nova Dental,Referral,60,2,415.59,0.0
+2026-10-23,Nova Dental,Direct,126,4,860.79,0.0
+2026-10-23,Nova Dental,Email,44,0,0.0,0.0
+2026-10-23,Nova Dental,Organic,273,7,1659.87,0.0
+2026-10-23,Nova Dental,Paid Search,146,9,1808.2,645.31
+2026-10-23,Nova Dental,Paid Social,111,0,0.0,114.35
+2026-10-23,Nova Dental,Referral,69,4,884.45,0.0
+2026-10-24,Nova Dental,Direct,110,4,912.29,0.0
+2026-10-24,Nova Dental,Email,38,2,397.44,0.0
+2026-10-24,Nova Dental,Organic,234,9,1844.64,0.0
+2026-10-24,Nova Dental,Paid Search,128,4,731.4,583.01
+2026-10-24,Nova Dental,Paid Social,79,2,390.43,92.47
+2026-10-24,Nova Dental,Referral,56,4,822.05,0.0
+2026-10-25,Nova Dental,Direct,125,1,207.56,0.0
+2026-10-25,Nova Dental,Email,41,5,1222.99,0.0
+2026-10-25,Nova Dental,Organic,231,6,1183.55,0.0
+2026-10-25,Nova Dental,Paid Search,125,8,1492.15,579.38
+2026-10-25,Nova Dental,Paid Social,79,2,420.56,90.79
+2026-10-25,Nova Dental,Referral,49,2,448.55,0.0
+2026-10-26,Nova Dental,Direct,149,9,2019.92,0.0
+2026-10-26,Nova Dental,Email,45,3,650.26,0.0
+2026-10-26,Nova Dental,Organic,335,12,2902.6,0.0
+2026-10-26,Nova Dental,Paid Search,177,8,1634.89,777.43
+2026-10-26,Nova Dental,Paid Social,98,2,398.37,112.23
+2026-10-26,Nova Dental,Referral,76,4,834.5,0.0
+2026-10-27,Nova Dental,Direct,146,4,731.91,0.0
+2026-10-27,Nova Dental,Email,46,3,630.92,0.0
+2026-10-27,Nova Dental,Organic,318,10,2225.29,0.0
+2026-10-27,Nova Dental,Paid Search,151,4,739.64,710.68
+2026-10-27,Nova Dental,Paid Social,104,0,0.0,122.45
+2026-10-27,Nova Dental,Referral,75,4,791.44,0.0
+2026-10-28,Nova Dental,Direct,152,4,747.31,0.0
+2026-10-28,Nova Dental,Email,49,1,191.3,0.0
+2026-10-28,Nova Dental,Organic,306,8,1532.45,0.0
+2026-10-28,Nova Dental,Paid Search,166,4,866.19,720.46
+2026-10-28,Nova Dental,Paid Social,122,1,214.82,131.36
+2026-10-28,Nova Dental,Referral,67,5,941.95,0.0
+2026-10-29,Nova Dental,Direct,133,4,655.75,0.0
+2026-10-29,Nova Dental,Email,47,5,1130.53,0.0
+2026-10-29,Nova Dental,Organic,280,7,1300.7,0.0
+2026-10-29,Nova Dental,Paid Search,150,10,2005.1,683.87
+2026-10-29,Nova Dental,Paid Social,98,0,0.0,106.18
+2026-10-29,Nova Dental,Referral,62,0,0.0,0.0
+2026-10-30,Nova Dental,Direct,130,6,1243.19,0.0
+2026-10-30,Nova Dental,Email,46,2,395.08,0.0
+2026-10-30,Nova Dental,Organic,269,9,2122.07,0.0
+2026-10-30,Nova Dental,Paid Search,143,9,1925.3,631.15
+2026-10-30,Nova Dental,Paid Social,87,0,0.0,104.24
+2026-10-30,Nova Dental,Referral,55,3,643.02,0.0
+2026-10-31,Nova Dental,Direct,119,7,1360.71,0.0
+2026-10-31,Nova Dental,Email,37,1,196.73,0.0
+2026-10-31,Nova Dental,Organic,243,5,1051.76,0.0
+2026-10-31,Nova Dental,Paid Search,117,4,853.13,491.75
+2026-10-31,Nova Dental,Paid Social,78,1,237.24,88.56
+2026-10-31,Nova Dental,Referral,66,2,345.27,0.0
+2026-11-01,Nova Dental,Direct,123,3,575.58,0.0
+2026-11-01,Nova Dental,Email,38,5,1134.34,0.0
+2026-11-01,Nova Dental,Organic,256,11,1978.5,0.0
+2026-11-01,Nova Dental,Paid Search,147,4,873.13,640.82
+2026-11-01,Nova Dental,Paid Social,93,1,229.98,91.56
+2026-11-01,Nova Dental,Referral,54,4,776.96,0.0
+2026-11-02,Nova Dental,Direct,146,4,868.59,0.0
+2026-11-02,Nova Dental,Email,38,2,436.59,0.0
+2026-11-02,Nova Dental,Organic,313,10,1757.03,0.0
+2026-11-02,Nova Dental,Paid Search,157,6,1324.53,695.52
+2026-11-02,Nova Dental,Paid Social,110,0,0.0,123.78
+2026-11-02,Nova Dental,Referral,63,5,859.95,0.0
+2026-11-03,Nova Dental,Direct,147,10,2012.52,0.0
+2026-11-03,Nova Dental,Email,42,2,326.98,0.0
+2026-11-03,Nova Dental,Organic,289,5,939.12,0.0
+2026-11-03,Nova Dental,Paid Search,151,5,1014.5,651.27
+2026-11-03,Nova Dental,Paid Social,102,2,392.36,108.98
+2026-11-03,Nova Dental,Referral,72,4,789.73,0.0
+2026-11-04,Nova Dental,Direct,159,6,1091.77,0.0
+2026-11-04,Nova Dental,Email,45,0,0.0,0.0
+2026-11-04,Nova Dental,Organic,271,9,1669.67,0.0
+2026-11-04,Nova Dental,Paid Search,176,10,2138.99,776.18
+2026-11-04,Nova Dental,Paid Social,91,1,220.21,104.7
+2026-11-04,Nova Dental,Referral,62,4,946.84,0.0
+2026-11-05,Nova Dental,Direct,128,5,1354.28,0.0
+2026-11-05,Nova Dental,Email,41,1,212.65,0.0
+2026-11-05,Nova Dental,Organic,291,8,1369.14,0.0
+2026-11-05,Nova Dental,Paid Search,150,6,1290.09,676.65
+2026-11-05,Nova Dental,Paid Social,92,4,870.21,103.29
+2026-11-05,Nova Dental,Referral,62,3,559.54,0.0
+2026-11-06,Nova Dental,Direct,123,3,627.67,0.0
+2026-11-06,Nova Dental,Email,44,4,811.95,0.0
+2026-11-06,Nova Dental,Organic,238,5,940.67,0.0
+2026-11-06,Nova Dental,Paid Search,148,5,823.58,638.61
+2026-11-06,Nova Dental,Paid Social,105,2,378.12,105.87
+2026-11-06,Nova Dental,Referral,67,3,675.89,0.0
+2026-11-07,Nova Dental,Direct,110,11,2072.86,0.0
+2026-11-07,Nova Dental,Email,34,2,426.79,0.0
+2026-11-07,Nova Dental,Organic,236,12,2298.72,0.0
+2026-11-07,Nova Dental,Paid Search,138,3,672.08,514.56
+2026-11-07,Nova Dental,Paid Social,88,2,452.67,98.11
+2026-11-07,Nova Dental,Referral,57,4,1116.87,0.0
+2026-11-08,Nova Dental,Direct,112,6,1178.37,0.0
+2026-11-08,Nova Dental,Email,37,5,876.18,0.0
+2026-11-08,Nova Dental,Organic,241,8,1604.04,0.0
+2026-11-08,Nova Dental,Paid Search,139,7,1492.21,653.04
+2026-11-08,Nova Dental,Paid Social,87,2,384.2,96.71
+2026-11-08,Nova Dental,Referral,56,1,242.85,0.0
+2026-11-09,Nova Dental,Direct,120,3,619.19,0.0
+2026-11-09,Nova Dental,Email,44,1,158.22,0.0
+2026-11-09,Nova Dental,Organic,309,10,2487.38,0.0
+2026-11-09,Nova Dental,Paid Search,138,8,1777.48,587.36
+2026-11-09,Nova Dental,Paid Social,118,0,0.0,132.18
+2026-11-09,Nova Dental,Referral,69,6,1276.94,0.0
+2026-11-10,Nova Dental,Direct,156,3,619.06,0.0
+2026-11-10,Nova Dental,Email,51,3,571.45,0.0
+2026-11-10,Nova Dental,Organic,352,14,2862.59,0.0
+2026-11-10,Nova Dental,Paid Search,173,10,1846.43,717.22
+2026-11-10,Nova Dental,Paid Social,122,0,0.0,138.12
+2026-11-10,Nova Dental,Referral,69,5,1144.12,0.0
+2026-11-11,Nova Dental,Direct,129,4,956.82,0.0
+2026-11-11,Nova Dental,Email,44,3,648.03,0.0
+2026-11-11,Nova Dental,Organic,263,8,1652.08,0.0
+2026-11-11,Nova Dental,Paid Search,161,7,1424.31,657.51
+2026-11-11,Nova Dental,Paid Social,104,3,562.58,123.29
+2026-11-11,Nova Dental,Referral,69,6,1098.72,0.0
+2026-11-12,Nova Dental,Direct,135,4,833.35,0.0
+2026-11-12,Nova Dental,Email,46,3,456.33,0.0
+2026-11-12,Nova Dental,Organic,340,10,2209.71,0.0
+2026-11-12,Nova Dental,Paid Search,153,12,2259.42,649.93
+2026-11-12,Nova Dental,Paid Social,100,0,0.0,112.3
+2026-11-12,Nova Dental,Referral,63,2,358.85,0.0

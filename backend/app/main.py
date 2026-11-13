@@ -8,6 +8,8 @@ from fastapi.responses import JSONResponse
 
 from app.api.routes import copilot, health, insights, models, reports, seo, usage
 from app.core.config import Settings, apply_runtime_env, get_settings
+from app.services.analytics import CsvValidationError
+from app.services.insights import DatasetNotFoundError
 from app.services.llm import (
     LLMError,
     LLMOutputError,
@@ -26,10 +28,15 @@ FEATURE_ROUTERS = (
     usage.router,
 )
 
-LLM_ERROR_STATUS: dict[type[LLMError], int] = {
+# Service-layer errors carry a user-facing message; this maps them to HTTP status codes so
+# routes stay thin and services stay HTTP-agnostic.
+DOMAIN_ERROR_STATUS: dict[type[Exception], int] = {
     ProviderNotConfiguredError: status.HTTP_400_BAD_REQUEST,
     ProviderUnavailableError: status.HTTP_502_BAD_GATEWAY,
     LLMOutputError: status.HTTP_502_BAD_GATEWAY,
+    LLMError: status.HTTP_502_BAD_GATEWAY,
+    CsvValidationError: status.HTTP_422_UNPROCESSABLE_CONTENT,
+    DatasetNotFoundError: status.HTTP_404_NOT_FOUND,
 }
 
 
@@ -44,8 +51,11 @@ def add_cors(app: FastAPI, settings: Settings) -> None:
     )
 
 
-async def handle_llm_error(_: Request, exc: Exception) -> JSONResponse:
-    code = LLM_ERROR_STATUS.get(type(exc), status.HTTP_502_BAD_GATEWAY)
+async def handle_domain_error(_: Request, exc: Exception) -> JSONResponse:
+    code = next(
+        (DOMAIN_ERROR_STATUS[cls] for cls in type(exc).__mro__ if cls in DOMAIN_ERROR_STATUS),
+        status.HTTP_500_INTERNAL_SERVER_ERROR,
+    )
     return JSONResponse(status_code=code, content={"detail": str(exc)})
 
 
@@ -55,7 +65,8 @@ def create_app() -> FastAPI:
 
     app = FastAPI(title=settings.app_name, version=settings.version)
     add_cors(app, settings)
-    app.add_exception_handler(LLMError, handle_llm_error)
+    for error_type in (LLMError, CsvValidationError, DatasetNotFoundError):
+        app.add_exception_handler(error_type, handle_domain_error)
     app.include_router(health.router)
     for router in FEATURE_ROUTERS:
         app.include_router(router)

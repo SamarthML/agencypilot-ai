@@ -41,16 +41,26 @@ Goal: both apps boot, talk to each other, talk to Postgres, and can make one log
 
 Goal: upload a marketing CSV, see KPIs + charts + a grounded AI summary.
 
-- [ ] Sample CSV(s) in `backend/tests/fixtures/` and a "load sample data" button
-- [ ] Schemas: `DatasetUploadResponse`, `KpiSet`, `TimeSeriesPoint`, `ChannelBreakdown`, `InsightSummary`
-- [ ] `POST /insights/upload`: validate columns/types, store dataset (table or JSON), return id
-- [ ] `services/insights.py`: Pandas KPIs (sessions, conversions, CVR, spend, CPA, ROAS, MoM deltas, top channels)
-- [ ] Clear errors for missing columns / bad dates / empty files
-- [ ] `GET /insights/{id}/kpis` and `/timeseries`
-- [ ] `POST /insights/{id}/summary`: LLM gets **only the computed KPI JSON**; prompt forbids inventing numbers
-- [ ] Frontend: drag-and-drop upload, KPI cards with delta badges, Recharts line + bar + pie
-- [ ] Summary panel with provider/model/cost shown under it
-- [ ] Tests: KPI math on fixtures, column validation, summary prompt contains no raw rows
+- [x] Demo data: `scripts/generate_demo_data.py` → `sample_data/marketing_demo.csv` (3 clients × 6 channels
+      × 180 days, seeded; Apex Fitness has a scripted Organic drop); small fixture in `tests/fixtures/`;
+      auto-loaded on first use + "Reset all to sample data" button
+- [x] Schemas: `DatasetUploadResponse`, `Kpi`, `TimeSeriesPoint`, `ChannelBreakdown`, `Signal`,
+      `InsightsDashboard`, `InsightSummary`, `AskResponse`, `OverviewResponse`
+- [x] `POST /api/insights/{client_id}/upload`: validate columns/types, store in `insight_datasets` +
+      `insight_rows` (migration 0002), one active dataset per client
+- [x] `services/analytics.py`: Pandas KPIs (sessions, conversions, CVR, revenue, spend, ROAS, CPA, AOV,
+      period-over-period deltas, channel breakdown, notable-change signals)
+- [x] Clear errors for missing columns / bad dates / bad numbers / empty files / oversize uploads (422/413)
+- [x] `GET /api/insights/{client_id}/summary?days=7|30|90` (KPIs + timeseries + channels + signals) and
+      `GET /api/insights/overview` (agency-wide KPIs for Home)
+- [x] `POST /api/insights/{client_id}/ai-summary`: LLM gets **only the computed KPI JSON**; prompt forbids
+      inventing numbers; TTL-cached per dataset/period/provider/model, cache hits logged at $0
+- [x] `POST /api/insights/{client_id}/ask`: Q&A grounded in the same KPI JSON
+- [x] Frontend: drag-and-drop upload dialog, KPI cards with delta badges, Recharts line + bar + donut,
+      channel table, notable changes, period tabs; Home KPIs use real data
+- [x] Summary panel with provider/model/tokens/latency/cost (and "Cached") shown under it
+- [x] Tests: KPI math on fixtures, column validation, summary prompt contains no raw rows, cache, routes,
+      DB round trip (skipped without Postgres)
 
 **Done when:** uploading the sample CSV renders a full dashboard and a summary whose numbers match the KPI cards.
 

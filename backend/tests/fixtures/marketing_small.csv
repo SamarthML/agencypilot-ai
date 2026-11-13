@@ -1,0 +1,10 @@
+date,client,channel,sessions,conversions,revenue,spend
+2026-01-01,Test Co,Organic,100,2,200,0
+2026-01-01,Test Co,Paid Search,50,1,100,25
+2026-01-02,Test Co,Organic,100,2,200,0
+2026-01-02,Test Co,Paid Search,50,1,100,25
+2026-01-03,Test Co,Organic,60,3,300,0
+2026-01-03,Test Co,Paid Search,50,2,200,30
+2026-01-04,Test Co,Organic,60,3,300,0
+2026-01-04,Test Co,Paid Search,50,2,200,30
+2026-01-04,Other Co,Organic,999,99,9999,0

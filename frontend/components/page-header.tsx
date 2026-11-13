@@ -11,7 +11,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description, actions }: PageHeaderProps) {
   return (
-    <FadeIn className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <FadeIn className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
       <div className="space-y-1.5">
         <h1 className="text-2xl font-semibold tracking-tight md:text-3xl">{title}</h1>
         {description && (

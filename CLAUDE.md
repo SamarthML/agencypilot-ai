@@ -46,7 +46,9 @@ AgencyPilot/
 │   ├── requirements.txt        # major versions pinned
 │   ├── pyproject.toml          # ruff + pytest config
 │   ├── alembic.ini
-│   ├── alembic/                # migrations (versions/0001_init.py: pgvector + llm_usage)
+│   ├── alembic/                # migrations (0001_init: pgvector + llm_usage; 0002_insights: datasets)
+│   ├── scripts/                # generate_demo_data.py (writes sample_data/marketing_demo.csv)
+│   ├── sample_data/            # demo CSV, auto-loaded into an empty DB on first Insights request
 │   ├── app/
 │   │   ├── main.py             # FastAPI app factory, CORS, router registration
 │   │   ├── core/
@@ -58,11 +60,14 @@ AgencyPilot/
 │   │   └── services/
 │   │       ├── llm.py          # THE ONLY place that calls an LLM provider
 │   │       ├── pricing.py      # per-model token prices for cost estimation
-│   │       ├── insights.py     # Pandas KPI computation
+│   │       ├── analytics.py    # pure Pandas: CSV validation, KPIs, breakdowns, signals
+│   │       ├── insights.py     # insights datasets: Postgres storage + dashboard assembly
+│   │       ├── insights_ai.py  # grounded AI summary (TTL-cached) + Q&A prompts
 │   │       ├── seo/            # scraper.py, checks.py, scoring.py
 │   │       ├── rag/            # pdf_loader.py, chunker.py, embedder.py, retriever.py
 │   │       └── reports.py      # report assembly + PDF rendering
-│   └── tests/                  # pytest; mirrors app/ layout; fixtures in tests/fixtures/
+│   └── tests/                  # pytest; mirrors app/ layout; fixtures in tests/fixtures/,
+│                               #   fake LLM provider in tests/fakes.py
 └── frontend/
     ├── .env.local.example      # NEXT_PUBLIC_API_URL (copy to .env.local)
     ├── package.json
@@ -70,14 +75,16 @@ AgencyPilot/
     ├── components/
     │   ├── ui/                 # shadcn/ui (radix-nova); only card.tsx is restyled (rounded-2xl)
     │   ├── sidebar.tsx, topbar.tsx, page-header.tsx, empty-state.tsx, kpi-card.tsx, motion.tsx
-    │   └── <feature>/          # feature components (e.g. home/)
+    │   └── <feature>/          # feature components (e.g. home/, insights/)
     ├── lib/
     │   ├── api.ts              # typed fetch client: X-LLM-Provider header, ApiError, toasts
     │   ├── types.ts            # TS types mirroring backend Pydantic schemas
     │   ├── nav.ts              # single nav config (sidebar, titles, empty states)
     │   ├── providers.ts        # LLM provider display metadata
     │   └── model-context.tsx, client-context.tsx   # persisted UI state
-    └── hooks/use-local-storage.ts   # useSyncExternalStore-backed, hydration-safe
+    └── hooks/
+        ├── use-local-storage.ts     # useSyncExternalStore-backed, hydration-safe
+        └── use-api.ts               # abortable data fetching; loading derived, no setState in effects
 ```
 
 ## Coding rules

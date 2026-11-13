@@ -1,6 +1,5 @@
 """llm.py with a fake provider: no SDK client, no network, usage rows captured in memory."""
 
-from collections.abc import AsyncIterator
 from decimal import Decimal
 
 import pytest
@@ -9,50 +8,10 @@ from sqlalchemy.exc import OperationalError
 
 from app.core.config import Settings
 from app.services import llm
-from app.services.llm import ChatMessage, Completion, CompletionRequest, StreamItem, Usage
+from app.services.llm import ChatMessage, Usage
+from tests.fakes import FakeProvider, TransientError, ok, use_provider
 
 MESSAGES = [ChatMessage(role="user", content="Summarise the KPIs.")]
-
-
-class TransientError(Exception):
-    pass
-
-
-class FakeProvider:
-    name = "groq"
-    retryable_errors: tuple[type[BaseException], ...] = (TransientError,)
-
-    def __init__(
-        self,
-        outcomes: list[Completion | Exception] | None = None,
-        stream_items: list[StreamItem | Exception] | None = None,
-    ) -> None:
-        self.outcomes = outcomes or []
-        self.stream_items = stream_items or []
-        self.requests: list[CompletionRequest] = []
-
-    async def complete(self, request: CompletionRequest) -> Completion:
-        self.requests.append(request)
-        outcome = self.outcomes.pop(0)
-        if isinstance(outcome, Exception):
-            raise outcome
-        return outcome
-
-    async def stream(self, request: CompletionRequest) -> AsyncIterator[StreamItem]:
-        self.requests.append(request)
-        for item in self.stream_items:
-            if isinstance(item, Exception):
-                raise item
-            yield item
-
-
-def use_provider(monkeypatch: pytest.MonkeyPatch, provider: FakeProvider) -> FakeProvider:
-    monkeypatch.setattr(llm, "build_provider", lambda name, settings: provider)
-    return provider
-
-
-def ok(text: str = "All good.", tokens_in: int = 1000, tokens_out: int = 200) -> Completion:
-    return Completion(text=text, usage=Usage(tokens_in, tokens_out))
 
 
 async def test_generate_returns_text_and_logs_usage(

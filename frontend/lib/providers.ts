@@ -10,7 +10,7 @@ export interface ProviderOption {
 
 /** Display metadata only. Actual model IDs are configured in backend/.env. */
 export const PROVIDERS: readonly ProviderOption[] = [
-  { id: "groq", label: "Groq", description: "Llama 3.3 70B · fastest", dotClass: "bg-orange-500" },
+  { id: "groq", label: "Groq", description: "GPT-OSS 120B · fastest", dotClass: "bg-orange-500" },
   { id: "openai", label: "OpenAI", description: "GPT-4o mini", dotClass: "bg-emerald-500" },
   { id: "claude", label: "Claude", description: "Claude Haiku", dotClass: "bg-amber-600" },
 ];
