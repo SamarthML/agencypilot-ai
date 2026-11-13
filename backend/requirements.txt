@@ -29,6 +29,16 @@ jiter>=0.16,<0.19
 pandas>=2.2,<4
 numpy>=2,<3
 
+# Copilot RAG: PDF text extraction + local embeddings (BAAI/bge-small-en-v1.5).
+# Install the CPU-only torch wheel FIRST (no CUDA, far smaller download):
+#   python -m pip install "torch>=2.4,<2.15" --index-url https://download.pytorch.org/whl/cpu
+# <2.15: torch 2.15's torch_python.dll is blocked by Windows Smart App Control; 2.14.1 loads.
+torch>=2.4,<2.15
+sentence-transformers>=5,<7
+pypdf>=5,<8
+# Only used by scripts/generate_sample_brief.py (pure Python; Phase 5 PDF export can reuse it)
+fpdf2>=2.8,<3
+
 # Dev / test
 pytest>=8,<9
 pytest-asyncio>=0.24,<2

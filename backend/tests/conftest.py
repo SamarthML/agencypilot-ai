@@ -11,6 +11,8 @@ os.environ.update(
         "ANTHROPIC_API_KEY": "",
         "DEFAULT_PROVIDER": "groq",
         "GROQ_MODEL": "openai/gpt-oss-120b",
+        "COPILOT_WARMUP": "false",
+        "COPILOT_MIN_SIMILARITY": "0.5",
     }
 )
 

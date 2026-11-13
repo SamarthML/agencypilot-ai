@@ -117,6 +117,33 @@ async def test_stream_yields_text_and_logs_usage_at_end(
     )
 
 
+async def test_stream_reports_result_on_completion_only(
+    monkeypatch: pytest.MonkeyPatch, usage_rows: list[llm.UsageRecord]
+) -> None:
+    use_provider(monkeypatch, FakeProvider(stream_items=["Hel", "lo", Usage(1000, 200)]))
+    results: list[llm.LLMResult] = []
+
+    async for _ in llm.stream(MESSAGES, feature="copilot", on_complete=results.append):
+        assert results == []  # not called until the stream has finished
+
+    [result] = results
+    assert (result.text, result.input_tokens, result.output_tokens) == ("Hello", 1000, 200)
+    assert result.cost_usd == usage_rows[0].cost_usd > 0
+
+
+async def test_stream_failure_skips_on_complete(
+    monkeypatch: pytest.MonkeyPatch, usage_rows: list[llm.UsageRecord]
+) -> None:
+    use_provider(monkeypatch, FakeProvider(stream_items=["partial", TransientError("drop")]))
+    results: list[llm.LLMResult] = []
+
+    with pytest.raises(llm.ProviderUnavailableError):
+        async for _ in llm.stream(MESSAGES, feature="copilot", on_complete=results.append):
+            pass
+
+    assert results == []
+
+
 async def test_stream_failure_is_logged(
     monkeypatch: pytest.MonkeyPatch, usage_rows: list[llm.UsageRecord]
 ) -> None:

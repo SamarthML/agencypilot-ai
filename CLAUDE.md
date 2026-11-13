@@ -46,9 +46,12 @@ AgencyPilot/
 │   ├── requirements.txt        # major versions pinned
 │   ├── pyproject.toml          # ruff + pytest config
 │   ├── alembic.ini
-│   ├── alembic/                # migrations: 0001 pgvector + llm_usage, 0002 insights, 0003 seo_audits
-│   ├── scripts/                # generate_demo_data.py (writes sample_data/marketing_demo.csv)
-│   ├── sample_data/            # demo CSV, auto-loaded into an empty DB on first Insights request
+│   ├── alembic/                # migrations: 0001 pgvector + llm_usage, 0002 insights, 0003 seo_audits,
+│   │                           #   0004 copilot (documents, chunks + HNSW, copilot_feedback)
+│   ├── scripts/                # generate_demo_data.py (marketing_demo.csv),
+│   │                           #   generate_sample_brief.py (bloom_bakery_brief.pdf)
+│   ├── sample_data/            # demo CSV (auto-loaded on first Insights request) and Bloom Bakery
+│   │                           #   brief PDF (ingested at startup if that client has no documents)
 │   ├── app/
 │   │   ├── main.py             # FastAPI app factory, CORS, router registration
 │   │   ├── core/
@@ -67,7 +70,10 @@ AgencyPilot/
 │   │       ├── insights_ai.py  # grounded AI summary (TTL-cached) + Q&A prompts
 │   │       ├── seo_audit.py    # SEO orchestration: fetch → checks → score → AI (cached) → save
 │   │       ├── seo/            # fetcher.py (SSRF guard), checks.py (10 checks), scoring.py
-│   │       ├── rag/            # pdf_loader.py, chunker.py, embedder.py, retriever.py
+│   │       ├── rag.py          # extract (pypdf) → token-aware chunking → BGE embeddings → pgvector
+│   │       │                   #   retrieval + similarity threshold
+│   │       ├── copilot.py      # ingest background task, SSE chat (rewrite → retrieve → guardrail →
+│   │       │                   #   stream), citation parsing, feedback, demo seed + startup warm-up
 │   │       └── reports.py      # report assembly + PDF rendering
 │   └── tests/                  # pytest; mirrors app/ layout; fixtures in tests/fixtures/,
 │                               #   fake LLM provider in tests/fakes.py
@@ -170,6 +176,8 @@ docker compose up -d --wait
 # 2. Backend (terminal 1)
 cd backend
 python -m venv .venv                                   # one-time
+# CPU-only torch first (no CUDA; <2.15 because Smart App Control blocks 2.15's DLLs)
+.\.venv\Scripts\python.exe -m pip install "torch>=2.4,<2.15" --index-url https://download.pytorch.org/whl/cpu
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 Copy-Item .env.example .env                            # one-time, then fill in keys + HF_HOME
 .\.venv\Scripts\python.exe -m alembic upgrade head
@@ -220,6 +228,11 @@ DEFAULT_PROVIDER=groq
 GROQ_MODEL=openai/gpt-oss-120b
 OPENAI_MODEL=gpt-4o-mini
 ANTHROPIC_MODEL=claude-haiku-5-5
+EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+COPILOT_MAX_UPLOAD_MB=10
+COPILOT_TOP_K=5
+COPILOT_MIN_SIMILARITY=0.5                             # below this: "not found", no LLM call
+COPILOT_WARMUP=true                                    # load model + seed brief at startup
 CORS_ORIGINS=http://localhost:3000
 HF_HOME=C:/Users/<you>/.cache/agencypilot-hf          # model cache outside the repo/OneDrive
 ```

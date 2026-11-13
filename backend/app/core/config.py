@@ -43,6 +43,13 @@ class Settings(BaseSettings):
     insights_cache_ttl_seconds: int = 600
     seo_cache_ttl_seconds: int = 3600
 
+    embedding_model: str = "BAAI/bge-small-en-v1.5"
+    copilot_max_upload_mb: float = 10.0
+    copilot_top_k: int = 5
+    # Calibrated on bge-small: in-document questions scored >= 0.52, unrelated ones 0.36-0.50.
+    copilot_min_similarity: float = 0.5
+    copilot_warmup: bool = True
+
     def api_key_for(self, provider: LlmProvider) -> SecretStr | None:
         return {
             "groq": self.groq_api_key,

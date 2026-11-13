@@ -1,6 +1,9 @@
 """FastAPI application factory."""
 
 import logging
+import threading
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -8,7 +11,13 @@ from fastapi.responses import JSONResponse
 
 from app.api.routes import copilot, health, insights, models, reports, seo, usage
 from app.core.config import Settings, apply_runtime_env, get_settings
+from app.services import copilot as copilot_service
 from app.services.analytics import CsvValidationError
+from app.services.copilot import (
+    DocumentNotFoundError,
+    InvalidDocumentError,
+    UnsupportedDocumentError,
+)
 from app.services.insights import DatasetNotFoundError
 from app.services.llm import (
     LLMError,
@@ -57,6 +66,9 @@ DOMAIN_ERROR_STATUS: dict[type[Exception], int] = {
     SiteUnreachableError: status.HTTP_502_BAD_GATEWAY,
     SeoFetchError: status.HTTP_502_BAD_GATEWAY,
     SeoAuditNotFoundError: status.HTTP_404_NOT_FOUND,
+    DocumentNotFoundError: status.HTTP_404_NOT_FOUND,
+    UnsupportedDocumentError: status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
+    InvalidDocumentError: status.HTTP_422_UNPROCESSABLE_CONTENT,
 }
 HANDLED_ERRORS = (
     LLMError,
@@ -64,7 +76,19 @@ HANDLED_ERRORS = (
     DatasetNotFoundError,
     SeoFetchError,
     SeoAuditNotFoundError,
+    DocumentNotFoundError,
+    UnsupportedDocumentError,
+    InvalidDocumentError,
 )
+
+
+@asynccontextmanager
+async def lifespan(_: FastAPI) -> AsyncIterator[None]:
+    # The embedding model takes ~30-60 s to import and load; doing it in a daemon thread keeps
+    # startup instant while making sure the first chat request doesn't pay for it.
+    if get_settings().copilot_warmup:
+        threading.Thread(target=copilot_service.warm_up, name="copilot-warmup", daemon=True).start()
+    yield
 
 
 def add_cors(app: FastAPI, settings: Settings) -> None:
@@ -90,7 +114,7 @@ def create_app() -> FastAPI:
     settings = get_settings()
     apply_runtime_env(settings)
 
-    app = FastAPI(title=settings.app_name, version=settings.version)
+    app = FastAPI(title=settings.app_name, version=settings.version, lifespan=lifespan)
     add_cors(app, settings)
     for error_type in HANDLED_ERRORS:
         app.add_exception_handler(error_type, handle_domain_error)

@@ -447,16 +447,19 @@ async def stream(
     model: str | None = None,
     max_tokens: int = 1024,
     temperature: float = 0.2,
+    on_complete: Callable[[LLMResult], None] | None = None,
 ) -> AsyncIterator[str]:
     """Yield text chunks. Usage is recorded when the stream ends, fails or is abandoned.
 
     Retries only happen before the first chunk; once text has been sent it can't be un-sent.
+    `on_complete` receives the full text, tokens, latency and cost after a successful stream.
     """
     settings, provider_name, request = _prepare(
         messages, system, provider, model, max_tokens, temperature, None
     )
     started = time.perf_counter()
     usage = Usage(0, 0)
+    parts: list[str] = []
     error: BaseException | None = None
     try:
         impl = build_provider(provider_name, settings)
@@ -464,6 +467,7 @@ async def stream(
             if isinstance(item, Usage):
                 usage = item
             else:
+                parts.append(item)
                 yield item
     except GeneratorExit:
         error = GeneratorExit("stream closed by client before completion")
@@ -472,7 +476,10 @@ async def stream(
         error = exc
         raise _as_llm_error(exc, provider_name) from exc
     finally:
-        await _record(_stream_record(feature, provider_name, request.model, usage, started, error))
+        record = _stream_record(feature, provider_name, request.model, usage, started, error)
+        await _record(record)
+    if on_complete is not None:
+        on_complete(_stream_result("".join(parts), record))
 
 
 async def _stream_with_retries(
@@ -513,6 +520,18 @@ def _stream_record(
         cost_usd=estimate_cost(model, usage.input_tokens, usage.output_tokens),
         success=error is None,
         error=_error_text(error) if error else None,
+    )
+
+
+def _stream_result(text: str, record: UsageRecord) -> LLMResult:
+    return LLMResult(
+        text=text,
+        input_tokens=record.input_tokens,
+        output_tokens=record.output_tokens,
+        latency_ms=record.latency_ms,
+        provider=record.provider,
+        model=record.model,
+        cost_usd=record.cost_usd,
     )
 
 

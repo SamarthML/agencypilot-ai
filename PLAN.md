@@ -112,18 +112,28 @@ Goal: enter a URL, get a scored audit with rule results and AI fix suggestions.
 
 Goal: upload PDFs, ask questions, get streamed answers with page citations.
 
-- [ ] Migrations: `documents` and `chunks` (text, page, doc_id, `embedding Vector(384)`) + HNSW/IVFFlat index
-- [ ] `rag/pdf_loader.py`: pypdf text per page
-- [ ] `rag/chunker.py`: token/char-window chunking with overlap, page number preserved
-- [ ] `rag/embedder.py`: bge-small-en-v1.5 loaded once (singleton), batch encode, normalised vectors,
-      query prefix for bge
-- [ ] `POST /copilot/documents`: upload + ingest; `GET`/`DELETE` documents
-- [ ] `rag/retriever.py`: cosine top-k via pgvector, optional doc filter, min-score cutoff
-- [ ] `POST /copilot/chat` streaming (SSE): retrieve → prompt with numbered sources → stream via `llm.stream()`
-- [ ] Answers cite `[doc, p. N]`; "I don't know from the documents" when retrieval is empty/weak
-- [ ] Citations returned as structured data alongside the stream
-- [ ] Frontend: document manager, chat UI with token streaming, clickable citation chips
-- [ ] Tests: chunker boundaries + page tracking, retriever on seeded vectors, prompt includes sources, stream logs usage
+- [x] Migration 0004: `documents` (status processing|ready|failed), `chunks` (`embedding Vector(384)`,
+      HNSW cosine index, client index, FK cascade) and `copilot_feedback`
+- [x] `services/rag.py`: pypdf text per page (.txt/.md = one page); sentence-packed chunks of ≤250 tokens
+      with 40-token overlap, measured with the model's own tokenizer (over-limit text raises, never
+      silently truncated); chunk size chosen by measurement (500-token pages: right page 4/10, 250: 8/10)
+- [x] bge-small-en-v1.5 loaded once (thread-safe lazy singleton, warmed in a background thread at
+      startup), batch encode, normalised vectors, BGE query prefix
+- [x] `POST /api/copilot/upload` (pdf/txt/md, ≤10 MB, per client) → BackgroundTask ingest;
+      `GET /documents?client=` with status + chunk count; `DELETE /documents/{id}`
+- [x] Retrieval: cosine top-5 per client via pgvector (iterative HNSW scan so the filter can't starve k)
+- [x] `POST /api/copilot/chat/stream` (SSE `token` → `citations` → `done`, or `error`): follow-up
+      rewrite from the last 4 turns (`copilot_rewrite`) → retrieve → stream via `llm.stream()` (`copilot`)
+- [x] Guardrail: best similarity < `COPILOT_MIN_SIMILARITY` (0.5, calibrated) → "couldn't find this"
+      without an LLM call, cost 0; prompt makes the model say it doesn't know otherwise
+- [x] Citations `[file p.N]` parsed from the answer (incl. gpt-oss's `【…】`) → structured citations
+      (filename, page, snippet, similarity) of the sources actually cited
+- [x] `POST /api/copilot/feedback` (message_id or question, answer, up/down, comment)
+- [x] Seed: `scripts/generate_sample_brief.py` → `sample_data/bloom_bakery_brief.pdf` (3 pages), ingested
+      for Bloom Bakery on first run
+- [ ] Frontend: document manager, chat UI with token streaming, clickable citation chips, feedback
+- [x] Tests: chunking + token limit, threshold, retrieval filters by client (pgvector), SSE event order,
+      follow-up rewrite, citations parsing, upload validation, ingest/seed/feedback DB round trips
 
 **Done when:** asking a question about an uploaded PDF streams a correct answer with accurate page citations.
 
