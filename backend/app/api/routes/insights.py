@@ -8,11 +8,11 @@ from sqlalchemy.orm import Session
 from app.api.deps import LlmProviderDep
 from app.core.config import get_settings
 from app.core.db import get_db
+from app.schemas.common import ClientId
 from app.schemas.insights import (
     AiSummaryRequest,
     AskRequest,
     AskResponse,
-    ClientId,
     DatasetUploadResponse,
     Days,
     InsightsDashboard,

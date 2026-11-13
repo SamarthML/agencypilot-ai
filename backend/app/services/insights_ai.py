@@ -8,7 +8,6 @@ per (dataset, period, provider, model, prompt version); cache hits are logged wi
 import asyncio
 import time
 import uuid
-from collections.abc import Callable
 from dataclasses import dataclass
 
 from pydantic import BaseModel
@@ -22,9 +21,10 @@ from app.schemas.insights import (
     InsightsSnapshot,
     InsightSummary,
     KpiUnit,
-    LlmCallMeta,
 )
 from app.services import insights, llm
+from app.services.cache import TtlCache
+from app.services.llm_meta import cache_hit_meta, call_meta
 
 SUMMARY_FEATURE = "insights_summary"
 ASK_FEATURE = "insights_ask"
@@ -155,39 +155,6 @@ def build_ask_messages(context: InsightsContext, question: str) -> list[llm.Chat
 # ---------------------------------------------------------------------------
 
 
-class TtlCache[V]:
-    """A small in-process TTL cache. Per-process is fine for a single API instance."""
-
-    def __init__(
-        self,
-        ttl_seconds: float,
-        max_entries: int = 256,
-        clock: Callable[[], float] = time.monotonic,
-    ) -> None:
-        self._ttl = ttl_seconds
-        self._max_entries = max_entries
-        self._clock = clock
-        self._entries: dict[str, tuple[float, V]] = {}
-
-    def get(self, key: str) -> V | None:
-        entry = self._entries.get(key)
-        if entry is None:
-            return None
-        expires_at, value = entry
-        if self._clock() >= expires_at:
-            del self._entries[key]
-            return None
-        return value
-
-    def set(self, key: str, value: V) -> None:
-        if len(self._entries) >= self._max_entries:
-            self._entries.pop(next(iter(self._entries)))  # evict the oldest insert
-        self._entries[key] = (self._clock() + self._ttl, value)
-
-    def clear(self) -> None:
-        self._entries.clear()
-
-
 _summary_cache: TtlCache[AiSummaryContent] | None = None
 
 
@@ -219,27 +186,6 @@ async def _ground(db: Session, client_id: str, days: int) -> _Grounding:
     return _Grounding(dataset.id, snapshot, build_context(dataset.client_name, snapshot))
 
 
-def _meta(result: llm.LLMResult) -> LlmCallMeta:
-    return LlmCallMeta(
-        provider=result.provider,
-        model=result.model,
-        input_tokens=result.input_tokens,
-        output_tokens=result.output_tokens,
-        latency_ms=result.latency_ms,
-        cost_usd=float(result.cost_usd),
-        cached=result.cached,
-    )
-
-
-async def _cache_hit_meta(provider: LlmProvider, model: str, started: float) -> LlmCallMeta:
-    latency_ms = int((time.perf_counter() - started) * 1000)
-    await llm.record_cache_hit(SUMMARY_FEATURE, provider, model, latency_ms)
-    return LlmCallMeta(
-        provider=provider, model=model, input_tokens=0, output_tokens=0,
-        latency_ms=latency_ms, cost_usd=0.0, cached=True,
-    )  # fmt: skip
-
-
 async def summarize(
     db: Session, client_id: str, days: int, provider: LlmProvider
 ) -> InsightSummary:
@@ -251,7 +197,7 @@ async def summarize(
 
     cached = summary_cache().get(key)
     if cached is not None:
-        meta = await _cache_hit_meta(provider, model, started)
+        meta = await cache_hit_meta(SUMMARY_FEATURE, provider, model, started)
         return InsightSummary(client_id=client_id, period=period, summary=cached, meta=meta)
 
     structured = await llm.generate_structured(
@@ -265,7 +211,10 @@ async def summarize(
     )
     summary_cache().set(key, structured.data)
     return InsightSummary(
-        client_id=client_id, period=period, summary=structured.data, meta=_meta(structured.result)
+        client_id=client_id,
+        period=period,
+        summary=structured.data,
+        meta=call_meta(structured.result),
     )
 
 
@@ -283,4 +232,4 @@ async def ask(
     answer = result.text.strip()
     if not answer:
         raise llm.LLMOutputError("The model returned an empty answer. Try again or switch models.")
-    return AskResponse(question=question, answer=answer, meta=_meta(result))
+    return AskResponse(question=question, answer=answer, meta=call_meta(result))

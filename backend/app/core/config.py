@@ -41,6 +41,7 @@ class Settings(BaseSettings):
 
     max_upload_mb: float = 5.0
     insights_cache_ttl_seconds: int = 600
+    seo_cache_ttl_seconds: int = 3600
 
     def api_key_for(self, provider: LlmProvider) -> SecretStr | None:
         return {

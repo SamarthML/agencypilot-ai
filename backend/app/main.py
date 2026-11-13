@@ -16,6 +16,17 @@ from app.services.llm import (
     ProviderNotConfiguredError,
     ProviderUnavailableError,
 )
+from app.services.seo.fetcher import (
+    BlockedAddressError,
+    FetchTimeoutError,
+    InvalidUrlError,
+    NotHtmlError,
+    PageTooLargeError,
+    SeoFetchError,
+    SiteBlocksBotsError,
+    SiteUnreachableError,
+)
+from app.services.seo_audit import SeoAuditNotFoundError
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
@@ -37,7 +48,23 @@ DOMAIN_ERROR_STATUS: dict[type[Exception], int] = {
     LLMError: status.HTTP_502_BAD_GATEWAY,
     CsvValidationError: status.HTTP_422_UNPROCESSABLE_CONTENT,
     DatasetNotFoundError: status.HTTP_404_NOT_FOUND,
+    InvalidUrlError: status.HTTP_422_UNPROCESSABLE_CONTENT,
+    BlockedAddressError: status.HTTP_400_BAD_REQUEST,
+    FetchTimeoutError: status.HTTP_504_GATEWAY_TIMEOUT,
+    NotHtmlError: status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
+    PageTooLargeError: status.HTTP_422_UNPROCESSABLE_CONTENT,
+    SiteBlocksBotsError: status.HTTP_502_BAD_GATEWAY,
+    SiteUnreachableError: status.HTTP_502_BAD_GATEWAY,
+    SeoFetchError: status.HTTP_502_BAD_GATEWAY,
+    SeoAuditNotFoundError: status.HTTP_404_NOT_FOUND,
 }
+HANDLED_ERRORS = (
+    LLMError,
+    CsvValidationError,
+    DatasetNotFoundError,
+    SeoFetchError,
+    SeoAuditNotFoundError,
+)
 
 
 def add_cors(app: FastAPI, settings: Settings) -> None:
@@ -65,7 +92,7 @@ def create_app() -> FastAPI:
 
     app = FastAPI(title=settings.app_name, version=settings.version)
     add_cors(app, settings)
-    for error_type in (LLMError, CsvValidationError, DatasetNotFoundError):
+    for error_type in HANDLED_ERRORS:
         app.add_exception_handler(error_type, handle_domain_error)
     app.include_router(health.router)
     for router in FEATURE_ROUTERS:

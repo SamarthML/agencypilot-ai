@@ -46,7 +46,7 @@ AgencyPilot/
 │   ├── requirements.txt        # major versions pinned
 │   ├── pyproject.toml          # ruff + pytest config
 │   ├── alembic.ini
-│   ├── alembic/                # migrations (0001_init: pgvector + llm_usage; 0002_insights: datasets)
+│   ├── alembic/                # migrations: 0001 pgvector + llm_usage, 0002 insights, 0003 seo_audits
 │   ├── scripts/                # generate_demo_data.py (writes sample_data/marketing_demo.csv)
 │   ├── sample_data/            # demo CSV, auto-loaded into an empty DB on first Insights request
 │   ├── app/
@@ -59,11 +59,14 @@ AgencyPilot/
 │   │   ├── api/routes/         # thin routers; /health at root, features under /api/<feature>
 │   │   └── services/
 │   │       ├── llm.py          # THE ONLY place that calls an LLM provider
+│   │       ├── llm_meta.py     # LLMResult -> LlmCallMeta; cache-hit logging helper
+│   │       ├── cache.py        # shared in-process TtlCache for LLM results
 │   │       ├── pricing.py      # per-model token prices for cost estimation
 │   │       ├── analytics.py    # pure Pandas: CSV validation, KPIs, breakdowns, signals
 │   │       ├── insights.py     # insights datasets: Postgres storage + dashboard assembly
 │   │       ├── insights_ai.py  # grounded AI summary (TTL-cached) + Q&A prompts
-│   │       ├── seo/            # scraper.py, checks.py, scoring.py
+│   │       ├── seo_audit.py    # SEO orchestration: fetch → checks → score → AI (cached) → save
+│   │       ├── seo/            # fetcher.py (SSRF guard), checks.py (10 checks), scoring.py
 │   │       ├── rag/            # pdf_loader.py, chunker.py, embedder.py, retriever.py
 │   │       └── reports.py      # report assembly + PDF rendering
 │   └── tests/                  # pytest; mirrors app/ layout; fixtures in tests/fixtures/,

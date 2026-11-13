@@ -130,26 +130,6 @@ async def test_failed_summary_is_not_cached(
     assert len(fake.requests) == 3
 
 
-def test_ttl_cache_expires_entries() -> None:
-    now = [0.0]
-    cache: insights_ai.TtlCache[str] = insights_ai.TtlCache(10, clock=lambda: now[0])
-
-    cache.set("k", "v")
-    now[0] = 9.9
-    assert cache.get("k") == "v"
-    now[0] = 10.0
-    assert cache.get("k") is None
-
-
-def test_ttl_cache_evicts_oldest_when_full() -> None:
-    cache: insights_ai.TtlCache[int] = insights_ai.TtlCache(60, max_entries=2)
-
-    for i in range(3):
-        cache.set(str(i), i)
-
-    assert (cache.get("0"), cache.get("1"), cache.get("2")) == (None, 1, 2)
-
-
 # --- Ask ------------------------------------------------------------------------
 
 

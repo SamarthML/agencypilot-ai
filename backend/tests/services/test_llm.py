@@ -3,7 +3,7 @@
 from decimal import Decimal
 
 import pytest
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from sqlalchemy.exc import OperationalError
 
 from app.core.config import Settings
@@ -183,6 +183,33 @@ def test_json_schema_inlines_refs_and_closes_objects() -> None:
     assert item["additionalProperties"] is False
     assert item["required"] == ["headline", "score"]
     assert "title" not in item
+
+
+class Fix(BaseModel):
+    title: str = Field(max_length=120)
+    default: str
+
+
+class Report(BaseModel):
+    fixes: list[Fix] = Field(min_length=5, max_length=5)
+    keywords: list[str] = Field(description="Search phrases", min_length=8, max_length=8)
+
+
+def test_json_schema_keeps_properties_named_like_keywords() -> None:
+    """Regression: a field called "title" was stripped along with the `title` keyword."""
+    fix = llm.json_schema_for(Report)["properties"]["fixes"]["items"]
+
+    assert set(fix["properties"]) == {"title", "default"}
+    assert fix["required"] == ["title", "default"]
+
+
+def test_json_schema_restates_dropped_constraints_in_descriptions() -> None:
+    props = llm.json_schema_for(Report)["properties"]
+
+    assert props["fixes"]["description"] == "Exactly 5 items"
+    assert props["keywords"]["description"] == "Search phrases (exactly 8 items)"
+    assert "maxItems" not in props["keywords"]
+    assert props["fixes"]["items"]["properties"]["title"]["description"] == "At most 120 characters"
 
 
 async def test_cache_hit_logged_with_zero_cost(usage_rows: list[llm.UsageRecord]) -> None:

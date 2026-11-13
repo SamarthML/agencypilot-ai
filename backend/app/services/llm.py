@@ -535,6 +535,24 @@ def json_schema_for(model: type[BaseModel]) -> dict[str, Any]:
     return _clean_schema(schema, defs)
 
 
+_RANGE_KEYWORDS = (("minItems", "maxItems", "items"), ("minLength", "maxLength", "characters"))
+
+
+def _range_hint(low: int | None, high: int | None, unit: str) -> str | None:
+    if low is not None and low == high:
+        return f"exactly {low} {unit}"
+    parts = [f"at least {low} {unit}"] if low is not None else []
+    if high is not None:
+        parts.append(f"at most {high} {unit}")
+    return " and ".join(parts) or None
+
+
+def _constraint_hint(node: dict[str, Any]) -> str | None:
+    """Dropped length/size keywords, restated in words so the model still sees them."""
+    hints = [_range_hint(node.get(lo), node.get(hi), unit) for lo, hi, unit in _RANGE_KEYWORDS]
+    return "; ".join(h for h in hints if h) or None
+
+
 def _clean_schema(node: Any, defs: dict[str, Any]) -> Any:
     if isinstance(node, list):
         return [_clean_schema(item, defs) for item in node]
@@ -545,6 +563,15 @@ def _clean_schema(node: Any, defs: dict[str, Any]) -> Any:
     cleaned = {
         k: _clean_schema(v, defs) for k, v in node.items() if k not in _UNSUPPORTED_SCHEMA_KEYS
     }
+    if "properties" in node:
+        # Property NAMES are data, not keywords: a field called "title" must survive.
+        cleaned["properties"] = {
+            name: _clean_schema(sub, defs) for name, sub in node["properties"].items()
+        }
+    hint = _constraint_hint(node)
+    if hint:
+        description = cleaned.get("description")
+        cleaned["description"] = f"{description} ({hint})" if description else hint.capitalize()
     if cleaned.get("type") == "object" and "properties" in cleaned:
         cleaned["required"] = list(cleaned["properties"])
         cleaned["additionalProperties"] = False

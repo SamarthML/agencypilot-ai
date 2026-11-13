@@ -70,24 +70,35 @@ Goal: upload a marketing CSV, see KPIs + charts + a grounded AI summary.
 
 Goal: enter a URL, get a scored audit with rule results and AI fix suggestions.
 
-- [ ] `services/seo/scraper.py`: httpx fetch (timeout, size limit, user-agent, redirects), BeautifulSoup parse
-- [ ] URL validation + SSRF guard (block private/loopback IPs)
-- [ ] `services/seo/checks.py`: 10 pure-function checks, each returning `CheckResult(id, passed, severity, detail)`:
-  - [ ] title present & 30–60 chars
-  - [ ] meta description present & 70–160 chars
-  - [ ] exactly one H1
-  - [ ] heading hierarchy (no skipped levels)
-  - [ ] images have alt text
-  - [ ] canonical link present
-  - [ ] viewport meta (mobile-friendly)
-  - [ ] HTTPS
-  - [ ] Open Graph tags
-  - [ ] content length / word count threshold
-- [ ] `services/seo/scoring.py`: severity-weighted 0–100 score
-- [ ] `POST /seo/audit` → `SeoAuditResponse`; audits persisted for history
-- [ ] `POST /seo/audit/{id}/suggestions`: LLM gets failed checks + relevant page snippets only
+- [x] `services/seo/fetcher.py`: httpx fetch (10 s, 2 MB, browser UA, ≤5 redirects followed manually),
+      load time / final URL / status / size recorded; BeautifulSoup (stdlib html.parser) parse
+- [x] URL validation + SSRF guard: http/https on default ports only, every resolved IP must be public
+      (private, loopback, link-local, reserved, CGNAT, multicast, IPv4-mapped blocked), re-checked on
+      every redirect, connection pinned to the validated IP (Host header + TLS SNI) against DNS rebinding
+- [x] `services/seo/checks.py`: 10 pure-function checks, each returning
+      `SeoCheck(id, name, status: pass|warn|fail, value, recommendation, weight)`:
+  - [x] title present & 30–60 chars
+  - [x] meta description present & 70–160 chars
+  - [x] exactly one H1
+  - [x] heading hierarchy (no skipped levels)
+  - [x] images have alt text
+  - [x] canonical link present
+  - [x] viewport meta (mobile-friendly)
+  - [x] HTTPS
+  - [x] Open Graph tags
+  - [x] content length / word count threshold
+- [x] `services/seo/scoring.py`: weighted 0–100 score (pass 1, warn 0.5, fail 0), computed in code
+- [x] `POST /api/seo/audit` → `SeoAuditResponse`; every audit saved to `seo_audits` (migration 0003);
+      `GET /api/seo/history?client=` (last 10) and `GET /api/seo/audits/{id}`
+- [x] AI report in the same call (`services/seo_audit.py`, feature `seo_audit`): LLM gets check results +
+      title, meta description, H1 and first 1500 chars of visible text; Pydantic-validated JSON (5 fixes,
+      rewritten title/meta, 8 keywords, 3 content ideas), one repair retry; audit still returns score +
+      checks with `ai: null` if the LLM fails; cached 1 h per (normalised URL, provider), hits logged at $0
+- [x] Friendly errors: invalid URL 422, blocked address 400, timeout 504, non-HTML 415, too large 422,
+      bot-blocked (401/403/429) / unreachable 502
 - [ ] Frontend: URL form, score gauge, pass/fail checklist, suggestions accordion, recent audits list
-- [ ] Tests: every check against saved HTML fixtures (pass + fail cases), scoring, SSRF guard
+- [x] Tests: every check against saved HTML fixtures (pass + warn + fail cases), scoring, SSRF guard,
+      redirects/limits via `httpx.MockTransport`, orchestration + cache, routes, DB round trip
 
 **Done when:** auditing a real site gives a believable score and specific, actionable suggestions.
 

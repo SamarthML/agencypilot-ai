@@ -4,9 +4,9 @@ import uuid
 from datetime import date, datetime
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, BeforeValidator, Field, StringConstraints
+from pydantic import BaseModel, BeforeValidator, Field
 
-from app.core.config import LlmProvider
+from app.schemas.common import LlmCallMeta
 
 
 def _digits_to_int(value: object) -> object:
@@ -17,7 +17,6 @@ def _digits_to_int(value: object) -> object:
 Days = Annotated[Literal[7, 30, 90], BeforeValidator(_digits_to_int)]
 KpiUnit = Literal["count", "currency", "percent", "ratio"]
 GoodWhen = Literal["up", "down", "neutral"]
-ClientId = Annotated[str, StringConstraints(pattern=r"^[a-z0-9]+(-[a-z0-9]+)*$", max_length=50)]
 
 
 class DatasetInfo(BaseModel):
@@ -107,16 +106,6 @@ class InsightsSnapshot(BaseModel):
 
 class InsightsDashboard(InsightsSnapshot):
     dataset: DatasetInfo
-
-
-class LlmCallMeta(BaseModel):
-    provider: LlmProvider
-    model: str
-    input_tokens: int
-    output_tokens: int
-    latency_ms: int
-    cost_usd: float
-    cached: bool
 
 
 class AiSummaryRequest(BaseModel):
