@@ -125,6 +125,8 @@ class AuditResult:
     ai_error: str | None
     meta: LlmCallMeta | None
     cached: bool = False
+    # Built from bundled fixture HTML by the demo seed (services/seo_demo.py).
+    is_demo: bool = False
 
 
 _audit_cache: TtlCache[AuditResult] | None = None
@@ -196,7 +198,8 @@ async def run_audit(
 
     hit = audit_cache().get(key)
     if hit is not None:
-        meta = await cache_hit_meta(FEATURE, provider, model, started)
+        saved = hit.meta.cost_usd if hit.meta else None
+        meta = await cache_hit_meta(FEATURE, provider, model, started, saved)
         result = replace(hit, meta=meta, cached=True)
     else:
         result = await compute_audit(url, provider, model)
@@ -228,6 +231,7 @@ def save_audit(
         load_ms=result.load_ms,
         html_bytes=result.html_bytes,
         cached=result.cached,
+        is_demo=result.is_demo,
     )
     db.add(row)
     db.commit()
@@ -251,6 +255,7 @@ def to_response(row: SeoAudit) -> SeoAuditResponse:
         ai_error=row.ai_error,
         meta=LlmCallMeta.model_validate(row.llm_meta) if row.llm_meta else None,
         cached=row.cached,
+        is_demo=row.is_demo,
         created_at=row.created_at,
     )
 
@@ -279,5 +284,6 @@ def _summary(row: SeoAudit) -> SeoAuditSummary:
         client_id=row.client_id,
         score=row.score,
         issue_count=sum(1 for check in row.checks if check["status"] != "pass"),
+        is_demo=row.is_demo,
         created_at=row.created_at,
     )

@@ -68,6 +68,9 @@ class SeoAuditResponse(BaseModel):
     ai_error: str | None
     meta: LlmCallMeta | None
     cached: bool
+    is_demo: bool = Field(
+        default=False, description="Seeded from bundled HTML (demo data), not a live fetch."
+    )
     created_at: datetime
 
 
@@ -78,4 +81,5 @@ class SeoAuditSummary(BaseModel):
     client_id: str | None
     score: int
     issue_count: int = Field(description="Checks with status fail or warn.")
+    is_demo: bool = False
     created_at: datetime

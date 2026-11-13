@@ -28,3 +28,9 @@ class LlmUsage(Base):
     success: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
     error: Mapped[str | None] = mapped_column(Text, nullable=True)
     cached: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    # Answered without a provider call (e.g. the Copilot similarity guardrail).
+    skipped: Mapped[bool] = mapped_column(
+        Boolean, nullable=False, default=False, server_default="false"
+    )
+    # On cache hits: the cost of the original call whose result was replayed.
+    saved_cost_usd: Mapped[Decimal | None] = mapped_column(Numeric(12, 6), nullable=True)

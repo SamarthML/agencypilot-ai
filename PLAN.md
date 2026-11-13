@@ -166,12 +166,23 @@ Goal: one-click monthly client report, and full visibility into LLM spend.
       CRUD round trip (Postgres), API contract, PDF bytes / content type
 
 ### Usage & cost
-- [ ] `GET /usage/summary` (totals, by provider, by feature, by day) and `GET /usage/calls` (paginated)
-- [ ] Usage page: KPI cards (calls, tokens, $ spent, p50/p95 latency), cost-by-model chart, call log table
+- [x] `GET /usage/summary?days=7|30|all` (Pandas: totals, avg/p95 latency, cache hit rate, guardrail
+      skips, money saved by cache; by feature, by provider/model, by day) and `GET /usage/recent?limit=`
+- [x] Consistent logging: every feature tag logs success/failure; cache hits log cost 0 + the original
+      call's cost (`saved_cost_usd`); guardrail answers log `skipped` (migration 0006)
+- [x] Per-IP rate limit on every LLM endpoint (sliding window, `RATE_LIMIT_PER_MINUTE`, 429 +
+      Retry-After; friendly toast in the UI)
+- [x] Usage page: KPI cards (calls, tokens, cost, avg/p95 latency, cache hit rate, saved by cache),
+      cost-by-feature bar, calls-per-day line, cost-by-model donut, recent calls table, 7d/30d/all
 - [ ] Side-by-side provider comparison (same prompt → latency/cost/output across Groq/OpenAI/Claude)
-- [ ] Cost optimisations documented and implemented where cheap: response caching for identical prompts,
-      `max_tokens` caps per feature, smaller default models, embedding batching
-- [ ] Tests: aggregation queries, cost calculation
+- [x] Cost optimisations implemented and explained on the Usage page: response caching, similarity
+      guardrail, `max_tokens` caps per feature, cheap default model, Pandas for all numbers, provider
+      switcher, rate limiting (embeddings are batched in `rag.py`)
+- [x] Settings page from `GET /api/settings`: providers (key configured yes/no, never the key), models,
+      Copilot threshold, rate limit, demo seeding — read-only
+- [x] Seeded demo SEO audits flagged `is_demo`: "Demo audit" badge + tooltip, no Re-run
+- [x] Tests: aggregation math (totals, p95, day filling, savings estimate), rate limiter, logging of
+      cache hits/skips, usage/settings API contracts (no key material)
 
 **Done when:** a report can be generated, edited, and downloaded as PDF; the Usage page shows every call made during the demo.
 

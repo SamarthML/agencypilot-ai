@@ -1,6 +1,7 @@
 import { Clock, Download, ExternalLink, FileCode2, Gauge, RotateCw, Zap, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
+import { DemoAuditBadge } from "@/components/seo/demo-badge";
 import { ScoreGauge } from "@/components/seo/score-gauge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -56,6 +57,7 @@ export function AuditOverview({ audit, onRerun }: AuditOverviewProps) {
                   <Zap aria-hidden className="size-3" /> Cached result
                 </Badge>
               )}
+              {audit.is_demo && <DemoAuditBadge />}
             </div>
             <p className="text-sm text-muted-foreground">{issueSummary(audit)}</p>
           </div>
@@ -65,9 +67,14 @@ export function AuditOverview({ audit, onRerun }: AuditOverviewProps) {
                 <ExternalLink aria-hidden className="size-3.5" /> Final URL
               </dt>
               <dd className="truncate text-sm font-medium">
-                <a href={audit.final_url} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  {audit.final_url}
-                </a>
+                {audit.is_demo ? (
+                  // Fictional *.example site: nothing to link to.
+                  audit.final_url
+                ) : (
+                  <a href={audit.final_url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    {audit.final_url}
+                  </a>
+                )}
               </dd>
             </div>
             <Fact icon={Clock} label="Load time">
@@ -87,9 +94,12 @@ export function AuditOverview({ audit, onRerun }: AuditOverviewProps) {
             <Button variant="outline" onClick={() => window.print()}>
               <Download data-icon="inline-start" aria-hidden /> Download PDF
             </Button>
-            <Button variant="ghost" onClick={onRerun}>
-              <RotateCw data-icon="inline-start" aria-hidden /> Re-run
-            </Button>
+            {/* A demo audit can't be re-run: its site is fictional and was never fetched. */}
+            {!audit.is_demo && (
+              <Button variant="ghost" onClick={onRerun}>
+                <RotateCw data-icon="inline-start" aria-hidden /> Re-run
+              </Button>
+            )}
           </div>
         </div>
       </CardContent>

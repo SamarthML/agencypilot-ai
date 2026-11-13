@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import { ComingSoonPage } from "@/components/coming-soon-page";
+import { UsageView } from "@/components/usage/usage-view";
 
 export const metadata: Metadata = { title: "Usage" };
 
 export default function Page() {
-  return <ComingSoonPage href="/usage" />;
+  return <UsageView />;
 }

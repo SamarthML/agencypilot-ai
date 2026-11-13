@@ -19,6 +19,7 @@ from fastapi.sse import EventSourceResponse, ServerSentEvent
 from sqlalchemy.orm import Session
 
 from app.api.deps import LlmProviderDep
+from app.api.rate_limit import LlmRateLimit
 from app.core.config import get_settings
 from app.core.db import get_db
 from app.schemas.common import ClientId
@@ -67,7 +68,7 @@ def delete_document(document_id: uuid.UUID, db: DbDep) -> None:
     copilot.delete_document(db, document_id)
 
 
-@router.post("/chat/stream", response_class=EventSourceResponse)
+@router.post("/chat/stream", response_class=EventSourceResponse, dependencies=[LlmRateLimit])
 async def chat_stream(
     body: ChatRequest, provider: LlmProviderDep
 ) -> AsyncIterator[ServerSentEvent]:

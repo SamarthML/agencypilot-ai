@@ -67,6 +67,7 @@ def build_demo_audit(site: DemoSite) -> seo_audit.AuditResult:
         ai=SeoAiReport.model_validate_json(site.ai_path.read_bytes()),
         ai_error=None,
         meta=None,
+        is_demo=True,
     )
 
 

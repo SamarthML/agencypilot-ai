@@ -7,6 +7,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
 from app.api.deps import LlmProviderDep
+from app.api.rate_limit import LlmRateLimit
 from app.core.db import get_db
 from app.schemas.common import ClientId
 from app.schemas.seo import SeoAuditRequest, SeoAuditResponse, SeoAuditSummary
@@ -17,7 +18,7 @@ router = APIRouter(prefix="/api/seo", tags=["seo"])
 DbDep = Annotated[Session, Depends(get_db)]
 
 
-@router.post("/audit", response_model=SeoAuditResponse)
+@router.post("/audit", response_model=SeoAuditResponse, dependencies=[LlmRateLimit])
 async def audit(body: SeoAuditRequest, db: DbDep, provider: LlmProviderDep) -> SeoAuditResponse:
     """Fetch the URL safely, run 10 checks, score it and attach an AI report (cached 1 h)."""
     return await seo_audit.run_audit(db, body.url, body.client_id, provider)

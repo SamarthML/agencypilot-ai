@@ -13,6 +13,8 @@ os.environ.update(
         "GROQ_MODEL": "openai/gpt-oss-120b",
         "COPILOT_WARMUP": "false",
         "SEED_DEMO_DATA": "false",
+        # Existing API tests make many calls; test_rate_limit.py covers the limiter itself.
+        "RATE_LIMIT_PER_MINUTE": "100000",
         "COPILOT_MIN_SIMILARITY": "0.5",
     }
 )

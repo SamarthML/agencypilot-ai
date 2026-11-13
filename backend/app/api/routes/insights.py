@@ -6,6 +6,7 @@ from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, s
 from sqlalchemy.orm import Session
 
 from app.api.deps import LlmProviderDep
+from app.api.rate_limit import LlmRateLimit
 from app.core.config import get_settings
 from app.core.db import get_db
 from app.schemas.common import ClientId
@@ -69,7 +70,7 @@ def summary(client_id: ClientId, db: DbDep, days: Days = 30) -> InsightsDashboar
     return insights.get_dashboard(db, client_id, days)
 
 
-@router.post("/{client_id}/ai-summary", response_model=InsightSummary)
+@router.post("/{client_id}/ai-summary", response_model=InsightSummary, dependencies=[LlmRateLimit])
 async def ai_summary(
     client_id: ClientId, body: AiSummaryRequest, db: DbDep, provider: LlmProviderDep
 ) -> InsightSummary:
@@ -77,7 +78,7 @@ async def ai_summary(
     return await insights_ai.summarize(db, client_id, body.days, provider)
 
 
-@router.post("/{client_id}/ask", response_model=AskResponse)
+@router.post("/{client_id}/ask", response_model=AskResponse, dependencies=[LlmRateLimit])
 async def ask(
     client_id: ClientId, body: AskRequest, db: DbDep, provider: LlmProviderDep
 ) -> AskResponse:

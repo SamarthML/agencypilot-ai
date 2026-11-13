@@ -155,10 +155,18 @@ def build_ask_messages(context: InsightsContext, question: str) -> list[llm.Chat
 # ---------------------------------------------------------------------------
 
 
-_summary_cache: TtlCache[AiSummaryContent] | None = None
+@dataclass(frozen=True)
+class CachedSummary:
+    """A cached summary plus what the original call cost, so cache hits can log the saving."""
+
+    content: AiSummaryContent
+    cost_usd: float
 
 
-def summary_cache() -> TtlCache[AiSummaryContent]:
+_summary_cache: TtlCache[CachedSummary] | None = None
+
+
+def summary_cache() -> TtlCache[CachedSummary]:
     global _summary_cache
     if _summary_cache is None:
         _summary_cache = TtlCache(get_settings().insights_cache_ttl_seconds)
@@ -197,8 +205,8 @@ async def summarize(
 
     cached = summary_cache().get(key)
     if cached is not None:
-        meta = await cache_hit_meta(SUMMARY_FEATURE, provider, model, started)
-        return InsightSummary(client_id=client_id, period=period, summary=cached, meta=meta)
+        meta = await cache_hit_meta(SUMMARY_FEATURE, provider, model, started, cached.cost_usd)
+        return InsightSummary(client_id=client_id, period=period, summary=cached.content, meta=meta)
 
     structured = await llm.generate_structured(
         build_summary_messages(grounding.context),
@@ -209,13 +217,9 @@ async def summarize(
         model=model,
         max_tokens=SUMMARY_MAX_TOKENS,
     )
-    summary_cache().set(key, structured.data)
-    return InsightSummary(
-        client_id=client_id,
-        period=period,
-        summary=structured.data,
-        meta=call_meta(structured.result),
-    )
+    meta = call_meta(structured.result)
+    summary_cache().set(key, CachedSummary(structured.data, meta.cost_usd))
+    return InsightSummary(client_id=client_id, period=period, summary=structured.data, meta=meta)
 
 
 async def ask(

@@ -91,6 +91,9 @@ async def test_summary_calls_llm_then_serves_from_cache(
         ("insights_summary", False),
         ("insights_summary", True),
     ]
+    # The hit costs nothing and records what the original call cost (the money saved).
+    assert usage_rows[1].cost_usd == 0
+    assert usage_rows[1].saved_cost_usd == pytest.approx(usage_rows[0].cost_usd)
 
 
 async def test_summary_request_is_grounded_and_structured(

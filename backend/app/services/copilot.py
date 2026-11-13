@@ -378,6 +378,8 @@ async def chat(request: ChatRequest, provider: LlmProvider) -> AsyncIterator[Cha
         query = await standalone_query(request, provider, calls)
         chunks = await asyncio.to_thread(search, request.client, query)
         grounded = rag.is_grounded(chunks, get_settings().copilot_min_similarity)
+        if not grounded:
+            await _record_guardrail_skip(provider, started)
         pieces = _answer(query, chunks, provider, calls) if grounded else _not_found(request.client)
         async for piece in pieces:
             answer.append(piece)
@@ -389,6 +391,12 @@ async def chat(request: ChatRequest, provider: LlmProvider) -> AsyncIterator[Cha
     yield ChatEvent("citations", CitationsEvent(citations=citations))
     rewritten = query if query != request.question else None
     yield ChatEvent("done", _done(provider, calls, started, grounded, rewritten))
+
+
+async def _record_guardrail_skip(provider: LlmProvider, started: float) -> None:
+    """Log the request the guardrail answered without an answer-LLM call (cost 0)."""
+    latency_ms = int((time.perf_counter() - started) * 1000)
+    await llm.record_skip(FEATURE, provider, get_settings().model_for(provider), latency_ms)
 
 
 def _error_detail(exc: Exception) -> str:

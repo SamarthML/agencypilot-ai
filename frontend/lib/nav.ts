@@ -15,8 +15,6 @@ export interface NavItem {
   icon: LucideIcon;
   /** One-line description of what the page / micro app does. */
   description: string;
-  /** Build phase in PLAN.md that delivers this page (absent for Home). */
-  phase?: number;
 }
 
 export const NAV_ITEMS: readonly NavItem[] = [
@@ -32,7 +30,6 @@ export const NAV_ITEMS: readonly NavItem[] = [
     icon: BarChart3,
     description:
       "Upload a client CSV to get KPIs, trend charts and an AI summary written only from the computed numbers.",
-    phase: 2,
   },
   {
     href: "/seo",
@@ -40,7 +37,6 @@ export const NAV_ITEMS: readonly NavItem[] = [
     icon: SearchCheck,
     description:
       "Scan any URL against 10 rule-based SEO checks, get a 0–100 score and AI-written fix suggestions.",
-    phase: 3,
   },
   {
     href: "/copilot",
@@ -48,7 +44,6 @@ export const NAV_ITEMS: readonly NavItem[] = [
     icon: MessagesSquare,
     description:
       "Chat with a client's PDFs: answers stream in with page-level citations, grounded by RAG.",
-    phase: 4,
   },
   {
     href: "/reports",
@@ -56,7 +51,6 @@ export const NAV_ITEMS: readonly NavItem[] = [
     icon: FileText,
     description:
       "Generate a monthly client report from dashboard data, edit it section by section and export to PDF.",
-    phase: 5,
   },
   {
     href: "/usage",
@@ -64,14 +58,12 @@ export const NAV_ITEMS: readonly NavItem[] = [
     icon: Gauge,
     description:
       "Every LLM call with tokens, latency and cost, broken down by provider, model and feature.",
-    phase: 5,
   },
   {
     href: "/settings",
     label: "Settings",
     icon: Settings,
     description: "Provider keys status, default model and workspace preferences.",
-    phase: 6,
   },
 ];
 

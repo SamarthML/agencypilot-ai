@@ -2,6 +2,7 @@
 
 import { History } from "lucide-react";
 
+import { DemoAuditTag } from "@/components/seo/demo-badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useApi } from "@/hooks/use-api";
@@ -61,9 +62,12 @@ function AuditRow({ audit, selected, onSelect }: { audit: SeoAuditSummary; selec
             {hostname(audit.final_url)}
             <span className="font-normal text-muted-foreground">{pathOf(audit.final_url)}</span>
           </span>
-          <span className="block text-xs text-muted-foreground">
-            {audit.issue_count === 0 ? "No issues" : `${audit.issue_count} issue${audit.issue_count === 1 ? "" : "s"}`}{" "}
-            · {formatRelativeTime(audit.created_at)}
+          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+            <span className="truncate">
+              {audit.issue_count === 0 ? "No issues" : `${audit.issue_count} issue${audit.issue_count === 1 ? "" : "s"}`}{" "}
+              · {formatRelativeTime(audit.created_at)}
+            </span>
+            {audit.is_demo && <DemoAuditTag />}
           </span>
         </span>
       </button>

@@ -27,6 +27,10 @@ import type {
   SeoAuditRequest,
   SeoAuditResponse,
   SeoAuditSummary,
+  AppSettings,
+  UsageCall,
+  UsageDays,
+  UsageSummary,
 } from "@/lib/types";
 
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(
@@ -96,6 +100,16 @@ function toApiError(error: unknown): ApiError {
   return new ApiError("Can't reach the API. Is the backend running?", null);
 }
 
+/** HTTP 429 from the per-client LLM rate limit. */
+export function isRateLimited(error: unknown): boolean {
+  return error instanceof ApiError && error.status === 429;
+}
+
+/** Shown even for silent requests: the user needs to know why nothing happened. One at a time. */
+function toastRateLimit(error: ApiError): void {
+  toast.warning("Slow down a little", { id: "rate-limit", description: error.message });
+}
+
 /** True when the caller cancelled the request (not a timeout): never worth a toast. */
 export function isAbortError(error: unknown): boolean {
   return error instanceof DOMException && error.name === "AbortError";
@@ -116,7 +130,8 @@ export async function apiFetch<T>(path: string, options: ApiOptions = {}): Promi
   } catch (error) {
     if (isAbortError(error)) throw error;
     const apiError = toApiError(error);
-    if (!silent) toast.error("Request failed", { description: apiError.message });
+    if (isRateLimited(apiError)) toastRateLimit(apiError);
+    else if (!silent) toast.error("Request failed", { description: apiError.message });
     throw apiError;
   }
 }
@@ -281,7 +296,11 @@ async function openChatStream(
     if (isAbortError(error)) throw error;
     throw toApiError(error);
   }
-  if (!response.ok) throw new ApiError(await readErrorMessage(response), response.status);
+  if (!response.ok) {
+    const error = new ApiError(await readErrorMessage(response), response.status);
+    if (isRateLimited(error)) toastRateLimit(error);
+    throw error;
+  }
   if (!response.body) throw new ApiError("The API returned an empty stream.", null);
   return response.body;
 }
@@ -387,4 +406,18 @@ export async function downloadReportPdf(id: string, fallbackName: string): Promi
   link.click();
   link.remove();
   setTimeout(() => URL.revokeObjectURL(url), 10_000);
+}
+
+/* ---- Usage & cost / Settings ---- */
+
+export function getUsageSummary(days: UsageDays, options: ApiOptions = {}): Promise<UsageSummary> {
+  return apiFetch(`/api/usage/summary?days=${days}`, options);
+}
+
+export function getRecentUsage(limit = 50, options: ApiOptions = {}): Promise<UsageCall[]> {
+  return apiFetch(`/api/usage/recent?limit=${limit}`, options);
+}
+
+export function getAppSettings(options: ApiOptions = {}): Promise<AppSettings> {
+  return apiFetch("/api/settings", options);
 }

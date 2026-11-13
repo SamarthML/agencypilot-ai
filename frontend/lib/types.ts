@@ -204,6 +204,8 @@ export interface SeoAuditResponse {
   ai_error: string | null;
   meta: LlmCallMeta | null;
   cached: boolean;
+  /** Seeded from bundled HTML (demo data), not fetched from the live site. */
+  is_demo: boolean;
   created_at: string;
 }
 
@@ -214,6 +216,7 @@ export interface SeoAuditSummary {
   client_id: string | null;
   score: number;
   issue_count: number;
+  is_demo: boolean;
   created_at: string;
 }
 
@@ -397,4 +400,110 @@ export interface Report extends ReportSummary {
   metrics: ReportMetrics;
   seo_audit_id: string | null;
   meta: LlmCallMeta;
+}
+
+/* ---- Usage & cost ---- */
+
+export type UsageDays = 7 | 30 | "all";
+
+export interface UsageTotals {
+  requests: number;
+  llm_calls: number;
+  cache_hits: number;
+  guardrail_skips: number;
+  errors: number;
+  input_tokens: number;
+  output_tokens: number;
+  total_tokens: number;
+  cost_usd: number;
+  avg_latency_ms: number | null;
+  p95_latency_ms: number | null;
+  cache_hit_rate: number | null;
+  saved_usd: number;
+  saved_includes_estimates: boolean;
+}
+
+export interface FeatureUsage {
+  feature: string;
+  requests: number;
+  llm_calls: number;
+  cache_hits: number;
+  guardrail_skips: number;
+  errors: number;
+  input_tokens: number;
+  output_tokens: number;
+  cost_usd: number;
+  avg_latency_ms: number | null;
+}
+
+export interface ModelUsage {
+  provider: string;
+  model: string;
+  llm_calls: number;
+  input_tokens: number;
+  output_tokens: number;
+  cost_usd: number;
+}
+
+export interface DailyUsage {
+  date: string;
+  llm_calls: number;
+  cache_hits: number;
+  guardrail_skips: number;
+  errors: number;
+  cost_usd: number;
+}
+
+export interface UsageSummary {
+  days: UsageDays;
+  start: string;
+  end: string;
+  totals: UsageTotals;
+  by_feature: FeatureUsage[];
+  by_model: ModelUsage[];
+  by_day: DailyUsage[];
+}
+
+export interface UsageCall {
+  id: string;
+  created_at: string;
+  feature: string;
+  provider: string;
+  model: string;
+  input_tokens: number;
+  output_tokens: number;
+  latency_ms: number;
+  cost_usd: number;
+  cached: boolean;
+  skipped: boolean;
+  saved_cost_usd: number | null;
+  success: boolean;
+  error: string | null;
+}
+
+/* ---- Settings (read-only; API keys are never sent) ---- */
+
+export interface ProviderSettings {
+  id: LlmProvider;
+  label: string;
+  configured: boolean;
+  model: string;
+  is_default: boolean;
+}
+
+export interface AppSettings {
+  providers: ProviderSettings[];
+  default_provider: LlmProvider;
+  embedding_model: string;
+  copilot_min_similarity: number;
+  copilot_top_k: number;
+  copilot_max_upload_mb: number;
+  insights_max_upload_mb: number;
+  insights_cache_ttl_seconds: number;
+  seo_cache_ttl_seconds: number;
+  llm_timeout_seconds: number;
+  llm_max_retries: number;
+  rate_limit_enabled: boolean;
+  rate_limit_per_minute: number;
+  seed_demo_data: boolean;
 }

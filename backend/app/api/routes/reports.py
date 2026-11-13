@@ -7,6 +7,7 @@ from fastapi import APIRouter, Depends, Query, Response, status
 from sqlalchemy.orm import Session
 
 from app.api.deps import LlmProviderDep
+from app.api.rate_limit import LlmRateLimit
 from app.core.db import get_db
 from app.schemas.common import ClientId
 from app.schemas.reports import (
@@ -29,7 +30,12 @@ def months(db: DbDep, client: Annotated[ClientId, Query()]) -> list[ReportMonth]
     return reports.list_months(db, client)
 
 
-@router.post("/generate", response_model=Report, status_code=status.HTTP_201_CREATED)
+@router.post(
+    "/generate",
+    response_model=Report,
+    status_code=status.HTTP_201_CREATED,
+    dependencies=[LlmRateLimit],
+)
 async def generate(body: ReportGenerateRequest, db: DbDep, provider: LlmProviderDep) -> Report:
     """Compute the month's KPIs (+ latest SEO audit) and have the LLM write a draft report."""
     return await reports.generate_report(db, body, provider)

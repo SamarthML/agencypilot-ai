@@ -291,6 +291,10 @@ class UsageRecord:
     success: bool = True
     error: str | None = None
     cached: bool = False
+    # Answered without a provider call (e.g. the Copilot similarity guardrail).
+    skipped: bool = False
+    # Cache hits: the cost of the original call whose result was replayed.
+    saved_cost_usd: Decimal | None = None
 
 
 def write_usage(record: UsageRecord) -> None:
@@ -308,10 +312,23 @@ async def _record(record: UsageRecord) -> None:
 
 
 async def record_cache_hit(
-    feature: str, provider: LlmProvider, model: str, latency_ms: int = 0
+    feature: str,
+    provider: LlmProvider,
+    model: str,
+    latency_ms: int = 0,
+    saved_cost_usd: Decimal | None = None,
 ) -> None:
-    """A response served from an app-level cache: logged with zero tokens and zero cost."""
-    await _record(UsageRecord(feature, provider, model, latency_ms=latency_ms, cached=True))
+    """A response served from an app-level cache: zero tokens and cost, plus what it saved."""
+    record = UsageRecord(
+        feature, provider, model, latency_ms=latency_ms, cached=True,
+        saved_cost_usd=saved_cost_usd,
+    )  # fmt: skip
+    await _record(record)
+
+
+async def record_skip(feature: str, provider: LlmProvider, model: str, latency_ms: int = 0) -> None:
+    """A request answered without calling the provider (e.g. the similarity guardrail)."""
+    await _record(UsageRecord(feature, provider, model, latency_ms=latency_ms, skipped=True))
 
 
 # ---------------------------------------------------------------------------

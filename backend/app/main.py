@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.api.routes import copilot, health, insights, models, reports, seo, usage
+from app.api.routes import settings as settings_routes
 from app.core.config import Settings, apply_runtime_env, get_settings
 from app.services import copilot as copilot_service
 from app.services import seo_demo
@@ -48,6 +49,7 @@ FEATURE_ROUTERS = (
     copilot.router,
     reports.router,
     usage.router,
+    settings_routes.router,
 )
 
 # Service-layer errors carry a user-facing message; this maps them to HTTP status codes so
@@ -105,7 +107,7 @@ def add_cors(app: FastAPI, settings: Settings) -> None:
         allow_methods=["*"],
         allow_headers=["*"],
         # Content-Disposition carries the report PDF filename to the browser download.
-        expose_headers=["X-LLM-Provider", "Content-Disposition"],
+        expose_headers=["X-LLM-Provider", "Content-Disposition", "Retry-After"],
     )
 
 

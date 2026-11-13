@@ -5,7 +5,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Annotated, Literal
 
-from pydantic import SecretStr, field_validator
+from pydantic import Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 BACKEND_DIR = Path(__file__).resolve().parents[2]
@@ -49,6 +49,10 @@ class Settings(BaseSettings):
     # Calibrated on bge-small: in-document questions scored >= 0.52, unrelated ones 0.36-0.50.
     copilot_min_similarity: float = 0.5
     copilot_warmup: bool = True
+
+    # Per-client (IP) limit on endpoints that call an LLM; 429 beyond it.
+    rate_limit_enabled: bool = True
+    rate_limit_per_minute: int = Field(default=20, ge=1)
 
     # Seed one fixture-based SEO audit per demo client (only for clients with no audits).
     seed_demo_data: bool = True

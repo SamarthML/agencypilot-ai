@@ -100,7 +100,10 @@ async def test_weak_retrieval_skips_the_llm_and_costs_nothing(
     assert isinstance(done, DoneEvent)
     assert (done.grounded, done.cost_usd, done.input_tokens, done.output_tokens) == (False, 0, 0, 0)
     assert provider.requests == []
-    assert usage_rows == []
+    # Logged as a guardrail skip: no provider call, no tokens, no cost.
+    assert [(r.feature, r.skipped, r.cached, r.cost_usd, r.input_tokens) for r in usage_rows] == [
+        ("copilot", True, False, 0, 0)
+    ]
 
 
 async def test_no_documents_at_all_also_hits_the_guardrail(

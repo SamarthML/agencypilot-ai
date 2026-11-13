@@ -55,6 +55,7 @@ def test_demo_audit_runs_real_checks_on_fixture(client_id: str) -> None:
     assert site.url.endswith(".example/")  # reserved TLD: never a real site
     assert audit.status_code == 200 and audit.html_bytes > 1000
     assert audit.meta is None  # no LLM call, so no model/cost is shown
+    assert audit.is_demo is True
 
 
 def test_demo_scores_are_distinct() -> None:
@@ -120,6 +121,7 @@ def test_seed_creates_one_audit_and_is_idempotent(
     )  # fmt: skip
     saved = seo_audit.get_audit(db, history[0].id)
     assert saved.ai is not None and saved.meta is None and saved.cached is False
+    assert saved.is_demo is True and history[0].is_demo is True
 
 
 def test_seed_skips_clients_with_real_audits(db: Session, test_site: seo_demo.DemoSite) -> None:

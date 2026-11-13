@@ -47,7 +47,8 @@ AgencyPilot/
 │   ├── pyproject.toml          # ruff + pytest config
 │   ├── alembic.ini
 │   ├── alembic/                # migrations: 0001 pgvector + llm_usage, 0002 insights, 0003 seo_audits,
-│   │                           #   0004 copilot (documents, chunks + HNSW, copilot_feedback), 0005 reports
+│   │                           #   0004 copilot (documents, chunks + HNSW, copilot_feedback), 0005 reports,
+│   │                           #   0006 llm_usage.skipped/saved_cost_usd + seo_audits.is_demo
 │   ├── scripts/                # generate_demo_data.py (marketing_demo.csv),
 │   │                           #   generate_sample_brief.py (bloom_bakery_brief.pdf),
 │   │                           #   seed_demo_data.py (demo SEO audits on demand)
@@ -63,9 +64,11 @@ AgencyPilot/
 │   │   ├── models/             # SQLAlchemy ORM models (one file per table group)
 │   │   ├── schemas/            # Pydantic request/response models (one file per feature)
 │   │   ├── api/routes/         # thin routers; /health at root, features under /api/<feature>
+│   │   ├── api/rate_limit.py   # per-IP sliding-window limit; `dependencies=[LlmRateLimit]` on LLM routes
 │   │   └── services/
 │   │       ├── llm.py          # THE ONLY place that calls an LLM provider
-│   │       ├── llm_meta.py     # LLMResult -> LlmCallMeta; cache-hit logging helper
+│   │       ├── llm_meta.py     # LLMResult -> LlmCallMeta; cache-hit logging helper (logs saved cost)
+│   │       ├── usage.py        # Pandas aggregations over llm_usage for the Usage page
 │   │       ├── cache.py        # shared in-process TtlCache for LLM results
 │   │       ├── pricing.py      # per-model token prices for cost estimation
 │   │       ├── analytics.py    # pure Pandas: CSV validation, KPIs, breakdowns, signals
@@ -91,7 +94,8 @@ AgencyPilot/
     │   ├── sidebar.tsx, topbar.tsx, page-header.tsx, empty-state.tsx, kpi-card.tsx, motion.tsx,
     │   │   llm-meta.tsx        # provider/model/tokens/latency/cost line under AI output
     │   ├── copy-button.tsx     # shared copy-to-clipboard icon button
-    │   └── <feature>/          # feature components (home/, insights/, seo/, copilot/, reports/); container queries
+    │   └── <feature>/          # feature components (home/, insights/, seo/, copilot/, reports/, usage/,
+    │                           #   settings/); container queries
     │                           #   (@container / @xl:) where a card's width, not the viewport, matters
     ├── lib/
     │   ├── api.ts              # typed fetch client: X-LLM-Provider header, ApiError, toasts
@@ -135,6 +139,9 @@ AgencyPilot/
   input_tokens, output_tokens, latency_ms, cost_usd, success/error. This includes streaming calls
   (log on stream completion) and failed calls.
 - Cost is computed from `services/pricing.py` (a per-model price table), not hardcoded at call sites.
+- Cache hits are logged with `cached=true`, cost 0 and `saved_cost_usd` (the original call's cost);
+  requests answered without a provider call (guardrail) are logged with `skipped=true`.
+- Every route that can call an LLM declares `dependencies=[LlmRateLimit]` (`app/api/rate_limit.py`).
 - Default provider is **Groq**; the provider/model can be overridden per request.
 - **Ground the LLM in data we computed.** Insights summaries get KPI numbers, not the raw CSV. SEO
   suggestions get the failed check results. Copilot answers only from retrieved chunks and must cite pages.
@@ -247,6 +254,8 @@ COPILOT_TOP_K=5
 COPILOT_MIN_SIMILARITY=0.5                             # below this: "not found", no LLM call
 COPILOT_WARMUP=true                                    # load model + seed brief at startup
 SEED_DEMO_DATA=true                                    # seed fixture SEO audits for demo clients
+RATE_LIMIT_ENABLED=true
+RATE_LIMIT_PER_MINUTE=20                               # per client IP, on every LLM endpoint
 CORS_ORIGINS=http://localhost:3000
 HF_HOME=C:/Users/<you>/.cache/agencypilot-hf          # model cache outside the repo/OneDrive
 ```

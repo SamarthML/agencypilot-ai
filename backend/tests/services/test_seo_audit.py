@@ -63,6 +63,7 @@ def fake_save(
         page=result.page.model_dump(), ai=result.ai.model_dump() if result.ai else None,
         llm_meta=result.meta.model_dump() if result.meta else None, ai_error=result.ai_error,
         load_ms=result.load_ms, html_bytes=result.html_bytes, cached=result.cached,
+        is_demo=result.is_demo,
         created_at=datetime.now(UTC),
     )  # fmt: skip
     SAVED.append(row)
@@ -162,6 +163,8 @@ async def test_second_audit_is_served_from_cache_at_zero_cost(
     assert second.score == first.score and second.ai == first.ai
     assert second.id != first.id and len(SAVED) == 2  # every audit is persisted
     assert [(r.feature, r.cached, r.cost_usd) for r in usage_rows][1] == ("seo_audit", True, 0)
+    assert usage_rows[0].cost_usd > 0
+    assert usage_rows[1].saved_cost_usd == pytest.approx(usage_rows[0].cost_usd)
 
 
 async def test_cache_is_per_provider(
