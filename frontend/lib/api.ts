@@ -1,0 +1,90 @@
+import { toast } from "sonner";
+
+import { DEFAULT_PROVIDER, isProvider } from "@/lib/providers";
+import { readStorage } from "@/lib/storage";
+import { STORAGE_KEYS } from "@/lib/storage-keys";
+import type { HealthResponse, LlmProvider } from "@/lib/types";
+
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(
+  /\/$/,
+  "",
+);
+export const PROVIDER_HEADER = "X-LLM-Provider";
+const DEFAULT_TIMEOUT_MS = 15_000;
+
+export class ApiError extends Error {
+  constructor(
+    message: string,
+    /** HTTP status, or null for network errors / timeouts. */
+    readonly status: number | null,
+  ) {
+    super(message);
+    this.name = "ApiError";
+  }
+}
+
+export interface ApiOptions extends RequestInit {
+  /** Don't show a toast on failure (e.g. background polling). */
+  silent?: boolean;
+  timeoutMs?: number;
+}
+
+/** The provider chosen in the model switcher, readable outside React. */
+export function getSelectedProvider(): LlmProvider {
+  const stored = readStorage(STORAGE_KEYS.provider);
+  return isProvider(stored) ? stored : DEFAULT_PROVIDER;
+}
+
+function buildHeaders(init: RequestInit): Headers {
+  const headers = new Headers(init.headers);
+  headers.set("Accept", "application/json");
+  headers.set(PROVIDER_HEADER, getSelectedProvider());
+  const isJsonBody = init.body !== undefined && !(init.body instanceof FormData);
+  if (isJsonBody && !headers.has("Content-Type")) headers.set("Content-Type", "application/json");
+  return headers;
+}
+
+/** FastAPI errors look like {"detail": "..."} or {"detail": [{msg: "..."}]}. */
+async function readErrorMessage(response: Response): Promise<string> {
+  try {
+    const body: unknown = await response.json();
+    if (body && typeof body === "object" && "detail" in body) {
+      const { detail } = body as { detail: unknown };
+      if (typeof detail === "string") return detail;
+      if (Array.isArray(detail) && detail[0]?.msg) return String(detail[0].msg);
+    }
+  } catch {
+    // Non-JSON error body; fall through to the status text.
+  }
+  return response.statusText || `Request failed with status ${response.status}`;
+}
+
+function toApiError(error: unknown): ApiError {
+  if (error instanceof ApiError) return error;
+  if (error instanceof DOMException && error.name === "TimeoutError") {
+    return new ApiError("The API took too long to respond.", null);
+  }
+  return new ApiError("Can't reach the API. Is the backend running?", null);
+}
+
+export async function apiFetch<T>(path: string, options: ApiOptions = {}): Promise<T> {
+  const { silent = false, timeoutMs = DEFAULT_TIMEOUT_MS, ...init } = options;
+  try {
+    const response = await fetch(`${API_URL}${path}`, {
+      ...init,
+      headers: buildHeaders(init),
+      signal: init.signal ?? AbortSignal.timeout(timeoutMs),
+    });
+    if (!response.ok) throw new ApiError(await readErrorMessage(response), response.status);
+    if (response.status === 204) return undefined as T;
+    return (await response.json()) as T;
+  } catch (error) {
+    const apiError = toApiError(error);
+    if (!silent) toast.error("Request failed", { description: apiError.message });
+    throw apiError;
+  }
+}
+
+export function getHealth(options: ApiOptions = {}): Promise<HealthResponse> {
+  return apiFetch<HealthResponse>("/health", { timeoutMs: 5_000, ...options });
+}

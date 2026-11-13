@@ -66,14 +66,18 @@ AgencyPilot/
 └── frontend/
     ├── .env.local.example      # NEXT_PUBLIC_API_URL (copy to .env.local)
     ├── package.json
-    ├── app/                    # App Router: (dashboard)/insights, seo, copilot, reports, usage
+    ├── app/                    # App Router; (app)/ route group holds the sidebar+topbar shell
     ├── components/
-    │   ├── ui/                 # shadcn/ui generated components (don't hand-edit)
-    │   └── <feature>/          # feature components
+    │   ├── ui/                 # shadcn/ui (radix-nova); only card.tsx is restyled (rounded-2xl)
+    │   ├── sidebar.tsx, topbar.tsx, page-header.tsx, empty-state.tsx, kpi-card.tsx, motion.tsx
+    │   └── <feature>/          # feature components (e.g. home/)
     ├── lib/
-    │   ├── api.ts              # typed fetch client for the backend
-    │   └── types.ts            # TS types mirroring backend Pydantic schemas
-    └── hooks/
+    │   ├── api.ts              # typed fetch client: X-LLM-Provider header, ApiError, toasts
+    │   ├── types.ts            # TS types mirroring backend Pydantic schemas
+    │   ├── nav.ts              # single nav config (sidebar, titles, empty states)
+    │   ├── providers.ts        # LLM provider display metadata
+    │   └── model-context.tsx, client-context.tsx   # persisted UI state
+    └── hooks/use-local-storage.ts   # useSyncExternalStore-backed, hydration-safe
 ```
 
 ## Coding rules
@@ -125,6 +129,12 @@ AgencyPilot/
 - Run `pytest` and `ruff` (backend) and `npm run lint` + `npm run build` (frontend) before calling a task done.
 
 ### Frontend
+- **Next.js 16 + React 19.** APIs differ from older versions: check `frontend/node_modules/next/dist/docs/`
+  before using an unfamiliar Next API (see `frontend/AGENTS.md`).
+- Design: zinc neutrals; the brand gradient (`bg-brand-gradient` / `text-brand-gradient`) is used
+  sparingly (logo, active nav bar, hero accent, primary CTA). Cards are `rounded-2xl` with a subtle
+  border and `shadow-card`. Check 375 / 768 / 1440 px before calling UI work done.
+- Persisted UI state goes through `useLocalStorage` (no `setState` in effects, no hydration mismatch).
 - Server Components by default; add `"use client"` only where state/effects/streaming are needed.
 - All backend calls go through `lib/api.ts`.
 - UI built from shadcn/ui primitives; icons from lucide-react; motion is subtle (Framer Motion for

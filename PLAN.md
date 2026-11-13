@@ -9,21 +9,28 @@ Tick items (`[x]`) as they land.
 
 Goal: both apps boot, talk to each other, talk to Postgres, and can make one logged LLM call.
 
-- [ ] `docker-compose.yml` with `pgvector/pgvector:pg16`, named volume, healthcheck
-- [ ] `.env.example` with every variable from CLAUDE.md
-- [ ] Backend skeleton: `app/main.py`, `core/config.py` (pydantic-settings), `core/db.py`
-- [ ] CORS configured from `CORS_ORIGINS`
-- [ ] `GET /health` returns a schema (`status`, `db`, `version`)
-- [ ] Alembic initialised; first migration enables `vector` extension + creates `llm_usage` table
+- [x] `docker-compose.yml` with `pgvector/pgvector:pg16`, named volume, healthcheck
+- [x] `backend/.env.example` + `frontend/.env.local.example` with every variable from CLAUDE.md
+- [x] Backend skeleton: `app/main.py`, `core/config.py` (pydantic-settings), `core/db.py`
+- [x] Empty feature routers mounted under `/api/{insights,seo,copilot,reports,usage}`
+- [x] CORS configured from `CORS_ORIGINS` (allows `X-LLM-Provider`)
+- [x] `GET /health` returns a schema (`status`, `db`, `version`) and checks the DB
+- [x] Alembic initialised; first migration enables `vector` extension + creates `llm_usage` table
+- [x] pytest + ruff setup; tests for `/health` and CORS
 - [ ] `services/pricing.py` with per-model input/output prices for the default models
 - [ ] `services/llm.py`: provider abstraction (Groq, OpenAI, Anthropic), `complete()` and `stream()`,
-      usage logging (tokens, latency, cost, success/error) to `llm_usage`
+      usage logging (tokens, latency, cost, success/error, cached) to `llm_usage`
+- [ ] Backend reads `X-LLM-Provider` (validated) with fallback to `DEFAULT_PROVIDER`
 - [ ] `GET /models` lists available providers/models (only those with a key configured)
-- [ ] pytest setup + tests for `pricing.py` and `llm.py` (providers mocked)
-- [ ] Frontend: Next.js App Router + TS strict + Tailwind + shadcn/ui init
-- [ ] App shell: sidebar nav (Insights, SEO, Copilot, Reports, Usage), header with model switcher
-- [ ] `lib/api.ts` typed client + `lib/types.ts`; model choice stored in context/localStorage
-- [ ] GitHub Actions CI: backend (ruff + pytest), frontend (lint + build)
+- [ ] Tests for `pricing.py` and `llm.py` (providers mocked)
+- [x] Frontend: Next.js App Router + TS strict + Tailwind + shadcn/ui init
+- [x] Design system: zinc tokens, indigo→violet brand accent, Inter, dark default + light toggle
+- [x] App shell: collapsible sidebar (Sheet drawer on mobile), top bar with client selector,
+      model switcher, theme toggle and API status dot (polls `/health` every 30s)
+- [x] Home page (hero, KPI cards, micro-app cards) + empty-state placeholder pages for every route
+- [x] `lib/api.ts` typed client (sends `X-LLM-Provider`, toasts on failure) + `lib/types.ts`;
+      model choice stored in React context + localStorage
+- [ ] GitHub Actions CI: backend (ruff + pytest), frontend (lint + tsc + build)
 - [ ] README: setup steps verified on a clean Windows checkout
 
 **Done when:** `docker compose up`, backend, and frontend all run; `/health` is green in the UI; a test LLM call shows up in `llm_usage`.
