@@ -224,3 +224,86 @@ export interface DemoClient {
   industry: string;
   initials: string;
 }
+
+/* ---- Client Copilot ---- */
+
+export type DocumentStatus = "processing" | "ready" | "failed";
+export type Rating = "up" | "down";
+
+export interface CopilotDocument {
+  id: string;
+  client: string;
+  filename: string;
+  pages: number;
+  status: DocumentStatus;
+  error: string | null;
+  chunk_count: number;
+  created_at: string;
+}
+
+export interface ChatTurn {
+  role: "user" | "assistant";
+  content: string;
+}
+
+export interface ChatRequest {
+  client: string;
+  question: string;
+  history: ChatTurn[];
+}
+
+export interface Citation {
+  filename: string;
+  page: number;
+  snippet: string;
+  similarity: number;
+}
+
+/** SSE `token`: a piece of answer text, in order. */
+export interface TokenEvent {
+  text: string;
+}
+
+/** SSE `citations`: the sources the answer actually cited, in order of first mention. */
+export interface CitationsEvent {
+  citations: Citation[];
+}
+
+/** SSE `done`: totals for the whole request (follow-up rewrite + answer). */
+export interface DoneEvent {
+  message_id: string;
+  provider: LlmProvider;
+  model: string;
+  input_tokens: number;
+  output_tokens: number;
+  cost_usd: number;
+  latency_ms: number;
+  /** False when the similarity guardrail answered "not found" without calling the LLM. */
+  grounded: boolean;
+  rewritten_query: string | null;
+}
+
+/** SSE `error`: the request failed; no `done` event follows. */
+export interface ErrorEvent {
+  detail: string;
+}
+
+export type CopilotStreamEvent =
+  | { event: "token"; data: TokenEvent }
+  | { event: "citations"; data: CitationsEvent }
+  | { event: "done"; data: DoneEvent }
+  | { event: "error"; data: ErrorEvent };
+
+export interface FeedbackRequest {
+  client?: string | null;
+  message_id?: string | null;
+  question?: string | null;
+  answer: string;
+  rating: Rating;
+  comment?: string | null;
+}
+
+export interface FeedbackResponse {
+  id: string;
+  created_at: string;
+}

@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 import { LlmMeta } from "@/components/llm-meta";
 import { Stagger, StaggerItem } from "@/components/motion";
-import { CopyButton } from "@/components/seo/copy-button";
+import { CopyButton } from "@/components/copy-button";
 import { PriorityBadge } from "@/components/seo/status-badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

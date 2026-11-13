@@ -85,18 +85,23 @@ AgencyPilot/
     │   ├── ui/                 # shadcn/ui (radix-nova); only card.tsx is restyled (rounded-2xl)
     │   ├── sidebar.tsx, topbar.tsx, page-header.tsx, empty-state.tsx, kpi-card.tsx, motion.tsx,
     │   │   llm-meta.tsx        # provider/model/tokens/latency/cost line under AI output
-    │   └── <feature>/          # feature components (home/, insights/, seo/); container queries
+    │   ├── copy-button.tsx     # shared copy-to-clipboard icon button
+    │   └── <feature>/          # feature components (home/, insights/, seo/, copilot/); container queries
     │                           #   (@container / @xl:) where a card's width, not the viewport, matters
     ├── lib/
     │   ├── api.ts              # typed fetch client: X-LLM-Provider header, ApiError, toasts
     │   ├── types.ts            # TS types mirroring backend Pydantic schemas
     │   ├── nav.ts              # single nav config (sidebar, titles, empty states)
     │   ├── seo.ts, channels.ts, format.ts   # feature helpers: score bands/error copy, chart colours, formatters
+    │   ├── sse.ts              # pure Server-Sent Events parser for the Copilot chat stream
+    │   ├── citations.ts        # [file p.N] / 【file p.N】 markers -> numbered chips (mirrors backend)
     │   ├── providers.ts        # LLM provider display metadata
     │   └── model-context.tsx, client-context.tsx   # persisted UI state
     └── hooks/
         ├── use-local-storage.ts     # useSyncExternalStore-backed, hydration-safe
-        └── use-api.ts               # abortable data fetching; loading derived, no setState in effects
+        ├── use-api.ts               # abortable data fetching; loading derived, no setState in effects
+        ├── use-copilot-documents.ts # document list that polls while any doc is processing
+        └── use-copilot-chat.ts      # per-client chat threads, SSE streaming, stop/retry
 ```
 
 ## Coding rules

@@ -3,8 +3,14 @@ import { toast } from "sonner";
 import { DEFAULT_PROVIDER, isProvider } from "@/lib/providers";
 import { readStorage } from "@/lib/storage";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
+import { parseSseChunk } from "@/lib/sse";
 import type {
   AskResponse,
+  ChatRequest,
+  CopilotDocument,
+  CopilotStreamEvent,
+  FeedbackRequest,
+  FeedbackResponse,
   DatasetUploadResponse,
   Days,
   HealthResponse,
@@ -58,14 +64,19 @@ function buildHeaders(init: RequestInit): Headers {
 }
 
 /** FastAPI errors look like {"detail": "..."} or {"detail": [{msg: "..."}]}. */
+function parseErrorDetail(body: unknown): string | null {
+  if (body && typeof body === "object" && "detail" in body) {
+    const { detail } = body as { detail: unknown };
+    if (typeof detail === "string") return detail;
+    if (Array.isArray(detail) && detail[0]?.msg) return String(detail[0].msg);
+  }
+  return null;
+}
+
 async function readErrorMessage(response: Response): Promise<string> {
   try {
-    const body: unknown = await response.json();
-    if (body && typeof body === "object" && "detail" in body) {
-      const { detail } = body as { detail: unknown };
-      if (typeof detail === "string") return detail;
-      if (Array.isArray(detail) && detail[0]?.msg) return String(detail[0].msg);
-    }
+    const detail = parseErrorDetail(await response.json());
+    if (detail) return detail;
   } catch {
     // Non-JSON error body; fall through to the status text.
   }
@@ -186,4 +197,118 @@ export function getSeoHistory(
 
 export function loadSampleData(): Promise<SampleLoadResponse> {
   return apiFetch("/api/insights/sample", { method: "POST", timeoutMs: 60_000 });
+}
+
+/* ---- Client Copilot ---- */
+
+export function getCopilotDocuments(
+  clientId: string,
+  options: ApiOptions = {},
+): Promise<CopilotDocument[]> {
+  return apiFetch(`/api/copilot/documents?client=${encodeURIComponent(clientId)}`, options);
+}
+
+export function deleteCopilotDocument(id: string): Promise<void> {
+  return apiFetch(`/api/copilot/documents/${encodeURIComponent(id)}`, { method: "DELETE" });
+}
+
+export function sendCopilotFeedback(body: FeedbackRequest): Promise<FeedbackResponse> {
+  return apiFetch("/api/copilot/feedback", { method: "POST", body: JSON.stringify(body) });
+}
+
+function xhrError(xhr: XMLHttpRequest): ApiError {
+  let detail: string | null = null;
+  try {
+    detail = parseErrorDetail(JSON.parse(xhr.responseText));
+  } catch {
+    // Non-JSON error body.
+  }
+  return new ApiError(detail ?? (xhr.statusText || `Upload failed with status ${xhr.status}`), xhr.status);
+}
+
+/**
+ * Upload a document for ingestion. Uses XMLHttpRequest because fetch can't report upload
+ * progress. Silent: the dropzone shows failures inline.
+ */
+export function uploadCopilotDocument(
+  clientId: string,
+  file: File,
+  onProgress: (fraction: number) => void,
+): Promise<CopilotDocument> {
+  const body = new FormData();
+  body.append("client", clientId);
+  body.append("file", file);
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", `${API_URL}/api/copilot/upload`);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader(PROVIDER_HEADER, getSelectedProvider());
+    xhr.timeout = 120_000;
+    xhr.upload.onprogress = (e) => {
+      if (e.lengthComputable) onProgress(e.loaded / e.total);
+    };
+    xhr.onload = () =>
+      xhr.status >= 200 && xhr.status < 300
+        ? resolve(JSON.parse(xhr.responseText) as CopilotDocument)
+        : reject(xhrError(xhr));
+    xhr.onerror = () => reject(new ApiError("Can't reach the API. Is the backend running?", null));
+    xhr.ontimeout = () => reject(new ApiError("The upload took too long.", null));
+    xhr.send(body);
+  });
+}
+
+async function openChatStream(
+  request: ChatRequest,
+  signal: AbortSignal,
+): Promise<ReadableStream<Uint8Array>> {
+  const body = JSON.stringify(request);
+  const headers = buildHeaders({ body });
+  headers.set("Accept", "text/event-stream");
+  let response: Response;
+  try {
+    response = await fetch(`${API_URL}/api/copilot/chat/stream`, {
+      method: "POST",
+      headers,
+      body,
+      signal,
+    });
+  } catch (error) {
+    if (isAbortError(error)) throw error;
+    throw toApiError(error);
+  }
+  if (!response.ok) throw new ApiError(await readErrorMessage(response), response.status);
+  if (!response.body) throw new ApiError("The API returned an empty stream.", null);
+  return response.body;
+}
+
+/**
+ * POST a question and yield its Server-Sent Events as they arrive (`token`* → `citations` →
+ * `done`, or `error`). EventSource can't POST, so this reads the fetch body stream directly.
+ * Throws ApiError on HTTP/network failure (including a drop mid-stream); rethrows aborts.
+ */
+export async function* streamCopilotChat(
+  request: ChatRequest,
+  signal: AbortSignal,
+): AsyncGenerator<CopilotStreamEvent> {
+  const stream = await openChatStream(request, signal);
+  const reader = stream.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+  try {
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      const parsed = parseSseChunk(buffer + decoder.decode(value, { stream: true }));
+      buffer = parsed.rest;
+      yield* parsed.events;
+    }
+  } catch (error) {
+    if (isAbortError(error) || signal.aborted) throw new DOMException("Aborted", "AbortError");
+    throw new ApiError("Connection lost mid-answer.", null);
+  } finally {
+    // Also runs when the consumer stops early: free the connection.
+    reader.cancel().catch(() => undefined);
+  }
+  // The final event may arrive without its terminating blank line.
+  yield* parseSseChunk(`${buffer}\n\n`).events;
 }

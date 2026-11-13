@@ -131,7 +131,11 @@ Goal: upload PDFs, ask questions, get streamed answers with page citations.
 - [x] `POST /api/copilot/feedback` (message_id or question, answer, up/down, comment)
 - [x] Seed: `scripts/generate_sample_brief.py` → `sample_data/bloom_bakery_brief.pdf` (3 pages), ingested
       for Bloom Bakery on first run
-- [ ] Frontend: document manager, chat UI with token streaming, clickable citation chips, feedback
+- [x] Frontend: document manager (drag-and-drop upload with progress, status polling, delete;
+      Sheet drawer on mobile), chat UI streaming tokens via fetch + ReadableStream SSE parsing,
+      markdown answers, clickable citation chips + source cards, per-answer model/tokens/cost footer
+      ("No LLM call · $0" on guardrail answers), stop/regenerate/copy, thumbs feedback, last 4 turns
+      as history, per-client threads, retry on stream errors
 - [x] Tests: chunking + token limit, threshold, retrieval filters by client (pgvector), SSE event order,
       follow-up rewrite, citations parsing, upload validation, ingest/seed/feedback DB round trips
 

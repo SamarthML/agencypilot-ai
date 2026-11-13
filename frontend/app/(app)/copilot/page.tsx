@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import { ComingSoonPage } from "@/components/coming-soon-page";
+import { CopilotView } from "@/components/copilot/copilot-view";
 
 export const metadata: Metadata = { title: "Copilot" };
 
 export default function Page() {
-  return <ComingSoonPage href="/copilot" />;
+  return <CopilotView />;
 }
