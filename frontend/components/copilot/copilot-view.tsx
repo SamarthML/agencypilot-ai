@@ -1,6 +1,6 @@
 "use client";
 
-import { FolderOpen, Trash2 } from "lucide-react";
+import { FolderOpen, RotateCw, Trash2, TriangleAlert } from "lucide-react";
 import { useMemo, useState } from "react";
 
 import { ChatEmpty } from "@/components/copilot/chat-empty";
@@ -21,6 +21,29 @@ function disabledReason(documents: CopilotDocument[] | undefined, failed: boolea
   if (documents.some((d) => d.status === "ready")) return null;
   if (documents.some((d) => d.status === "processing")) return "Indexing documents…";
   return "Upload a document to start asking…";
+}
+
+function groundingLabel(documents: CopilotDocument[] | undefined, failed: boolean): string {
+  if (!documents) return failed ? "Documents unavailable" : "Loading documents…";
+  const ready = documents.filter((d) => d.status === "ready").length;
+  if (ready === 0) return "No indexed documents yet";
+  return `${ready} ${ready === 1 ? "document" : "documents"} · cites pages`;
+}
+
+/** Shown instead of the "upload a document" prompt when the list itself failed to load. */
+function DocumentsLoadError({ message, onRetry }: { message: string; onRetry: () => void }) {
+  return (
+    <div role="alert" className="m-auto flex max-w-sm flex-col items-center gap-3 px-4 py-8 text-center">
+      <span className="flex size-12 items-center justify-center rounded-2xl bg-destructive/10 text-destructive">
+        <TriangleAlert aria-hidden className="size-5" />
+      </span>
+      <h2 className="text-lg font-semibold tracking-tight">Couldn&apos;t load documents</h2>
+      <p className="text-sm text-muted-foreground">{message}</p>
+      <Button variant="outline" size="sm" onClick={onRetry}>
+        <RotateCw data-icon="inline-start" aria-hidden /> Try again
+      </Button>
+    </div>
+  );
 }
 
 export function CopilotView() {
@@ -46,7 +69,7 @@ export function CopilotView() {
           <div className="min-w-0 flex-1">
             <h1 className="truncate text-sm font-semibold">{client.name} Copilot</h1>
             <p className="truncate text-xs text-muted-foreground">
-              Grounded in {documents.filter((d) => d.status === "ready").length} document(s) · cites pages
+              {groundingLabel(docs.documents, docs.error !== undefined)}
             </p>
           </div>
           <Button variant="outline" size="sm" className="lg:hidden" onClick={() => setSheetOpen(true)}>
@@ -59,7 +82,9 @@ export function CopilotView() {
           </Button>
         </header>
 
-        {chat.messages.length === 0 ? (
+        {chat.messages.length === 0 && docs.error ? (
+          <DocumentsLoadError message={docs.error.message} onRetry={docs.reload} />
+        ) : chat.messages.length === 0 ? (
           <ChatEmpty
             clientId={client.id}
             clientName={client.name}

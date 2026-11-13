@@ -61,7 +61,7 @@ export function CostExplainer({ rateLimit }: { rateLimit: number | null }) {
         <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {levers(rateLimit).map(({ icon: Icon, title, detail }) => (
             <li key={title} className="flex gap-3">
-              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-from/10 text-brand-from dark:text-brand-to">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-from/10 text-brand-text">
                 <Icon aria-hidden className="size-4" />
               </span>
               <div className="min-w-0 space-y-0.5">

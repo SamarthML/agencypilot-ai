@@ -25,7 +25,7 @@ function ProviderCard({ provider }: { provider: ProviderSettings }) {
             {provider.label}
           </p>
           {provider.is_default && (
-            <span className="inline-flex items-center gap-1 rounded-md bg-brand-from/10 px-1.5 py-0.5 text-[11px] font-medium text-brand-from dark:text-brand-to">
+            <span className="inline-flex items-center gap-1 rounded-md bg-brand-from/10 px-1.5 py-0.5 text-[11px] font-medium text-brand-text">
               <Star aria-hidden className="size-3" /> Default
             </span>
           )}

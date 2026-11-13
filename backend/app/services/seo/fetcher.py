@@ -3,7 +3,8 @@
 Users submit arbitrary URLs, so this is an SSRF boundary:
 - only http/https on the default ports, no credentials in the URL;
 - every hostname is resolved and rejected if ANY address is non-public (private, loopback,
-  link-local, reserved, CGNAT, multicast, unspecified; IPv4-mapped IPv6 unwrapped);
+  link-local, reserved, CGNAT, multicast, unspecified; IPv4-mapped and NAT64 IPv6 are judged
+  by the IPv4 address they embed, and 6to4/Teredo count as non-public);
 - the connection is pinned to the validated IP (Host header + TLS SNI keep the real hostname),
   so a second DNS lookup can't be rebound to an internal address;
 - redirects are followed manually and every hop is re-validated;
@@ -25,6 +26,8 @@ TIMEOUT_SECONDS = 10.0
 MAX_BYTES = 2 * 1024 * 1024
 MAX_REDIRECTS = 5
 DEFAULT_PORTS = {"http": 80, "https": 443}
+# RFC 6052 well-known NAT64 prefix: on NAT64 networks 64:ff9b::a00:1 reaches 10.0.0.1.
+NAT64_PREFIX = ipaddress.IPv6Network("64:ff9b::/96")
 SCHEME_PREFIX = re.compile(r"^([a-zA-Z][a-zA-Z0-9+.-]*):")
 REDIRECT_STATUSES = frozenset({301, 302, 303, 307, 308})
 BOT_BLOCK_STATUSES = frozenset({401, 403, 429})
@@ -129,10 +132,19 @@ def normalize_url(raw: str) -> str:
 # ---------------------------------------------------------------------------
 
 
+def embedded_ipv4(ip: ipaddress.IPv6Address) -> ipaddress.IPv4Address | None:
+    """The IPv4 address an IPv4-mapped or NAT64 (64:ff9b::/96) IPv6 address stands for."""
+    if ip.ipv4_mapped is not None:
+        return ip.ipv4_mapped
+    if ip in NAT64_PREFIX:
+        return ipaddress.IPv4Address(int(ip) & 0xFFFFFFFF)
+    return None
+
+
 def is_public_ip(address: str) -> bool:
     ip = ipaddress.ip_address(address.split("%", 1)[0])  # drop an IPv6 zone id
-    if isinstance(ip, ipaddress.IPv6Address) and ip.ipv4_mapped is not None:
-        ip = ip.ipv4_mapped
+    if isinstance(ip, ipaddress.IPv6Address):
+        ip = embedded_ipv4(ip) or ip
     return ip.is_global and not ip.is_multicast
 
 

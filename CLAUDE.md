@@ -65,6 +65,7 @@ AgencyPilot/
 │   │   ├── schemas/            # Pydantic request/response models (one file per feature)
 │   │   ├── api/routes/         # thin routers; /health at root, features under /api/<feature>
 │   │   ├── api/rate_limit.py   # per-IP sliding-window limit; `dependencies=[LlmRateLimit]` on LLM routes
+│   │   ├── api/body_limit.py   # request-wide body cap (largest upload + 1 MB), 413 before buffering
 │   │   └── services/
 │   │       ├── llm.py          # THE ONLY place that calls an LLM provider
 │   │       ├── llm_meta.py     # LLMResult -> LlmCallMeta; cache-hit logging helper (logs saved cost)
@@ -81,6 +82,7 @@ AgencyPilot/
 │   │       │                   #   retrieval + similarity threshold
 │   │       ├── copilot.py      # ingest background task, SSE chat (rewrite → retrieve → guardrail →
 │   │       │                   #   stream), citation parsing, feedback, demo seed + startup warm-up
+│   │       ├── uploads.py      # safe_filename for every upload (base name, printable, ≤255 chars)
 │   │       ├── reports.py      # monthly reports: month metrics + SEO → grounded narrative → CRUD
 │   │       └── report_pdf.py   # fpdf2 A4 PDF (branded header, KPI/channel tables, Latin-1 sanitising)
 │   └── tests/                  # pytest; mirrors app/ layout; fixtures in tests/fixtures/,
@@ -88,12 +90,15 @@ AgencyPilot/
 └── frontend/
     ├── .env.local.example      # NEXT_PUBLIC_API_URL (copy to .env.local)
     ├── package.json
-    ├── app/                    # App Router; (app)/ route group holds the sidebar+topbar shell
+    ├── vitest.config.mts       # unit tests for pure lib/ helpers (*.test.ts next to the module)
+    ├── app/                    # App Router; (app)/ route group holds the sidebar+topbar shell;
+    │                           #   not-found.tsx, opengraph-image.tsx + apple-icon.tsx (generated PNGs)
     ├── components/
     │   ├── ui/                 # shadcn/ui (radix-nova); only card.tsx is restyled (rounded-2xl)
     │   ├── sidebar.tsx, topbar.tsx, page-header.tsx, empty-state.tsx, kpi-card.tsx, motion.tsx,
     │   │   llm-meta.tsx        # provider/model/tokens/latency/cost line under AI output
     │   ├── copy-button.tsx     # shared copy-to-clipboard icon button
+    │   ├── command-menu.tsx    # Ctrl/⌘+K palette: pages, actions, client switch, theme
     │   └── <feature>/          # feature components (home/, insights/, seo/, copilot/, reports/, usage/,
     │                           #   settings/); container queries
     │                           #   (@container / @xl:) where a card's width, not the viewport, matters
@@ -106,6 +111,8 @@ AgencyPilot/
     │   ├── citations.ts        # [file p.N] / 【file p.N】 markers -> numbered chips (mirrors backend)
     │   ├── reports.ts          # report section limits + client-side validation (mirrors backend)
     │   ├── providers.ts        # LLM provider display metadata
+    │   ├── command-intents.ts  # palette action -> target page ("focus the SEO URL field"), no URL params
+    │   ├── brand.ts            # logo mark path shared by the generated icons
     │   └── model-context.tsx, client-context.tsx   # persisted UI state
     └── hooks/
         ├── use-local-storage.ts     # useSyncExternalStore-backed, hydration-safe
@@ -169,7 +176,8 @@ AgencyPilot/
 - **Next.js 16 + React 19.** APIs differ from older versions: check `frontend/node_modules/next/dist/docs/`
   before using an unfamiliar Next API (see `frontend/AGENTS.md`).
 - Design: zinc neutrals; the brand gradient (`bg-brand-gradient` / `text-brand-gradient`) is used
-  sparingly (logo, active nav bar, hero accent, primary CTA). Cards are `rounded-2xl` with a subtle
+  sparingly (logo, active nav bar, hero accent, primary CTA). Small brand-coloured text uses
+  `text-brand-text` (AA in both themes), not `text-brand-from`. Cards are `rounded-2xl` with a subtle
   border and `shadow-card`. Check 375 / 768 / 1440 px before calling UI work done.
 - Persisted UI state goes through `useLocalStorage` (no `setState` in effects, no hydration mismatch).
 - Server Components by default; add `"use client"` only where state/effects/streaming are needed.
@@ -217,15 +225,20 @@ npm run dev
 ```powershell
 # Backend (from backend/)
 .\.venv\Scripts\python.exe -m pytest
+.\.venv\Scripts\python.exe -m pytest --cov            # coverage of app/ (fails under 85%)
 .\.venv\Scripts\python.exe -m ruff check .
 .\.venv\Scripts\python.exe -m ruff format --check .
 .\.venv\Scripts\python.exe -m alembic check            # models match migrations
 
 # Frontend (from frontend/)
 npm run lint
-npx tsc --noEmit
+npm run typecheck
+npm test                                               # vitest (citation + SSE parsers)
 npm run build
 ```
+
+CI (`.github/workflows/ci.yml`) runs all of the above on every push and PR: backend against a
+`pgvector/pgvector:pg16` service with no API keys (LLM always faked), frontend on Node 24.
 
 ### Useful
 

@@ -24,7 +24,12 @@ export function ChannelTable({ channels, colors }: ChannelTableProps) {
         <CardTitle className="text-base">Channel breakdown</CardTitle>
         <CardDescription>Exact figures behind the charts, vs the previous period</CardDescription>
       </CardHeader>
-      <CardContent className="overflow-x-auto">
+      <CardContent
+        tabIndex={0}
+        role="region"
+        aria-label="Channel breakdown table"
+        className="overflow-x-auto rounded-b-2xl outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
+      >
         <table className="w-full min-w-[640px] text-sm">
           <thead>
             <tr className="border-b text-left text-xs text-muted-foreground">

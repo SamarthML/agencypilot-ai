@@ -36,7 +36,7 @@ export function HeroCard() {
         aria-hidden
         className="bg-brand-gradient pointer-events-none absolute -top-24 -right-16 size-72 rounded-full opacity-20 blur-3xl"
       />
-      <div className="relative flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div className="relative flex flex-col gap-6 xl:flex-row xl:items-end xl:justify-between">
         <div className="space-y-2">
           <p className="text-sm text-muted-foreground">
             Viewing <span className="font-medium text-foreground">{client.name}</span> · using{" "}
@@ -51,7 +51,7 @@ export function HeroCard() {
             Every LLM call is tracked for tokens, latency and cost.
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex shrink-0 flex-wrap gap-2">
           <Button asChild size="lg" className="bg-brand-gradient border-0 text-white hover:opacity-90">
             <Link href="/insights">
               Open Insights <ArrowRight data-icon="inline-end" aria-hidden />

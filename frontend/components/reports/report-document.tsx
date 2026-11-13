@@ -26,7 +26,7 @@ interface ReportDocumentProps {
 function Section({ title, icon, children, className }: { title: string; icon?: ReactNode; children: ReactNode; className?: string }) {
   return (
     <section className={cn("min-w-0 space-y-3", className)}>
-      <h3 className="flex items-center gap-2 text-sm font-semibold tracking-wide text-brand-from uppercase dark:text-brand-to">
+      <h3 className="flex items-center gap-2 text-sm font-semibold tracking-wide text-brand-text uppercase">
         <span aria-hidden className="bg-brand-gradient h-4 w-1 rounded-full" />
         {icon}
         {title}
@@ -49,7 +49,7 @@ function Bullets({ items, numbered = false }: { items: string[]; numbered?: bool
             aria-hidden
             className={cn(
               "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold",
-              numbered ? "bg-brand-from/15 text-brand-from dark:text-brand-to" : "bg-muted text-muted-foreground",
+              numbered ? "bg-brand-from/15 text-brand-text" : "bg-muted text-muted-foreground",
             )}
           >
             {numbered ? index + 1 : "•"}

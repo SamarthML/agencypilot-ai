@@ -1,11 +1,12 @@
 "use client";
 
 import { ArrowRight, Globe, Loader2, SearchCheck } from "lucide-react";
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 
 import { FadeIn } from "@/components/motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useIntent } from "@/lib/command-intents";
 import { EXAMPLE_URLS, hostname } from "@/lib/seo";
 
 interface AuditHeroProps {
@@ -17,6 +18,16 @@ interface AuditHeroProps {
 /** Large URL input + example chips. The audit is saved to the client chosen in the top bar. */
 export function AuditHero({ clientName, running, onAudit }: AuditHeroProps) {
   const [url, setUrl] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [focusRequested, focusHandled] = useIntent("seo:new-audit");
+
+  // "New SEO audit" from the command palette: bring the URL field into view, ready to type.
+  useEffect(() => {
+    if (!focusRequested) return;
+    inputRef.current?.focus();
+    inputRef.current?.select();
+    focusHandled();
+  }, [focusRequested, focusHandled]);
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -57,6 +68,7 @@ export function AuditHero({ clientName, running, onAudit }: AuditHeroProps) {
                 className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-muted-foreground"
               />
               <Input
+                ref={inputRef}
                 type="text"
                 inputMode="url"
                 autoComplete="url"

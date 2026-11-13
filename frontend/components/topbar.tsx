@@ -5,6 +5,7 @@ import { Suspense } from "react";
 
 import { ApiStatus } from "@/components/api-status";
 import { ClientSwitcher } from "@/components/client-switcher";
+import { CommandMenu } from "@/components/command-menu";
 import { ModelSwitcher } from "@/components/model-switcher";
 import { MobileSidebar } from "@/components/sidebar";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -19,7 +20,6 @@ function PageTitle() {
 }
 
 export function Topbar() {
-
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center gap-2 border-b border-border/60 bg-background/80 px-4 backdrop-blur-md md:px-8 print:hidden">
       <MobileSidebar />
@@ -29,6 +29,7 @@ export function Topbar() {
         </Suspense>
       </p>
       <div className="flex items-center gap-1.5 sm:gap-2">
+        <CommandMenu />
         <ClientSwitcher />
         <ModelSwitcher />
         <Separator orientation="vertical" className="mx-0.5 h-5! max-sm:hidden" />

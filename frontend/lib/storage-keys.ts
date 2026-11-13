@@ -4,4 +4,5 @@ export const STORAGE_KEYS = {
   client: "ap.client",
   sidebar: "ap.sidebar",
   insightsDays: "ap.insights.days",
+  onboarding: "ap.onboarding",
 } as const;

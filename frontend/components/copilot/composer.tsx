@@ -1,9 +1,10 @@
 "use client";
 
 import { ArrowUp, Square } from "lucide-react";
-import { useState, type FormEvent, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 
 import { Button } from "@/components/ui/button";
+import { useIntent } from "@/lib/command-intents";
 import { cn } from "@/lib/utils";
 
 /** Matches the backend's ChatRequest.question limit. */
@@ -19,7 +20,17 @@ interface ComposerProps {
 
 export function Composer({ streaming, disabledReason, onSend, onStop }: ComposerProps) {
   const [text, setText] = useState("");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [focusRequested, focusHandled] = useIntent("copilot:ask");
   const disabled = disabledReason !== null;
+
+  // "Ask Copilot" from the command palette. Waits while documents load (the field is disabled
+  // until then), so the request isn't dropped on a cold page.
+  useEffect(() => {
+    if (!focusRequested || disabled) return;
+    textareaRef.current?.focus();
+    focusHandled();
+  }, [focusRequested, disabled, focusHandled]);
   const canSend = !disabled && !streaming && text.trim().length > 0;
 
   function submit(event?: FormEvent) {
@@ -49,6 +60,7 @@ export function Composer({ streaming, disabledReason, onSend, onStop }: Composer
         </label>
         <textarea
           id="copilot-question"
+          ref={textareaRef}
           value={text}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={onKeyDown}

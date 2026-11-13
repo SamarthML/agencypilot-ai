@@ -95,13 +95,19 @@ def test_urls_are_normalised(raw: str, normalized: str) -> None:
         "fc00::1",
         "::ffff:127.0.0.1",
         "::ffff:10.0.0.1",
+        "64:ff9b::7f00:1",  # NAT64 -> 127.0.0.1
+        "64:ff9b::a9fe:a9fe",  # NAT64 -> 169.254.169.254
+        "2002:7f00:1::1",  # 6to4
+        "2001:0:4136:e378:8000:63bf:80ff:fffe",  # Teredo
     ],
 )
 def test_non_public_addresses_are_not_public(address: str) -> None:
     assert fetcher.is_public_ip(address) is False
 
 
-@pytest.mark.parametrize("address", [PUBLIC_IP, "8.8.8.8", "2606:4700:4700::1111"])
+@pytest.mark.parametrize(
+    "address", [PUBLIC_IP, "8.8.8.8", "2606:4700:4700::1111", "64:ff9b::808:808"]
+)
 def test_public_addresses_are_public(address: str) -> None:
     assert fetcher.is_public_ip(address) is True
 

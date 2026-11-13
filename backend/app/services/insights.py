@@ -23,6 +23,7 @@ from app.schemas.insights import (
     SampleLoadResponse,
 )
 from app.services import analytics
+from app.services.uploads import safe_filename
 
 logger = logging.getLogger(__name__)
 
@@ -84,7 +85,7 @@ def upload_dataset(
 ) -> DatasetUploadResponse:
     parsed = analytics.parse_client_csv(content, client_id, client_name)
     client = analytics.ClientFrame(client_id, client_name, parsed.frame)
-    dataset = save_dataset(db, client, filename, "upload")
+    dataset = save_dataset(db, client, safe_filename(filename, default="upload.csv"), "upload")
     return DatasetUploadResponse(dataset=dataset_info(dataset), warnings=parsed.warnings)
 
 

@@ -31,6 +31,7 @@
   --color-warning: var(--warning);
   --color-brand-from: var(--brand-from);
   --color-brand-to: var(--brand-to);
+  --color-brand-text: var(--brand-text);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -65,17 +66,21 @@
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
+  /* Text tokens are tuned for WCAG AA (>= 4.5:1) on card, muted and their own 10% tints. */
+  --muted-foreground: oklch(0.51 0.016 285.938);
   --accent: oklch(0.955 0.003 286.35);
   --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --success: oklch(0.6 0.15 155);
+  --destructive: oklch(0.52 0.22 27.325);
+  --success: oklch(0.5 0.13 155);
   --warning: oklch(0.72 0.16 70);
   --border: oklch(0.92 0.004 286.32);
   --input: oklch(0.92 0.004 286.32);
   --ring: oklch(0.585 0.233 277.117);
   --brand-from: oklch(0.585 0.233 277.117); /* indigo-500 */
   --brand-to: oklch(0.606 0.25 292.717);    /* violet-500 */
+  --brand-solid-from: oklch(0.511 0.262 276.966); /* indigo-600 */
+  --brand-solid-to: oklch(0.541 0.281 293.009);   /* violet-600 */
+  --brand-text: oklch(0.511 0.262 276.966);       /* indigo-600: small brand-coloured text */
   --chart-1: oklch(0.585 0.233 277.117);
   --chart-2: oklch(0.606 0.25 292.717);
   --chart-3: oklch(0.7 0.15 162);
@@ -128,6 +133,7 @@
   --ring: oklch(0.673 0.182 276.935);
   --brand-from: oklch(0.673 0.182 276.935); /* indigo-400 */
   --brand-to: oklch(0.702 0.183 293.541);   /* violet-400 */
+  --brand-text: oklch(0.702 0.183 293.541);       /* violet-400; --brand-solid-* stay as in :root */
   --chart-1: oklch(0.673 0.182 276.935);
   --chart-2: oklch(0.702 0.183 293.541);
   --chart-3: oklch(0.77 0.15 162);
@@ -155,8 +161,10 @@
 }
 
 /* ---------- Brand accent utilities (use sparingly) ---------- */
+/* Surfaces that carry white text (CTAs, logo, avatars): indigo-600 -> violet-600 in both themes,
+   so white text stays >= 5.7:1. The theme's lighter --brand-from/--brand-to are for text. */
 @utility bg-brand-gradient {
-  background-image: linear-gradient(135deg, var(--brand-from), var(--brand-to));
+  background-image: linear-gradient(135deg, var(--brand-solid-from), var(--brand-solid-to));
 }
 
 @utility text-brand-gradient {

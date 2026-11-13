@@ -83,7 +83,7 @@ export function UsageView() {
         </>
       )}
 
-      <RecentCalls calls={recent.data} />
+      <RecentCalls calls={recent.data} error={recent.error?.message} onRetry={recent.reload} />
       <CostExplainer rateLimit={settings.data?.rate_limit_enabled ? settings.data.rate_limit_per_minute : null} />
     </div>
   );

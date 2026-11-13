@@ -84,7 +84,7 @@ export function ReportsView() {
       <PageHeader
         title="Reports"
         description="Monthly client reports: KPIs computed from the data, a narrative written only from those numbers, editable and exportable as PDF."
-        actions={<NewReportDialog />}
+        actions={<NewReportDialog openOnCommand />}
       />
       <Tabs value={scope} onValueChange={(value) => setScope(value as Scope)}>
         <TabsList>

@@ -39,6 +39,7 @@ from app.schemas.copilot import (
     TokenEvent,
 )
 from app.services import llm, rag
+from app.services.uploads import safe_filename
 
 logger = logging.getLogger(__name__)
 
@@ -50,7 +51,6 @@ REWRITE_TURN_CHARS = 600
 ANSWER_MAX_TOKENS = 2000
 REWRITE_MAX_TOKENS = 800
 SNIPPET_CHARS = 240
-FILENAME_MAX_CHARS = 255
 PDF_MAGIC = b"%PDF-"
 SAMPLE_CLIENT = "bloom-bakery"
 SAMPLE_BRIEF = BACKEND_DIR / "sample_data" / "bloom_bakery_brief.pdf"
@@ -104,7 +104,7 @@ def display_name(client: str) -> str:
 
 def validate_upload(filename: str, content: bytes) -> str:
     """Check type and content; return the safe base filename to store."""
-    name = PurePath(filename.replace("\\", "/")).name.strip()[:FILENAME_MAX_CHARS]
+    name = safe_filename(filename, default="")
     suffix = PurePath(name).suffix.lower()
     if suffix not in rag.SUPPORTED_EXTENSIONS:
         raise UnsupportedDocumentError(

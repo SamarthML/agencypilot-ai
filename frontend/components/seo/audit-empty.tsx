@@ -23,7 +23,7 @@ const FEATURES: { icon: LucideIcon; title: string; body: string }[] = [
 /** What the user gets, shown before the first audit. */
 export function AuditEmpty() {
   return (
-    <Stagger className="grid gap-3 md:grid-cols-3">
+    <Stagger className="grid gap-3 lg:grid-cols-3">
       {FEATURES.map(({ icon: Icon, title, body }) => (
         <StaggerItem key={title}>
           <div className="h-full rounded-2xl border border-dashed border-border bg-card/40 p-5">

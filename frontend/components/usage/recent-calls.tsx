@@ -1,7 +1,9 @@
 "use client";
 
-import { CircleAlert, ShieldCheck, Zap } from "lucide-react";
+import { ChevronDown, ChevronUp, CircleAlert, RotateCw, ShieldCheck, Zap } from "lucide-react";
+import { useState } from "react";
 
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -35,7 +37,7 @@ function StatusBadge({ call }: { call: UsageCall }) {
   }
   if (call.skipped) {
     return (
-      <span className={cn(PILL, "bg-brand-from/10 text-brand-from dark:text-brand-to")}>
+      <span className={cn(PILL, "bg-brand-from/10 text-brand-text")}>
         <ShieldCheck aria-hidden className="size-3" /> Guardrail
       </span>
     );
@@ -71,15 +73,36 @@ function costCell(call: UsageCall): string {
 const HEAD = "px-3 py-2 text-left text-xs font-medium whitespace-nowrap text-muted-foreground";
 const NUM = "px-3 py-2.5 text-right tabular-nums whitespace-nowrap";
 
-export function RecentCalls({ calls }: { calls: UsageCall[] | undefined }) {
+/** Rows shown before "Show all": keeps the page scannable, especially on phones. */
+const COLLAPSED_ROWS = 10;
+
+interface RecentCallsProps {
+  calls: UsageCall[] | undefined;
+  /** Load error message; replaces the skeleton so a failed request doesn't look like loading. */
+  error?: string;
+  onRetry?: () => void;
+}
+
+export function RecentCalls({ calls, error, onRetry }: RecentCallsProps) {
+  const [expanded, setExpanded] = useState(false);
+  const visible = calls && !expanded ? calls.slice(0, COLLAPSED_ROWS) : calls;
+  const hidden = (calls?.length ?? 0) - (visible?.length ?? 0);
+
   return (
     <Card className="gap-0 pb-0">
       <CardHeader className="gap-1 pb-4">
         <CardTitle className="text-base">Recent calls</CardTitle>
-        <CardDescription>The latest 50 requests across every feature, newest first</CardDescription>
+        <CardDescription>The latest {calls?.length || 50} requests across every feature, newest first</CardDescription>
       </CardHeader>
       <CardContent className="px-0">
-        {!calls ? (
+        {!calls && error ? (
+          <div role="alert" className="flex flex-wrap items-center gap-3 px-(--card-spacing) pb-6 text-sm text-muted-foreground">
+            <span className="flex-1">Couldn&apos;t load recent calls. {error}</span>
+            <Button size="sm" variant="outline" onClick={onRetry}>
+              <RotateCw data-icon="inline-start" aria-hidden /> Retry
+            </Button>
+          </div>
+        ) : !calls ? (
           <div className="space-y-2 px-(--card-spacing) pb-6">
             {[0, 1, 2, 3].map((i) => (
               <Skeleton key={i} className="h-9 w-full" />
@@ -88,7 +111,8 @@ export function RecentCalls({ calls }: { calls: UsageCall[] | undefined }) {
         ) : calls.length === 0 ? (
           <p className="px-(--card-spacing) pb-6 text-sm text-muted-foreground">No LLM requests logged yet.</p>
         ) : (
-          <div className="overflow-x-auto border-t border-border/60">
+          // Focusable so keyboard users can scroll the table sideways on narrow screens.
+          <div tabIndex={0} role="region" aria-label="Recent LLM calls" className="overflow-x-auto border-t border-border/60 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset">
             <table className="w-full text-sm">
               <thead className="bg-muted/30">
                 <tr>
@@ -102,7 +126,7 @@ export function RecentCalls({ calls }: { calls: UsageCall[] | undefined }) {
                 </tr>
               </thead>
               <tbody>
-                {calls.map((call) => (
+                {(visible ?? []).map((call) => (
                   <tr key={call.id} className="border-t border-border/60 hover:bg-muted/30">
                     <td className="px-3 py-2.5 text-xs whitespace-nowrap text-muted-foreground">{formatCallTime(call.created_at)}</td>
                     <td className="px-3 py-2.5"><FeatureBadge feature={call.feature} /></td>
@@ -115,6 +139,14 @@ export function RecentCalls({ calls }: { calls: UsageCall[] | undefined }) {
                 ))}
               </tbody>
             </table>
+          </div>
+        )}
+        {calls && calls.length > COLLAPSED_ROWS && (
+          <div className="border-t border-border/60 p-2 text-center">
+            <Button variant="ghost" size="sm" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
+              {expanded ? <ChevronUp data-icon="inline-start" aria-hidden /> : <ChevronDown data-icon="inline-start" aria-hidden />}
+              {expanded ? "Show fewer" : `Show ${hidden} more`}
+            </Button>
           </div>
         )}
       </CardContent>

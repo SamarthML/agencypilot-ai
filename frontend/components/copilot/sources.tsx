@@ -36,7 +36,7 @@ function SourceDetails({ source, citation }: { source: CitationRef; citation: Ci
 }
 
 const CHIP =
-  "inline-flex h-[1.15rem] min-w-[1.15rem] items-center justify-center rounded-md bg-brand-from/15 px-1 align-[0.1em] text-[0.68rem] font-semibold text-brand-from tabular-nums transition-colors hover:bg-brand-from/25 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none dark:text-brand-to";
+  "inline-flex h-[1.15rem] min-w-[1.15rem] items-center justify-center rounded-md bg-brand-from/15 px-1 align-[0.1em] text-[0.68rem] font-semibold text-brand-text tabular-nums transition-colors hover:bg-brand-from/25 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none";
 
 /** Numbered superscript-style chip in the answer text; opens the cited passage. */
 export function CitationChip({

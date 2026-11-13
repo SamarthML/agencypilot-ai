@@ -1,5 +1,6 @@
 import { AppCard } from "@/components/home/app-card";
 import { HeroCard } from "@/components/home/hero-card";
+import { OnboardingBanner } from "@/components/home/onboarding-banner";
 import { OverviewKpis } from "@/components/home/overview-kpis";
 import { FadeIn, Stagger, StaggerItem } from "@/components/motion";
 import { getNavItem, MICRO_APP_HREFS } from "@/lib/nav";
@@ -10,6 +11,8 @@ export default function HomePage() {
       <FadeIn>
         <HeroCard />
       </FadeIn>
+
+      <OnboardingBanner />
 
       <OverviewKpis />
 

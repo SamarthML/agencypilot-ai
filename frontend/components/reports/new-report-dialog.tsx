@@ -21,6 +21,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useApi, type ApiState } from "@/hooks/use-api";
 import { ApiError, generateReport, getReportMonths, isAbortError } from "@/lib/api";
 import { DEMO_CLIENTS, useClient } from "@/lib/client-context";
+import { useIntent } from "@/lib/command-intents";
 import { useModel } from "@/lib/model-context";
 import { PROVIDERS } from "@/lib/providers";
 import type { ReportMonth } from "@/lib/types";
@@ -256,17 +257,26 @@ function NewReportBody({ onClose, onRunningChange }: { onClose: () => void; onRu
   );
 }
 
-export function NewReportDialog() {
+interface NewReportDialogProps {
+  /** Opens on the command palette's "New report". Set on one instance per page only. */
+  openOnCommand?: boolean;
+}
+
+export function NewReportDialog({ openOnCommand = false }: NewReportDialogProps) {
   const [open, setOpen] = useState(false);
   const [running, setRunning] = useState(false);
+  const [commandRequested, commandHandled] = useIntent("reports:new");
+  const isOpen = open || (openOnCommand && commandRequested);
 
   function onOpenChange(next: boolean) {
     setOpen(next);
-    if (!next) setRunning(false);
+    if (next) return;
+    setRunning(false);
+    commandHandled();
   }
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogTrigger asChild>
         <Button className="bg-brand-gradient border-0 text-white hover:opacity-90">
           <Plus data-icon="inline-start" aria-hidden /> New report

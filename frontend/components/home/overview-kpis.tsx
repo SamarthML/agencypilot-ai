@@ -43,7 +43,8 @@ export function OverviewKpis() {
             <Skeleton key={i} className="h-[124px] rounded-2xl" />
           ))
         )}
-        <StaggerItem className="col-span-2 lg:col-span-1">
+        {/* Spans 2 of 3 columns at lg so the five tiles fill two rows (3 + 2) without a hole. */}
+        <StaggerItem className="col-span-2 xl:col-span-1">
           <SeoIssuesKpi />
         </StaggerItem>
       </Stagger>

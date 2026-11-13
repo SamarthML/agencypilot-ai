@@ -30,7 +30,7 @@ Goal: both apps boot, talk to each other, talk to Postgres, and can make one log
 - [x] Home page (hero, KPI cards, micro-app cards) + empty-state placeholder pages for every route
 - [x] `lib/api.ts` typed client (sends `X-LLM-Provider`, toasts on failure) + `lib/types.ts`;
       model choice stored in React context + localStorage
-- [ ] GitHub Actions CI: backend (ruff + pytest), frontend (lint + tsc + build)
+- [x] GitHub Actions CI: backend (ruff + pytest), frontend (lint + tsc + build) — landed in Phase 6
 - [ ] README: setup steps verified on a clean Windows checkout
 
 **Done when:** `docker compose up`, backend, and frontend all run; `/health` is green in the UI; a test LLM call shows up in `llm_usage`.
@@ -194,12 +194,28 @@ Goal: interview-ready.
 
 - [x] Realistic demo seed: one fixture-based SEO audit per demo client (fictional `*.example`
       homepages run through the real checks + bundled AI report; startup, idempotent, no network/LLM)
-- [ ] Loading, empty, and error states on every page; toasts for failures
-- [ ] Dark mode, responsive layout, Framer Motion page transitions
-- [ ] Rate limiting / request size limits on upload + LLM endpoints
+
+### Part A — polish and CI
+- [x] UI/UX pass: every page checked in dark + light at 375 / 768 / 1024 / 1440 px (scripted
+      headless-Edge audit: overflow, one h1 per page, unlabelled controls, WCAG contrast); fixed
+      the 1024 px hero/KPI layout, Copilot doc count, collapsible recent-calls table
+- [x] Command palette (Ctrl/⌘+K, shadcn Command): pages, "New SEO audit", "New report",
+      "Ask Copilot", client switch, theme; actions reach the target page via `lib/command-intents.ts`
+- [x] Dismissible onboarding banner on Home (dismissal in localStorage, no flash for returning users)
+- [x] Favicon + Apple icon, page titles, Open Graph/Twitter tags with a generated OG image, friendly 404
+- [x] Accessibility: skip link, focus rings, keyboard-scrollable tables, AA contrast tokens
+      (`--brand-text`, darker light-mode muted/success/destructive, `bg-brand-gradient` ≥ 5.7:1)
+- [x] Loading, empty, and error states on every page; toasts for failures
+- [x] Dark mode, responsive layout, Framer Motion page transitions
+- [x] Rate limiting / request size limits on upload + LLM endpoints (request-wide body cap middleware)
 - [ ] Structured logging with request ids
-- [ ] Backend test coverage ≥ 80% on `services/`; coverage report in CI
-- [ ] A few frontend component tests (optional) or Playwright smoke test
+- [x] Backend test coverage ≥ 80% on `services/`; coverage report in CI (pytest-cov, floor 85%)
+- [x] Frontend unit tests: vitest for the citation and SSE parsers
+- [x] GitHub Actions CI: backend ruff + pytest (pgvector service, LLM mocked, no keys), frontend
+      lint + tsc + vitest + build; pip and npm caches
+- [x] Security review: secrets, SSRF (NAT64 gap closed), upload limits, CORS, rate limits
+
+### Part B — deploy and story
 - [ ] Seed script for a full demo (sample CSV, sample PDF, a few audits)
 - [ ] Deploy: frontend → Vercel; backend → Render/Railway (Dockerfile); DB → Neon/Supabase with pgvector
 - [ ] README: architecture diagram, screenshots/GIF, design decisions, cost numbers, "what I'd do next"

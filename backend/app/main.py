@@ -9,6 +9,7 @@ from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+from app.api.body_limit import MB, BodySizeLimitMiddleware
 from app.api.routes import copilot, health, insights, models, reports, seo, usage
 from app.api.routes import settings as settings_routes
 from app.core.config import Settings, apply_runtime_env, get_settings
@@ -100,15 +101,22 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
 
 
 def add_cors(app: FastAPI, settings: Settings) -> None:
+    # Least privilege: the frontend sends no cookies or auth, and only these methods/headers.
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.cors_origins,
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
+        allow_credentials=False,
+        allow_methods=["GET", "POST", "PUT", "DELETE"],
+        allow_headers=["Accept", "Content-Type", "X-LLM-Provider"],
         # Content-Disposition carries the report PDF filename to the browser download.
         expose_headers=["X-LLM-Provider", "Content-Disposition", "Retry-After"],
     )
+
+
+def max_request_bytes(settings: Settings) -> int:
+    """The largest upload allowed anywhere, plus 1 MB for multipart framing and form fields."""
+    largest_upload_mb = max(settings.max_upload_mb, settings.copilot_max_upload_mb)
+    return int((largest_upload_mb + 1) * MB)
 
 
 async def handle_domain_error(_: Request, exc: Exception) -> JSONResponse:
@@ -124,6 +132,8 @@ def create_app() -> FastAPI:
     apply_runtime_env(settings)
 
     app = FastAPI(title=settings.app_name, version=settings.version, lifespan=lifespan)
+    # Added before CORS so CORS stays outermost and 413 responses still carry CORS headers.
+    app.add_middleware(BodySizeLimitMiddleware, max_bytes=max_request_bytes(settings))
     add_cors(app, settings)
     for error_type in HANDLED_ERRORS:
         app.add_exception_handler(error_type, handle_domain_error)
