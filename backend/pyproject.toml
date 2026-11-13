@@ -18,3 +18,5 @@ extend-immutable-calls = ["fastapi.Depends", "fastapi.Query"]
 testpaths = ["tests"]
 pythonpath = ["."]
 addopts = "-q"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"

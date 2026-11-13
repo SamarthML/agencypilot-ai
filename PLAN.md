@@ -17,12 +17,12 @@ Goal: both apps boot, talk to each other, talk to Postgres, and can make one log
 - [x] `GET /health` returns a schema (`status`, `db`, `version`) and checks the DB
 - [x] Alembic initialised; first migration enables `vector` extension + creates `llm_usage` table
 - [x] pytest + ruff setup; tests for `/health` and CORS
-- [ ] `services/pricing.py` with per-model input/output prices for the default models
-- [ ] `services/llm.py`: provider abstraction (Groq, OpenAI, Anthropic), `complete()` and `stream()`,
+- [x] `services/pricing.py` with per-model input/output prices for the default models
+- [x] `services/llm.py`: provider abstraction (Groq, OpenAI, Anthropic), `complete()` and `stream()`,
       usage logging (tokens, latency, cost, success/error, cached) to `llm_usage`
-- [ ] Backend reads `X-LLM-Provider` (validated) with fallback to `DEFAULT_PROVIDER`
-- [ ] `GET /models` lists available providers/models (only those with a key configured)
-- [ ] Tests for `pricing.py` and `llm.py` (providers mocked)
+- [x] Backend reads `X-LLM-Provider` (validated) with fallback to `DEFAULT_PROVIDER`
+- [x] `GET /api/models` lists providers/models with an `available` flag (true when a key is configured)
+- [x] Tests for `pricing.py` and `llm.py` (providers mocked)
 - [x] Frontend: Next.js App Router + TS strict + Tailwind + shadcn/ui init
 - [x] Design system: zinc tokens, indigo→violet brand accent, Inter, dark default + light toggle
 - [x] App shell: collapsible sidebar (Sheet drawer on mobile), top bar with client selector,

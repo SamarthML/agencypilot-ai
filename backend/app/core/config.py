@@ -29,13 +29,32 @@ class Settings(BaseSettings):
     openai_api_key: SecretStr | None = None
     anthropic_api_key: SecretStr | None = None
     default_provider: LlmProvider = "groq"
-    groq_model: str = "llama-3.3-70b-versatile"
+    groq_model: str = "openai/gpt-oss-120b"
     openai_model: str = "gpt-4o-mini"
     anthropic_model: str = "claude-haiku-5-5"
+    llm_timeout_seconds: float = 30.0
+    llm_max_retries: int = 2
 
     cors_origins: Annotated[list[str], NoDecode] = ["http://localhost:3000"]
 
     hf_home: str | None = None
+
+    max_upload_mb: float = 5.0
+    insights_cache_ttl_seconds: int = 600
+
+    def api_key_for(self, provider: LlmProvider) -> SecretStr | None:
+        return {
+            "groq": self.groq_api_key,
+            "openai": self.openai_api_key,
+            "claude": self.anthropic_api_key,
+        }[provider]
+
+    def model_for(self, provider: LlmProvider) -> str:
+        return {
+            "groq": self.groq_model,
+            "openai": self.openai_model,
+            "claude": self.anthropic_model,
+        }[provider]
 
     @field_validator("cors_origins", mode="before")
     @classmethod

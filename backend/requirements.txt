@@ -3,6 +3,7 @@ fastapi>=0.115,<1
 uvicorn[standard]>=0.30,<1
 pydantic>=2.7,<3
 pydantic-settings>=2.3,<3
+python-multipart>=0.0.9,<1
 
 # Database
 # <2.1: 2.1's Cython modules have no pure-Python fallback and are blocked by
@@ -15,6 +16,19 @@ pgvector>=0.3,<1
 # HTTP
 httpx>=0.27,<1
 
+# LLM providers (only imported by app/services/llm.py)
+anthropic>=2,<3
+openai>=3,<4
+groq>=1,<2
+# jiter is a compiled dependency of anthropic/openai. 0.19.0's DLL is blocked by Windows
+# Smart App Control (no reputation yet); 0.18.0 loads. Relax once 0.19 builds reputation.
+jiter>=0.16,<0.19
+
+# Data
+pandas>=2.2,<4
+numpy>=2,<3
+
 # Dev / test
 pytest>=8,<9
+pytest-asyncio>=0.24,<2
 ruff>=0.6,<1
