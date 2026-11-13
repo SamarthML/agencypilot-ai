@@ -15,7 +15,7 @@ export function Topbar() {
   const title = findNavItemForPath(pathname)?.label ?? "AgencyPilot AI";
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center gap-2 border-b border-border/60 bg-background/80 px-4 backdrop-blur-md md:px-8">
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-2 border-b border-border/60 bg-background/80 px-4 backdrop-blur-md md:px-8 print:hidden">
       <MobileSidebar />
       <p className="min-w-0 flex-1 truncate text-sm font-medium">{title}</p>
       <div className="flex items-center gap-1.5 sm:gap-2">

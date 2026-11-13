@@ -77,12 +77,15 @@ AgencyPilot/
     ├── app/                    # App Router; (app)/ route group holds the sidebar+topbar shell
     ├── components/
     │   ├── ui/                 # shadcn/ui (radix-nova); only card.tsx is restyled (rounded-2xl)
-    │   ├── sidebar.tsx, topbar.tsx, page-header.tsx, empty-state.tsx, kpi-card.tsx, motion.tsx
-    │   └── <feature>/          # feature components (e.g. home/, insights/)
+    │   ├── sidebar.tsx, topbar.tsx, page-header.tsx, empty-state.tsx, kpi-card.tsx, motion.tsx,
+    │   │   llm-meta.tsx        # provider/model/tokens/latency/cost line under AI output
+    │   └── <feature>/          # feature components (home/, insights/, seo/); container queries
+    │                           #   (@container / @xl:) where a card's width, not the viewport, matters
     ├── lib/
     │   ├── api.ts              # typed fetch client: X-LLM-Provider header, ApiError, toasts
     │   ├── types.ts            # TS types mirroring backend Pydantic schemas
     │   ├── nav.ts              # single nav config (sidebar, titles, empty states)
+    │   ├── seo.ts, channels.ts, format.ts   # feature helpers: score bands/error copy, chart colours, formatters
     │   ├── providers.ts        # LLM provider display metadata
     │   └── model-context.tsx, client-context.tsx   # persisted UI state
     └── hooks/

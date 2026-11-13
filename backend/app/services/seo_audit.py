@@ -268,4 +268,16 @@ def history(
     query = select(SeoAudit).order_by(SeoAudit.created_at.desc()).limit(limit)
     if client_id is not None:
         query = query.where(SeoAudit.client_id == client_id)
-    return [SeoAuditSummary.model_validate(row, from_attributes=True) for row in db.scalars(query)]
+    return [_summary(row) for row in db.scalars(query)]
+
+
+def _summary(row: SeoAudit) -> SeoAuditSummary:
+    return SeoAuditSummary(
+        id=row.id,
+        url=row.url,
+        final_url=row.final_url,
+        client_id=row.client_id,
+        score=row.score,
+        issue_count=sum(1 for check in row.checks if check["status"] != "pass"),
+        created_at=row.created_at,
+    )

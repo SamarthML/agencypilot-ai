@@ -77,4 +77,5 @@ class SeoAuditSummary(BaseModel):
     final_url: str
     client_id: str | None
     score: int
+    issue_count: int = Field(description="Checks with status fail or warn.")
     created_at: datetime

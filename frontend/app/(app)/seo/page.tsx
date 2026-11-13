@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import { ComingSoonPage } from "@/components/coming-soon-page";
+import { SeoView } from "@/components/seo/seo-view";
 
 export const metadata: Metadata = { title: "SEO Audit" };
 
 export default function Page() {
-  return <ComingSoonPage href="/seo" />;
+  return <SeoView />;
 }

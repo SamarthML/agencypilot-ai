@@ -147,6 +147,76 @@ export interface OverviewResponse {
   kpis: Kpi[];
 }
 
+/* ---- SEO Audit (backend/app/schemas/seo.py) ---- */
+
+export type CheckStatus = "pass" | "warn" | "fail";
+export type FixPriority = "High" | "Medium" | "Low";
+
+export interface SeoCheck {
+  id: string;
+  name: string;
+  status: CheckStatus;
+  value: string;
+  recommendation: string;
+  weight: number;
+}
+
+export interface SeoPageSummary {
+  title: string | null;
+  meta_description: string | null;
+  h1: string | null;
+  word_count: number;
+}
+
+export interface SeoFix {
+  title: string;
+  detail: string;
+  priority: FixPriority;
+  impact: string;
+}
+
+export interface SeoAiReport {
+  summary: string;
+  top_fixes: SeoFix[];
+  rewritten_title: string;
+  rewritten_meta_description: string;
+  suggested_keywords: string[];
+  content_ideas: string[];
+}
+
+export interface SeoAuditRequest {
+  url: string;
+  client_id?: string | null;
+}
+
+export interface SeoAuditResponse {
+  id: string;
+  url: string;
+  final_url: string;
+  client_id: string | null;
+  status_code: number;
+  load_ms: number;
+  html_bytes: number;
+  score: number;
+  checks: SeoCheck[];
+  page: SeoPageSummary;
+  ai: SeoAiReport | null;
+  ai_error: string | null;
+  meta: LlmCallMeta | null;
+  cached: boolean;
+  created_at: string;
+}
+
+export interface SeoAuditSummary {
+  id: string;
+  url: string;
+  final_url: string;
+  client_id: string | null;
+  score: number;
+  issue_count: number;
+  created_at: string;
+}
+
 /** Frontend-only demo data until clients are stored in the backend. */
 export interface DemoClient {
   id: string;

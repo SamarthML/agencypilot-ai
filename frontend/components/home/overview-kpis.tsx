@@ -1,13 +1,16 @@
 "use client";
 
-import { KpiGridSkeleton, KpiTile } from "@/components/insights/kpi-grid";
+import { SeoIssuesKpi } from "@/components/home/seo-issues-kpi";
+import { KpiTile } from "@/components/insights/kpi-grid";
 import { Stagger, StaggerItem } from "@/components/motion";
+import { Skeleton } from "@/components/ui/skeleton";
 import { useApi } from "@/hooks/use-api";
 import { getInsightsOverview } from "@/lib/api";
 
 const DAYS = 30;
+const INSIGHT_TILES = 4;
 
-/** Agency-wide KPIs across every client's dataset, from /api/insights/overview. */
+/** Agency-wide KPIs from /api/insights/overview, plus open SEO issues for the selected client. */
 export function OverviewKpis() {
   const { data, error } = useApi("overview", (signal) =>
     getInsightsOverview(DAYS, { signal, silent: true }),
@@ -18,13 +21,15 @@ export function OverviewKpis() {
       <h2 id="kpi-heading" className="text-sm font-medium text-muted-foreground">
         Last {DAYS} days · all clients
       </h2>
-      {error ? (
-        <p className="rounded-2xl border border-dashed px-4 py-6 text-sm text-muted-foreground">
-          Live KPIs are unavailable: {error.message}
-        </p>
-      ) : data ? (
-        <Stagger className="grid grid-cols-2 gap-3 md:gap-4 xl:grid-cols-4">
-          {data.kpis.map((kpi) => (
+      <Stagger className="grid grid-cols-2 gap-3 md:gap-4 lg:grid-cols-3 xl:grid-cols-5">
+        {error ? (
+          <StaggerItem className="col-span-2 lg:col-span-2 xl:col-span-4">
+            <p className="flex h-full items-center rounded-2xl border border-dashed px-4 py-6 text-sm text-muted-foreground">
+              Live KPIs are unavailable: {error.message}
+            </p>
+          </StaggerItem>
+        ) : data ? (
+          data.kpis.map((kpi) => (
             <StaggerItem key={kpi.key}>
               <KpiTile
                 kpi={kpi}
@@ -32,11 +37,16 @@ export function OverviewKpis() {
                 footnote={kpi.key === "active_clients" ? "with data loaded" : undefined}
               />
             </StaggerItem>
-          ))}
-        </Stagger>
-      ) : (
-        <KpiGridSkeleton count={4} />
-      )}
+          ))
+        ) : (
+          Array.from({ length: INSIGHT_TILES }, (_, i) => (
+            <Skeleton key={i} className="h-[124px] rounded-2xl" />
+          ))
+        )}
+        <StaggerItem className="col-span-2 lg:col-span-1">
+          <SeoIssuesKpi />
+        </StaggerItem>
+      </Stagger>
     </section>
   );
 }

@@ -3,7 +3,7 @@
 import { ArrowRight, CircleCheck, Sparkles, TriangleAlert, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 
-import { LlmMeta } from "@/components/insights/llm-meta";
+import { LlmMeta } from "@/components/llm-meta";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";

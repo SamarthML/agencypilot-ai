@@ -102,6 +102,7 @@ def test_history_filters_by_client(client: TestClient, monkeypatch: pytest.Monke
                 final_url="u",
                 client_id=client_id,
                 score=50,
+                issue_count=3,
                 created_at=datetime.now(UTC),
             )  # fmt: skip
         ]

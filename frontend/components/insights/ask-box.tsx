@@ -3,7 +3,7 @@
 import { MessageSquareText, SendHorizontal } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
-import { LlmMeta } from "@/components/insights/llm-meta";
+import { LlmMeta } from "@/components/llm-meta";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";

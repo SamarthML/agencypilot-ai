@@ -96,7 +96,11 @@ Goal: enter a URL, get a scored audit with rule results and AI fix suggestions.
       checks with `ai: null` if the LLM fails; cached 1 h per (normalised URL, provider), hits logged at $0
 - [x] Friendly errors: invalid URL 422, blocked address 400, timeout 504, non-HTML 415, too large 422,
       bot-blocked (401/403/429) / unreachable 502
-- [ ] Frontend: URL form, score gauge, pass/fail checklist, suggestions accordion, recent audits list
+- [x] Frontend (`components/seo/`): hero URL form + example chips, step progress, animated score
+      gauge with fetch facts, checks grouped Fail/Warn/Pass (Pass collapsed), AI fixes with priority
+      badges, before/after title + meta with copy and length warnings, keywords, content ideas, LLM
+      meta footer, "AI unavailable" card with Retry AI, friendly error cards, recent audits (loads by
+      id), print-to-PDF (A4, no app chrome); Home "Open SEO issues" KPI for the selected client
 - [x] Tests: every check against saved HTML fixtures (pass + warn + fail cases), scoring, SSRF guard,
       redirects/limits via `httpx.MockTransport`, orchestration + cache, routes, DB round trip
 

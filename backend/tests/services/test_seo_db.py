@@ -78,5 +78,7 @@ def test_history_is_newest_first_and_filtered(db: Session) -> None:
     rows = seo_audit.history(db, CLIENT_ID)
 
     assert [r.id for r in rows] == [second.id, first.id]
+    expected_issues = sum(1 for c in second.checks if c.status != "pass")
+    assert rows[0].issue_count == expected_issues > 0
     assert all(r.client_id == CLIENT_ID for r in rows)
     assert seo_audit.history(db, "nobody-has-this-client") == []

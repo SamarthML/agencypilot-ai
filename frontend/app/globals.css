@@ -183,3 +183,51 @@
     @apply font-sans;
   }
 }
+/* ---------- Print (SEO "Download PDF") ----------
+   A4, no app chrome, and light colours even when the app is in dark mode. */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  :root,
+  .dark {
+    color-scheme: light;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.21 0.006 285.885);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.21 0.006 285.885);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.21 0.006 285.885);
+    --muted: oklch(0.967 0.001 286.375);
+    --muted-foreground: oklch(0.45 0.016 285.938);
+    --secondary: oklch(0.967 0.001 286.375);
+    --secondary-foreground: oklch(0.21 0.006 285.885);
+    --primary: oklch(0.21 0.006 285.885);
+    --primary-foreground: oklch(0.985 0 0);
+    --accent: oklch(0.955 0.003 286.35);
+    --accent-foreground: oklch(0.21 0.006 285.885);
+    --border: oklch(0.88 0.004 286.32);
+    --destructive: oklch(0.577 0.245 27.325);
+    --success: oklch(0.52 0.15 155);
+    --warning: oklch(0.6 0.16 70);
+    --shadow-card: none;
+  }
+
+  html,
+  body {
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  main {
+    max-width: none;
+    padding: 0;
+  }
+
+  .break-inside-avoid {
+    break-inside: avoid;
+  }
+}

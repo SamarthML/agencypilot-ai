@@ -13,6 +13,9 @@ import type {
   LlmProvider,
   OverviewResponse,
   SampleLoadResponse,
+  SeoAuditRequest,
+  SeoAuditResponse,
+  SeoAuditSummary,
 } from "@/lib/types";
 
 export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(
@@ -153,6 +156,32 @@ export function uploadInsightsCsv(
     timeoutMs: 60_000,
     silent: true, // the upload dialog shows the validation message inline
   });
+}
+
+/* ---- SEO Audit ---- */
+
+/** Fetch (≤10 s) + checks + LLM report; cached audits return in milliseconds. */
+const SEO_AUDIT_TIMEOUT_MS = 120_000;
+
+export function runSeoAudit(request: SeoAuditRequest): Promise<SeoAuditResponse> {
+  return apiFetch("/api/seo/audit", {
+    method: "POST",
+    body: JSON.stringify(request),
+    timeoutMs: SEO_AUDIT_TIMEOUT_MS,
+    silent: true, // the page shows a friendly error card instead of a toast
+  });
+}
+
+export function getSeoAudit(id: string, options: ApiOptions = {}): Promise<SeoAuditResponse> {
+  return apiFetch(`/api/seo/audits/${encodeURIComponent(id)}`, options);
+}
+
+export function getSeoHistory(
+  clientId: string | null,
+  options: ApiOptions = {},
+): Promise<SeoAuditSummary[]> {
+  const query = clientId ? `?client=${encodeURIComponent(clientId)}` : "";
+  return apiFetch(`/api/seo/history${query}`, options);
 }
 
 export function loadSampleData(): Promise<SampleLoadResponse> {
