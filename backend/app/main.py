@@ -12,6 +12,7 @@ from fastapi.responses import JSONResponse
 from app.api.routes import copilot, health, insights, models, reports, seo, usage
 from app.core.config import Settings, apply_runtime_env, get_settings
 from app.services import copilot as copilot_service
+from app.services import seo_demo
 from app.services.analytics import CsvValidationError
 from app.services.copilot import (
     DocumentNotFoundError,
@@ -91,6 +92,8 @@ async def lifespan(_: FastAPI) -> AsyncIterator[None]:
     # startup instant while making sure the first chat request doesn't pay for it.
     if get_settings().copilot_warmup:
         threading.Thread(target=copilot_service.warm_up, name="copilot-warmup", daemon=True).start()
+    if get_settings().seed_demo_data:
+        threading.Thread(target=seo_demo.seed_demo_data, name="demo-seed", daemon=True).start()
     yield
 
 

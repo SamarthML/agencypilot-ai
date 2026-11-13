@@ -50,6 +50,9 @@ class Settings(BaseSettings):
     copilot_min_similarity: float = 0.5
     copilot_warmup: bool = True
 
+    # Seed one fixture-based SEO audit per demo client (only for clients with no audits).
+    seed_demo_data: bool = True
+
     def api_key_for(self, provider: LlmProvider) -> SecretStr | None:
         return {
             "groq": self.groq_api_key,

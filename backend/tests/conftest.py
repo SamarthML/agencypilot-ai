@@ -12,6 +12,7 @@ os.environ.update(
         "DEFAULT_PROVIDER": "groq",
         "GROQ_MODEL": "openai/gpt-oss-120b",
         "COPILOT_WARMUP": "false",
+        "SEED_DEMO_DATA": "false",
         "COPILOT_MIN_SIMILARITY": "0.5",
     }
 )

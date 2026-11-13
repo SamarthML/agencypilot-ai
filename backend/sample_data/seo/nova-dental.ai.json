@@ -1,0 +1,52 @@
+{
+  "summary": "Nova Dental's homepage scores 74. It is secure, mobile-ready, has a canonical URL, alt text on every image and over 300 words. The weak spots are all in what searchers and social apps see first: the title is only 18 characters ('Nova Dental | Home'), the meta description runs to 239 characters, there are no Open Graph tags, and the page has two H1 headings.",
+  "top_fixes": [
+    {
+      "title": "Rewrite the title tag with services and intent",
+      "detail": "'Nova Dental | Home' is 18 characters and says nothing about what the practice offers. Use 30-60 characters naming family and cosmetic dentistry, e.g. 'Nova Dental | Family & Cosmetic Dentist'.",
+      "priority": "High",
+      "impact": "Click-through rate and ranking for dentist searches"
+    },
+    {
+      "title": "Add Open Graph tags",
+      "detail": "0 of 3 required Open Graph tags are present. Add og:title, og:description and an og:image of the reception or team so links shared by patients preview properly.",
+      "priority": "High",
+      "impact": "Social sharing and referral click-through"
+    },
+    {
+      "title": "Trim the meta description to 160 characters",
+      "detail": "At 239 characters the description is truncated in results. Keep the essentials: family and cosmetic care, Invisalign and implants, evening and Saturday hours.",
+      "priority": "Medium",
+      "impact": "Click-through rate from search results"
+    },
+    {
+      "title": "Keep a single H1",
+      "detail": "'New patients welcome' is a second H1 below the hero H1. Demote it to an H2 so the page has one main heading.",
+      "priority": "Medium",
+      "impact": "Clear page topic for search engines and screen readers"
+    },
+    {
+      "title": "Link each service to its own page",
+      "detail": "Whitening, Invisalign, implants, children's dentistry and emergency care are one-line bullets. Link each to a detailed page so searches like 'emergency dentist Saturday' land on a focused answer.",
+      "priority": "Low",
+      "impact": "Ranking for service-specific searches"
+    }
+  ],
+  "rewritten_title": "Nova Dental | Family & Cosmetic Dentist",
+  "rewritten_meta_description": "Family and cosmetic dentistry with evening and Saturday hours: check-ups, whitening, Invisalign, implants and same-day emergency care. Book online.",
+  "suggested_keywords": [
+    "family dentist",
+    "cosmetic dentist",
+    "emergency dentist same day",
+    "Invisalign clear aligners",
+    "dental implants",
+    "teeth whitening",
+    "Saturday dentist appointments",
+    "children's dentist"
+  ],
+  "content_ideas": [
+    "What happens at your first visit to Nova Dental, step by step",
+    "Invisalign vs braces: costs, timelines and who each one suits",
+    "Dental emergency? What to do in the first hour and when to call us"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "summary": "Bloom Bakery's homepage is in good shape: it is served over HTTPS, mobile-ready, has a single clear H1, a canonical URL and over 300 words of useful copy. Three warnings hold the score at 84: the title is 75 characters and gets cut off in search results, one product photo has no alt text, and Open Graph is missing an image, so shared links preview without a picture.",
+  "top_fixes": [
+    {
+      "title": "Shorten the title tag to under 60 characters",
+      "detail": "The current title is 75 characters, so search results truncate it before 'Austin, Texas'. Lead with the brand and the two strongest offers, e.g. 'Bloom Bakery | Austin Sourdough & Celebration Cakes'.",
+      "priority": "High",
+      "impact": "Click-through rate from search results"
+    },
+    {
+      "title": "Add og:image for social sharing",
+      "detail": "og:title and og:description are set but og:image is missing. Add a 1200x630 photo of the morning buns or a celebration cake so links shared on Instagram, Facebook and iMessage show a picture.",
+      "priority": "High",
+      "impact": "Social click-through and brand recognition"
+    },
+    {
+      "title": "Add alt text to the morning buns photo",
+      "detail": "5 of 6 images have alt text; the cardamom morning buns image in 'Neighbourhood favourites' has none. Describe it, e.g. 'Cardamom morning buns with orange zest on a cooling rack'.",
+      "priority": "Medium",
+      "impact": "Accessibility and image search visibility"
+    },
+    {
+      "title": "Give each location its own linked page",
+      "detail": "The homepage lists East Austin, Mueller and South Lamar with addresses and hours. Link each to a dedicated location page with directions and opening hours so searches like 'bakery Mueller' have a strong match.",
+      "priority": "Medium",
+      "impact": "Local search relevance"
+    },
+    {
+      "title": "Make the Thanksgiving pre-order section a seasonal landing page",
+      "detail": "Pre-orders for pies, rolls and holiday cookie boxes are only a short homepage section. A dedicated page with the menu, pickup days and the November 22 deadline can rank for seasonal searches and be updated each year.",
+      "priority": "Low",
+      "impact": "Seasonal organic traffic and conversions"
+    }
+  ],
+  "rewritten_title": "Bloom Bakery | Austin Sourdough & Celebration Cakes",
+  "rewritten_meta_description": "Family-owned Austin bakery with shops in East Austin, Mueller and South Lamar. Sourdough, morning buns and custom cakes baked fresh daily.",
+  "suggested_keywords": [
+    "Austin bakery",
+    "sourdough bread Austin",
+    "cardamom morning buns",
+    "custom celebration cakes Austin",
+    "birthday cakes Austin",
+    "office pastry delivery Austin",
+    "Thanksgiving pies Austin",
+    "bakery near Mueller"
+  ],
+  "content_ideas": [
+    "Behind the 36-hour ferment: how our country sourdough is made, from Texas flour to 7am loaf",
+    "Ordering a celebration cake: flavours, sizes and how far ahead to book",
+    "The Austin office breakfast guide: building a pastry box for a team of 10 to 50"
+  ]
+}

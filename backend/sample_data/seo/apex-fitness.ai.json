@@ -1,0 +1,52 @@
+{
+  "summary": "Apex Fitness's homepage scores 63 with three failed checks: there is no meta description, no canonical URL, and only 3 of 5 images have alt text. The heading order also jumps from H1 to H3 and the page has 180 words, below the 300 that gives search engines enough context. HTTPS, the mobile viewport, the title and the Open Graph tags are already correct.",
+  "top_fixes": [
+    {
+      "title": "Write a meta description",
+      "detail": "The page has no meta description, so search engines invent a snippet. Add 140-160 characters covering coached strength training, HIIT and the free first week.",
+      "priority": "High",
+      "impact": "Click-through rate from search results"
+    },
+    {
+      "title": "Add a canonical link",
+      "detail": "No canonical URL is declared. Add <link rel=\"canonical\" href=\"https://apexfitness.example/\"> so tracking-parameter and www variants consolidate to one page.",
+      "priority": "High",
+      "impact": "Crawlability and duplicate-content consolidation"
+    },
+    {
+      "title": "Add alt text to the hero and class photos",
+      "detail": "Only 3 of 5 images have alt text. Describe the squat-rack hero image and the strength class photo, e.g. 'Member squatting at a rack while a coach checks her form'.",
+      "priority": "High",
+      "impact": "Accessibility and image search visibility"
+    },
+    {
+      "title": "Fix the heading order under the H1",
+      "detail": "'Classes this week' is an H3 directly after the H1. Make it an H2 so the page outline reads H1 then H2 sections (Classes, Memberships, Coaches, Results).",
+      "priority": "Medium",
+      "impact": "Content structure for search engines and screen readers"
+    },
+    {
+      "title": "Expand the copy to at least 300 words",
+      "detail": "The page has 180 words. Add a short description of each class (Strength Foundations, Power HIIT, Mobility Flow, Team WOD), who it suits and what the free week includes.",
+      "priority": "Medium",
+      "impact": "Ranking for class and membership searches"
+    }
+  ],
+  "rewritten_title": "Apex Fitness | Strength Training, HIIT & Group Classes",
+  "rewritten_meta_description": "Coached strength training, HIIT and mobility classes for every level. Unlimited memberships from $129 a month. Claim your free first week at Apex Fitness.",
+  "suggested_keywords": [
+    "strength training gym",
+    "HIIT classes",
+    "group fitness classes",
+    "personal coaching gym",
+    "mobility classes",
+    "free gym trial week",
+    "unlimited class membership",
+    "beginner strength program"
+  ],
+  "content_ideas": [
+    "Strength Foundations explained: what to expect in your first four weeks",
+    "HIIT vs strength training: which class should you book first?",
+    "Member story: how Jordan deadlifted bodyweight in four months"
+  ]
+}

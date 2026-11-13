@@ -49,9 +49,12 @@ AgencyPilot/
 │   ├── alembic/                # migrations: 0001 pgvector + llm_usage, 0002 insights, 0003 seo_audits,
 │   │                           #   0004 copilot (documents, chunks + HNSW, copilot_feedback), 0005 reports
 │   ├── scripts/                # generate_demo_data.py (marketing_demo.csv),
-│   │                           #   generate_sample_brief.py (bloom_bakery_brief.pdf)
-│   ├── sample_data/            # demo CSV (auto-loaded on first Insights request) and Bloom Bakery
-│   │                           #   brief PDF (ingested at startup if that client has no documents)
+│   │                           #   generate_sample_brief.py (bloom_bakery_brief.pdf),
+│   │                           #   seed_demo_data.py (demo SEO audits on demand)
+│   ├── sample_data/            # demo CSV (auto-loaded on first Insights request), Bloom Bakery
+│   │                           #   brief PDF (ingested at startup if that client has no documents),
+│   │                           #   seo/<client>.html + .ai.json (fictional *.example homepages +
+│   │                           #   bundled AI report; seeded at startup for clients with no audits)
 │   ├── app/
 │   │   ├── main.py             # FastAPI app factory, CORS, router registration
 │   │   ├── core/
@@ -70,6 +73,7 @@ AgencyPilot/
 │   │       ├── insights_ai.py  # grounded AI summary (TTL-cached) + Q&A prompts
 │   │       ├── seo_audit.py    # SEO orchestration: fetch → checks → score → AI (cached) → save
 │   │       ├── seo/            # fetcher.py (SSRF guard), checks.py (10 checks), scoring.py
+│   │       ├── seo_demo.py     # demo seed: fixture HTML -> real checks/score -> one audit per client
 │   │       ├── rag.py          # extract (pypdf) → token-aware chunking → BGE embeddings → pgvector
 │   │       │                   #   retrieval + similarity threshold
 │   │       ├── copilot.py      # ingest background task, SSE chat (rewrite → retrieve → guardrail →
@@ -242,6 +246,7 @@ COPILOT_MAX_UPLOAD_MB=10
 COPILOT_TOP_K=5
 COPILOT_MIN_SIMILARITY=0.5                             # below this: "not found", no LLM call
 COPILOT_WARMUP=true                                    # load model + seed brief at startup
+SEED_DEMO_DATA=true                                    # seed fixture SEO audits for demo clients
 CORS_ORIGINS=http://localhost:3000
 HF_HOME=C:/Users/<you>/.cache/agencypilot-hf          # model cache outside the repo/OneDrive
 ```

@@ -181,6 +181,8 @@ Goal: one-click monthly client report, and full visibility into LLM spend.
 
 Goal: interview-ready.
 
+- [x] Realistic demo seed: one fixture-based SEO audit per demo client (fictional `*.example`
+      homepages run through the real checks + bundled AI report; startup, idempotent, no network/LLM)
 - [ ] Loading, empty, and error states on every page; toasts for failures
 - [ ] Dark mode, responsive layout, Framer Motion page transitions
 - [ ] Rate limiting / request size limits on upload + LLM endpoints

@@ -156,7 +156,7 @@ async def _ai_report(
     return structured.data, call_meta(structured.result), None
 
 
-def _page_summary(page: checks.PageData) -> SeoPageSummary:
+def page_summary(page: checks.PageData) -> SeoPageSummary:
     return SeoPageSummary(
         title=page.title,
         meta_description=page.meta_description,
@@ -177,7 +177,7 @@ async def compute_audit(url: httpx.URL, provider: LlmProvider, model: str) -> Au
         status_code=fetched.status_code,
         load_ms=fetched.load_ms,
         html_bytes=fetched.html_bytes,
-        page=_page_summary(page),
+        page=page_summary(page),
         checks=results,
         score=scoring.score(results),
         ai=ai,
