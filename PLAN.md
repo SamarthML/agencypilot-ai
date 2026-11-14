@@ -225,8 +225,8 @@ Goal: interview-ready.
       `documents.embedding_backend` + demo brief re-embedded on a backend switch
 - [x] Rate limit behind a proxy (`TRUST_PROXY` / `TRUSTED_PROXY_COUNT`, spoofed header tests),
       `DEMO_MODE` (Groq only, seeding, 10/min), cold-start "Waking up the server" banner
-- [ ] Live deploy: frontend → Vercel; backend → Render; DB → Neon (follow DEPLOY.md)
-- [ ] README: architecture diagram, screenshots/GIF, design decisions, cost numbers, "what I'd do next"
+- [x] Live deploy: frontend → Vercel; backend → Render; DB → Neon (follow DEPLOY.md)
+- [x] README: architecture diagram, screenshots, design decisions, cost numbers, roadmap; MIT LICENSE
 - [ ] 3-minute demo script for the interview
 
 **Done when:** a live URL works end-to-end and the README tells the story without me in the room.
