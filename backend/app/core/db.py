@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 engine = create_engine(
     get_settings().database_url,
     pool_pre_ping=True,
-    connect_args={"connect_timeout": 3},
+    connect_args={"connect_timeout": get_settings().db_connect_timeout},
 )
 SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
 

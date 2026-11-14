@@ -20,7 +20,7 @@ from pathlib import PurePath
 from typing import Literal
 
 from pydantic import BaseModel
-from sqlalchemy import func, select
+from sqlalchemy import delete, func, select
 from sqlalchemy.orm import Session
 
 from app.core.config import BACKEND_DIR, LlmProvider, get_settings
@@ -193,6 +193,7 @@ def _store_chunks(
         )
         document.pages = page_count
         document.status = "ready"
+        document.embedding_backend = rag.current_backend()
         db.commit()
     logger.info("Document %s ready: %d pages, %d chunks", document_id, page_count, len(chunks))
 
@@ -212,19 +213,44 @@ def _mark_failed(document_id: uuid.UUID, error: str) -> None:
 
 
 def seed_sample_documents() -> None:
-    """Ingest the Bloom Bakery brief if that client has no documents yet (first run)."""
+    """Ingest the Bloom Bakery brief on first run, or re-embed it after a backend switch."""
     if not SAMPLE_BRIEF.exists():
         logger.warning("Sample brief %s is missing; skipping Copilot seed", SAMPLE_BRIEF)
         return
     with SessionLocal() as db:
-        existing = db.scalar(
-            select(func.count()).select_from(Document).where(Document.client == SAMPLE_CLIENT)
-        )
-        if existing:
-            return
-        document = create_document(db, SAMPLE_CLIENT, SAMPLE_BRIEF.name)
-    logger.info("Seeding Copilot with %s for %s", SAMPLE_BRIEF.name, SAMPLE_CLIENT)
-    ingest_document(document.id, SAMPLE_BRIEF.name, SAMPLE_BRIEF.read_bytes())
+        documents = db.scalars(select(Document).where(Document.client == SAMPLE_CLIENT)).all()
+        if documents:
+            document_id = _reset_stale_brief(db, documents)
+        else:
+            document_id = create_document(db, SAMPLE_CLIENT, SAMPLE_BRIEF.name).id
+            logger.info("Seeding Copilot with %s for %s", SAMPLE_BRIEF.name, SAMPLE_CLIENT)
+    if document_id is not None:
+        ingest_document(document_id, SAMPLE_BRIEF.name, SAMPLE_BRIEF.read_bytes())
+
+
+def _reset_stale_brief(db: Session, documents: Sequence[Document]) -> uuid.UUID | None:
+    """Drop the brief's chunks if another embedding backend made them; None if it's current."""
+    backend = rag.current_backend()
+    stale = next(
+        (
+            doc
+            for doc in documents
+            if doc.filename == SAMPLE_BRIEF.name and doc.embedding_backend != backend
+        ),
+        None,
+    )
+    if stale is None:
+        return None
+    logger.info(
+        "Re-embedding %s: stored with %s, now using %s",
+        stale.filename,
+        stale.embedding_backend,
+        backend,
+    )
+    db.execute(delete(Chunk).where(Chunk.document_id == stale.id))
+    stale.status, stale.error = "processing", None
+    db.commit()
+    return stale.id
 
 
 def warm_up() -> None:

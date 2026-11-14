@@ -2,7 +2,7 @@
 
 from pydantic import BaseModel, Field
 
-from app.core.config import LlmProvider
+from app.core.config import EmbeddingBackend, LlmProvider
 
 
 class ProviderSettings(BaseModel):
@@ -17,6 +17,7 @@ class AppSettings(BaseModel):
     providers: list[ProviderSettings]
     default_provider: LlmProvider
     embedding_model: str
+    embedding_backend: EmbeddingBackend
     copilot_min_similarity: float
     copilot_top_k: int
     copilot_max_upload_mb: float
@@ -28,3 +29,4 @@ class AppSettings(BaseModel):
     rate_limit_enabled: bool
     rate_limit_per_minute: int
     seed_demo_data: bool
+    demo_mode: bool

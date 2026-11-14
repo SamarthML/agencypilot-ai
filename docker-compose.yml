@@ -1,3 +1,7 @@
+# Local dev (DB only, backend + frontend run natively):  docker compose up -d --wait db
+# Full stack in containers (production-like):           docker compose up --build
+#   -> http://localhost:3000 (web), http://localhost:8000/docs (API). Uses backend/.env for the
+#      provider keys if it exists. Stop the native dev servers first (same ports).
 services:
   db:
     image: pgvector/pgvector:pg16
@@ -16,6 +20,41 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+
+  backend:
+    build: ./backend
+    container_name: agencypilot-backend
+    env_file:
+      - path: backend/.env
+        required: false
+    # These override backend/.env: the container talks to the db service, runs the deployed
+    # (torch-free) embedding backend, and has no Windows model-cache path.
+    environment:
+      DATABASE_URL: postgresql+psycopg://agencypilot:agencypilot@db:5432/agencypilot
+      EMBEDDING_BACKEND: fastembed
+      FASTEMBED_CACHE_PATH: /opt/fastembed
+      HF_HOME: ""
+      CORS_ORIGINS: http://localhost:3000
+      PORT: "8000"
+    ports:
+      - "8000:8000"
+    # Same ceiling as Render's free instance, so running out of memory shows up locally first.
+    mem_limit: 512m
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+    container_name: agencypilot-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
 
 volumes:
   pgdata:

@@ -39,16 +39,20 @@ AgencyPilot/
 ├── CLAUDE.md
 ├── PLAN.md
 ├── README.md
-├── docker-compose.yml          # postgres (pgvector/pgvector:pg16)
+├── DEPLOY.md                   # click-by-click Neon + Render + Vercel deploy, cold starts, logs
+├── docker-compose.yml          # db (pgvector/pgvector:pg16) + backend + frontend images
 ├── .github/workflows/ci.yml
 ├── backend/
 │   ├── .env.example            # every backend env var, no real values (copy to .env)
-│   ├── requirements.txt        # major versions pinned
+│   ├── requirements.txt        # major versions pinned (dev/CI: both embedding backends)
+│   ├── requirements-deploy.txt # runtime only, no torch/sentence-transformers (fastembed)
+│   ├── Dockerfile              # python slim, non-root, fastembed model baked in, alembic → uvicorn
 │   ├── pyproject.toml          # ruff + pytest config
 │   ├── alembic.ini
 │   ├── alembic/                # migrations: 0001 pgvector + llm_usage, 0002 insights, 0003 seo_audits,
 │   │                           #   0004 copilot (documents, chunks + HNSW, copilot_feedback), 0005 reports,
-│   │                           #   0006 llm_usage.skipped/saved_cost_usd + seo_audits.is_demo
+│   │                           #   0006 llm_usage.skipped/saved_cost_usd + seo_audits.is_demo,
+│   │                           #   0007 documents.embedding_backend
 │   ├── scripts/                # generate_demo_data.py (marketing_demo.csv),
 │   │                           #   generate_sample_brief.py (bloom_bakery_brief.pdf),
 │   │                           #   seed_demo_data.py (demo SEO audits on demand)
@@ -78,7 +82,8 @@ AgencyPilot/
 │   │       ├── seo_audit.py    # SEO orchestration: fetch → checks → score → AI (cached) → save
 │   │       ├── seo/            # fetcher.py (SSRF guard), checks.py (10 checks), scoring.py
 │   │       ├── seo_demo.py     # demo seed: fixture HTML -> real checks/score -> one audit per client
-│   │       ├── rag.py          # extract (pypdf) → token-aware chunking → BGE embeddings → pgvector
+│   │       ├── rag.py          # extract (pypdf) → token-aware chunking → BGE embeddings
+│   │       │                   #   (EMBEDDING_BACKEND: sentence-transformers | fastembed) → pgvector
 │   │       │                   #   retrieval + similarity threshold
 │   │       ├── copilot.py      # ingest background task, SSE chat (rewrite → retrieve → guardrail →
 │   │       │                   #   stream), citation parsing, feedback, demo seed + startup warm-up
@@ -99,11 +104,15 @@ AgencyPilot/
     │   │   llm-meta.tsx        # provider/model/tokens/latency/cost line under AI output
     │   ├── copy-button.tsx     # shared copy-to-clipboard icon button
     │   ├── command-menu.tsx    # Ctrl/⌘+K palette: pages, actions, client switch, theme
+    │   ├── server-wake-banner.tsx  # "Waking up the server" banner while the API cold-starts
     │   └── <feature>/          # feature components (home/, insights/, seo/, copilot/, reports/, usage/,
     │                           #   settings/); container queries
     │                           #   (@container / @xl:) where a card's width, not the viewport, matters
+    ├── Dockerfile              # multi-stage standalone build (NEXT_PUBLIC_API_URL is a build arg)
     ├── lib/
-    │   ├── api.ts              # typed fetch client: X-LLM-Provider header, ApiError, toasts
+    │   ├── api.ts              # typed fetch client: X-LLM-Provider header, ApiError, toasts,
+    │   │                       #   cold-start gate (requests wait for the first /health answer)
+    │   ├── warmup.ts           # /health polling + phase store behind the "Waking up" banner
     │   ├── types.ts            # TS types mirroring backend Pydantic schemas
     │   ├── nav.ts              # single nav config (sidebar, titles, empty states)
     │   ├── seo.ts, channels.ts, format.ts   # feature helpers: score bands/error copy, chart colours, formatters
@@ -198,8 +207,8 @@ Prerequisites: Python 3.12, Node.js 20+ LTS, Docker Desktop, Git.
 > `Set-Content -Encoding utf8` get a BOM, which breaks `alembic.ini`/`.env`; write them without a BOM.
 
 ```powershell
-# 1. Database (Postgres 16 + pgvector), from repo root
-docker compose up -d --wait
+# 1. Database only (Postgres 16 + pgvector), from repo root
+docker compose up -d --wait db
 
 # 2. Backend (terminal 1)
 cd backend
@@ -246,6 +255,10 @@ CI (`.github/workflows/ci.yml`) runs all of the above on every push and PR: back
 .\.venv\Scripts\python.exe -m alembic revision --autogenerate -m "describe change"
 docker compose down                                    # stop DB (keeps data)
 docker compose down -v                                 # stop DB and wipe data
+
+# Full stack in production images (db + backend on fastembed + frontend), 512 MB backend limit.
+# Stop the native dev servers first (same ports 8000 / 3000). Deploying: see DEPLOY.md.
+docker compose up --build
 ```
 
 ## Environment variables
@@ -262,6 +275,8 @@ GROQ_MODEL=openai/gpt-oss-120b
 OPENAI_MODEL=gpt-4o-mini
 ANTHROPIC_MODEL=claude-haiku-5-5
 EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+EMBEDDING_BACKEND=sentence-transformers                # or fastembed (ONNX, no torch; deployed)
+EMBEDDING_THREADS=                                     # fastembed threads; empty = all cores
 COPILOT_MAX_UPLOAD_MB=10
 COPILOT_TOP_K=5
 COPILOT_MIN_SIMILARITY=0.5                             # below this: "not found", no LLM call
@@ -269,6 +284,10 @@ COPILOT_WARMUP=true                                    # load model + seed brief
 SEED_DEMO_DATA=true                                    # seed fixture SEO audits for demo clients
 RATE_LIMIT_ENABLED=true
 RATE_LIMIT_PER_MINUTE=20                               # per client IP, on every LLM endpoint
+TRUST_PROXY=false                                      # true behind a proxy: IP from X-Forwarded-For
+TRUSTED_PROXY_COUNT=1                                  # proxies appending to X-Forwarded-For
+DEMO_MODE=false                                        # Groq only, seeding on, 10/min, TRUST_PROXY
+DB_CONNECT_TIMEOUT=10                                  # seconds (Neon wakes from autosuspend)
 CORS_ORIGINS=http://localhost:3000
 HF_HOME=C:/Users/<you>/.cache/agencypilot-hf          # model cache outside the repo/OneDrive
 ```

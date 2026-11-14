@@ -14,11 +14,19 @@
 
 ## Stack
 
-Next.js · TypeScript · Tailwind · shadcn/ui · Recharts · FastAPI · Pydantic v2 · SQLAlchemy · PostgreSQL + pgvector · sentence-transformers · Docker · GitHub Actions
+Next.js · TypeScript · Tailwind · shadcn/ui · Recharts · FastAPI · Pydantic v2 · SQLAlchemy · PostgreSQL + pgvector · sentence-transformers / fastembed (ONNX) · Docker · GitHub Actions
 
 ## Quick start
 
-See [CLAUDE.md](CLAUDE.md#run-commands-windows-powershell) for full setup and run commands.
+Full stack in Docker (put a `GROQ_API_KEY` in `backend/.env` first):
+
+```bash
+docker compose up --build   # http://localhost:3000 · API docs at http://localhost:8000/docs
+```
+
+For local development (DB in Docker, backend and frontend native), see
+[CLAUDE.md](CLAUDE.md#run-commands-windows-powershell). To deploy for free (Neon + Render + Vercel),
+see [DEPLOY.md](DEPLOY.md).
 
 ## Architecture
 

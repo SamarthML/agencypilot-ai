@@ -4,6 +4,7 @@ import { DEFAULT_PROVIDER, isProvider } from "@/lib/providers";
 import { readStorage } from "@/lib/storage";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
 import { parseSseChunk } from "@/lib/sse";
+import { createWarmup } from "@/lib/warmup";
 import type {
   AskResponse,
   ChatRequest,
@@ -17,6 +18,7 @@ import type {
   InsightsDashboard,
   InsightSummary,
   LlmProvider,
+  ModelsResponse,
   OverviewResponse,
   Report,
   ReportGenerateRequest,
@@ -38,6 +40,16 @@ export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:800
   "",
 );
 export const PROVIDER_HEADER = "X-LLM-Provider";
+
+/** Cold-start gate: every request waits for the first /health answer (see lib/warmup.ts). */
+export const serverWarmup = createWarmup(async (timeoutMs) => {
+  try {
+    const response = await fetch(`${API_URL}/health`, { signal: AbortSignal.timeout(timeoutMs) });
+    return response.ok;
+  } catch {
+    return false;
+  }
+});
 const DEFAULT_TIMEOUT_MS = 15_000;
 
 export class ApiError extends Error {
@@ -117,6 +129,7 @@ export function isAbortError(error: unknown): boolean {
 
 export async function apiFetch<T>(path: string, options: ApiOptions = {}): Promise<T> {
   const { silent = false, timeoutMs = DEFAULT_TIMEOUT_MS, ...init } = options;
+  await serverWarmup.ready();
   const timeout = AbortSignal.timeout(timeoutMs);
   try {
     const response = await fetch(`${API_URL}${path}`, {
@@ -138,6 +151,10 @@ export async function apiFetch<T>(path: string, options: ApiOptions = {}): Promi
 
 export function getHealth(options: ApiOptions = {}): Promise<HealthResponse> {
   return apiFetch<HealthResponse>("/health", { timeoutMs: 5_000, ...options });
+}
+
+export function getModels(options: ApiOptions = {}): Promise<ModelsResponse> {
+  return apiFetch<ModelsResponse>("/api/models", { silent: true, ...options });
 }
 
 /* ---- Insights ---- */
@@ -281,6 +298,7 @@ async function openChatStream(
   request: ChatRequest,
   signal: AbortSignal,
 ): Promise<ReadableStream<Uint8Array>> {
+  await serverWarmup.ready();
   const body = JSON.stringify(request);
   const headers = buildHeaders({ body });
   headers.set("Accept", "text/event-stream");
@@ -383,6 +401,7 @@ function filenameFrom(disposition: string | null, fallback: string): string {
 
 /** Fetch the server-rendered PDF and hand it to the browser as a download. */
 export async function downloadReportPdf(id: string, fallbackName: string): Promise<void> {
+  await serverWarmup.ready();
   let response: Response;
   try {
     response = await fetch(`${API_URL}/api/reports/${encodeURIComponent(id)}/pdf`, {

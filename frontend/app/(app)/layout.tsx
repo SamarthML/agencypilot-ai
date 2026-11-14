@@ -1,3 +1,4 @@
+import { ServerWakeBanner } from "@/components/server-wake-banner";
 import { Sidebar } from "@/components/sidebar";
 import { Topbar } from "@/components/topbar";
 
@@ -12,6 +13,7 @@ export default function AppLayout({ children }: LayoutProps<"/">) {
       </a>
       <Sidebar />
       <div className="flex min-w-0 flex-1 flex-col">
+        <ServerWakeBanner />
         <Topbar />
         <main
           id="main"

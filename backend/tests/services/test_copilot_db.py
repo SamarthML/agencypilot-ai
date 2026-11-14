@@ -116,3 +116,29 @@ def test_feedback_round_trip(db: Session) -> None:
     assert row is not None
     assert (row.rating, row.comment, row.message_id) == ("down", "Missing split", None)
     assert saved.created_at is not None
+
+
+def stored_brief(db: Session) -> tuple[str, str, list[str]]:
+    document = db.scalars(select(Document).where(Document.client == SEED_CLIENT)).one()
+    db.refresh(document)
+    chunk_ids = db.scalars(select(Chunk.id).where(Chunk.document_id == document.id)).all()
+    return document.embedding_backend, document.status, [str(i) for i in chunk_ids]
+
+
+def test_seed_re_embeds_the_brief_after_a_backend_switch(
+    db: Session, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(copilot, "SAMPLE_CLIENT", SEED_CLIENT)
+    copilot.seed_sample_documents()
+    backend, _, first_chunks = stored_brief(db)
+    assert backend == "sentence-transformers"
+
+    monkeypatch.setattr(rag, "current_backend", lambda: "fastembed")
+    copilot.seed_sample_documents()
+    backend, status, new_chunks = stored_brief(db)
+
+    assert (backend, status) == ("fastembed", "ready")
+    assert new_chunks and not set(new_chunks) & set(first_chunks)
+
+    copilot.seed_sample_documents()  # same backend again: nothing to do
+    assert stored_brief(db)[2] == new_chunks

@@ -1,6 +1,7 @@
 /** Types mirroring backend Pydantic schemas (backend/app/schemas). Keep names identical. */
 
 export type LlmProvider = "groq" | "openai" | "claude";
+export type EmbeddingBackend = "sentence-transformers" | "fastembed";
 
 export interface HealthResponse {
   status: "ok" | "degraded";
@@ -495,6 +496,7 @@ export interface AppSettings {
   providers: ProviderSettings[];
   default_provider: LlmProvider;
   embedding_model: string;
+  embedding_backend: EmbeddingBackend;
   copilot_min_similarity: number;
   copilot_top_k: number;
   copilot_max_upload_mb: number;
@@ -506,4 +508,5 @@ export interface AppSettings {
   rate_limit_enabled: boolean;
   rate_limit_per_minute: number;
   seed_demo_data: boolean;
+  demo_mode: boolean;
 }

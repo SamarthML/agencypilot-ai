@@ -217,7 +217,15 @@ Goal: interview-ready.
 
 ### Part B — deploy and story
 - [ ] Seed script for a full demo (sample CSV, sample PDF, a few audits)
-- [ ] Deploy: frontend → Vercel; backend → Render/Railway (Dockerfile); DB → Neon/Supabase with pgvector
+- [x] Deploy config: `backend/Dockerfile` (python slim, non-root, fastembed model baked in, alembic →
+      uvicorn on `$PORT` with proxy headers), `frontend/Dockerfile` (standalone, multi-stage),
+      `docker compose up --build` full stack (backend capped at 512 MB), `DEPLOY.md` (Neon, Render, Vercel)
+- [x] `EMBEDDING_BACKEND=fastembed` (ONNX, no torch; cosine ≥ 0.9999 vs sentence-transformers):
+      backend container ~320 MB idle, ~400 MB peak while ingesting a 188-chunk document;
+      `documents.embedding_backend` + demo brief re-embedded on a backend switch
+- [x] Rate limit behind a proxy (`TRUST_PROXY` / `TRUSTED_PROXY_COUNT`, spoofed header tests),
+      `DEMO_MODE` (Groq only, seeding, 10/min), cold-start "Waking up the server" banner
+- [ ] Live deploy: frontend → Vercel; backend → Render; DB → Neon (follow DEPLOY.md)
 - [ ] README: architecture diagram, screenshots/GIF, design decisions, cost numbers, "what I'd do next"
 - [ ] 3-minute demo script for the interview
 

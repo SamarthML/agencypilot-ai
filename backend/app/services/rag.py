@@ -1,7 +1,7 @@
 """RAG primitives for the Client Copilot: extract → chunk → embed → retrieve.
 
 Chunk sizes are measured with the embedding model's own tokenizer, and anything longer than
-the model's input window raises instead of being silently truncated by sentence-transformers
+the model's input window raises instead of being silently truncated by the embedding backend
 (BGE reads at most 512 tokens; text past that would simply never be embedded).
 """
 
@@ -15,12 +15,13 @@ from dataclasses import dataclass
 from pathlib import PurePath
 from typing import Protocol
 
+import numpy as np
 from pypdf import PdfReader
 from pypdf.errors import PyPdfError
 from sqlalchemy import select, text
 from sqlalchemy.orm import Session
 
-from app.core.config import get_settings
+from app.core.config import EmbeddingBackend, get_settings
 from app.models.copilot import Chunk, Document
 
 logger = logging.getLogger(__name__)
@@ -35,6 +36,11 @@ OVERLAP_TOKENS = 40
 # BGE v1.5 is trained with this instruction on queries only; passages are embedded as-is.
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 EMBED_BATCH_SIZE = 32
+# ONNX attention activations scale with batch x seq^2: at 250-token chunks a batch of 32 peaked
+# 241 MB above the loaded model, 8 peaked 76 MB and ran faster (2.7 s vs 5.9 s per 64 chunks).
+FASTEMBED_BATCH_SIZE = 8
+# BGE reads 512 positions; [CLS] and [SEP] take two.
+BGE_MAX_TOKENS = 510
 
 TokenCounter = Callable[[str], int]
 
@@ -237,8 +243,8 @@ class Embedder(Protocol):
     def embed_query(self, text: str) -> list[float]: ...
 
 
-class BgeEmbedder:
-    """sentence-transformers BGE model on CPU, producing L2-normalised vectors."""
+class SentenceTransformerEmbedder:
+    """sentence-transformers BGE model on CPU (torch), producing L2-normalised vectors."""
 
     def __init__(self, model_name: str) -> None:
         # Imported here: torch + transformers take ~25 s to import cold, so only pay when used.
@@ -272,8 +278,61 @@ class BgeEmbedder:
         return vectors.tolist()
 
 
+class FastEmbedEmbedder:
+    """The same BGE model on ONNX Runtime via fastembed: no torch, ~5x less memory.
+
+    Behaves exactly like SentenceTransformerEmbedder: BGE query prefix added here (fastembed's
+    query_embed adds none for this model), passages embedded as-is, vectors L2-normalised.
+    Measured against sentence-transformers: cosine >= 0.99999 for the same text.
+    """
+
+    def __init__(self, model_name: str) -> None:
+        from fastembed import TextEmbedding
+        from tokenizers import Tokenizer
+
+        # The CPU arena keeps every batch's peak allocation for reuse: measured +170 MB per
+        # 32x240-token batch, never returned. Without it memory stays flat at the same speed.
+        self._model = TextEmbedding(
+            model_name,
+            threads=get_settings().embedding_threads,
+            enable_cpu_mem_arena=False,
+        )
+        # fastembed's tokenizer truncates at 512, which would hide over-long chunks; count with
+        # an untruncated copy so check_token_limit can refuse them like the torch backend does.
+        self._tokenizer = Tokenizer.from_str(self._model.model.tokenizer.to_str())
+        self._tokenizer.no_truncation()
+        self._tokenizer.no_padding()
+        self.max_tokens: int = BGE_MAX_TOKENS
+
+    def count_tokens(self, text_: str) -> int:
+        return len(self._tokenizer.encode(text_, add_special_tokens=False).ids)
+
+    def embed_documents(self, texts: Sequence[str]) -> list[list[float]]:
+        check_token_limit(texts, self.count_tokens, self.max_tokens)
+        return self._encode(list(texts))
+
+    def embed_query(self, text_: str) -> list[float]:
+        query = QUERY_PREFIX + text_
+        check_token_limit([query], self.count_tokens, self.max_tokens)
+        return self._encode([query])[0]
+
+    def _encode(self, texts: list[str]) -> list[list[float]]:
+        vectors = np.asarray(list(self._model.embed(texts, batch_size=FASTEMBED_BATCH_SIZE)))
+        norms = np.linalg.norm(vectors, axis=1, keepdims=True)
+        return (vectors / np.clip(norms, 1e-12, None)).tolist()
+
+
+EMBEDDER_CLASSES: dict[EmbeddingBackend, Callable[[str], Embedder]] = {
+    "sentence-transformers": SentenceTransformerEmbedder,
+    "fastembed": FastEmbedEmbedder,
+}
+
 _embedder: Embedder | None = None
 _embedder_lock = threading.Lock()
+
+
+def current_backend() -> EmbeddingBackend:
+    return get_settings().embedding_backend
 
 
 def get_embedder() -> Embedder:
@@ -282,9 +341,10 @@ def get_embedder() -> Embedder:
     if _embedder is None:
         with _embedder_lock:
             if _embedder is None:
-                model_name = get_settings().embedding_model
-                logger.info("Loading embedding model %s", model_name)
-                _embedder = BgeEmbedder(model_name)
+                settings = get_settings()
+                backend, model_name = settings.embedding_backend, settings.embedding_model
+                logger.info("Loading embedding model %s (%s)", model_name, backend)
+                _embedder = EMBEDDER_CLASSES[backend](model_name)
                 logger.info("Embedding model ready")
     return _embedder
 

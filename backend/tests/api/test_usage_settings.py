@@ -64,5 +64,6 @@ def test_settings_reports_configuration_without_keys(client: TestClient) -> None
     assert providers["groq"]["is_default"] is True
     assert body["copilot_min_similarity"] == 0.5
     assert body["seed_demo_data"] is False and body["rate_limit_enabled"] is True
+    assert body["embedding_backend"] == "sentence-transformers" and body["demo_mode"] is False
     assert "test-groq-key" not in response.text  # the key value never leaves the backend
     assert not any("key" in field for field in body)

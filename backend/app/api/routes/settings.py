@@ -26,6 +26,7 @@ def app_settings() -> AppSettings:
         ],
         default_provider=settings.default_provider,
         embedding_model=settings.embedding_model,
+        embedding_backend=settings.embedding_backend,
         copilot_min_similarity=settings.copilot_min_similarity,
         copilot_top_k=settings.copilot_top_k,
         copilot_max_upload_mb=settings.copilot_max_upload_mb,
@@ -37,4 +38,5 @@ def app_settings() -> AppSettings:
         rate_limit_enabled=settings.rate_limit_enabled,
         rate_limit_per_minute=settings.rate_limit_per_minute,
         seed_demo_data=settings.seed_demo_data,
+        demo_mode=settings.demo_mode,
     )

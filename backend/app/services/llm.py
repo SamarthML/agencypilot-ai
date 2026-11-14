@@ -16,11 +16,8 @@ from collections.abc import AsyncIterator, Awaitable, Callable, Sequence
 from dataclasses import asdict, dataclass, replace
 from decimal import Decimal
 from functools import lru_cache
-from typing import Any, Literal, Protocol, get_args
+from typing import TYPE_CHECKING, Any, Literal, Protocol, get_args
 
-import anthropic
-import groq
-import openai
 from pydantic import BaseModel, Field, ValidationError
 from sqlalchemy.exc import SQLAlchemyError
 
@@ -28,6 +25,13 @@ from app.core.config import LlmProvider, Settings, get_settings
 from app.core.db import SessionLocal
 from app.models.llm_usage import LlmUsage
 from app.services.pricing import estimate_cost
+
+if TYPE_CHECKING:
+    # The SDKs are imported when a provider is first built (see _make_provider): anthropic
+    # alone is ~37 MB resident, and a Groq-only deployment never needs it.
+    import anthropic
+    import groq
+    import openai
 
 logger = logging.getLogger(__name__)
 
@@ -151,7 +155,7 @@ class OpenAICompatibleProvider:
     def __init__(
         self,
         name: LlmProvider,
-        client: openai.AsyncOpenAI | groq.AsyncGroq,
+        client: "openai.AsyncOpenAI | groq.AsyncGroq",
         retryable_errors: tuple[type[BaseException], ...],
         stream_usage_option: bool,
     ) -> None:
@@ -200,7 +204,9 @@ class AnthropicProvider:
 
     name: LlmProvider = "claude"
 
-    def __init__(self, client: anthropic.AsyncAnthropic) -> None:
+    def __init__(self, client: "anthropic.AsyncAnthropic") -> None:
+        import anthropic
+
         self._client = client
         self.retryable_errors = _retryable(anthropic)
 
@@ -249,13 +255,19 @@ def _retryable(sdk: Any) -> tuple[type[BaseException], ...]:
 @lru_cache(maxsize=8)
 def _make_provider(name: LlmProvider, api_key: str, timeout: float) -> Provider:
     if name == "groq":
+        import groq
+
         client = groq.AsyncGroq(api_key=api_key, timeout=timeout, max_retries=0)
         return OpenAICompatibleProvider("groq", client, _retryable(groq), stream_usage_option=False)
     if name == "openai":
+        import openai
+
         client = openai.AsyncOpenAI(api_key=api_key, timeout=timeout, max_retries=0)
         return OpenAICompatibleProvider(
             "openai", client, _retryable(openai), stream_usage_option=True
         )
+    import anthropic
+
     claude = anthropic.AsyncAnthropic(api_key=api_key, timeout=timeout, max_retries=0)
     return AnthropicProvider(claude)
 
@@ -271,7 +283,10 @@ def build_provider(name: LlmProvider, settings: Settings) -> Provider:
 
 
 def available_providers(settings: Settings) -> dict[LlmProvider, bool]:
-    return {name: settings.api_key_for(name) is not None for name in PROVIDER_IDS}
+    return {
+        name: settings.api_key_for(name) is not None and settings.provider_allowed(name)
+        for name in PROVIDER_IDS
+    }
 
 
 # ---------------------------------------------------------------------------

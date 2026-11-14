@@ -26,6 +26,11 @@ class Document(Base):
     pages: Mapped[int] = mapped_column(Integer, nullable=False, default=0, server_default="0")
     status: Mapped[str] = mapped_column(String(20), nullable=False, default="processing")
     error: Mapped[str | None] = mapped_column(Text, nullable=True)
+    # Which backend embedded the chunks: their vectors differ slightly, so a document is
+    # re-embedded when the deployment switches backend (see copilot.seed_sample_documents).
+    embedding_backend: Mapped[str] = mapped_column(
+        String(40), nullable=False, server_default="sentence-transformers"
+    )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), server_default=func.now(), nullable=False
     )

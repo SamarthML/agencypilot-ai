@@ -1,7 +1,8 @@
 """Per-client rate limit for endpoints that call an LLM (in-memory sliding window).
 
 In-process state is enough for this single-instance app; a multi-instance deployment would
-move the window to Redis. Clients are keyed by IP address.
+move the window to Redis. Clients are keyed by IP address: the socket peer, or, behind a
+trusted reverse proxy (TRUST_PROXY), the X-Forwarded-For entry that proxy appended.
 """
 
 import math
@@ -12,7 +13,7 @@ from collections.abc import Callable
 
 from fastapi import Depends, HTTPException, Request, status
 
-from app.core.config import get_settings
+from app.core.config import Settings, get_settings
 
 
 class SlidingWindowLimiter:
@@ -55,13 +56,36 @@ def get_limiter() -> SlidingWindowLimiter:
     return _limiter
 
 
+def forwarded_client(header: str, trusted_hops: int) -> str | None:
+    """The address appended by the outermost trusted proxy.
+
+    Each proxy appends the peer it saw, so the last `trusted_hops` entries were written by our
+    proxies and everything to their left is whatever the client sent (forgeable). With fewer
+    entries than hops, the left-most one is the best we have.
+    """
+    entries = [entry.strip() for entry in header.split(",") if entry.strip()]
+    if not entries:
+        return None
+    return entries[-trusted_hops] if len(entries) >= trusted_hops else entries[0]
+
+
+def client_ip(request: Request, settings: Settings) -> str:
+    """Rate-limit key: X-Forwarded-For only when we sit behind a proxy we trust."""
+    if settings.trust_proxy:
+        forwarded = request.headers.get("x-forwarded-for")
+        if forwarded:
+            address = forwarded_client(forwarded, settings.trusted_proxy_count)
+            if address:
+                return address
+    return request.client.host if request.client else "unknown"
+
+
 def llm_rate_limit(request: Request) -> None:
     """FastAPI dependency: 429 with a clear message once a client exceeds the LLM limit."""
     settings = get_settings()
     if not settings.rate_limit_enabled:
         return
-    key = request.client.host if request.client else "unknown"
-    retry_after = get_limiter().hit(key)
+    retry_after = get_limiter().hit(client_ip(request, settings))
     if retry_after is None:
         return
     seconds = max(1, math.ceil(retry_after))

@@ -79,11 +79,17 @@ function ConfigList({ settings }: { settings: AppSettings }) {
           <Row label="Embedding model" hint="EMBEDDING_MODEL: runs locally, no API cost">
             <span className="break-all">{settings.embedding_model}</span>
           </Row>
+          <Row label="Embedding backend" hint="EMBEDDING_BACKEND: torch locally, ONNX (fastembed) when deployed">
+            {settings.embedding_backend}
+          </Row>
           <Row label="AI rate limit" hint="RATE_LIMIT_ENABLED / RATE_LIMIT_PER_MINUTE, per client IP">
             {settings.rate_limit_enabled ? `${settings.rate_limit_per_minute} / min` : "Off"}
           </Row>
           <Row label="Demo data seeding" hint="SEED_DEMO_DATA: fixture SEO audits for demo clients at startup">
             {onOff(settings.seed_demo_data)}
+          </Row>
+          <Row label="Demo mode" hint="DEMO_MODE: Groq only, stricter rate limit, proxy client IPs">
+            {onOff(settings.demo_mode)}
           </Row>
           <Row label="Cache lifetimes" hint="Insights summary / SEO audit">
             {settings.insights_cache_ttl_seconds / 60} min / {settings.seo_cache_ttl_seconds / 60} min
